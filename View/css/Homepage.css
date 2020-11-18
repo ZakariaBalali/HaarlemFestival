@@ -1,0 +1,83 @@
+.MainContent {
+    display: inline-block;
+}
+
+.DanceContent {
+    background-image: url("../images/dance_background_homepage.jpg");
+    float: left;
+    margin-left: 65px;
+    background-position: center;
+    height: 800px;
+    width: 399px;
+}
+
+.DanceContent label {
+    font-family: "Segoe UI";
+    font-weight: bold;
+    font-size: 62px;
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+.FoodContent {
+    background-image: url("../images/food_background_homepage.jpg");
+    background-repeat: no-repeat;
+    background-size: 399px 800px;
+    background-size: cover;
+    background-position: center;
+    float: left;
+    margin-left: 65px;
+    height: 800px;
+    width: 399px;
+}
+
+.FoodContent label {
+    font-family: "Segoe UI";
+    font-weight: bold;
+    font-size: 62px;
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.JazzContent {
+    background-image: url("../images/jazz_background_homepage.jpg");
+    background-size: 399px 800px;
+    background-size: cover;
+    background-position: center;
+    float: left;
+    margin-left: 65px;
+    height: 800px;
+    width: 399px;
+}
+
+.JazzContent label {
+    font-family: "Segoe UI";
+    font-weight: bold;
+    font-size: 62px;
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.HistoricContent {
+    background-image: url("../images/historic_background_homepage.jpg");
+    background-size: 399px 800px;
+    background-size: cover;
+    background-position: center;
+    float: left;
+    margin-left: 65px;
+    height: 800px;
+    width: 399px;
+}
+
+.HistoricContent label{
+    font-family: "Segoe UI";
+    font-weight: bold;
+    font-size: 62px;
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+}

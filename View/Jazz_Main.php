@@ -6,7 +6,7 @@
     <meta name="description" content="Haarlem Jazz">
     <meta name="keywords" content="Jazz, smooth, lineup">
     <link href="css/JazzMain.css" rel="stylesheet" type="text/css">
-    <link href="css/Main.css" rel="stylesheet" type="text/css">
+    <link href="css/Banner.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <section class="Banner">
