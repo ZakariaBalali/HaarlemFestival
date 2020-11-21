@@ -5,7 +5,7 @@
     <title>Haarlem Program</title>
     <meta name="description" content="Haarlem Program">
     <meta name="keywords" content="Create your own Programme">
-    <link href="css/ShoppingCart_Main.css" rel="stylesheet" type="text/css">
+    <link href="css/ShoppingCartMain.css" rel="stylesheet" type="text/css">
     <link href="css/Banner.css" rel="stylesheet" type="text/css">
 </head>
 <body>

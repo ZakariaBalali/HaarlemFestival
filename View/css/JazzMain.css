@@ -1,13 +1,1001 @@
+.MainContent {
 
-.MainContent{
     background-image: url(../images/jazz_main_background.jpg);
+    background-attachment: fixed;
     background-repeat: repeat;
-    height: 1080px;
-}
-.lineupRow{
+    height: 2200px;
 
 }
 
-.lineupRoster{
+a:link {
+    text-decoration: none;
 
 }
+
+.MainContent h1 {
+    color: #FFFFFF;
+    font-size: 33px;
+    text-align: center;
+
+}
+
+.JazzTicketContent {
+    overflow: hidden;
+    width: 1280px;
+    margin-left: 274px;
+}
+
+.JazzButtons {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 -3rem;
+
+}
+
+.activeButton {
+
+    border: 3px solid black;
+    border-radius: 18px;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    font-size: 26px;
+    background-color: #AA2828;
+    width: 266px;
+    height: 76px;
+    line-height: 76px;
+    text-align: center;
+    align-self: center;
+    margin: 0 3rem 6rem 3rem;
+
+}
+
+.activeButton a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.notActiveButton a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.notActiveButton {
+    border: 3px solid black;
+    border-radius: 18px;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    font-size: 26px;
+    background-color: #FFFFFF;
+    width: 266px;
+    height: 76px;
+    line-height: 76px;
+    text-align: center;
+    align-self: center;
+    margin: 0 3rem 6rem 3rem;
+
+}
+
+.notActiveButton:hover {
+    background-color: #AA2828;
+}
+
+.notActiveButton:hover a {
+    color: #FFFFFF;
+}
+
+.lineupRoster {
+    display: inline-block;
+}
+
+.lineupThursday {
+    margin-top: 20px;
+    border: #FFFFFF 6px solid;
+    border-radius: 20px;
+    background-color: rgba(196, 141, 112, 0.66);
+    float: left;
+    margin-left: 65px;
+    height: 1700px;
+    width: 380px;
+}
+
+.titleThursday {
+    margin: auto;
+    text-align: center;
+    width: 334px;
+    height: 40px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.63);
+    color: black;
+    font-weight: bold;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+
+.lineupFriday {
+    margin-top: 20px;
+    border: #FFFFFF 6px solid;
+    border-radius: 20px;
+    background-color: rgba(196, 141, 112, 0.66);
+    float: left;
+    margin-left: 65px;
+    height: 1700px;
+    width: 380px;
+}
+
+.titleFriday {
+    margin: auto;
+    text-align: center;
+    width: 334px;
+    height: 40px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.63);
+    color: black;
+    font-weight: bold;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.lineupSaturday {
+    margin-top: 20px;
+    border: #FFFFFF 6px solid;
+    border-radius: 20px;
+    background-color: rgba(196, 141, 112, 0.66);
+    float: left;
+    margin-left: 65px;
+    height: 1700px;
+    width: 380px;
+}
+
+.titleSaturday {
+    margin: auto;
+    text-align: center;
+    width: 334px;
+    height: 40px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.63);
+    color: black;
+    font-weight: bold;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.lineupSunday {
+    margin-top: 20px;
+    border: #FFFFFF 6px solid;
+    border-radius: 20px;
+    background-color: rgba(196, 141, 112, 0.66);
+    float: left;
+    margin-left: 65px;
+    height: 1700px;
+    width: 380px;
+}
+
+.titleSunday {
+    margin: auto;
+    text-align: center;
+    width: 334px;
+    height: 40px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.63);
+    color: black;
+    font-weight: bold;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.lineupRoster {
+}
+
+.lineupRoster img {
+
+    border: 5px white solid;
+    margin-left: 20px;
+    margin-top: 40px;
+    width: 327px;
+    height: 218px;
+    object-fit: cover;
+}
+
+.titleGumboKings {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 712px;
+    left: 91px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeGumboKings {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 753px;
+    left: 91px;
+    color: black;
+    background-color: rgba(255, 110, 110, 0.71)
+}
+
+.titleWickedJazzSounds {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 985px;
+    left: 91px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeWickedJazzSounds {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1026px;
+    left: 91px;
+    color: black;
+    background-color: rgba(106, 255, 90, 0.71);
+}
+
+
+.titleEvolve {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1257px;
+    left: 91px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeEvolve {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1298px;
+    left: 91px;
+    color: black;
+    background-color: rgba(249, 255, 62, 0.71);
+}
+
+.titleTomThomsonAssemble {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1529px;
+    left: 91px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeTomThomsonAssemble {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1570px;
+    left: 91px;
+    color: black;
+    background-color: rgba(70, 240, 246, 0.71);
+}
+
+.titleNtjamRosie {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1801px;
+    left: 91px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeNtjamRosie {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1842px;
+    left: 91px;
+    color: black;
+    background-color: rgba(255, 133, 227, 0.71);
+}
+
+.titleJonnaFraser {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 2073px;
+    left: 91px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeJonnaFraser {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 2114px;
+    left: 91px;
+    color: black;
+    background-color: rgba(255, 200, 72, 0.71);
+}
+
+.titleFoxAndTheMayors {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 713px;
+    left: 548px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeFoxAndTheMayors {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 754px;
+    left: 548px;
+    color: black;
+    background-color: rgba(255, 110, 110, 0.71)
+}
+
+.titleMylesSanko {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 985px;
+    left: 548px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeMylesSanko {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1026px;
+    left: 548px;
+    color: black;
+    background-color: rgba(106, 255, 90, 0.71);
+}
+
+
+.titleUncleSue {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1257px;
+    left: 548px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeUncleSue {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1298px;
+    left: 548px;
+    color: black;
+    background-color: rgba(249, 255, 62, 0.71);
+}
+
+.titleRuisSoundsystem {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1529px;
+    left: 548px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeRuisSoundsystem {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1570px;
+    left: 548px;
+    color: black;
+    background-color: rgba(70, 240, 246, 0.71);
+}
+
+.titleChrisAllen {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1801px;
+    left: 548px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeChrisAllen {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1842px;
+    left: 548px;
+    color: black;
+    background-color: rgba(255, 133, 227, 0.71);
+}
+
+.titleTheFamilyXL {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 2073px;
+    left: 548px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeTheFamilyXL {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 2114px;
+    left: 548px;
+    color: black;
+    background-color: rgba(255, 200, 72, 0.71);
+}
+
+.titleGareDuNord {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 713px;
+    left: 1005px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeGareDuNord {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 754px;
+    left: 1005px;
+    color: black;
+    background-color: rgba(255, 110, 110, 0.71)
+}
+
+.titleHanBennink {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 985px;
+    left: 1005px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeHanBennink {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1026px;
+    left: 1005px;
+    color: black;
+    background-color: rgba(106, 255, 90, 0.71);
+}
+
+
+.titleRilan {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1257px;
+    left: 1005px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeRilan {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1298px;
+    left: 1005px;
+    color: black;
+    background-color: rgba(249, 255, 62, 0.71);
+}
+
+.titleTheNordaniens {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1529px;
+    left: 1005px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeTheNordaniens {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1570px;
+    left: 1005px;
+    color: black;
+    background-color: rgba(70, 240, 246, 0.71);
+}
+
+.titleSoulSix {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1801px;
+    left: 1005px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeSoulSix {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1842px;
+    left: 1005px;
+    color: black;
+    background-color: rgba(255, 133, 227, 0.71);
+}
+
+.titleLilithMerlot {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 2073px;
+    left: 1005px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeLilithMerlot {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 2114px;
+    left: 1005px;
+    color: black;
+    background-color: rgba(255, 200, 72, 0.71);
+}
+
+.titleRuisSunday {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 713px;
+    left: 1462px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeRuisSunday {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 754px;
+    left: 1462px;
+    color: black;
+    background-color: rgba(255, 110, 110, 0.71)
+}
+
+.titleWickedSunday {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 985px;
+    left: 1462px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeWickedSunday {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1026px;
+    left: 1462px;
+    color: black;
+    background-color: rgba(106, 255, 90, 0.71);
+}
+
+
+.titleEvolveSunday {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1257px;
+    left: 1462px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeEvolveSunday {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1298px;
+    left: 1462px;
+    color: black;
+    background-color: rgba(249, 255, 62, 0.71);
+}
+
+.titleTheNordaniensSunday {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1529px;
+    left: 1462px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeTheNordaniensSunday {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1570px;
+    left: 1462px;
+    color: black;
+    background-color: rgba(70, 240, 246, 0.71);
+}
+
+.titleGumboKingsSunday {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1801px;
+    left: 1462px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeGumboKingsSunday {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 1842px;
+    left: 1462px;
+    color: black;
+    background-color: rgba(255, 133, 227, 0.71);
+}
+
+.titleGareDuNordSunday {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 2073px;
+    left: 1462px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.71);
+}
+
+.timeGareDuNordSunday {
+    border: #707070 1px solid;
+    font-family: "Segoe UI";
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 335px;
+    height: 39px;
+    line-height: 39px;
+    top: 2114px;
+    left: 1462px;
+    color: black;
+    background-color: rgba(255, 200, 72, 0.71);
+}
+
+
+
+

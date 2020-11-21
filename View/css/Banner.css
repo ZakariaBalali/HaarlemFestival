@@ -14,7 +14,7 @@ body {
     justify-content: space-between;
     height: 114px;
     position: sticky;
-    position: -webkit-sticky;
+    z-index: 1000;
     top: 0; /* required */
 }
 
@@ -40,6 +40,7 @@ body {
 
 
 .NavigationBar {
+    z-index: 1000;
     display: block;
     border: black 2px groove;
     background-color: #FFFFFF;
@@ -74,6 +75,6 @@ body {
     float: right;
     width: 55px;
     top: 4px;
-    margin-left: 1050px;
+    margin-left: 1080px;
 }
 
