@@ -2,10 +2,10 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Haarlem Jazz</title>
-    <meta name="description" content="Haarlem Jazz">
-    <meta name="keywords" content="Jazz, smooth, lineup">
-    <link href="css/JazzMain.css" rel="stylesheet" type="text/css">
+    <title>Haarlem Historic</title>
+    <meta name="description" content="Haarlem Historic">
+    <meta name="keywords" content="History, Haarlem, Buildings">
+    <link href="css/HistoricMain.css" rel="stylesheet" type="text/css">
     <link href="css/Banner.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -22,24 +22,14 @@
     <a href="Homepage.php">Home</a>
     <a href="Dance_Main.php">Dance</a>
     <a href="Food_Main.php">Food</a>
-    <a class="active" href="Jazz_Main.php">Jazz</a>
-    <a href="Historic_Main.php">Historic</a>
+    <a href="Jazz_Main.php">Jazz</a>
+    <a class="active"  href="Historic_Main.php">Historic</a>
     <a href="Program_Main.php">Program</a>
     <a href="Shopping_Cart.php"><img src="images/icon_shoppingcart.png"></a>
 </section>
 
 <section class="MainContent">
-    <section class="lineupRoster">
-        <section class="lineupRow">
-            <section class="artist">
 
-            </section>
-        </section>
-    </section>
-
-</section>
-
-<section class="Footer">
 
 </section>
 

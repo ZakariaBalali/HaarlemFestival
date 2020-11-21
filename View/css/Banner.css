@@ -25,6 +25,7 @@ body {
 
 .rightBanner {
     display: flex;
+    margin-right: 20px;
 }
 
 .rightBanner label {
@@ -39,15 +40,17 @@ body {
 
 
 .NavigationBar {
+    display: block;
+    border: black 2px groove;
     background-color: #FFFFFF;
     font-size: 200px;
     height: 50px;
     position: sticky;
-    position: -webkit-sticky;
     top: 114px; /* required */
 }
 
 .NavigationBar a {
+
     float: left;
     display: block;
     color: black;
@@ -64,5 +67,13 @@ body {
 
 .NavigationBar a.active {
     color: red;
+}
+
+.NavigationBar img {
+    position: absolute;
+    float: right;
+    width: 55px;
+    top: 4px;
+    margin-left: 1050px;
 }
 

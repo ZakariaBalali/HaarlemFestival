@@ -7,7 +7,7 @@
     float: left;
     margin-left: 65px;
     background-position: center;
-    height: 800px;
+    height: 780px;
     width: 399px;
 }
 
@@ -21,15 +21,40 @@
 
 }
 
+.DanceContent:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/dance_background_homepage.jpg');
+    background-position: center;
+}
+
+
+.HoverTextDance {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: "Segoe UI";
+    font-size: 20px;
+    opacity: 0;
+
+}
+
+.DanceContent:hover .HoverTextDance {
+    opacity: 1;
+}
+
+.DanceButton {
+    position: absolute;
+    bottom: 70px;
+    left: 134px;
+}
+
 .FoodContent {
     background-image: url("../images/food_background_homepage.jpg");
     background-repeat: no-repeat;
-    background-size: 399px 800px;
+    background-size: 399px 780px;
     background-size: cover;
     background-position: center;
     float: left;
     margin-left: 65px;
-    height: 800px;
+    height: 780px;
     width: 399px;
 }
 
@@ -42,14 +67,40 @@
     margin-top: 50px;
 }
 
+.FoodContent:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/food_background_homepage.jpg');
+    background-position: center;
+    background-size: 399px 780px;
+    background-size: cover;
+    background-position: center;
+}
+
+.HoverTextFood {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: "Segoe UI";
+    font-size: 20px;
+    opacity: 0;
+}
+
+.FoodContent:hover .HoverTextFood {
+    opacity: 1;
+}
+
+.FoodButton {
+    position: absolute;
+    bottom: 70px;
+    left: 600px;
+}
+
 .JazzContent {
     background-image: url("../images/jazz_background_homepage.jpg");
-    background-size: 399px 800px;
+    background-size: 399px 780px;
     background-size: cover;
     background-position: center;
     float: left;
     margin-left: 65px;
-    height: 800px;
+    height: 780px;
     width: 399px;
 }
 
@@ -62,22 +113,85 @@
     margin-top: 50px;
 }
 
+.JazzContent:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/jazz_background_homepage.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.HoverTextJazz {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: "Segoe UI";
+    font-size: 20px;
+    opacity: 0;
+}
+
+.JazzContent:hover .HoverTextJazz {
+    opacity: 1;
+}
+.JazzButton {
+    position: absolute;
+    bottom: 70px;
+    left: 1065px;
+}
+
 .HistoricContent {
     background-image: url("../images/historic_background_homepage.jpg");
-    background-size: 399px 800px;
+    background-size: 399px 780px;
     background-size: cover;
     background-position: center;
     float: left;
     margin-left: 65px;
-    height: 800px;
+    height: 780px;
     width: 399px;
 }
 
-.HistoricContent label{
+.HistoricContent label {
     font-family: "Segoe UI";
     font-weight: bold;
     font-size: 62px;
     display: block;
     text-align: center;
     margin-top: 50px;
+}
+
+.HoverTextHistoric {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: "Segoe UI";
+    font-size: 20px;
+    opacity: 0;
+}
+
+.HistoricContent:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/historic_background_homepage.jpg');
+    background-size: cover;
+    background-position: center;
+
+}
+
+.HistoricContent:hover .HoverTextHistoric {
+    opacity: 1;
+}
+
+.HistoricButton {
+    position: absolute;
+    bottom: 70px;
+    left: 1531px;
+}
+
+.HoverButton {
+    font-weight: bold;
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #F1FF30;
+    border: #707070;
+    border-radius: 30px;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
 }
