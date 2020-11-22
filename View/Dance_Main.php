@@ -12,8 +12,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    
-   
+
+
 <section class="Banner">
     <section class="leftBanner">
         <img class="logoImage" src="images/logo.png">
@@ -21,19 +21,6 @@
     </section>
     <section class="rightBanner">
         <h1 class="Date">26-29 July 2021</h1>
-        <form>
-            <fieldset>
-                <p>
-                    <label>English</label>
-                    <select id = "myList">
-                        <option value = "1">one</option>
-                        <option value = "2">two</option>
-                        <option value = "3">three</option>
-                        <option value = "4">four</option>
-                    </select>
-                </p>
-            </fieldset>
-        </form>
     </section>
 </section>
 <section class="NavigationBar">
@@ -62,7 +49,7 @@
      <button type = "submit" class="image3" value = "myimage">
      <img src="./images/afrojack.jpg " />
      </button>
-    
+
 
                     <!--row 2 -->
      <section class="ArtistsRow2">
@@ -84,9 +71,9 @@
     <button type="button" class="btn btn-light btn-lg">Saturday, Jul 28th</button>
     <button type="button" class="btn btn-light btn-lg">Sunday, Jul 29th</button>
     </section>
-     
-   
-   
+
+
+
 
 </section>
 
