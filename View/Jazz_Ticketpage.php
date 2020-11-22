@@ -5,7 +5,7 @@
     <title>Haarlem Jazz</title>
     <meta name="description" content="Haarlem Jazz">
     <meta name="keywords" content="Jazz, smooth, lineup">
-    <link href="css/JazzMain.css" rel="stylesheet" type="text/css">
+    <link href="css/JazzTickets.css" rel="stylesheet" type="text/css">
     <link href="css/Banner.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -40,7 +40,16 @@
                 <a href="Jazz_Ticketpage.php">Tickets</a>
             </section>
         </section>
+        <section class="JazzDayButtons">
+            <section class="thursdayButton"><a href="# ">Thursday</a></section>
+            <section class="fridayButton"><a href="# ">Friday</a></section>
+            <section class="saturdayButton"><a href="#">Saturday</a></section>
+            <section class="sundayButton"><a href="#">Sunday</a></section>
+        </section>
 
+        <section class="tickets">
+            <section class=""
+        </section>
     </section>
 </section>
 </body>
