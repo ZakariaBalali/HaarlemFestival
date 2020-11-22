@@ -5,11 +5,10 @@
     <meta name="description" content="Haarlem Dance">
     <meta name="keywords" content="Dance, smooth, lineup">
     <link href="css/DanceMain.css" rel="stylesheet" type="text/css">
-    <link href="css/Main.css" rel="stylesheet" type="text/css">
     <script src="script.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="css/Banner.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
