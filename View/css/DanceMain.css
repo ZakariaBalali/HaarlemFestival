@@ -1,0 +1,43 @@
+
+.MainContent{
+    background-image: url(../images/dance_main_background.jpg);
+    background-repeat: repeat;
+    height: 1080px;
+   
+}
+
+.EventTitle{
+    color:lime;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+#subtitle{
+  text-align: center;
+  font-size: 18px;
+  color: white;
+}
+
+.ArtistsRow1 {
+   width:52%;
+ margin-left: auto ;
+ margin-right:auto ;
+
+  }
+  .ArtistsRow2 {
+    widows: 80%;
+  margin-left: auto ;
+  margin-right:auto ;
+  }
+  .DaysRow{
+    height: 150px;
+    width:52%;
+    padding: 35px 150px;
+    margin-left: auto ;
+    margin-right:auto ;
+  }
+
+
+  
+
+  
