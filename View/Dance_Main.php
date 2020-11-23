@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-    <title>Haarlem Jazz</title>
+    <title>Haarlem Dance</title>
     <meta name="description" content="Haarlem Dance">
     <meta name="keywords" content="Dance, smooth, lineup">
     <link href="css/DanceMain.css" rel="stylesheet" type="text/css">

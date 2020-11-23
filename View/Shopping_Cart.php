@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Haarlem Program</title>
+    <title>Shopping Cart</title>
     <meta name="description" content="Haarlem Program">
     <meta name="keywords" content="Create your own Programme">
     <link href="css/ShoppingCartMain.css" rel="stylesheet" type="text/css">

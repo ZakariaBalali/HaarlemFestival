@@ -46,9 +46,138 @@
             <section class="saturdayButton"><a href="#">Saturday</a></section>
             <section class="sundayButton"><a href="#">Sunday</a></section>
         </section>
-
-        <section class="tickets">
-            <section class=""
+    </section>
+    <section class="tickets">
+        <section class="leftSideTicket1">
+            <img src="images/GumboKings1.jpg">
+            <h1>Gumbo Kings</h1>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>Morbi semper hendrerit ex eu semper. Sed vitae lectus in nibh facilisis vestibulum at non est.
+                Suspendisse feugiat, odio eget consectetur varius, augue mauris sodales ipsum, sed ultrices mi ipsum eu
+                sem.</p>
+        </section>
+        <section class="rightSideTicket1">
+            <label class="dayLabel">Thu 28 Jul</label>
+            <label class="timeLabel">18:00-19:00</label>
+            <label class="priceLabel">€15,00</label>
+            <label class="locationLabel">Patronaat</label>
+            <div class="buyButtonTicketRow1">
+                <img src="images/BuyIcon.png">
+                <label class="buyLabel">Buy Now</label>
+            </div>
+        </section>
+        <section class="leftSideTicket2">
+            <img src="images/WickedJazzSounds1.jpg">
+            <h1>Wicked Jazz Sounds</h1>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>Suspendisse egestas, lorem efficitur lobortis pulvinar, purus mi maximus risus, nec ullamcorper nulla
+                lacus at dolor.</p>
+        </section>
+        <section class="rightSideTicket2">
+            <label class="dayLabel">Thu 28 Jul</label>
+            <label class="timeLabel">18:00-19:00</label>
+            <label class="priceLabel">€15,00</label>
+            <label class="locationLabel">Patronaat</label>
+            <div class="buyButtonTicketRow1">
+                <img src="images/BuyIcon.png">
+                <label class="buyLabel">Buy Now</label>
+            </div>
+        </section>
+        <section class="leftSideTicket3">
+            <img src="images/Evolve1.jpg">
+            <h1>Evolve</h1>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>Proin pulvinar tellus sed lacus interdum porttitor. Donec finibus neque sed dignissim tempor. Vivamus
+                tincidunt felis in nunc consectetur viverra. Praesent egestas semper auctor. Cras fringilla pharetra mi,
+                in pulvinar erat venenatis a. Nullam rutrum mollis lacinia.</p>
+        </section>
+        <section class="rightSideTicket3">
+            <label class="dayLabel">Thu 28 Jul</label>
+            <label class="timeLabel">19:30-20:30</label>
+            <label class="priceLabel">€15,00</label>
+            <label class="locationLabel">Patronaat</label>
+            <div class="buyButtonTicketRow2">
+                <img src="images/BuyIcon.png">
+                <label class="buyLabel">Buy Now</label>
+            </div>
+        </section>
+        <section class="leftSideTicket4">
+            <img src="images/TomThomsonAssemble1.jpg">
+            <h1>Tom Thomson Assemble</h1>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>Proin pulvinar tellus sed lacus interdum porttitor. Donec finibus neque sed dignissim tempor. Vivamus
+                tincidunt felis in nunc consectetur viverra. Praesent egestas semper auctor. Cras fringilla pharetra mi,
+                in pulvinar erat venenatis a. Nullam rutrum mollis lacinia.</p>
+        </section>
+        <section class="rightSideTicket4">
+            <label class="dayLabel">Thu 28 Jul</label>
+            <label class="timeLabel">19:30-20:30</label>
+            <label class="priceLabel">€15,00</label>
+            <label class="locationLabel">Patronaat</label>
+            <div class="buyButtonTicketRow2">
+                <img src="images/BuyIcon.png">
+                <label class="buyLabel">Buy Now</label>
+            </div>
+        </section>
+        <section class="leftSideTicket5">
+            <img src="images/NtjamRosie1.jpg">
+            <h1>Ntjam Rosie</h1>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>Sed vel commodo risus. Fusce est ante, posuere mattis cursus non, laoreet et libero. Curabitur
+                ullamcorper arcu at blandit faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a
+                molestie risus.</p>
+        </section>
+        <section class="rightSideTicket5">
+            <label class="dayLabel">Thu 28 Jul</label>
+            <label class="timeLabel">21:00-22:00</label>
+            <label class="priceLabel">€15,00</label>
+            <label class="locationLabel">Patronaat</label>
+            <div class="buyButtonTicketRow3">
+                <img src="images/BuyIcon.png">
+                <label class="buyLabel">Buy Now</label>
+            </div>
+        </section>
+        <section class="leftSideTicket6">
+            <img src="images/JonnaFraser1.jpg">
+            <h1>Jonna Fraser</h1>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>Proin pulvinar tellus sed lacus interdum porttitor. Donec finibus neque sed dignissim tempor. Vivamus
+                tincidunt felis in nunc consectetur viverra. Praesent egestas semper auctor. Cras fringilla pharetra mi,
+                in pulvinar erat venenatis a. Nullam rutrum mollis lacinia.</p>
+        </section>
+        <section class="rightSideTicket6">
+            <label class="dayLabel">Thu 28 Jul</label>
+            <label class="timeLabel">21:00-22:00</label>
+            <label class="priceLabel">€15,00</label>
+            <label class="locationLabel">Patronaat</label>
+            <div class="buyButtonTicketRow3">
+                <img src="images/BuyIcon.png">
+                <label class="buyLabel">Buy Now</label>
+            </div>
         </section>
     </section>
 </section>
