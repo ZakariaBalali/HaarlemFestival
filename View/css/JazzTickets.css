@@ -225,21 +225,22 @@
 }
 
 .timeLabel {
-    margin-top: 5px;
+    margin-top: 10px;
     font-size: 20px;
 }
 
 .priceLabel {
-    margin-top: 5px;
+    margin-top: 10px;
     font-size: 23px;
 }
 
 .locationLabel {
+    margin-top: 10px;
     font-size: 19px;
 }
 
 .buyButtonTicketRow1 {
-    margin-top: 40px;
+    margin-top: 25px;
     margin-left: 5px;
     width: 171px;
     height: 60px;
@@ -247,8 +248,12 @@
     border: #FFFFFF 2px solid;
 }
 
+.buyButtonTicketRow1:hover {
+    background-color: #FF2323;
+}
+
 .buyButtonTicketRow2 {
-    margin-top: 40px;
+    margin-top: 25px;
     margin-left: 5px;
     width: 171px;
     height: 60px;
@@ -256,8 +261,12 @@
     border: #FFFFFF 2px solid;
 }
 
+.buyButtonTicketRow2:hover {
+    background-color: #2069FC;
+}
+
 .buyButtonTicketRow3 {
-    margin-top: 40px;
+    margin-top: 25px;
     margin-left: 5px;
     width: 171px;
     height: 60px;
@@ -265,7 +274,11 @@
     border: #FFFFFF 2px solid;
 }
 
-.buyButtonTicketRow1 img{
+.buyButtonTicketRow3:hover{
+    background-color: #FF7700;
+}
+
+.buyButtonTicketRow1 img {
     margin-top: 24px;
     margin-left: 5px;
     margin-right: 0px;
@@ -275,7 +288,7 @@
     object-fit: cover;
 }
 
-.buyButtonTicketRow2 img{
+.buyButtonTicketRow2 img {
     margin-top: 24px;
     margin-left: 5px;
     margin-right: 0px;
@@ -285,8 +298,8 @@
     object-fit: cover;
 }
 
-.buyButtonTicketRow3 img{
-    margin-top: 24px;
+.buyButtonTicketRow3 img {
+    margin-top: 19px;
     margin-left: 5px;
     margin-right: 0px;
     height: 18px;
@@ -294,6 +307,7 @@
     float: left;
     object-fit: cover;
 }
+
 .buyLabel {
     margin-right: 15px;
     font-size: 16px;
