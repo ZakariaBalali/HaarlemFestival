@@ -1,23 +1,24 @@
 .MainContent {
     display: inline-block;
+    margin-top: 11rem;
 }
 
 .DanceContent {
     background-image: url("../images/dance_background_homepage.jpg");
     float: left;
-    margin-left: 65px;
+    margin-left: 4.0625rem;
     background-position: center;
-    height: 780px;
-    width: 399px;
+    height: 48.75rem;
+    width: 24.9375rem;
 }
 
 .DanceContent label {
     font-family: "Segoe UI";
     font-weight: bold;
-    font-size: 62px;
+    font-size: 3.875rem;
     display: block;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 3.125rem;
 
 }
 
@@ -28,10 +29,10 @@
 
 
 .HoverTextDance {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
     font-family: "Segoe UI";
-    font-size: 20px;
+    font-size: 1.25rem;
     opacity: 0;
 
 }
@@ -42,44 +43,44 @@
 
 .DanceButton {
     position: absolute;
-    bottom: 70px;
-    left: 134px;
+    bottom: 4.375rem;
+    left: 8.375rem
 }
 
 .FoodContent {
     background-image: url("../images/food_background_homepage.jpg");
     background-repeat: no-repeat;
-    background-size: 399px 780px;
+    background-size: 24.9375rem 48.75rem;
     background-size: cover;
     background-position: center;
     float: left;
-    margin-left: 65px;
-    height: 780px;
-    width: 399px;
+    margin-left: 4.0625rem;
+    height: 48.75rem;
+    width: 24.9375rem;
 }
 
 .FoodContent label {
     font-family: "Segoe UI";
     font-weight: bold;
-    font-size: 62px;
+    font-size: 3.875rem;
     display: block;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 3.125rem;
 }
 
 .FoodContent:hover {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/food_background_homepage.jpg');
     background-position: center;
-    background-size: 399px 780px;
+    background-size: 24.9375rem 48.75rem;
     background-size: cover;
     background-position: center;
 }
 
 .HoverTextFood {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
     font-family: "Segoe UI";
-    font-size: 20px;
+    font-size: 1.25rem;
     opacity: 0;
 }
 
@@ -89,28 +90,28 @@
 
 .FoodButton {
     position: absolute;
-    bottom: 70px;
-    left: 600px;
+    bottom: 4.375rem;
+    left: 37.5rem;
 }
 
 .JazzContent {
     background-image: url("../images/jazz_background_homepage.jpg");
-    background-size: 399px 780px;
+    background-size: 24.9375rem 48.75rem;
     background-size: cover;
     background-position: center;
     float: left;
-    margin-left: 65px;
-    height: 780px;
-    width: 399px;
+    margin-left: 4.0625rem;
+    height: 48.75rem;
+    width: 24.9375rem;
 }
 
 .JazzContent label {
     font-family: "Segoe UI";
     font-weight: bold;
-    font-size: 62px;
+    font-size: 3.875rem;
     display: block;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 3.125rem;
 }
 
 .JazzContent:hover {
@@ -120,10 +121,10 @@
 }
 
 .HoverTextJazz {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
     font-family: "Segoe UI";
-    font-size: 20px;
+    font-size: 1.25rem;
     opacity: 0;
 }
 
@@ -132,35 +133,35 @@
 }
 .JazzButton {
     position: absolute;
-    bottom: 70px;
-    left: 1065px;
+    bottom: 4.375rem;
+    left: 66.5625rem;
 }
 
 .HistoricContent {
     background-image: url("../images/historic_background_homepage.jpg");
-    background-size: 399px 780px;
+    background-size: 24.9375rem 48.75rem;
     background-size: cover;
     background-position: center;
     float: left;
-    margin-left: 65px;
-    height: 780px;
-    width: 399px;
+    margin-left: 4.0625rem;
+    height: 48.75rem;
+    width: 24.9375rem;
 }
 
 .HistoricContent label {
     font-family: "Segoe UI";
     font-weight: bold;
-    font-size: 62px;
+    font-size: 3.875rem;
     display: block;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 3.125rem;
 }
 
 .HoverTextHistoric {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
     font-family: "Segoe UI";
-    font-size: 20px;
+    font-size: 1.25rem;
     opacity: 0;
 }
 
@@ -177,20 +178,20 @@
 
 .HistoricButton {
     position: absolute;
-    bottom: 70px;
-    left: 1531px;
+    bottom: 4.375rem;
+    left: 95.6875rem;
 }
 
 .HoverButton {
     font-weight: bold;
-    width: 200px;
-    height: 30px;
-    line-height: 30px;
+    width: 12.5rem;
+    height: 1.875rem;
+    line-height: 1.875rem;
     background-color: #F1FF30;
     border: #707070;
-    border-radius: 30px;
+    border-radius: 1.875rem;
     color: black;
-    padding: 15px 32px;
+    padding: 0.9375rem 2rem;
     text-align: center;
     text-decoration: none;
     display: inline-block;

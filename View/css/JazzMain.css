@@ -1,17 +1,19 @@
-.MainContent {
-
-    background-image: url(../images/jazz_main_background.jpg);
+body{
     background-attachment: fixed;
-    background-position: 0px 150px;
-    height: 2200px;
-
+    background-image: url(../images/jazz_main_background.jpg);
+    background-position: 0rem 8.375rem;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
+.MainContent{
+    margin-top: 11.2rem;
+    height: 137.5rem;
+}
 .MainContent h1 {
     color: #FFFFFF;
-    font-size: 33px;
+    font-size: 2.0625rem;
     text-align: center;
-
 }
 
 
@@ -27,15 +29,15 @@
 
 .activeButton {
 
-    border: 3px solid black;
-    border-radius: 18px;
+    border: 0.1875rem solid black;
+    border-radius: 1.125rem;
     font-family: "Segoe UI";
     font-weight: bold;
-    font-size: 26px;
+    font-size: 1.625rem;
     background-color: #AA2828;
-    width: 266px;
-    height: 76px;
-    line-height: 76px;
+    width: 16.625rem;
+    height: 4.75rem;
+    line-height: 4.75rem;
     text-align: center;
     align-self: center;
     margin: 0 3rem 6rem 3rem;
@@ -53,15 +55,15 @@
 }
 
 .notActiveButton {
-    border: 3px solid black;
-    border-radius: 18px;
+    border: 0.1875rem solid black;
+    border-radius: 1.125rem;
     font-family: "Segoe UI";
     font-weight: bold;
-    font-size: 26px;
+    font-size: 1.625rem;
     background-color: #FFFFFF;
-    width: 266px;
-    height: 76px;
-    line-height: 76px;
+    width: 16.625rem;
+    height: 4.75rem;
+    line-height: 4.75rem;
     text-align: center;
     align-self: center;
     margin: 0 3rem 6rem 3rem;
@@ -81,100 +83,100 @@
 }
 
 .lineupThursday {
-    margin-top: 20px;
-    border: #FFFFFF 6px solid;
-    border-radius: 20px;
+    margin-top: 1.25rem;
+    border: #FFFFFF 0.375rem solid;
+    border-radius: 1.25rem;
     background-color: rgba(196, 141, 112, 0.66);
     float: left;
-    margin-left: 65px;
-    height: 1700px;
-    width: 380px;
+    margin-left: 4.0625rem;
+    height: 106.25rem;
+    width: 23.75rem;
 }
 
 .titleThursday {
     margin: auto;
     text-align: center;
-    width: 334px;
-    height: 40px;
-    border-radius: 12px;
+    width: 20.875rem;
+    height: 2.5rem;
+    border-radius: 0.75rem;
     background-color: rgba(255, 255, 255, 0.63);
     color: black;
     font-weight: bold;
-    line-height: 40px;
-    font-size: 20px;
+    line-height: 2.5rem;
+    font-size: 1.25rem;
 }
 
 
 .lineupFriday {
-    margin-top: 20px;
-    border: #FFFFFF 6px solid;
-    border-radius: 20px;
+    margin-top: 1.25rem;
+    border: #FFFFFF 0.375rem solid;
+    border-radius: 1.25rem;
     background-color: rgba(196, 141, 112, 0.66);
     float: left;
-    margin-left: 65px;
-    height: 1700px;
-    width: 380px;
+    margin-left: 4.0625rem;
+    height: 106.25rem;
+    width: 23.75rem;
 }
 
 .titleFriday {
     margin: auto;
     text-align: center;
-    width: 334px;
-    height: 40px;
-    border-radius: 12px;
+    width: 20.875rem;
+    height: 2.5rem;
+    border-radius: 0.75rem;
     background-color: rgba(255, 255, 255, 0.63);
     color: black;
     font-weight: bold;
-    line-height: 40px;
-    font-size: 20px;
+    line-height: 2.5rem;
+    font-size: 1.25rem;
 }
 
 .lineupSaturday {
-    margin-top: 20px;
-    border: #FFFFFF 6px solid;
-    border-radius: 20px;
+    margin-top: 1.25rem;
+    border: #FFFFFF 0.375rem solid;
+    border-radius: 1.25rem;
     background-color: rgba(196, 141, 112, 0.66);
     float: left;
-    margin-left: 65px;
-    height: 1700px;
-    width: 380px;
+    margin-left: 4.0625rem;
+    height: 106.25rem;
+    width: 23.75rem;
 }
 
 .titleSaturday {
     margin: auto;
     text-align: center;
-    width: 334px;
-    height: 40px;
-    border-radius: 12px;
+    width: 20.875rem;
+    height: 2.5rem;
+    border-radius: 0.75rem;
     background-color: rgba(255, 255, 255, 0.63);
     color: black;
     font-weight: bold;
-    line-height: 40px;
-    font-size: 20px;
+    line-height: 2.5rem;
+    font-size: 1.25rem;
 }
 
 .lineupSunday {
-    margin-top: 20px;
-    border: #FFFFFF 6px solid;
-    border-radius: 20px;
+    margin-top: 1.25rem;
+    border: #FFFFFF 0.375rem solid;
+    border-radius: 1.25rem;
     background-color: rgba(196, 141, 112, 0.66);
     float: left;
-    margin-left: 65px;
-    height: 1700px;
-    width: 380px;
+    margin-left: 4.0625rem;
+    height: 106.25rem;
+    width: 23.75rem;
 }
 
 .titleSunday {
     margin: auto;
     text-align: center;
-    width: 334px;
-    height: 40px;
-    border-radius: 12px;
+    width: 20.875rem;
+    height: 2.5rem;
+    border-radius: 0.75rem;
     background-color: rgba(255, 255, 255, 0.63);
     color: black;
     font-weight: bold;
-    line-height: 40px;
-    font-size: 20px;
+    line-height: 2.5rem;
+    font-size: 1.25rem;
 }
 
 .lineupRoster {
@@ -182,806 +184,806 @@
 
 .lineupRoster img {
 
-    border: 5px white solid;
-    margin-left: 20px;
-    margin-top: 40px;
-    width: 327px;
-    height: 218px;
+    border: 0.3125rem white solid;
+    margin-left: 1.25rem;
+    margin-top: 2.5rem;
+    width: 20.4375rem;
+    height: 13.625rem;
     object-fit: cover;
 }
 
 .titleGumboKings {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 712px;
-    left: 91px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 44.5rem;
+    left: 5.6875rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeGumboKings {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 753px;
-    left: 91px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 47.0625rem;
+    left: 5.6875rem;
     color: black;
     background-color: rgba(255, 110, 110, 0.71)
 }
 
 .titleWickedJazzSounds {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 985px;
-    left: 91px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 61.5625rem;
+    left: 5.6875rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeWickedJazzSounds {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1026px;
-    left: 91px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 64.125rem;
+    left: 5.6875rem;
     color: black;
     background-color: rgba(106, 255, 90, 0.71);
 }
 
 
 .titleEvolve {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1257px;
-    left: 91px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 78.5625rem;
+    left: 5.6875rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeEvolve {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1298px;
-    left: 91px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 81.125rem;
+    left: 5.6875rem;
     color: black;
     background-color: rgba(249, 255, 62, 0.71);
 }
 
 .titleTomThomsonAssemble {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1529px;
-    left: 91px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 95.5625rem;
+    left: 5.6875rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeTomThomsonAssemble {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1570px;
-    left: 91px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 98.125rem;
+    left: 5.6875rem;
     color: black;
     background-color: rgba(70, 240, 246, 0.71);
 }
 
 .titleNtjamRosie {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1801px;
-    left: 91px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 112.5625rem;
+    left: 5.6875rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeNtjamRosie {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1842px;
-    left: 91px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 115.125rem;
+    left: 5.6875rem;
     color: black;
     background-color: rgba(255, 133, 227, 0.71);
 }
 
 .titleJonnaFraser {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 2073px;
-    left: 91px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 129.5625rem;
+    left: 5.6875rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeJonnaFraser {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 2114px;
-    left: 91px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 132.125rem;
+    left: 5.6875rem;
     color: black;
     background-color: rgba(255, 200, 72, 0.71);
 }
 
 .titleFoxAndTheMayors {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 713px;
-    left: 548px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 44.5625rem;
+    left: 34.25rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeFoxAndTheMayors {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 754px;
-    left: 548px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 47.125rem;
+    left: 34.25rem;
     color: black;
     background-color: rgba(255, 110, 110, 0.71)
 }
 
 .titleMylesSanko {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 985px;
-    left: 548px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 61.5625rem;
+    left: 34.25rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeMylesSanko {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1026px;
-    left: 548px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 64.125rem;
+    left: 34.25rem;
     color: black;
     background-color: rgba(106, 255, 90, 0.71);
 }
 
 
 .titleUncleSue {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1257px;
-    left: 548px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 78.5625rem;
+    left: 34.25rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeUncleSue {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1298px;
-    left: 548px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 81.125rem;
+    left: 34.25rem;
     color: black;
     background-color: rgba(249, 255, 62, 0.71);
 }
 
 .titleRuisSoundsystem {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1529px;
-    left: 548px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 95.5625rem;
+    left: 34.25rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeRuisSoundsystem {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1570px;
-    left: 548px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 98.125rem;
+    left: 34.25rem;
     color: black;
     background-color: rgba(70, 240, 246, 0.71);
 }
 
 .titleChrisAllen {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1801px;
-    left: 548px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 112.5625rem;
+    left: 34.25rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeChrisAllen {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1842px;
-    left: 548px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 115.125rem;
+    left: 34.25rem;
     color: black;
     background-color: rgba(255, 133, 227, 0.71);
 }
 
 .titleTheFamilyXL {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 2073px;
-    left: 548px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 129.5625rem;
+    left: 34.25rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeTheFamilyXL {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 2114px;
-    left: 548px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 132.125rem;
+    left: 34.25rem;
     color: black;
     background-color: rgba(255, 200, 72, 0.71);
 }
 
 .titleGareDuNord {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 713px;
-    left: 1005px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 44.5625rem;
+    left: 62.8125rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeGareDuNord {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 754px;
-    left: 1005px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 47.125rem;
+    left: 62.8125rem;
     color: black;
     background-color: rgba(255, 110, 110, 0.71)
 }
 
 .titleHanBennink {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 985px;
-    left: 1005px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 61.5625rem;
+    left: 62.8125rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeHanBennink {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1026px;
-    left: 1005px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 64.125rem;
+    left: 62.8125rem;
     color: black;
     background-color: rgba(106, 255, 90, 0.71);
 }
 
 
 .titleRilan {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1257px;
-    left: 1005px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 78.5625rem;
+    left: 62.8125rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeRilan {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1298px;
-    left: 1005px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 81.125rem;
+    left: 62.8125rem;
     color: black;
     background-color: rgba(249, 255, 62, 0.71);
 }
 
 .titleTheNordaniens {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1529px;
-    left: 1005px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 95.5625rem;
+    left: 62.8125rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeTheNordaniens {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1570px;
-    left: 1005px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 98.125rem;
+    left: 62.8125rem;
     color: black;
     background-color: rgba(70, 240, 246, 0.71);
 }
 
 .titleSoulSix {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1801px;
-    left: 1005px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 112.5625rem;
+    left: 62.8125rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeSoulSix {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1842px;
-    left: 1005px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 115.125rem;
+    left: 62.8125rem;
     color: black;
     background-color: rgba(255, 133, 227, 0.71);
 }
 
 .titleLilithMerlot {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 2073px;
-    left: 1005px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 129.5625rem;
+    left: 62.8125rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeLilithMerlot {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 2114px;
-    left: 1005px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 132.125rem;
+    left: 62.8125rem;
     color: black;
     background-color: rgba(255, 200, 72, 0.71);
 }
 
 .titleRuisSunday {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 713px;
-    left: 1462px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 44.5625rem;
+    left: 91.375rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeRuisSunday {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 754px;
-    left: 1462px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 47.125rem;
+    left: 91.375rem;
     color: black;
     background-color: rgba(255, 110, 110, 0.71)
 }
 
 .titleWickedSunday {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 985px;
-    left: 1462px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 61.5625rem;
+    left: 91.375rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeWickedSunday {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1026px;
-    left: 1462px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 64.125rem;
+    left: 91.375rem;
     color: black;
     background-color: rgba(106, 255, 90, 0.71);
 }
 
 
 .titleEvolveSunday {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1257px;
-    left: 1462px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 78.5625rem;
+    left: 91.375rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeEvolveSunday {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1298px;
-    left: 1462px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 81.125rem;
+    left: 91.375rem;
     color: black;
     background-color: rgba(249, 255, 62, 0.71);
 }
 
 .titleTheNordaniensSunday {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1529px;
-    left: 1462px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 95.5625rem;
+    left: 91.375rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeTheNordaniensSunday {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1570px;
-    left: 1462px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 98.125rem;
+    left: 91.375rem;
     color: black;
     background-color: rgba(70, 240, 246, 0.71);
 }
 
 .titleGumboKingsSunday {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1801px;
-    left: 1462px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 112.5625rem;
+    left: 91.375rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeGumboKingsSunday {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 1842px;
-    left: 1462px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 115.125rem;
+    left: 91.375rem;
     color: black;
     background-color: rgba(255, 133, 227, 0.71);
 }
 
 .titleGareDuNordSunday {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 2073px;
-    left: 1462px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 129.5625rem;
+    left: 91.375rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
 .timeGareDuNordSunday {
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: bold;
     position: absolute;
     margin: auto;
     text-align: center;
-    width: 335px;
-    height: 39px;
-    line-height: 39px;
-    top: 2114px;
-    left: 1462px;
+    width: 20.9375rem;
+    height: 2.4375rem;
+    line-height: 2.4375rem;
+    top: 132.125rem;
+    left: 91.375rem;
     color: black;
     background-color: rgba(255, 200, 72, 0.71);
 }

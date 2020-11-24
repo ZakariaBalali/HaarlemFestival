@@ -1,23 +1,26 @@
-.MainContent {
-
-    background-image: url(../images/jazz_main_background.jpg);
+body {
     background-attachment: fixed;
-    background-position: 0px 150px;
-    height: 1300px;
+    background-image: url(../images/jazz_main_background.jpg);
+    background-position: 0rem 8.375rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
+.MainContent {
+    margin-top: 13.25rem;
+    height: 82.5rem;
 }
 
 .MainContent h1 {
     color: #FFFFFF;
-    font-size: 33px;
+    font-size: 2.0625rem;
     text-align: center;
 
 }
 
 .JazzTicketContent {
-    overflow: hidden;
-    width: 1280px;
-    margin-left: 274px;
+    width: 80rem;
+    margin-left: 17.125rem;
 }
 
 .JazzButtons {
@@ -40,15 +43,15 @@
 
 .thursdayButton {
 
-    border: 3px solid black;
-    border-radius: 18px;
+    border: 0.1875rem solid black;
+    border-radius: 1.125rem;
     font-family: "Segoe UI";
     font-weight: bold;
-    font-size: 21px;
+    font-size: 1.3125rem;
     background-color: #FFFFFF;
-    width: 214px;
-    height: 61px;
-    line-height: 60px;
+    width: 13.375rem;
+    height: 3.8125rem;
+    line-height: 3.75rem;
     text-align: center;
     align-self: center;
     margin: 0 3rem 6rem 3rem;
@@ -61,15 +64,15 @@
 
 .fridayButton {
 
-    border: 3px solid black;
-    border-radius: 18px;
+    border: 0.1875rem solid black;
+    border-radius: 1.125rem;
     font-family: "Segoe UI";
     font-weight: bold;
-    font-size: 21px;
+    font-size: 1.3125rem;
     background-color: #FFFFFF;
-    width: 214px;
-    height: 61px;
-    line-height: 60px;
+    width: 13.375rem;
+    height: 3.8125rem;
+    line-height: 3.75rem;
     text-align: center;
     align-self: center;
     margin: 0 3rem 6rem 3rem;
@@ -82,15 +85,15 @@
 
 .saturdayButton {
 
-    border: 3px solid black;
-    border-radius: 18px;
+    border: 0.1875rem solid black;
+    border-radius: 1.125rem;
     font-family: "Segoe UI";
     font-weight: bold;
-    font-size: 21px;
+    font-size: 1.3125rem;
     background-color: #FFFFFF;
-    width: 214px;
-    height: 61px;
-    line-height: 60px;
+    width: 13.375rem;
+    height: 3.8125rem;
+    line-height: 3.75rem;
     text-align: center;
     align-self: center;
     margin: 0 3rem 6rem 3rem;
@@ -103,15 +106,15 @@
 
 .sundayButton {
 
-    border: 3px solid black;
-    border-radius: 18px;
+    border: 0.1875rem solid black;
+    border-radius: 1.125rem;
     font-family: "Segoe UI";
     font-weight: bold;
-    font-size: 21px;
+    font-size: 1.3125rem;
     background-color: #FFFFFF;
-    width: 214px;
-    height: 61px;
-    line-height: 60px;
+    width: 13.375rem;
+    height: 3.8125rem;
+    line-height: 3.75rem;
     text-align: center;
     align-self: center;
     margin: 0 3rem 6rem 3rem;
@@ -124,15 +127,15 @@
 
 .activeButton {
 
-    border: 3px solid black;
-    border-radius: 18px;
+    border: 0.1875rem solid black;
+    border-radius: 1.125rem;
     font-family: "Segoe UI";
     font-weight: bold;
-    font-size: 26px;
+    font-size: 1.625rem;
     background-color: #AA2828;
-    width: 266px;
-    height: 76px;
-    line-height: 76px;
+    width: 16.625rem;
+    height: 4.75rem;
+    line-height: 4.75rem;
     text-align: center;
     align-self: center;
     margin: 0 3rem 6rem 3rem;
@@ -150,15 +153,15 @@
 }
 
 .notActiveButton {
-    border: 3px solid black;
-    border-radius: 18px;
+    border: 0.1875rem solid black;
+    border-radius: 1.125rem;
     font-family: "Segoe UI";
     font-weight: bold;
-    font-size: 26px;
+    font-size: 1.625rem;
     background-color: #FFFFFF;
-    width: 266px;
-    height: 76px;
-    line-height: 76px;
+    width: 16.625rem;
+    height: 4.75rem;
+    line-height: 4.75rem;
     text-align: center;
     align-self: center;
     margin: 0 3rem 6rem 3rem;
@@ -175,30 +178,30 @@
 
 .tickets {
     display: grid;
-
-    margin-top: 30px;
-    padding-left: 50px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    float: left;
+    margin-top: 1.875rem;
+    padding-left: 3.125rem;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas: "leftSideTicket1 rightSideTicket1 leftSideTicket2 rightSideTicket2" "leftSideTicket3 rightSideTicket3 leftSideTicket4 rightSideTicket4" "leftSideTicket5 rightSideTicket5 leftSideTicket6 rightSideTicket6";
+    gap: 0rem 3.125rem;
+    grid-template-areas: "leftSideTicket1  leftSideTicket2 " "leftSideTicket3  leftSideTicket4 " "leftSideTicket5 leftSideTicket6 ";
 }
 
 .tickets img {
     float: left;
-    height: 199px;
-    width: 193px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 30px;
+    height: 12.4375rem;
+    width: 12.0625rem;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+    margin-top: 1.875rem;
     object-fit: cover;
 
 }
 
 .tickets h1 {
-    margin-top: 40px;
+    margin-top: 2.5rem;
     float: left;
-    font-size: 26px;
+    font-size: 1.625rem;
     font-family: "Arial Rounded MT";
     font-weight: bold;
     color: #E81212;
@@ -208,7 +211,7 @@
     font-family: "Arial Rounded MT";
     color: black;
     float: start;
-    margin-right: 80px;
+    margin-right: 5rem;
 
 }
 
@@ -219,46 +222,81 @@
 
 }
 
+.tickets a {
+    text-decoration: none;
+}
+
 .dayLabel {
-    margin-top: 30px;
-    font-size: 26px;
+    margin-top: 1.875rem;
+    font-size: 1.625rem;
 }
 
 .timeLabel {
-    margin-top: 10px;
-    font-size: 20px;
+    margin-top: 0.625rem;
+    font-size: 1.25rem;
 }
 
 .priceLabel {
-    margin-top: 10px;
-    font-size: 23px;
+    margin-top: 0.625rem;
+    font-size: 1.4375rem;
 }
 
 .locationLabel {
-    margin-top: 10px;
-    font-size: 19px;
+    margin-top: 0.625rem;
+    font-size: 1.1875rem;
 }
 
+
 .buyButtonTicketRow1 {
-    margin-top: 25px;
-    margin-left: 5px;
-    width: 171px;
-    height: 60px;
+    margin-top: 1.5625rem;
+    margin-left: 0.3125rem;
+    width: 10.6875rem;
+    height: 3.75rem;
     background-color: #FC5757;
-    border: #FFFFFF 2px solid;
+    border: #FFFFFF 0.125rem solid;
 }
 
 .buyButtonTicketRow1:hover {
     background-color: #FF2323;
 }
 
+.closeTicketScreenRow1 {
+    width: 10.6875rem;
+    height: 3.75rem;
+    float: right;
+    background-color: #FC5757;
+}
+
+.closeTicketScreenRow1:hover {
+    background-color: #FF2323;
+}
+
+.closeTicketScreenRow1 img {
+    margin-top: 1.5rem;
+    margin-left: 0.3125rem;
+    margin-right: 0rem;
+    height: 1.125rem;
+    width: 1.1875rem;
+    float: left;
+    object-fit: cover;
+}
+
+.closeTicketScreenRow1 label {
+    cursor: pointer;
+    font-family: "Arial Rounded MT";
+    color: #FFFFFF;
+    margin-right: 0.9375rem;
+    font-size: 1.25rem;
+    line-height: 3.75rem;
+}
+
 .buyButtonTicketRow2 {
-    margin-top: 25px;
-    margin-left: 5px;
-    width: 171px;
-    height: 60px;
+    margin-top: 1.5625rem;
+    margin-left: 0.3125rem;
+    width: 10.6875rem;
+    height: 3.75rem;
     background-color: #578EFC;
-    border: #FFFFFF 2px solid;
+    border: #FFFFFF 0.125rem solid;
 }
 
 .buyButtonTicketRow2:hover {
@@ -266,151 +304,203 @@
 }
 
 .buyButtonTicketRow3 {
-    margin-top: 25px;
-    margin-left: 5px;
-    width: 171px;
-    height: 60px;
+    margin-top: 1.5625rem;
+    margin-left: 0.3125rem;
+    width: 10.6875rem;
+    height: 3.75rem;
     background-color: #FF9130;
-    border: #FFFFFF 2px solid;
+    border: #FFFFFF 0.125rem solid;
 }
 
-.buyButtonTicketRow3:hover{
+.buyButtonTicketRow3:hover {
     background-color: #FF7700;
 }
 
 .buyButtonTicketRow1 img {
-    margin-top: 24px;
-    margin-left: 5px;
-    margin-right: 0px;
-    height: 18px;
-    width: 19px;
+    margin-top: 1.5rem;
+    margin-left: 0.3125rem;
+    margin-right: 0rem;
+    height: 1.125rem;
+    width: 1.1875rem;
     float: left;
     object-fit: cover;
 }
 
 .buyButtonTicketRow2 img {
-    margin-top: 24px;
-    margin-left: 5px;
-    margin-right: 0px;
-    height: 18px;
-    width: 19px;
+    margin-top: 1.5rem;
+    margin-left: 0.3125rem;
+    margin-right: 0rem;
+    height: 1.125rem;
+    width: 1.1875rem;
     float: left;
     object-fit: cover;
 }
 
 .buyButtonTicketRow3 img {
-    margin-top: 19px;
-    margin-left: 5px;
-    margin-right: 0px;
-    height: 18px;
-    width: 19px;
+    margin-top: 1.1875rem;
+    margin-left: 0.3125rem;
+    margin-right: 0rem;
+    height: 1.125rem;
+    width: 1.1875rem;
     float: left;
-    object-fit: cover;
 }
 
 .buyLabel {
-    margin-right: 15px;
-    font-size: 16px;
-    line-height: 60px;
+    cursor: pointer;
+    color: #FFFFFF;
+    margin-right: 0.9375rem;
+    font-size: 1rem;
+    line-height: 3.75rem;
 }
 
 .rightSideTicket1 {
-
-    margin-bottom: 50px;
-    grid-area: rightSideTicket1;
-    width: 184px;
-    height: 254px;
+    margin-bottom: 3.125rem;
+    margin-left: 43.6875rem;
+    grid-area: leftSideTicket1;
+    width: 11.5rem;
+    height: 15.875rem;
     background-color: #FC5757;
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
 }
+
 
 .leftSideTicket1 {
     grid-area: leftSideTicket1;
-    width: 699px;
-    height: 254px;
+    width: 43.6875rem;
+    height: 15.875rem;
     background-color: rgba(255, 255, 255, 0.68);
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
 }
 
-.rightSideTicket2 {
-    grid-area: rightSideTicket2;
-    width: 184px;
-    height: 254px;
+.leftSideTicketBuy1 {
+    display: none;
+    grid-area: leftSideTicket1;
+    margin-left: 11.5rem;
+    width: 43.6875rem;
+    height: 15.875rem;
+    background-color: rgba(255, 255, 255, 1);
+    border: #707070 0.0625rem solid;
+}
+
+.rightSideTicketBuy1 {
+    display: none;
+    margin-bottom: 3.125rem;
+    grid-area: leftSideTicket1;
+    width: 11.5rem;
+    height: 15.875rem;
     background-color: #FC5757;
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
+}
+
+
+.rightSideTicket2 {
+    grid-area: leftSideTicket2;
+    margin-left: 43.6875rem;
+    width: 11.5rem;
+    height: 15.875rem;
+    background-color: #FC5757;
+    border: #707070 0.0625rem solid;
 }
 
 .leftSideTicket2 {
     grid-area: leftSideTicket2;
-    width: 699px;
-    height: 254px;
+    width: 43.6875rem;
+    height: 15.875rem;
     background-color: rgba(255, 255, 255, 0.68);
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
+}
+
+.leftSideTicketBuy2 {
+    display: none;
+    grid-area: leftSideTicket2;
+    margin-left: 11.5rem;
+    width: 43.6875rem;
+    height: 15.875rem;
+    background-color: rgba(255, 255, 255, 1);
+    border: #707070 0.0625rem solid;
+}
+
+.rightSideTicketBuy2 {
+    display: none;
+    margin-bottom: 3.125rem;
+    grid-area: leftSideTicket2;
+    width: 11.5rem;
+    height: 15.875rem;
+    background-color: #FC5757;
+    border: #707070 0.0625rem solid;
 }
 
 .rightSideTicket3 {
-    grid-area: rightSideTicket3;
-    width: 184px;
-    height: 254px;
+    grid-area: leftSideTicket3;
+    margin-left: 43.6875rem;
+    width: 11.5rem;
+    height: 15.875rem;
     background-color: #578EFC;
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
 }
 
 .leftSideTicket3 {
     grid-area: leftSideTicket3;
-    width: 699px;
-    height: 254px;
+
+    width: 43.6875rem;
+    height: 15.875rem;
     background-color: rgba(255, 255, 255, 0.68);
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
 }
 
 .rightSideTicket4 {
-    grid-area: rightSideTicket4;
-    width: 184px;
-    height: 254px;
+    grid-area: leftSideTicket4;
+    margin-left: 43.6875rem;
+    width: 11.5rem;
+    height: 15.875rem;
     background-color: #578EFC;
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
 }
 
 .leftSideTicket4 {
     grid-area: leftSideTicket4;
-    width: 699px;
-    height: 254px;
+    width: 43.6875rem;
+    height: 15.875rem;
     background-color: rgba(255, 255, 255, 0.68);
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
 }
 
 .rightSideTicket5 {
-    grid-area: rightSideTicket5;
-    width: 184px;
-    height: 254px;
+    grid-area: leftSideTicket5;
+    margin-left: 43.6875rem;
+    width: 11.5rem;
+    height: 15.875rem;
     background-color: #FF9130;
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
 }
 
 .leftSideTicket5 {
 
     grid-area: leftSideTicket5;
-    width: 699px;
-    height: 254px;
+    width: 43.6875rem;
+    height: 15.875rem;
     background-color: rgba(255, 255, 255, 0.68);
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
 }
 
 .rightSideTicket6 {
-    grid-area: rightSideTicket6;
-    width: 184px;
-    height: 254px;
+    grid-area: leftSideTicket6;
+    margin-left: 43.6875rem;
+    width: 11.5rem;
+    height: 15.875rem;
     background-color: #FF9130;
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
 }
 
 .leftSideTicket6 {
     grid-area: leftSideTicket6;
-    width: 699px;
-    height: 254px;
+    width: 43.6875rem;
+    height: 15.875rem;
     background-color: rgba(255, 255, 255, 0.68);
-    border: #707070 1px solid;
+    border: #707070 0.0625rem solid;
 }
+
+
+
 
 
