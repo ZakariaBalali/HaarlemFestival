@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Haarlem Festival</title>
     <meta name="description" content="Haarlem Festival">
-    <meta id="meta" name="viewport" content="width=device-width; initial-scale=1.25; maximum-scale=1.25; user-scalable=0;">
     <meta name="keywords" content="Festival, International, Music, Food, Jazz, Historic">
     <link href="css/Homepage.css" rel="stylesheet" type="text/css">
     <link href="css/Banner.css" rel="stylesheet" type="text/css">
