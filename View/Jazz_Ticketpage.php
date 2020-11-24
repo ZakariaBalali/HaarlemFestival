@@ -122,7 +122,7 @@
         <section class="rightSideTicketBuy2" id="rightSideTicketBuy2">
 
         </section>
-        <section class="leftSideTicket3">
+        <section class="leftSideTicket3" id="leftSideTicket3">
             <img src="images/Evolve1.jpg">
             <h1>Evolve</h1>
             <br>
@@ -134,19 +134,30 @@
                 tincidunt felis in nunc consectetur viverra. Praesent egestas semper auctor. Cras fringilla pharetra mi,
                 in pulvinar erat venenatis a. Nullam rutrum mollis lacinia.</p>
         </section>
-
-
-        <section class="rightSideTicket3">
+        <section class="rightSideTicket3" id="rightSideTicket3">
             <label class="dayLabel">Thu 28 Jul</label>
             <label class="timeLabel">19:30-20:30</label>
             <label class="priceLabel">€15,00</label>
             <label class="locationLabel">Patronaat</label>
             <div class="buyButtonTicketRow2">
-                <img src="images/BuyIcon.png">
-                <label class="buyLabel">Buy Now</label>
+                <a href="javascript:SwapToBuyScreen('leftSideTicket3','rightSideTicket3', 'leftSideTicketBuy3','rightSideTicketBuy3' )">
+                    <img src="images/BuyIcon.png">
+                    <label class="buyLabel">Buy Now</label>
+                </a>
             </div>
         </section>
-        <section class="leftSideTicket4">
+        <section class="leftSideTicketBuy3" id="leftSideTicketBuy3">
+            <div class="closeTicketScreenRow2" id="closeTicketScreenRow2">
+                <a href="javascript:SwapBackToTicketScreen('leftSideTicket3','rightSideTicket3', 'leftSideTicketBuy3','rightSideTicketBuy3' )">
+                    <img src="images/BuyIcon.png">
+                    <label class="closeLabel">Back</label>
+                </a>
+            </div>
+        </section>
+        <section class="rightSideTicketBuy3" id="rightSideTicketBuy3">
+
+        </section>
+        <section class="leftSideTicket4" id="leftSideTicket4">
             <img src="images/TomThomsonAssemble1.jpg">
             <h1>Tom Thomson Assemble</h1>
             <br>
@@ -158,17 +169,30 @@
                 tincidunt felis in nunc consectetur viverra. Praesent egestas semper auctor. Cras fringilla pharetra mi,
                 in pulvinar erat venenatis a. Nullam rutrum mollis lacinia.</p>
         </section>
-        <section class="rightSideTicket4">
+        <section class="rightSideTicket4" id="rightSideTicket4">
             <label class="dayLabel">Thu 28 Jul</label>
             <label class="timeLabel">19:30-20:30</label>
             <label class="priceLabel">€15,00</label>
             <label class="locationLabel">Patronaat</label>
             <div class="buyButtonTicketRow2">
-                <img src="images/BuyIcon.png">
-                <label class="buyLabel">Buy Now</label>
+                <a href="javascript:SwapToBuyScreen('leftSideTicket4','rightSideTicket4', 'leftSideTicketBuy4','rightSideTicketBuy4' )">
+                    <img src="images/BuyIcon.png">
+                    <label class="buyLabel">Buy Now</label>
+                </a>
             </div>
         </section>
-        <section class="leftSideTicket5">
+        <section class="leftSideTicketBuy4" id="leftSideTicketBuy4">
+            <div class="closeTicketScreenRow2" id="closeTicketScreenRow2">
+                <a href="javascript:SwapBackToTicketScreen('leftSideTicket4','rightSideTicket4', 'leftSideTicketBuy4','rightSideTicketBuy4' )">
+                    <img src="images/BuyIcon.png">
+                    <label class="closeLabel">Back</label>
+                </a>
+            </div>
+        </section>
+        <section class="rightSideTicketBuy4" id="rightSideTicketBuy4">
+
+        </section>
+        <section class="leftSideTicket5" id="leftSideTicket5">
             <img src="images/NtjamRosie1.jpg">
             <h1>Ntjam Rosie</h1>
             <br>
@@ -180,17 +204,30 @@
                 ullamcorper arcu at blandit faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a
                 molestie risus.</p>
         </section>
-        <section class="rightSideTicket5">
+        <section class="rightSideTicket5" id="rightSideTicket5">
             <label class="dayLabel">Thu 28 Jul</label>
             <label class="timeLabel">21:00-22:00</label>
             <label class="priceLabel">€15,00</label>
             <label class="locationLabel">Patronaat</label>
             <div class="buyButtonTicketRow3">
-                <img src="images/BuyIcon.png">
-                <label class="buyLabel">Buy Now</label>
+                <a href="javascript:SwapToBuyScreen('leftSideTicket5','rightSideTicket5', 'leftSideTicketBuy5','rightSideTicketBuy5' )">
+                    <img src="images/BuyIcon.png">
+                    <label class="buyLabel">Buy Now</label>
+                </a>
             </div>
         </section>
-        <section class="leftSideTicket6">
+        <section class="leftSideTicketBuy5" id="leftSideTicketBuy5">
+            <div class="closeTicketScreenRow3" id="closeTicketScreenRow3">
+                <a href="javascript:SwapBackToTicketScreen('leftSideTicket5','rightSideTicket5', 'leftSideTicketBuy5','rightSideTicketBuy5' )">
+                    <img src="images/BuyIcon.png">
+                    <label class="closeLabel">Back</label>
+                </a>
+            </div>
+        </section>
+        <section class="rightSideTicketBuy5" id="rightSideTicketBuy5">
+
+        </section>
+        <section class="leftSideTicket6" id="leftSideTicket6">
             <img src="images/JonnaFraser1.jpg">
             <h1>Jonna Fraser</h1>
             <br>
@@ -202,15 +239,28 @@
                 tincidunt felis in nunc consectetur viverra. Praesent egestas semper auctor. Cras fringilla pharetra mi,
                 in pulvinar erat venenatis a. Nullam rutrum mollis lacinia.</p>
         </section>
-        <section class="rightSideTicket6">
+        <section class="rightSideTicket6" id="rightSideTicket6">
             <label class="dayLabel">Thu 28 Jul</label>
             <label class="timeLabel">21:00-22:00</label>
             <label class="priceLabel">€15,00</label>
             <label class="locationLabel">Patronaat</label>
             <div class="buyButtonTicketRow3">
-                <img src="images/BuyIcon.png">
-                <label class="buyLabel">Buy Now</label>
+                <a href="javascript:SwapToBuyScreen('leftSideTicket6','rightSideTicket6', 'leftSideTicketBuy6','rightSideTicketBuy6' )">
+                    <img src="images/BuyIcon.png">
+                    <label class="buyLabel">Buy Now</label>
+                </a>
             </div>
+        </section>
+        <section class="leftSideTicketBuy6" id="leftSideTicketBuy6">
+            <div class="closeTicketScreenRow3" id="closeTicketScreenRow3">
+                <a href="javascript:SwapBackToTicketScreen('leftSideTicket6','rightSideTicket6', 'leftSideTicketBuy6','rightSideTicketBuy6' )">
+                    <img src="images/BuyIcon.png">
+                    <label class="closeLabel">Back</label>
+                </a>
+            </div>
+        </section>
+        <section class="rightSideTicketBuy6" id="rightSideTicketBuy6">
+
         </section>
     </section>
 </section>

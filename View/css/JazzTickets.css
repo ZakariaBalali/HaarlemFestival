@@ -290,6 +290,67 @@ body {
     line-height: 3.75rem;
 }
 
+
+.closeTicketScreenRow2 {
+    width: 10.6875rem;
+    height: 3.75rem;
+    float: right;
+    background-color: #578EFC;
+}
+
+.closeTicketScreenRow2:hover {
+    background-color: #2069FC;
+}
+
+.closeTicketScreenRow2 img {
+    margin-top: 1.5rem;
+    margin-left: 0.3125rem;
+    margin-right: 0rem;
+    height: 1.125rem;
+    width: 1.1875rem;
+    float: left;
+    object-fit: cover;
+}
+
+.closeTicketScreenRow2 label {
+    cursor: pointer;
+    font-family: "Arial Rounded MT";
+    color: #FFFFFF;
+    margin-right: 0.9375rem;
+    font-size: 1.25rem;
+    line-height: 3.75rem;
+}
+
+.closeTicketScreenRow3 {
+    width: 10.6875rem;
+    height: 3.75rem;
+    float: right;
+    background-color: #FF9130;
+}
+
+.closeTicketScreenRow3:hover {
+    background-color: #FF7700;
+}
+
+.closeTicketScreenRow3 img {
+    margin-top: 1.5rem;
+    margin-left: 0.3125rem;
+    margin-right: 0rem;
+    height: 1.125rem;
+    width: 1.1875rem;
+    float: left;
+    object-fit: cover;
+}
+
+.closeTicketScreenRow3 label {
+    cursor: pointer;
+    font-family: "Arial Rounded MT";
+    color: #FFFFFF;
+    margin-right: 0.9375rem;
+    font-size: 1.25rem;
+    line-height: 3.75rem;
+}
+
 .buyButtonTicketRow2 {
     margin-top: 1.5625rem;
     margin-left: 0.3125rem;
@@ -448,6 +509,26 @@ body {
     border: #707070 0.0625rem solid;
 }
 
+.leftSideTicketBuy3 {
+    display: none;
+    grid-area: leftSideTicket3;
+    margin-left: 11.5rem;
+    width: 43.6875rem;
+    height: 15.875rem;
+    background-color: rgba(255, 255, 255, 1);
+    border: #707070 0.0625rem solid;
+}
+
+.rightSideTicketBuy3 {
+    display: none;
+    margin-bottom: 3.125rem;
+    grid-area: leftSideTicket3;
+    width: 11.5rem;
+    height: 15.875rem;
+    background-color: #578EFC;
+    border: #707070 0.0625rem solid;
+}
+
 .rightSideTicket4 {
     grid-area: leftSideTicket4;
     margin-left: 43.6875rem;
@@ -462,6 +543,26 @@ body {
     width: 43.6875rem;
     height: 15.875rem;
     background-color: rgba(255, 255, 255, 0.68);
+    border: #707070 0.0625rem solid;
+}
+
+.leftSideTicketBuy4 {
+    display: none;
+    grid-area: leftSideTicket4;
+    margin-left: 11.5rem;
+    width: 43.6875rem;
+    height: 15.875rem;
+    background-color: rgba(255, 255, 255, 1);
+    border: #707070 0.0625rem solid;
+}
+
+.rightSideTicketBuy4 {
+    display: none;
+    margin-bottom: 3.125rem;
+    grid-area: leftSideTicket4;
+    width: 11.5rem;
+    height: 15.875rem;
+    background-color: #578EFC;
     border: #707070 0.0625rem solid;
 }
 
@@ -483,6 +584,26 @@ body {
     border: #707070 0.0625rem solid;
 }
 
+.leftSideTicketBuy5 {
+    display: none;
+    grid-area: leftSideTicket5;
+    margin-left: 11.5rem;
+    width: 43.6875rem;
+    height: 15.875rem;
+    background-color: rgba(255, 255, 255, 1);
+    border: #707070 0.0625rem solid;
+}
+
+.rightSideTicketBuy5 {
+    display: none;
+    margin-bottom: 3.125rem;
+    grid-area: leftSideTicket5;
+    width: 11.5rem;
+    height: 15.875rem;
+    background-color: #FF9130;
+    border: #707070 0.0625rem solid;
+}
+
 .rightSideTicket6 {
     grid-area: leftSideTicket6;
     margin-left: 43.6875rem;
@@ -497,6 +618,26 @@ body {
     width: 43.6875rem;
     height: 15.875rem;
     background-color: rgba(255, 255, 255, 0.68);
+    border: #707070 0.0625rem solid;
+}
+
+.leftSideTicketBuy6 {
+    display: none;
+    grid-area: leftSideTicket6;
+    margin-left: 11.5rem;
+    width: 43.6875rem;
+    height: 15.875rem;
+    background-color: rgba(255, 255, 255, 1);
+    border: #707070 0.0625rem solid;
+}
+
+.rightSideTicketBuy6 {
+    display: none;
+    margin-bottom: 3.125rem;
+    grid-area: leftSideTicket6;
+    width: 11.5rem;
+    height: 15.875rem;
+    background-color: #FF9130;
     border: #707070 0.0625rem solid;
 }
 
