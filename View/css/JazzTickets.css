@@ -246,16 +246,18 @@ body {
     font-size: 1.1875rem;
 }
 
-.artistLabel{
+.artistLabel {
     font-size: 1.0625rem;
 }
 
-.timeLabelBuy{
+.timeLabelBuy {
     font-size: 1.0625rem;
 }
-.locationLabelBuy{
+
+.locationLabelBuy {
     font-size: 1.0625rem;
 }
+
 .buyButtonTicketRow1 {
     margin-top: 1.5625rem;
     margin-left: 0.3125rem;
@@ -462,7 +464,7 @@ body {
     border: #707070 0.0625rem solid;
 }
 
-.rightSideTicketBuy1 img{
+.rightSideTicketBuy1 img {
     margin-top: 1.2rem;
     width: 9.1875rem;
     height: 9.5rem;
@@ -505,7 +507,7 @@ body {
     border: #707070 0.0625rem solid;
 }
 
-.rightSideTicketBuy2 img{
+.rightSideTicketBuy2 img {
     margin-top: 1.2rem;
     width: 9.1875rem;
     height: 9.5rem;
@@ -549,7 +551,7 @@ body {
     border: #707070 0.0625rem solid;
 }
 
-.rightSideTicketBuy3 img{
+.rightSideTicketBuy3 img {
     margin-top: 1.2rem;
     width: 9.1875rem;
     height: 9.5rem;
@@ -593,7 +595,7 @@ body {
 }
 
 
-.rightSideTicketBuy4 img{
+.rightSideTicketBuy4 img {
     margin-top: 1.2rem;
     width: 9.1875rem;
     height: 9.5rem;
@@ -637,7 +639,7 @@ body {
     border: #707070 0.0625rem solid;
 }
 
-.rightSideTicketBuy5 img{
+.rightSideTicketBuy5 img {
     margin-top: 1.2rem;
     width: 9.1875rem;
     height: 9.5rem;
@@ -679,7 +681,8 @@ body {
     background-color: #FF9130;
     border: #707070 0.0625rem solid;
 }
-.rightSideTicketBuy6 img{
+
+.rightSideTicketBuy6 img {
     margin-top: 1.2rem;
     width: 9.1875rem;
     height: 9.5rem;
@@ -690,25 +693,22 @@ body {
     display: grid;
     text-align: left;
     grid-template-columns: 3fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr;
     gap: 1rem 0rem;
     margin-left: 1rem;
     margin-top: 1rem;
-    grid-template-areas:
-            "titleGrid priceGrid amountGrid ."
-            "titleArtist priceArtist amountArtist ."
-            "titleAllAccessDay priceAllAccessDay amountAllAccessDay ."
-            "titleAllAccessWeekend priceAllAccessWeekend amountAllAccessWeekend .";
+    grid-template-areas: "titleGrid priceGrid amountGrid ." "titleArtist priceArtist amountArtist ." "titleAllAccessDay priceAllAccessDay amountAllAccessDay ." "titleAllAccessWeekend priceAllAccessWeekend amountAllAccessWeekend .";
     color: #000000;
 
 }
 
-.ticketGridArea label{
+.ticketGridArea label {
     text-align: left;
     font-family: "Segoe UI";
     font-weight: normal;
     font-size: 1.25rem;
 }
+
 .titleGrid {
     grid-area: titleGrid;
     font-weight: bold;
@@ -737,6 +737,35 @@ body {
     grid-area: amountArtist;
 }
 
+.amountArtist button {
+    width: 1.4375rem;
+    height: 1.4375rem;
+}
+
+.amountArtist input {
+    width: 2rem;
+    border: none;
+    border: 2px #BCE0FD solid;
+    border-radius: 0.3125rem;
+    background-color: #F1F9FF;
+    text-align: right;
+}
+
+.minusArtist {
+    border: none;
+    background-color: #AA2828;
+    color: #FFFFFF;
+    border-radius: 50%;
+
+}
+
+.plusArtist {
+    border: none;
+    background-color: #2699FB;
+    color: #FFFFFF;
+    border-radius: 50%;
+}
+
 .titleAllAccessDay {
     grid-area: titleAllAccessDay;
 }
@@ -747,6 +776,35 @@ body {
 
 .amountAllAccessDay {
     grid-area: amountAllAccessDay;
+}
+
+.amountAllAccessDay button {
+    width: 1.4375rem;
+    height: 1.4375rem;
+}
+
+.amountAllAccessDay input {
+    width: 2rem;
+    border: none;
+    border: 2px #BCE0FD solid;
+    border-radius: 0.3125rem;
+    background-color: #F1F9FF;
+    text-align: right;
+
+}
+
+.minusAllAccessDay {
+    border: none;
+    background-color: #AA2828;
+    color: #FFFFFF;
+    border-radius: 50%;
+}
+
+.plusAllAccessDay {
+    border: none;
+    background-color: #2699FB;
+    color: #FFFFFF;
+    border-radius: 50%;
 }
 
 .titleAllAccessWeekend {
@@ -761,4 +819,30 @@ body {
     grid-area: amountAllAccessWeekend;
 }
 
+.amountAllAccessWeekend button {
+    width: 1.4375rem;
+    height: 1.4375rem;
+}
 
+.amountAllAccessWeekend input {
+    width: 2rem;
+    border: none;
+    border: 2px #BCE0FD solid;
+    border-radius: 0.3125rem;
+    background-color: #F1F9FF;
+    text-align: right;
+}
+
+.minusAllAccessWeekend {
+    border: none;
+    background-color: #AA2828;
+    color: #FFFFFF;
+    border-radius: 50%;
+}
+
+.plusAllAccessWeekend {
+    border: none;
+    background-color: #2699FB;
+    color: #FFFFFF;
+    border-radius: 50%;
+}

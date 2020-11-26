@@ -80,3 +80,4 @@ function ShowFriday(ticketThursday, thursdayDayButton, thursdayDayButtonLink, fr
     sundayButtonLink.style.color = "#000000";
 
 }
+
