@@ -271,6 +271,10 @@ body {
     background-color: #FF2323;
 }
 
+.CloseAndAddButton{
+    float: right;
+}
+
 .closeTicketScreenRow1 {
     width: 10.6875rem;
     height: 3.75rem;
@@ -845,4 +849,32 @@ body {
     background-color: #2699FB;
     color: #FFFFFF;
     border-radius: 50%;
+}
+
+.AddToCartButton{
+    background-color: #0D7EFF;
+    border: 1px #707070 solid;
+    width: 9.6875rem;
+    height: 6rem;
+    margin-top: 5rem;
+    margin-left: 0.5rem;
+
+}
+
+.AddToCartButton label{
+    font-size: 1.0625rem;
+    font-family: "Segoe UI";
+    text-align: center;
+    line-height: 6rem;
+    font-weight: bold;
+}
+
+.AddToCartButton img{
+    margin-top: 2.2rem;
+    margin-left: 0.3125rem;
+    margin-right: 0rem;
+    height: 1.678125rem;
+    width: 1.678125rem;
+    float: left;
+    object-fit: cover;
 }

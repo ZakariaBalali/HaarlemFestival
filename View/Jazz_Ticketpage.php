@@ -81,11 +81,17 @@
             </div>
         </section>
         <section class="leftSideTicketBuy1" id="leftSideTicketBuy1">
-            <div class="closeTicketScreenRow1" id="closeTicketScreenRow1">
-                <a href="javascript:SwapBackToTicketScreen('leftSideTicket1','rightSideTicket1', 'leftSideTicketBuy1','rightSideTicketBuy1' )">
-                    <img src="images/BuyIcon.png">
-                    <label class="closeLabel">Back</label>
-                </a>
+            <div class="CloseAndAddButton">
+                <div class="closeTicketScreenRow1" id="closeTicketScreenRow1">
+                    <a href="javascript:SwapBackToTicketScreen('leftSideTicket1','rightSideTicket1', 'leftSideTicketBuy1','rightSideTicketBuy1' )">
+                        <img src="images/BuyIcon.png">
+                        <label class="closeLabel">Back</label>
+                    </a>
+                </div>
+                <div class="AddToCartButton">
+                    <img src="images/ShoppingCart.png">
+                    <label>Add to Cart</label>
+                </div>
             </div>
             <section class="ticketGridArea">
                 <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
@@ -115,14 +121,16 @@
                 <label class="titleAllAccessWeekend">All-Access Weekend</label>
                 <label class="priceAllAccessWeekend"> €80,00</label>
                 <div class="amountAllAccessWeekend">
-                <button class="minusAllAccessWeekend" id="minusAllAccessWeekend1">−</button>
-                <input class="inputAllAccessWeekend" type="number" value="0" id="inputAllAccessWeekend1"/>
-                <button class="plusAllAccessWeekend" id="plusAllAccessWeekend1">+</button>
+                    <button class="minusAllAccessWeekend" id="minusAllAccessWeekend1">−</button>
+                    <input class="inputAllAccessWeekend" type="number" value="0" id="inputAllAccessWeekend1"/>
+                    <button class="plusAllAccessWeekend" id="plusAllAccessWeekend1">+</button>
                     <script>
                         addTicket('minusAllAccessWeekend1', 'inputAllAccessWeekend1', 'plusAllAccessWeekend1')
                     </script>
                 </div>
+
             </section>
+
         </section>
         <section class="rightSideTicketBuy1" id="rightSideTicketBuy1">
             <label class="artistLabel">Gumbo Kings</label>
@@ -156,11 +164,17 @@
             </div>
         </section>
         <section class="leftSideTicketBuy2" id="leftSideTicketBuy2">
-            <div class="closeTicketScreenRow1" id="closeTicketScreenRow1">
-                <a href="javascript:SwapBackToTicketScreen('leftSideTicket2','rightSideTicket2', 'leftSideTicketBuy2','rightSideTicketBuy2' )">
-                    <img src="images/BuyIcon.png">
-                    <label class="closeLabel">Back</label>
-                </a>
+            <div class="CloseAndAddButton">
+                <div class="closeTicketScreenRow1" id="closeTicketScreenRow1">
+                    <a href="javascript:SwapBackToTicketScreen('leftSideTicket2','rightSideTicket2', 'leftSideTicketBuy2','rightSideTicketBuy2' )">
+                        <img src="images/BuyIcon.png">
+                        <label class="closeLabel">Back</label>
+                    </a>
+                </div>
+                <div class="AddToCartButton">
+                    <img src="images/ShoppingCart.png">
+                    <label>Add to Cart</label>
+                </div>
             </div>
             <section class="ticketGridArea">
                 <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
@@ -230,11 +244,17 @@
             </div>
         </section>
         <section class="leftSideTicketBuy3" id="leftSideTicketBuy3">
-            <div class="closeTicketScreenRow2" id="closeTicketScreenRow2">
-                <a href="javascript:SwapBackToTicketScreen('leftSideTicket3','rightSideTicket3', 'leftSideTicketBuy3','rightSideTicketBuy3' )">
-                    <img src="images/BuyIcon.png">
-                    <label class="closeLabel">Back</label>
-                </a>
+            <div class="CloseAndAddButton">
+                <div class="closeTicketScreenRow2" id="closeTicketScreenRow2">
+                    <a href="javascript:SwapBackToTicketScreen('leftSideTicket3','rightSideTicket3', 'leftSideTicketBuy3','rightSideTicketBuy3' )">
+                        <img src="images/BuyIcon.png">
+                        <label class="closeLabel">Back</label>
+                    </a>
+                </div>
+                <div class="AddToCartButton">
+                    <img src="images/ShoppingCart.png">
+                    <label>Add to Cart</label>
+                </div>
             </div>
             <section class="ticketGridArea">
                 <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
@@ -304,11 +324,18 @@
             </div>
         </section>
         <section class="leftSideTicketBuy4" id="leftSideTicketBuy4">
-            <div class="closeTicketScreenRow2" id="closeTicketScreenRow2">
-                <a href="javascript:SwapBackToTicketScreen('leftSideTicket4','rightSideTicket4', 'leftSideTicketBuy4','rightSideTicketBuy4' )">
-                    <img src="images/BuyIcon.png">
-                    <label class="closeLabel">Back</label>
-                </a>
+            <div class="CloseAndAddButton">
+                <div class="closeTicketScreenRow2" id="closeTicketScreenRow2">
+                    <a href="javascript:SwapBackToTicketScreen('leftSideTicket4','rightSideTicket4', 'leftSideTicketBuy4','rightSideTicketBuy4' )">
+                        <img src="images/BuyIcon.png">
+                        <label class="closeLabel">Back</label>
+                    </a>
+                </div>
+
+                <div class="AddToCartButton">
+                    <img src="images/ShoppingCart.png">
+                    <label>Add to Cart</label>
+                </div>
             </div>
             <section class="ticketGridArea">
                 <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
@@ -378,11 +405,17 @@
             </div>
         </section>
         <section class="leftSideTicketBuy5" id="leftSideTicketBuy5">
-            <div class="closeTicketScreenRow3" id="closeTicketScreenRow3">
-                <a href="javascript:SwapBackToTicketScreen('leftSideTicket5','rightSideTicket5', 'leftSideTicketBuy5','rightSideTicketBuy5' )">
-                    <img src="images/BuyIcon.png">
-                    <label class="closeLabel">Back</label>
-                </a>
+            <div class="CloseAndAddButton">
+                <div class="closeTicketScreenRow3" id="closeTicketScreenRow3">
+                    <a href="javascript:SwapBackToTicketScreen('leftSideTicket5','rightSideTicket5', 'leftSideTicketBuy5','rightSideTicketBuy5' )">
+                        <img src="images/BuyIcon.png">
+                        <label class="closeLabel">Back</label>
+                    </a>
+                </div>
+                <div class="AddToCartButton">
+                    <img src="images/ShoppingCart.png">
+                    <label>Add to Cart</label>
+                </div>
             </div>
             <section class="ticketGridArea">
                 <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
@@ -452,11 +485,17 @@
             </div>
         </section>
         <section class="leftSideTicketBuy6" id="leftSideTicketBuy6">
-            <div class="closeTicketScreenRow3" id="closeTicketScreenRow3">
-                <a href="javascript:SwapBackToTicketScreen('leftSideTicket6','rightSideTicket6', 'leftSideTicketBuy6','rightSideTicketBuy6' )">
-                    <img src="images/BuyIcon.png">
-                    <label class="closeLabel">Back</label>
-                </a>
+            <div class="CloseAndAddButton">
+                <div class="closeTicketScreenRow3" id="closeTicketScreenRow3">
+                    <a href="javascript:SwapBackToTicketScreen('leftSideTicket6','rightSideTicket6', 'leftSideTicketBuy6','rightSideTicketBuy6' )">
+                        <img src="images/BuyIcon.png">
+                        <label class="closeLabel">Back</label>
+                    </a>
+                </div>
+                <div class="AddToCartButton">
+                    <img src="images/ShoppingCart.png">
+                    <label>Add to Cart</label>
+                </div>
             </div>
             <section class="ticketGridArea">
                 <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
