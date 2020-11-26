@@ -5,10 +5,8 @@
     <meta name="description" content="Haarlem Dance">
     <meta name="keywords" content="Dance, smooth, lineup">
     <link href="css/DanceMain.css" rel="stylesheet" type="text/css">
-    <script src="script.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="css/Banner.css" rel="stylesheet" type="text/css">
+    <script src="DanceScript.js"></script>
 </head>
 <body>
 
@@ -29,47 +27,67 @@
     <a href="Jazz_Main.php">Jazz</a>
     <a href="Historic_Main.php">Historic</a>
     <a href="Program_Main.php">Program</a>
+    <a href="Shopping_Cart.php"><img src="images/icon_shoppingcart.png"></a>
 </section>
 
 <section class="MainContent">
     <section class="EventTitle">
     <h2>Haarlem Dance</h2>
     </section>
-    <p id="subtitle">Choose day or artist for tickets</p>
-
+    <p id="subtitle" >Choose day or artist for tickets</p>
                      <!--row 1 -->
     <section class="ArtistsRow1">
-     <button type = "submit" class="image1" value = "myimage">
      <img src="./images/arminvanbuuren.jpg " />
-     </button>
-     <button type = "submit" class="image2" value = "myimage">
-      <img src="./images/hardwell.jpg " />
-     </button>
-     <button type = "submit" class="image3" value = "myimage">
+     <img src="./images/hardwell.jpg " />
      <img src="./images/afrojack.jpg " />
-     </button>
-
 
                     <!--row 2 -->
      <section class="ArtistsRow2">
-     <button type = "submit" class="image4" value = "myimage">
-     <img src="./images/arminvanbuuren.jpg " />
-     </button>
-     <button type = "submit" class="image5" value = "myimage">
-      <img src="./images/hardwell.jpg " />
-     </button>
-     <button type = "submit" class="image6" value = "myimage">
-     <img src="./images/afrojack.jpg " />
-     </button>
+     <img src="./images/martingarrix.jpg " />
+     <img src="./images/nickyromero.jpg " />
+     <img src="./images/tiesto.jpg " />
      </section>
     </section>
+
                    <!--row Days -->
-    <section class="DaysRow">
-    <button type="button" class="btn btn-light btn-lg mr-5">All tickets</button>
-    <button type="button" class="btn btn-light btn-lg">Friday, Jul 27th</button>
-    <button type="button" class="btn btn-light btn-lg">Saturday, Jul 28th</button>
-    <button type="button" class="btn btn-light btn-lg">Sunday, Jul 29th</button>
+    <section class="DaysRow" >
+    <button  class="allTicketsBtn" >All tickets</button>
+    <button  class="fridayBtn" >Friday, Jul 27th</button>
+    <button  class="saturdayBtn">Saturday, Jul 28th</button>
+    <button  class="sundayBtn">Sunday, Jul 29th</button>
     </section>
+
+                 <!--tickets -->
+       
+      <section class="Tickets">
+      <div class="grid-container">
+      <div class="ticketTitle"> Hardwell</div>
+      <div class="ticketImg" > <img src="./images/tiesto.jpg"></div>
+      <div class="ticketInfo">
+            <label class="dayLabel">Date: 2020-07-27</label>
+            <br>
+            <label class="timeLabel">Time: 22:00</label>
+            <br>
+            <label class="locationLabel">Location: Club Stalker</label>
+            <br>
+            <label class="durationLabel">Duration: 90 min</label>
+            <br>
+            <label class="priceLabel">Price: €60,00</label>
+            <br>
+            <br>
+            <button id="buyTicketBtn">Buy now</button>
+            </br>
+            
+
+      </div>
+
+        </section>
+
+
+
+
+
+      </section>
 
 
 
