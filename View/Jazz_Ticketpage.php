@@ -30,7 +30,6 @@
 </section>
 
 <section class="MainContent">
-
     <section class="JazzTicketContent">
         <h1>Haarlem Jazz Tickets</h1>
         <section class="JazzButtons">
@@ -42,14 +41,18 @@
             </section>
         </section>
         <section class="JazzDayButtons">
-            <section class="thursdayButton"><a href="# ">Thursday</a></section>
-            <section class="fridayButton"><a href="# ">Friday</a></section>
-            <section class="saturdayButton"><a href="#">Saturday</a></section>
-            <section class="sundayButton"><a href="#">Sunday</a></section>
+            <section class="thursdayButton" id="thursdayButton"><a id="thursdayButtonLink"
+                                                                   href="javascript:ShowThursdayTickets('tickets', 'thursdayButton', 'thursdayButtonLink',
+                                                                   'fridayButton', 'fridayButtonLink', 'saturdayButton', 'saturdayButtonLink', 'sundayButton',
+                                                                   'sundayButtonLink')">Thursday</a>
+
+            </section>
+            <section class="fridayButton" id="fridayButton"><a id="fridayButtonLink" href="# ">Friday</a></section>
+            <section class="saturdayButton" id="fridayButton"><a id="saturdayButtonLink" href="#">Saturday</a></section>
+            <section class="sundayButton" id="sundayButton"><a id="saturdayButtonLink" href="#">Sunday</a></section>
         </section>
     </section>
-    <section class="tickets">
-
+    <section class="tickets" id="tickets">
         <section class="leftSideTicket1" id="leftSideTicket1">
             <img src="images/GumboKings1.jpg">
             <h1>Gumbo Kings</h1>
@@ -82,9 +85,27 @@
                     <label class="closeLabel">Back</label>
                 </a>
             </div>
+            <section class="ticketGridArea">
+                <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
+                <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
+                <label style="font-weight: bold; font-size: 1.4375rem" class="amountGrid">Amount</label>
+
+                <label class="titleArtist">Gare du Nord Saturday</label>
+                <label class="priceArtist">€15,00</label>
+                <label class="amountArtist">Test</label>
+                <label class="titleAllAccessDay">All-Access Thursday</label>
+                <label class="priceAllAccessDay">€35,00</label>
+                <label class="amountAllAccessDay">test</label>
+                <label class="titleAllAccessWeekend">All-Access Weekend</label>
+                <label class="priceAllAccessWeekend"> €80,00</label>
+                <label class="amountAllAccessWeekend">test</label>
+            </section>
         </section>
         <section class="rightSideTicketBuy1" id="rightSideTicketBuy1">
-
+            <label class="artistLabel">Gumbo Kings</label>
+            <label class="timeLabelBuy">18:00-19:00</label>
+            <label class="locationLabelBuy">Location: Patronaat</label>
+            <img src="images/GumboKings1.jpg">
         </section>
 
 
@@ -118,9 +139,27 @@
                     <label class="closeLabel">Back</label>
                 </a>
             </div>
+            <section class="ticketGridArea">
+                <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
+                <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
+                <label style="font-weight: bold; font-size: 1.4375rem" class="amountGrid">Amount</label>
+
+                <label class="titleArtist">Wicked Jazz Sounds Saturday</label>
+                <label class="priceArtist">€15,00</label>
+                <label class="amountArtist">Test</label>
+                <label class="titleAllAccessDay">All-Access Thursday</label>
+                <label class="priceAllAccessDay">€35,00</label>
+                <label class="amountAllAccessDay">test</label>
+                <label class="titleAllAccessWeekend">All-Access Weekend</label>
+                <label class="priceAllAccessWeekend"> €80,00</label>
+                <label class="amountAllAccessWeekend">test</label>
+            </section>
         </section>
         <section class="rightSideTicketBuy2" id="rightSideTicketBuy2">
-
+            <label class="timeLabelBuy">Wicked Jazz Sounds</label>
+            <label class="timeLabelBuy">18:00-19:00</label>
+            <label class="locationLabelBuy">Location: Patronaat</label>
+            <img src="images/WickedJazzSounds1.jpg">
         </section>
         <section class="leftSideTicket3" id="leftSideTicket3">
             <img src="images/Evolve1.jpg">
@@ -153,9 +192,27 @@
                     <label class="closeLabel">Back</label>
                 </a>
             </div>
+            <section class="ticketGridArea">
+                <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
+                <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
+                <label style="font-weight: bold; font-size: 1.4375rem" class="amountGrid">Amount</label>
+
+                <label class="titleArtist">Evolve</label>
+                <label class="priceArtist">€15,00</label>
+                <label class="amountArtist">Test</label>
+                <label class="titleAllAccessDay">All-Access Thursday</label>
+                <label class="priceAllAccessDay">€35,00</label>
+                <label class="amountAllAccessDay">test</label>
+                <label class="titleAllAccessWeekend">All-Access Weekend</label>
+                <label class="priceAllAccessWeekend"> €80,00</label>
+                <label class="amountAllAccessWeekend">test</label>
+            </section>
         </section>
         <section class="rightSideTicketBuy3" id="rightSideTicketBuy3">
-
+            <label class="artistLabel">Evolve</label>
+            <label class="timeLabelBuy">19:30-20:30</label>
+            <label class="locationLabelBuy">Location: Patronaat</label>
+            <img src="images/Evolve1.jpg">
         </section>
         <section class="leftSideTicket4" id="leftSideTicket4">
             <img src="images/TomThomsonAssemble1.jpg">
@@ -188,9 +245,27 @@
                     <label class="closeLabel">Back</label>
                 </a>
             </div>
+            <section class="ticketGridArea">
+                <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
+                <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
+                <label style="font-weight: bold; font-size: 1.4375rem" class="amountGrid">Amount</label>
+
+                <label class="titleArtist">Tom Thomson Assemble</label>
+                <label class="priceArtist">€15,00</label>
+                <label class="amountArtist">Test</label>
+                <label class="titleAllAccessDay">All-Access Thursday</label>
+                <label class="priceAllAccessDay">€35,00</label>
+                <label class="amountAllAccessDay">test</label>
+                <label class="titleAllAccessWeekend">All-Access Weekend</label>
+                <label class="priceAllAccessWeekend"> €80,00</label>
+                <label class="amountAllAccessWeekend">test</label>
+            </section>
         </section>
         <section class="rightSideTicketBuy4" id="rightSideTicketBuy4">
-
+            <label class="artistLabel">Tom Thomson</label>
+            <label class="timeLabelBuy">19:30-20:30</label>
+            <label class="locationLabelBuy">Location: Patronaat</label>
+            <img src="images/TomThomsonAssemble1.jpg">
         </section>
         <section class="leftSideTicket5" id="leftSideTicket5">
             <img src="images/NtjamRosie1.jpg">
@@ -223,9 +298,27 @@
                     <label class="closeLabel">Back</label>
                 </a>
             </div>
+            <section class="ticketGridArea">
+                <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
+                <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
+                <label style="font-weight: bold; font-size: 1.4375rem" class="amountGrid">Amount</label>
+
+                <label class="titleArtist">Ntjam Rosie</label>
+                <label class="priceArtist">€15,00</label>
+                <label class="amountArtist">Test</label>
+                <label class="titleAllAccessDay">All-Access Thursday</label>
+                <label class="priceAllAccessDay">€35,00</label>
+                <label class="amountAllAccessDay">test</label>
+                <label class="titleAllAccessWeekend">All-Access Weekend</label>
+                <label class="priceAllAccessWeekend"> €80,00</label>
+                <label class="amountAllAccessWeekend">test</label>
+            </section>
         </section>
         <section class="rightSideTicketBuy5" id="rightSideTicketBuy5">
-
+            <label class="artistLabel">Ntjam Rosie</label>
+            <label class="timeLabelBuy">21:00-22:00</label>
+            <label class="locationLabelBuy">Location: Patronaat</label>
+            <img src="images/NtjamRosie1.jpg">
         </section>
         <section class="leftSideTicket6" id="leftSideTicket6">
             <img src="images/JonnaFraser1.jpg">
@@ -258,9 +351,27 @@
                     <label class="closeLabel">Back</label>
                 </a>
             </div>
+            <section class="ticketGridArea">
+                <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
+                <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
+                <label style="font-weight: bold; font-size: 1.4375rem" class="amountGrid">Amount</label>
+
+                <label class="titleArtist">Jonna Fraser</label>
+                <label class="priceArtist">€15,00</label>
+                <label class="amountArtist">Test</label>
+                <label class="titleAllAccessDay">All-Access Thursday</label>
+                <label class="priceAllAccessDay">€35,00</label>
+                <label class="amountAllAccessDay">test</label>
+                <label class="titleAllAccessWeekend">All-Access Weekend</label>
+                <label class="priceAllAccessWeekend"> €80,00</label>
+                <label class="amountAllAccessWeekend">test</label>
+            </section>
         </section>
         <section class="rightSideTicketBuy6" id="rightSideTicketBuy6">
-
+            <label class="artistLabel">Jonna Fraser</label>
+            <label class="timeLabelBuy">21:00-22:00</label>
+            <label class="locationLabelBuy">Location: Patronaat</label>
+            <img src="images/JonnaFraser1.jpg">
         </section>
     </section>
 </section>

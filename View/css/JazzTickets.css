@@ -48,7 +48,7 @@ body {
     font-family: "Segoe UI";
     font-weight: bold;
     font-size: 1.3125rem;
-    background-color: #FFFFFF;
+    background-color: #AA2828;
     width: 13.375rem;
     height: 3.8125rem;
     line-height: 3.75rem;
@@ -59,7 +59,7 @@ body {
 
 .thursdayButton a {
     text-decoration: none;
-    color: #000000;
+    color: #FFFFFF;
 }
 
 .fridayButton {
@@ -246,7 +246,16 @@ body {
     font-size: 1.1875rem;
 }
 
+.artistLabel{
+    font-size: 1.0625rem;
+}
 
+.timeLabelBuy{
+    font-size: 1.0625rem;
+}
+.locationLabelBuy{
+    font-size: 1.0625rem;
+}
 .buyButtonTicketRow1 {
     margin-top: 1.5625rem;
     margin-left: 0.3125rem;
@@ -453,6 +462,11 @@ body {
     border: #707070 0.0625rem solid;
 }
 
+.rightSideTicketBuy1 img{
+    margin-top: 1.2rem;
+    width: 9.1875rem;
+    height: 9.5rem;
+}
 
 .rightSideTicket2 {
     grid-area: leftSideTicket2;
@@ -489,6 +503,12 @@ body {
     height: 15.875rem;
     background-color: #FC5757;
     border: #707070 0.0625rem solid;
+}
+
+.rightSideTicketBuy2 img{
+    margin-top: 1.2rem;
+    width: 9.1875rem;
+    height: 9.5rem;
 }
 
 .rightSideTicket3 {
@@ -529,6 +549,12 @@ body {
     border: #707070 0.0625rem solid;
 }
 
+.rightSideTicketBuy3 img{
+    margin-top: 1.2rem;
+    width: 9.1875rem;
+    height: 9.5rem;
+}
+
 .rightSideTicket4 {
     grid-area: leftSideTicket4;
     margin-left: 43.6875rem;
@@ -564,6 +590,13 @@ body {
     height: 15.875rem;
     background-color: #578EFC;
     border: #707070 0.0625rem solid;
+}
+
+
+.rightSideTicketBuy4 img{
+    margin-top: 1.2rem;
+    width: 9.1875rem;
+    height: 9.5rem;
 }
 
 .rightSideTicket5 {
@@ -604,6 +637,12 @@ body {
     border: #707070 0.0625rem solid;
 }
 
+.rightSideTicketBuy5 img{
+    margin-top: 1.2rem;
+    width: 9.1875rem;
+    height: 9.5rem;
+}
+
 .rightSideTicket6 {
     grid-area: leftSideTicket6;
     margin-left: 43.6875rem;
@@ -640,8 +679,86 @@ body {
     background-color: #FF9130;
     border: #707070 0.0625rem solid;
 }
+.rightSideTicketBuy6 img{
+    margin-top: 1.2rem;
+    width: 9.1875rem;
+    height: 9.5rem;
+}
 
 
+.ticketGridArea {
+    display: grid;
+    text-align: left;
+    grid-template-columns: 3fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr ;
+    gap: 1rem 0rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    grid-template-areas:
+            "titleGrid priceGrid amountGrid ."
+            "titleArtist priceArtist amountArtist ."
+            "titleAllAccessDay priceAllAccessDay amountAllAccessDay ."
+            "titleAllAccessWeekend priceAllAccessWeekend amountAllAccessWeekend .";
+    color: #000000;
 
+}
+
+.ticketGridArea label{
+    text-align: left;
+    font-family: "Segoe UI";
+    font-weight: normal;
+    font-size: 1.25rem;
+}
+.titleGrid {
+    grid-area: titleGrid;
+    font-weight: bold;
+}
+
+.priceGrid {
+    grid-area: priceGrid;
+}
+
+.amountGrid {
+    grid-area: amountGrid;
+}
+
+.titleArtist {
+    font-family: "Segoe UI";
+    font-weight: normal;
+    grid-area: titleArtist;
+
+}
+
+.priceArtist {
+    grid-area: priceArtist;
+}
+
+.amountArtist {
+    grid-area: amountArtist;
+}
+
+.titleAllAccessDay {
+    grid-area: titleAllAccessDay;
+}
+
+.priceAllAccessDay {
+    grid-area: priceAllAccessDay;
+}
+
+.amountAllAccessDay {
+    grid-area: amountAllAccessDay;
+}
+
+.titleAllAccessWeekend {
+    grid-area: titleAllAccessWeekend;
+}
+
+.priceAllAccessWeekend {
+    grid-area: priceAllAccessWeekend;
+}
+
+.amountAllAccessWeekend {
+    grid-area: amountAllAccessWeekend;
+}
 
 
