@@ -29,10 +29,70 @@
 </section>
 
 <section class="MainContent">
-
-
+    <section class=eventName>
+        <h2>Haarlem Historic tour</h2>
+    </section>
+    <section class="infoBox">
+        <section id=startingPoint>
+            <h3>Startingpoint</h3>
+            <p>The tour starts near of the ‘Church of St. Bavo’, ‘Grote Markt’ in the centre of Haarlem.</p>
+        </section>
+        <section id=duration>
+            <h3>Duration | Distance</h3>
+            <p>2,5 hours (with a 15-minute break) | 4 km (2.4 ml)</p>
+        </section>
+        <section id=covidMeasures>
+            <h3>Covid-19 safety measures</h3>
+            <p>1.5 m distance</p>
+            <p>General hand and face hygiene</p>
+            <p>Screening for COVID-19 symptoms before entry</p>
+        </section>
+        <section id=price>
+            <h3>Price</h3>
+            <p>Normal ticket €17,50,- p.p.</p>
+            <p>Family ticket €60,- (4 participants)</p>
+        </section>
+        <section id=additionalInfo>
+            <h3>Additional information</h3>
+            <p>Due to the nature of this walk participants must be a <B STYLE="text-decoration: underline;">minimum of 12 years old</B> and <B STYLE="text-decoration: underline;">no strollers are allowed</B></p>
+        </section>
+    </section>
+    <section class="programBox">
+        <section id=programInfo>
+            <h3>Program</h3>
+            <p1>We offer multiple programs. The tours will be in Dutch, English or Chinese. All tours start at the St. Bavo. (Note that some days do not include all different languages). </p1>
+            <p>The price of a normal ticket is €17,50 euros.</p>
+            <p>The price of a family ticket is €60 euros. A family ticket is for 4 persons and is 14% cheaper than a normal ticket. </p>
+            <p>Reservation is mandatory</p>
+        </section>
+        <p id="programQuestion">Select a day and language to see the program</p>
+        <button class="dayButton">Thu 26 July</button>
+        <button class="dayButton">Fri 27 July</button>
+        <button class="dayButton">Sat 28 July</button>
+        <button class="dayButton">Sun 29 July</button>
+        <form>
+            <label class="radioButtonLanguage">
+                <input type="radio" id="english" name="language" value="english" checked>English
+            </label>
+            <label class="radioButtonLanguage">
+                <input type="radio" id="dutch" name="language" value="dutch">Dutch
+            </label>
+            <label class="radioButtonLanguage">
+                <input type="radio" id="chinese" name="language" value="chinese">Chinese
+            </label>
+        </form>
+        <section id=programTable>
+        </section>
+        <button id="buyButton">Get your tickets now!</button>
+    </section>
+    <section class="venuesBox">
+        <section id=venuesInfo>
+            <h3>Venues</h3>
+            <p>In these historic tours we will come across the following 9 venues.</p>
+            <img src='images/historic/historic_googleMaps_locaties.jpg' alt="Locations of venues which will be visited" id="venuesImage">
+        </section>
+    </section>
 </section>
-
 
 </body>
 </html>
