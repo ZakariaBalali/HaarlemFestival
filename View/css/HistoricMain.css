@@ -1,3 +1,164 @@
-.MainContent{
-    margin-top: 11rem;
+body{
+    background-attachment: fixed;
+    background-image: url(../images/historic/historic_main_background.jpg);
+    height: 67.5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
+/*body:not(.Banner .NavigationBar) {
+    opacity: 0.8;
+}*/
+
+.MainContent{
+    display: grid;
+    grid-template-columns: 4em repeat(2, 18em) repeat(3, 18em);
+    grid-template-rows: 14em repeat(4, 6em) repeat(5, 6em) 1.5em;
+    gap: 3.5em;
+    grid-template-areas:
+        ". . . . . ."
+        ". info info program program program"
+        ". info info program program program"
+        ". info info program program program"
+        ". info info program program program"
+        ". venues venues venues venues venues"
+        ". venues venues venues venues venues"
+        ". venues venues venues venues venues"
+        ". venues venues venues venues venues"
+        ". venues venues venues venues venues"
+        ". . . . . .";
+  }
+
+.infoBox{
+    background-color: white;
+    border-radius: 1em;
+    grid-area: info;
+}
+.programBox{
+    background-color: white;
+    border-radius: 1em;
+    grid-area: program
+}
+.venuesBox{
+    background-color: white;
+    border-radius: 1em;
+    grid-area: venues
+}
+.eventName{
+    position: absolute;
+    font-size: 2em;
+    left: 21em;
+    color: black;
+    top: 5em;
+}
+
+.infoBox #startingPoint, .infoBox #duration, .infoBox #covidMeasures, .infoBox #price, .infoBox #additionalInfo{
+    left: 8.5em;
+    font-size: 1.1em;
+    color: black;
+    position: absolute; 
+    max-width: 25%;
+    line-height: 4.5mm;
+    padding: 0.5em;
+    margin-bottom: .4em;
+}
+
+.infoBox #duration{
+    top: 21.5em;
+    line-height: 4mm;
+}
+
+.infoBox #covidMeasures{
+    top: 26em;
+    line-height: 4mm;
+}
+.infoBox #price{
+    top: 32em;
+    line-height: 4mm;
+}
+.infoBox #additionalInfo{
+    top: 37.5em;
+    line-height: 4mm;
+}
+#covidMeasures p, #price p, #programInfo p{
+    line-height: 0.1em;
+}
+.programBox #programInfo, #programQuestion{
+    left: 48em;
+    font-size: 1.1em;
+    color: black;
+    position: absolute; 
+    max-width: 48%;
+    line-height: 4.5mm;
+    padding: 0.5em;
+    margin-bottom: .4em;
+}
+#programQuestion{
+    text-decoration: underline;
+    font-weight: bold;
+    top: 25em;
+}
+.dayButton{
+    top: 12em;
+    left: 2.5em;
+    font-size: 1.1em;
+    color: black; 
+    text-align: center;
+    transition: 0.3s;
+    position: relative;
+    cursor: pointer;
+    border-radius: 0.2em;
+    padding: 0.4em;
+    border: none;
+    width: 10em;    
+}
+.dayButton:hover{
+    background-color: #3e8e41;
+    color: white;
+    
+}
+.radioButtonLanguage{
+    top: 13em;
+    left: 2.5em;
+    font-size: 1.1em;
+    color: black;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+#buyButton{
+    top: 24em;
+    left: 40em;
+    font-size: 1.1em;
+    background: url('../images/icon_shoppingcart.png');
+    background-repeat: no-repeat;
+    background-position: 0.5em;
+    background-size: 2.5em;
+    background-color: yellow;
+    color:black; 
+    font-weight: bold;
+    text-align: right;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    border-radius: 0.4em;
+    padding: 1em;
+    width: 14.3em;   
+}
+.venuesBox #venuesInfo{
+    left: 8.5em;
+    font-size: 1.1em;
+    color: black;
+    position: absolute; 
+    max-width: 50%;
+    line-height: 4.5mm;
+    padding: 0.5em;
+    margin-bottom: .4em;
+}
+#venuesImage{
+    margin-top: 2em;   
+    width: max-content;
+    height: max-content;
+}
+
+
