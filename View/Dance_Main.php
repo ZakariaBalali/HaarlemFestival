@@ -59,12 +59,33 @@
 
                  <!--tickets -->
        
-      <section class="Tickets">
+    <section class="Tickets">
       <div class="grid-container">
-      <div class="ticketTitle"> Hardwell</div>
-      <div class="ticketImg" > <img src="./images/tiesto.jpg"></div>
-      <div class="ticketInfo">
-            <label class="dayLabel">Date: 2020-07-27</label>
+      <div class="ticket1Title">Nicky Romero/Afrojack</div>
+      <div class="ticket2Title">Tiesto</div>
+      <div class="ticket1Detail">
+      <section class="rightsideDetail">
+      <label class="dayLabel">Date: 2020-07-27</label>
+            <br>
+            <label class="timeLabel">Time: 20:00</label>
+            <br>
+            <label class="locationLabel">Location: Lichtfabriek</label>
+            <br>
+            <label class="durationLabel">Duration: 360 min</label>
+            <br>
+            <label class="priceLabel">Price: €75,00</label>
+            <br>
+            <br>
+            <button class="buyTicketBtn">Buy now</button>
+            </br>
+    </section>
+    <section class="leftsideDetail">
+    <img class="imagesLeft" src="images/nickyromeroafrojack.png">
+    </section>
+      </div>
+      <div class="ticket2Detail">
+    <section class="rightsideDetail">
+      <label class="dayLabel">Date: 2020-07-27</label>
             <br>
             <label class="timeLabel">Time: 22:00</label>
             <br>
@@ -75,11 +96,23 @@
             <label class="priceLabel">Price: €60,00</label>
             <br>
             <br>
-            <button id="buyTicketBtn">Buy now</button>
+            <button class="buyTicketBtn">Buy now</button>
             </br>
-            
+    </section>
+    <section class="leftsideDetail">
+    <img class="imagesLeft" src="images/tiesto1.jpg">
+    </section>
 
       </div>
+      <div class="ticket3Title">
+
+      </div>
+      <div class="ticket4Title">
+
+      </div>
+      <div class="ticket3Detail"></div>
+     <div class="ticket4Detail"></div>
+    </div>
 
         </section>
 
