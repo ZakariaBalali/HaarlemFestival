@@ -110,7 +110,7 @@
   .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0fr 0fr 1fr 1fr;
     gap: 0px 0px;
     grid-template-areas:
       "ticket1Title ticket2Title"
@@ -163,6 +163,7 @@
       height: 300px;
       width: 300px;
       float: left;
+      object-fit: cover;
       
     }
     .buyTicketBtn{
