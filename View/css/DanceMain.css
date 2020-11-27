@@ -1,8 +1,9 @@
 
 .MainContent{
     background-image: url(../images/dance_main_background.jpg);
-    background-repeat: repeat;
-    height: 67.5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 0rem 67.5rem;
 
     margin-top: 10rem;
 
@@ -108,60 +109,94 @@
   }
   .grid-container {
     display: grid;
-    grid-template-columns: 1.8fr 0.2fr 1fr 1fr;
-    grid-template-rows: 0.7fr 1.3fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-template-areas:
-      "ticketTitle ticketTitle ticketTitle ticketTitle"
-      "ticketImg ticketInfo ticketInfo ticketInfo"
-      "ticketImg ticketInfo ticketInfo ticketInfo";
+      "ticket1Title ticket2Title"
+      "ticket1Detail ticket2Detail"
+      "ticket3Title ticket4Title"
+      "ticket3Detail ticket4Detail";
   }
-  .ticketTitle{
-     grid-area: ticketTitle; 
+  .ticket1Title {
+     grid-area: ticket1Title; 
      background-color:#F9007D;
-     width: 30%;
-     height: 50px;
-     padding: 0%;
+     margin-right: 20px;
      margin-left: 300px;
      font-size: 25px;
      font-family: Segoe UI;
      text-align: center;
      font-weight: bold;
-
-  }
-  .ticketImg {
-    padding: 0%;
-     grid-area: ticketImg;
-     background-color: white;
-     width: 35%;
-     margin-left: 300px;
-     height: 210px;
-     background-repeat: no-repeat;
-     background-position: center;
-
-     }
-  .ticketInfo { 
-    grid-area: ticketImg;
-    background-color: white;
-    width: 31.6%;
-    margin-left: 600px;
-    color: black;
+     height: 50px;
+     
+    }
+  .ticket2Title {
+    grid-area: ticket2Title;
+    background-color:#F9007D;
+    margin-right: 300px;
+    margin-left: 20px;
+    font-size: 25px;
     font-family: Segoe UI;
-    font-weight: bolder;
-    height: 210px;
-    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    height: 50px;
+   }
+  .ticket1Detail {
+     grid-area: ticket1Detail; 
+     background-color: white;
+    
+     margin-right: 20px;
+     margin-left: 300px;
+     color: black;
+     height: 300px;
+     
+    }
+    .rightsideDetail{
+     float: right;
+     text-align: left;
+     font-size: 30px;
+     font-weight: bold;
+     font-family: segoe ui;
+     margin-left: 10px;
+    }
+    .leftsideDetail img{
+      height: 300px;
+      width: 300px;
+      float: left;
+      
+    }
+    .buyTicketBtn{
+      text-align: center;
+      height: 50px;
+      width: 175px;
+      margin-left: 55px;
+      font-size: 18px;
+      font-weight: bold;
+      font-family: segoe ui;
+      background-color: #0D7EFF ;
+      color: whitesmoke;
+    }
+  .ticket2Detail {
+     grid-area: ticket2Detail;
+     background-color: white;
+     margin-right: 300px;
+     margin-left: 20px;
+     color: black;
+     height: 300px;
+     }
+  .ticket3Title {
+     grid-area: ticket3Title; 
+    }
+  .ticket4Title {
+     grid-area: ticket4Title; 
+    }
+  .ticket3Detail {
+     grid-area: ticket3Detail; 
+    }
+  .ticket4Detail { 
+    grid-area: ticket4Detail; 
   }
- #buyTicketBtn{
-   background-color: #0d7eff;
-   text-align: center;
-   font-family: Segoe UI;
-   font-weight: bold;
-   font-size: 20px;
-   color: white;
-   height: 40px;
-   width: 170px;
-   margin-left: 52px;
- }
+
  
 
 
