@@ -8,7 +8,6 @@
     <link href="css/JazzTickets.css" rel="stylesheet" type="text/css">
     <link href="css/Banner.css" rel="stylesheet" type="text/css">
     <script src="js/JazzScript.js"></script>
-    <script src="js/JazzTicketScript.js" type="text/javascript"></script>
 </head>
 <body>
 
