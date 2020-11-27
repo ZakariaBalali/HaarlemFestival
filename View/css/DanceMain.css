@@ -1,202 +1,253 @@
 
-.MainContent{
+.MainContent {
     background-image: url(../images/dance_main_background.jpg);
-    background-repeat: no-repeat;
+    background-position: 0rem 8.375rem;
     background-size: cover;
-    height: 0rem 67.5rem;
-
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 150rem;
     margin-top: 10rem;
 
 }
-.body{
-  font-family: Segoe UI;
-  font-weight: bold;
+
+.body {
+    font-family: Segoe UI;
+    font-weight: bold;
 }
 
-.EventTitle{
+.EventTitle {
     overflow: hidden;
-    color:lime;
+    color: lime;
     text-align: center;
     font-size: 1.875rem;
     font-family: Segoe UI;
     font-weight: bold;
 }
-#subtitle{
-  text-align: center;
-  font-size: 1.125rem;
-  color: white;
+
+#subtitle {
+    text-align: center;
+    font-size: 1.125rem;
+    color: white;
 }
 
 .ArtistsRow1 {
-   width:52%;
- margin-left: auto ;
- margin-right:auto ;
+    width: 52%;
+    margin-left: auto;
+    margin-right: auto;
 
-  }
-  .ArtistsRow2 {
-    
-  margin-left: auto ;
-  margin-right:auto ;
-  }
-  .DaysRow{
-    padding: 50px;
-   text-align: center;
-  }
- 
-  .allTicketsBtn{
-    height: 50px;
+}
+
+.ArtistsRow2 {
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.DaysRow {
+    padding: 3.125rem;
+    text-align: center;
+}
+
+.allTicketsBtn {
+    height: 3.125rem;
     width: 20%;
-    border-radius: 25px;
+    border-radius: 1.5625rem;
     border-color: white;
     font-family: Segoe UI;
     font-weight: bold;
-    font-size: 23px;
-  }
-  .allTicketsBtn:hover{
+    font-size: 1.4375rem;
+}
+
+.allTicketsBtn:hover {
     background-color: lime;
     border-color: black;
-  }
-  .allTicketsBtn:focus{
+}
+
+.allTicketsBtn:focus {
     background-color: lime;
-  }
-  .fridayBtn{
-    height: 50px;
+}
+
+.fridayBtn {
+    height: 3.125rem;
     width: 20%;
-    border-radius: 25px;
+    border-radius: 1.5625rem;
     border-color: white;
     font-family: Segoe UI;
     font-weight: bold;
-    font-size: 23px;
-  }
-  .fridayBtn:hover{
+    font-size: 1.4375rem;
+}
+
+.fridayBtn:hover {
     background-color: lime;
     border-color: black;
-  }
-  .fridayBtn:focus{
+}
+
+.fridayBtn:focus {
     background-color: lime;
-  }
-  .saturdayBtn{
-    height: 50px;
+}
+
+.saturdayBtn {
+    height: 3.125rem;
     width: 20%;
-    border-radius: 25px;
+    border-radius: 1.5625rem;
     border-color: white;
     font-family: Segoe UI;
     font-weight: bold;
-    font-size: 23px;
-  }
-  .saturdayBtn:hover{
+    font-size: 1.4375rem;
+}
+
+.saturdayBtn:hover {
     background-color: lime;
     border-color: black;
-  }
-  .saturdayBtn:focus{
+}
+
+.saturdayBtn:focus {
     background-color: lime;
-  }
-  .sundayBtn{
-    height: 50px;
+}
+
+.sundayBtn {
+    height: 3.125rem;
     width: 20%;
-    border-radius: 25px;
+    border-radius: 1.5625rem;
     border-color: white;
     font-family: Segoe UI;
     font-weight: bold;
-    font-size: 23px;
-  }
-  .sundayBtn:hover{
+    font-size: 1.4375rem;
+}
+
+.sundayBtn:hover {
     background-color: lime;
     border-color: black;
-  }
-  .sundayBtn:focus{
+}
+
+.sundayBtn:focus {
     background-color: lime;
-  }
-  .grid-container {
+}
+
+.grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0fr 0fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-      "ticket1Title ticket2Title"
-      "ticket1Detail ticket2Detail"
-      "ticket3Title ticket4Title"
-      "ticket3Detail ticket4Detail";
-  }
-  .ticket1Title {
-     grid-area: ticket1Title; 
-     background-color:#F9007D;
-     margin-right: 20px;
-     margin-left: 300px;
-     font-size: 25px;
-     font-family: Segoe UI;
-     text-align: center;
-     font-weight: bold;
-     height: 50px;
-     
-    }
-  .ticket2Title {
-    grid-area: ticket2Title;
-    background-color:#F9007D;
-    margin-right: 300px;
-    margin-left: 20px;
-    font-size: 25px;
+    grid-template-rows: 0fr 0fr 0fr 0fr;
+    gap: 0rem 0rem;
+    grid-template-areas: "ticket1Title ticket2Title" "ticket1Detail ticket2Detail" "ticket3Title ticket4Title" "ticket3Detail ticket4Detail";
+}
+
+.ticket1Title {
+    grid-area: ticket1Title;
+    background-color: #F9007D;
+    margin-right: 1.25rem;
+    margin-left: 18.75rem;
+    font-size: 1.5625rem;
     font-family: Segoe UI;
     text-align: center;
     font-weight: bold;
-    height: 50px;
-   }
-  .ticket1Detail {
-     grid-area: ticket1Detail; 
-     background-color: white;
-    
-     margin-right: 20px;
-     margin-left: 300px;
-     color: black;
-     height: 300px;
-     
-    }
-    .rightsideDetail{
-     float: right;
-     text-align: left;
-     font-size: 30px;
-     font-weight: bold;
-     font-family: segoe ui;
-     margin-left: 10px;
-    }
-    .leftsideDetail img{
-      height: 300px;
-      width: 300px;
-      float: left;
-      object-fit: cover;
-      
-    }
-    .buyTicketBtn{
-      text-align: center;
-      height: 50px;
-      width: 175px;
-      margin-left: 55px;
-      font-size: 18px;
-      font-weight: bold;
-      font-family: segoe ui;
-      background-color: #0D7EFF ;
-      color: whitesmoke;
-    }
-  .ticket2Detail {
-     grid-area: ticket2Detail;
-     background-color: white;
-     margin-right: 300px;
-     margin-left: 20px;
-     color: black;
-     height: 300px;
-     }
-  .ticket3Title {
-     grid-area: ticket3Title; 
-    }
-  .ticket4Title {
-     grid-area: ticket4Title; 
-    }
-  .ticket3Detail {
-     grid-area: ticket3Detail; 
-    }
-  .ticket4Detail { 
-    grid-area: ticket4Detail; 
-  }
+    height: 3.125rem;
+
+}
+
+.ticket2Title {
+    grid-area: ticket2Title;
+    background-color: #F9007D;
+    margin-right: 18.75rem;
+    margin-left: 1.25rem;
+    font-size: 1.5625rem;
+    font-family: Segoe UI;
+    text-align: center;
+    font-weight: bold;
+    height: 3.125rem;
+}
+
+.ticket1Detail {
+    grid-area: ticket1Detail;
+    background-color: white;
+    margin-right: 1.25rem;
+    margin-left: 18.75rem;
+    margin-bottom: 5rem;
+    color: black;
+    height: 18.75rem;
+
+}
+
+.rightsideDetail {
+    float: right;
+    text-align: left;
+    font-size: 1.875rem;
+    font-weight: bold;
+    font-family: segoe ui;
+    margin-left: 0.625rem;
+}
+
+.leftsideDetail img {
+    height: 18.75rem;
+    width: 18.75rem;
+    float: left;
+    object-fit: cover;
+
+}
+
+.buyTicketBtn {
+    text-align: center;
+    height: 3.125rem;
+    width: 10.9375rem;
+    margin-left: 3.4375rem;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: segoe ui;
+    background-color: #0D7EFF;
+    color: whitesmoke;
+}
+
+.ticket2Detail {
+    grid-area: ticket2Detail;
+    background-color: white;
+    margin-right: 18.75rem;
+    margin-left: 1.25rem;
+    color: black;
+    height: 18.75rem;
+}
+
+.ticket3Title {
+    grid-area: ticket3Title;
+    background-color: #F9007D;
+    margin-right: 1.25rem;
+    margin-left: 18.75rem;
+    font-size: 1.5625rem;
+    font-family: Segoe UI;
+    text-align: center;
+    font-weight: bold;
+    height: 3.125rem;
+}
+
+.ticket4Title {
+    grid-area: ticket4Title;
+    background-color: #F9007D;
+    margin-right: 18.75rem;
+    margin-left: 1.25rem;
+    font-size: 1.5625rem;
+    font-family: Segoe UI;
+    text-align: center;
+    font-weight: bold;
+    height: 3.125rem;
+}
+
+.ticket3Detail {
+    grid-area: ticket3Detail;
+    background-color: white;
+    margin-right: 1.25rem;
+    margin-left: 18.75rem;
+    margin-bottom: 5rem;
+    color: black;
+    height: 18.75rem;
+}
+
+.ticket4Detail {
+    grid-area: ticket4Detail;
+    background-color: white;
+    margin-right: 18.75rem;
+    margin-left: 1.25rem;
+    color: black;
+    height: 18.75rem;
+}
 
  
 
