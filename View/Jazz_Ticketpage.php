@@ -31,6 +31,40 @@
 </section>
 
 <section class="MainContent">
+
+    <section id="popupAddedTicket" class="popupAddedTicket">
+        <section class="popup-content">
+
+            <section class="popup-header">
+                <img src="images/icon_successfull.png">
+                <h1>Item(s) added to Shopping cart</h1>
+            </section>
+            <section class="popup-body">
+                <table class="addedTickets">
+                    <tr>
+                        <th>Amount</th>
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>Timeslot</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr class="tableContent">
+                        <th>1x</th>
+                        <th>Gumbo Kings</th>
+                        <th>Sat Jul 28th</th>
+                        <th>18:00-19:00</th>
+                        <th>€15,00</th>
+                    </tr>
+                </table>
+            </section>
+            <section class="popup-footer">
+                <button class="closeButton" id="closeButton">Continue Shopping</button>
+                <button onclick="window.location.href='Program_Main.php';" class="programButton">View in Program</button>
+                <button onclick="window.location.href='Shopping_Cart.php';" class="shoppingCartButton">To Shopping cart</button>
+            </section>
+        </section>
+    </section>
+
     <section class="JazzTicketContent">
         <h1>Haarlem Jazz Tickets</h1>
         <section class="JazzButtons">
@@ -42,11 +76,7 @@
             </section>
         </section>
         <section class="JazzDayButtons">
-            <section class="thursdayButton" id="thursdayButton"><a id="thursdayButtonLink"
-                                                                   href="javascript:ShowThursdayTickets('tickets', 'thursdayButton', 'thursdayButtonLink',
-                                                                   'fridayButton', 'fridayButtonLink', 'saturdayButton', 'saturdayButtonLink', 'sundayButton',
-                                                                   'sundayButtonLink')">Thursday</a>
-
+            <section class="thursdayButton" id="thursdayButton"><a id="thursdayButtonLink" href="#">Thursday</a>
             </section>
             <section class="fridayButton" id="fridayButton"><a id="fridayButtonLink" href="# ">Friday</a></section>
             <section class="saturdayButton" id="fridayButton"><a id="saturdayButtonLink" href="#">Saturday</a></section>
@@ -72,61 +102,63 @@
             <label class="timeLabel">18:00-19:00</label>
             <label class="priceLabel">€15,00</label>
             <label class="locationLabel">Patronaat</label>
-            <div class="buyButtonTicketRow1" id="buyButtonTicketRow1">
+            <section class="buyButtonTicketRow1" id="buyButtonTicketRow1">
                 <a href="javascript:SwapToBuyScreen('leftSideTicket1','rightSideTicket1', 'leftSideTicketBuy1','rightSideTicketBuy1' )">
                     <img src="images/BuyIcon.png">
                     <label class="buyLabel">Buy Now</label>
                 </a>
-            </div>
+            </section>
         </section>
         <section class="leftSideTicketBuy1" id="leftSideTicketBuy1">
-            <div class="CloseAndAddButton">
-                <div class="closeTicketScreenRow1" id="closeTicketScreenRow1">
+            <section class="CloseAndAddButton">
+                <section class="closeTicketScreenRow1" id="closeTicketScreenRow1">
                     <a href="javascript:SwapBackToTicketScreen('leftSideTicket1','rightSideTicket1', 'leftSideTicketBuy1','rightSideTicketBuy1' )">
                         <img src="images/BuyIcon.png">
                         <label class="closeLabel">Back</label>
                     </a>
-                </div>
-                <div class="AddToCartButton">
+                </section>
+                <button class="AddToCartButton" id="AddToCartButton1">
                     <img src="images/ShoppingCart.png">
                     <label>Add to Cart</label>
-                </div>
-            </div>
+                </button>
+                <script>
+                    modal('popupAddedTicket', 'AddToCartButton1', 'closeButton')
+                </script>
+            </section>
             <section class="ticketGridArea">
                 <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
                 <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
                 <label style="font-weight: bold; font-size: 1.4375rem" class="amountGrid">Amount</label>
-
                 <label class="titleArtist">Gare du Nord Saturday</label>
                 <label class="priceArtist">€15,00</label>
-                <div class="amountArtist">
+                <section class="amountArtist">
                     <button class="minusArtist" id="minusArtist1">−</button>
                     <input class="inputArtist" type="number" value="0" id="inputArtist1"/>
                     <button class="plusArtist" id="plusArtist1">+</button>
                     <script>
                         addTicket('minusArtist1', 'inputArtist1', 'plusArtist1')
                     </script>
-                </div>
+                </section>
                 <label class="titleAllAccessDay">All-Access Thursday</label>
                 <label class="priceAllAccessDay">€35,00</label>
-                <div class="amountAllAccessDay">
+                <section class="amountAllAccessDay">
                     <button class="minusAllAccessDay" id="minusAllAccessDay1">−</button>
                     <input class="inputAllAccessday" type="number" value="0" id="inputAllAccessDay1"/>
                     <button class="plusAllAccessDay" id="plusAllAccessDay1">+</button>
                     <script>
                         addTicket('minusAllAccessDay1', 'inputAllAccessDay1', 'plusAllAccessDay1')
                     </script>
-                </div>
+                </section>
                 <label class="titleAllAccessWeekend">All-Access Weekend</label>
                 <label class="priceAllAccessWeekend"> €80,00</label>
-                <div class="amountAllAccessWeekend">
+                <section class="amountAllAccessWeekend">
                     <button class="minusAllAccessWeekend" id="minusAllAccessWeekend1">−</button>
                     <input class="inputAllAccessWeekend" type="number" value="0" id="inputAllAccessWeekend1"/>
                     <button class="plusAllAccessWeekend" id="plusAllAccessWeekend1">+</button>
                     <script>
                         addTicket('minusAllAccessWeekend1', 'inputAllAccessWeekend1', 'plusAllAccessWeekend1')
                     </script>
-                </div>
+                </section>
 
             </section>
 
@@ -155,26 +187,29 @@
             <label class="timeLabel">18:00-19:00</label>
             <label class="priceLabel">€15,00</label>
             <label class="locationLabel">Patronaat</label>
-            <div class="buyButtonTicketRow1">
+            <section class="buyButtonTicketRow1">
                 <a href="javascript:SwapToBuyScreen('leftSideTicket2','rightSideTicket2', 'leftSideTicketBuy2','rightSideTicketBuy2' )">
                     <img src="images/BuyIcon.png">
                     <label class="buyLabel">Buy Now</label>
                 </a>
-            </div>
+            </section>
         </section>
         <section class="leftSideTicketBuy2" id="leftSideTicketBuy2">
-            <div class="CloseAndAddButton">
-                <div class="closeTicketScreenRow1" id="closeTicketScreenRow1">
+            <section class="CloseAndAddButton">
+                <section class="closeTicketScreenRow1" id="closeTicketScreenRow1">
                     <a href="javascript:SwapBackToTicketScreen('leftSideTicket2','rightSideTicket2', 'leftSideTicketBuy2','rightSideTicketBuy2' )">
                         <img src="images/BuyIcon.png">
                         <label class="closeLabel">Back</label>
                     </a>
-                </div>
-                <div class="AddToCartButton">
+                </section>
+                <button class="AddToCartButton" id="AddToCartButton2">
                     <img src="images/ShoppingCart.png">
                     <label>Add to Cart</label>
-                </div>
-            </div>
+                </button>
+                <script>
+                    modal('popupAddedTicket', 'AddToCartButton2', 'closeButton')
+                </script>
+            </section>
             <section class="ticketGridArea">
                 <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
                 <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
@@ -182,34 +217,34 @@
 
                 <label class="titleArtist">Wicked Jazz Sounds Saturday</label>
                 <label class="priceArtist">€15,00</label>
-                <div class="amountArtist">
+                <section class="amountArtist">
                     <button class="minusArtist" id="minusArtist2">−</button>
                     <input class="inputArtist" type="number" value="0" id="inputArtist2"/>
                     <button class="plusArtist" id="plusArtist2">+</button>
                     <script>
                         addTicket('minusArtist2', 'inputArtist2', 'plusArtist2')
                     </script>
-                </div>
+                </section>
                 <label class="titleAllAccessDay">All-Access Thursday</label>
                 <label class="priceAllAccessDay">€35,00</label>
-                <div class="amountAllAccessDay">
+                <section class="amountAllAccessDay">
                     <button class="minusAllAccessDay" id="minusAllAccessDay2">−</button>
                     <input class="inputAllAccessday" type="number" value="0" id="inputAllAccessDay2"/>
                     <button class="plusAllAccessDay" id="plusAllAccessDay2">+</button>
                     <script>
                         addTicket('minusAllAccessDay2', 'inputAllAccessDay2', 'plusAllAccessDay2')
                     </script>
-                </div>
+                </section>
                 <label class="titleAllAccessWeekend">All-Access Weekend</label>
                 <label class="priceAllAccessWeekend"> €80,00</label>
-                <div class="amountAllAccessWeekend">
+                <section class="amountAllAccessWeekend">
                     <button class="minusAllAccessWeekend" id="minusAllAccessWeekend2">−</button>
                     <input class="inputAllAccessWeekend" type="number" value="0" id="inputAllAccessWeekend2"/>
                     <button class="plusAllAccessWeekend" id="plusAllAccessWeekend2">+</button>
                     <script>
                         addTicket('minusAllAccessWeekend2', 'inputAllAccessWeekend2', 'plusAllAccessWeekend2')
                     </script>
-                </div>
+                </section>
             </section>
         </section>
         <section class="rightSideTicketBuy2" id="rightSideTicketBuy2">
@@ -235,26 +270,29 @@
             <label class="timeLabel">19:30-20:30</label>
             <label class="priceLabel">€15,00</label>
             <label class="locationLabel">Patronaat</label>
-            <div class="buyButtonTicketRow2">
+            <section class="buyButtonTicketRow2">
                 <a href="javascript:SwapToBuyScreen('leftSideTicket3','rightSideTicket3', 'leftSideTicketBuy3','rightSideTicketBuy3' )">
                     <img src="images/BuyIcon.png">
                     <label class="buyLabel">Buy Now</label>
                 </a>
-            </div>
+            </section>
         </section>
         <section class="leftSideTicketBuy3" id="leftSideTicketBuy3">
-            <div class="CloseAndAddButton">
-                <div class="closeTicketScreenRow2" id="closeTicketScreenRow2">
+            <section class="CloseAndAddButton">
+                <section class="closeTicketScreenRow2" id="closeTicketScreenRow2">
                     <a href="javascript:SwapBackToTicketScreen('leftSideTicket3','rightSideTicket3', 'leftSideTicketBuy3','rightSideTicketBuy3' )">
                         <img src="images/BuyIcon.png">
                         <label class="closeLabel">Back</label>
                     </a>
-                </div>
-                <div class="AddToCartButton">
+                </section>
+                <button class="AddToCartButton" id="AddToCartButton3">
                     <img src="images/ShoppingCart.png">
                     <label>Add to Cart</label>
-                </div>
-            </div>
+                </button>
+                <script>
+                    modal('popupAddedTicket', 'AddToCartButton3', 'closeButton')
+                </script>
+            </section>
             <section class="ticketGridArea">
                 <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
                 <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
@@ -262,34 +300,34 @@
 
                 <label class="titleArtist">Evolve</label>
                 <label class="priceArtist">€15,00</label>
-                <div class="amountArtist">
+                <section class="amountArtist">
                     <button class="minusArtist" id="minusArtist3">−</button>
                     <input class="inputArtist" type="number" value="0" id="inputArtist3"/>
                     <button class="plusArtist" id="plusArtist3">+</button>
                     <script>
                         addTicket('minusArtist3', 'inputArtist3', 'plusArtist3')
                     </script>
-                </div>
+                </section>
                 <label class="titleAllAccessDay">All-Access Thursday</label>
                 <label class="priceAllAccessDay">€35,00</label>
-                <div class="amountAllAccessDay">
+                <section class="amountAllAccessDay">
                     <button class="minusAllAccessDay" id="minusAllAccessDay3">−</button>
                     <input class="inputAllAccessday" type="number" value="0" id="inputAllAccessDay3"/>
                     <button class="plusAllAccessDay" id="plusAllAccessDay3">+</button>
                     <script>
                         addTicket('minusAllAccessDay3', 'inputAllAccessDay3', 'plusAllAccessDay3')
                     </script>
-                </div>
+                </section>
                 <label class="titleAllAccessWeekend">All-Access Weekend</label>
                 <label class="priceAllAccessWeekend"> €80,00</label>
-                <div class="amountAllAccessWeekend">
+                <section class="amountAllAccessWeekend">
                     <button class="minusAllAccessWeekend" id="minusAllAccessWeekend3">−</button>
                     <input class="inputAllAccessWeekend" type="number" value="0" id="inputAllAccessWeekend3"/>
                     <button class="plusAllAccessWeekend" id="plusAllAccessWeekend3">+</button>
                     <script>
                         addTicket('minusAllAccessWeekend3', 'inputAllAccessWeekend3', 'plusAllAccessWeekend3')
                     </script>
-                </div>
+                </section>
             </section>
         </section>
         <section class="rightSideTicketBuy3" id="rightSideTicketBuy3">
@@ -315,27 +353,30 @@
             <label class="timeLabel">19:30-20:30</label>
             <label class="priceLabel">€15,00</label>
             <label class="locationLabel">Patronaat</label>
-            <div class="buyButtonTicketRow2">
+            <section class="buyButtonTicketRow2">
                 <a href="javascript:SwapToBuyScreen('leftSideTicket4','rightSideTicket4', 'leftSideTicketBuy4','rightSideTicketBuy4' )">
                     <img src="images/BuyIcon.png">
                     <label class="buyLabel">Buy Now</label>
                 </a>
-            </div>
+            </section>
         </section>
         <section class="leftSideTicketBuy4" id="leftSideTicketBuy4">
-            <div class="CloseAndAddButton">
-                <div class="closeTicketScreenRow2" id="closeTicketScreenRow2">
+            <section class="CloseAndAddButton">
+                <section class="closeTicketScreenRow2" id="closeTicketScreenRow2">
                     <a href="javascript:SwapBackToTicketScreen('leftSideTicket4','rightSideTicket4', 'leftSideTicketBuy4','rightSideTicketBuy4' )">
                         <img src="images/BuyIcon.png">
                         <label class="closeLabel">Back</label>
                     </a>
-                </div>
+                </section>
 
-                <div class="AddToCartButton">
+                <button class="AddToCartButton" id="AddToCartButton4">
                     <img src="images/ShoppingCart.png">
                     <label>Add to Cart</label>
-                </div>
-            </div>
+                </button>
+                <script>
+                    modal('popupAddedTicket', 'AddToCartButton4', 'closeButton')
+                </script>
+            </section>
             <section class="ticketGridArea">
                 <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
                 <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
@@ -343,34 +384,34 @@
 
                 <label class="titleArtist">Tom Thomson Assemble</label>
                 <label class="priceArtist">€15,00</label>
-                <div class="amountArtist">
+                <section class="amountArtist">
                     <button class="minusArtist" id="minusArtist4">−</button>
                     <input class="inputArtist" type="number" value="0" id="inputArtist4"/>
                     <button class="plusArtist" id="plusArtist4">+</button>
                     <script>
                         addTicket('minusArtist4', 'inputArtist4', 'plusArtist4')
                     </script>
-                </div>
+                </section>
                 <label class="titleAllAccessDay">All-Access Thursday</label>
                 <label class="priceAllAccessDay">€35,00</label>
-                <div class="amountAllAccessDay">
+                <section class="amountAllAccessDay">
                     <button class="minusAllAccessDay" id="minusAllAccessDay4">−</button>
                     <input class="inputAllAccessday" type="number" value="0" id="inputAllAccessDay4"/>
                     <button class="plusAllAccessDay" id="plusAllAccessDay4">+</button>
                     <script>
                         addTicket('minusAllAccessDay4', 'inputAllAccessDay4', 'plusAllAccessDay4')
                     </script>
-                </div>
+                </section>
                 <label class="titleAllAccessWeekend">All-Access Weekend</label>
                 <label class="priceAllAccessWeekend"> €80,00</label>
-                <div class="amountAllAccessWeekend">
+                <section class="amountAllAccessWeekend">
                     <button class="minusAllAccessWeekend" id="minusAllAccessWeekend4">−</button>
                     <input class="inputAllAccessWeekend" type="number" value="0" id="inputAllAccessWeekend4"/>
                     <button class="plusAllAccessWeekend" id="plusAllAccessWeekend4">+</button>
                     <script>
                         addTicket('minusAllAccessWeekend4', 'inputAllAccessWeekend4', 'plusAllAccessWeekend4')
                     </script>
-                </div>
+                </section>
             </section>
         </section>
         <section class="rightSideTicketBuy4" id="rightSideTicketBuy4">
@@ -396,26 +437,29 @@
             <label class="timeLabel">21:00-22:00</label>
             <label class="priceLabel">€15,00</label>
             <label class="locationLabel">Patronaat</label>
-            <div class="buyButtonTicketRow3">
+            <section class="buyButtonTicketRow3">
                 <a href="javascript:SwapToBuyScreen('leftSideTicket5','rightSideTicket5', 'leftSideTicketBuy5','rightSideTicketBuy5' )">
                     <img src="images/BuyIcon.png">
                     <label class="buyLabel">Buy Now</label>
                 </a>
-            </div>
+            </section>
         </section>
         <section class="leftSideTicketBuy5" id="leftSideTicketBuy5">
-            <div class="CloseAndAddButton">
-                <div class="closeTicketScreenRow3" id="closeTicketScreenRow3">
+            <section class="CloseAndAddButton">
+                <section class="closeTicketScreenRow3" id="closeTicketScreenRow3">
                     <a href="javascript:SwapBackToTicketScreen('leftSideTicket5','rightSideTicket5', 'leftSideTicketBuy5','rightSideTicketBuy5' )">
                         <img src="images/BuyIcon.png">
                         <label class="closeLabel">Back</label>
                     </a>
-                </div>
-                <div class="AddToCartButton">
+                </section>
+                <button class="AddToCartButton" id="AddToCartButton5">
                     <img src="images/ShoppingCart.png">
                     <label>Add to Cart</label>
-                </div>
-            </div>
+                </button>
+                <script>
+                    modal('popupAddedTicket', 'AddToCartButton5', 'closeButton')
+                </script>
+            </section>
             <section class="ticketGridArea">
                 <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
                 <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
@@ -423,34 +467,34 @@
 
                 <label class="titleArtist">Ntjam Rosie</label>
                 <label class="priceArtist">€15,00</label>
-                <div class="amountArtist">
+                <section class="amountArtist">
                     <button class="minusArtist" id="minusArtist5">−</button>
                     <input class="inputArtist" type="number" value="0" id="inputArtist5"/>
                     <button class="plusArtist" id="plusArtist5">+</button>
                     <script>
                         addTicket('minusArtist5', 'inputArtist5', 'plusArtist5')
                     </script>
-                </div>
+                </section>
                 <label class="titleAllAccessDay">All-Access Thursday</label>
                 <label class="priceAllAccessDay">€35,00</label>
-                <div class="amountAllAccessDay">
+                <section class="amountAllAccessDay">
                     <button class="minusAllAccessDay" id="minusAllAccessDay5">−</button>
                     <input class="inputAllAccessday" type="number" value="0" id="inputAllAccessDay5"/>
                     <button class="plusAllAccessDay" id="plusAllAccessDay5">+</button>
                     <script>
                         addTicket('minusAllAccessDay5', 'inputAllAccessDay5', 'plusAllAccessDay5')
                     </script>
-                </div>
+                </section>
                 <label class="titleAllAccessWeekend">All-Access Weekend</label>
                 <label class="priceAllAccessWeekend"> €80,00</label>
-                <div class="amountAllAccessWeekend">
+                <section class="amountAllAccessWeekend">
                     <button class="minusAllAccessWeekend" id="minusAllAccessWeekend5">−</button>
                     <input class="inputAllAccessWeekend" type="number" value="0" id="inputAllAccessWeekend5"/>
                     <button class="plusAllAccessWeekend" id="plusAllAccessWeekend5">+</button>
                     <script>
                         addTicket('minusAllAccessWeekend5', 'inputAllAccessWeekend5', 'plusAllAccessWeekend5')
                     </script>
-                </div>
+                </section>
             </section>
         </section>
         <section class="rightSideTicketBuy5" id="rightSideTicketBuy5">
@@ -476,26 +520,29 @@
             <label class="timeLabel">21:00-22:00</label>
             <label class="priceLabel">€15,00</label>
             <label class="locationLabel">Patronaat</label>
-            <div class="buyButtonTicketRow3">
+            <section class="buyButtonTicketRow3">
                 <a href="javascript:SwapToBuyScreen('leftSideTicket6','rightSideTicket6', 'leftSideTicketBuy6','rightSideTicketBuy6' )">
                     <img src="images/BuyIcon.png">
                     <label class="buyLabel">Buy Now</label>
                 </a>
-            </div>
+            </section>
         </section>
         <section class="leftSideTicketBuy6" id="leftSideTicketBuy6">
-            <div class="CloseAndAddButton">
-                <div class="closeTicketScreenRow3" id="closeTicketScreenRow3">
+            <section class="CloseAndAddButton">
+                <section class="closeTicketScreenRow3" id="closeTicketScreenRow3">
                     <a href="javascript:SwapBackToTicketScreen('leftSideTicket6','rightSideTicket6', 'leftSideTicketBuy6','rightSideTicketBuy6' )">
                         <img src="images/BuyIcon.png">
                         <label class="closeLabel">Back</label>
                     </a>
-                </div>
-                <div class="AddToCartButton">
+                </section>
+                <button class="AddToCartButton" id="AddToCartButton6">
                     <img src="images/ShoppingCart.png">
                     <label>Add to Cart</label>
-                </div>
-            </div>
+                </button>
+                <script>
+                    modal('popupAddedTicket', 'AddToCartButton6', 'closeButton')
+                </script>
+            </section>
             <section class="ticketGridArea">
                 <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
                 <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
@@ -503,34 +550,34 @@
 
                 <label class="titleArtist">Jonna Fraser</label>
                 <label class="priceArtist">€15,00</label>
-                <div class="amountArtist">
+                <section class="amountArtist">
                     <button class="minusArtist" id="minusArtist6">−</button>
                     <input class="inputArtist" type="number" value="0" id="inputArtist6"/>
                     <button class="plusArtist" id="plusArtist6">+</button>
                     <script>
                         addTicket('minusArtist6', 'inputArtist6', 'plusArtist6')
                     </script>
-                </div>
+                </section>
                 <label class="titleAllAccessDay">All-Access Thursday</label>
                 <label class="priceAllAccessDay">€35,00</label>
-                <div class="amountAllAccessDay">
+                <section class="amountAllAccessDay">
                     <button class="minusAllAccessDay" id="minusAllAccessDay6">−</button>
                     <input class="inputAllAccessday" type="number" value="0" id="inputAllAccessDay6"/>
                     <button class="plusAllAccessDay" id="plusAllAccessDay6">+</button>
                     <script>
                         addTicket('minusAllAccessDay6', 'inputAllAccessDay6', 'plusAllAccessDay6')
                     </script>
-                </div>
+                </section>
                 <label class="titleAllAccessWeekend">All-Access Weekend</label>
                 <label class="priceAllAccessWeekend"> €80,00</label>
-                <div class="amountAllAccessWeekend">
+                <section class="amountAllAccessWeekend">
                     <button class="minusAllAccessWeekend" id="minusAllAccessWeekend6">−</button>
                     <input class="inputAllAccessWeekend" type="number" value="0" id="inputAllAccessWeekend6"/>
                     <button class="plusAllAccessWeekend" id="plusAllAccessWeekend6">+</button>
                     <script>
                         addTicket('minusAllAccessWeekend6', 'inputAllAccessWeekend6', 'plusAllAccessWeekend6')
                     </script>
-                </div>
+                </section>
             </section>
         </section>
         <section class="rightSideTicketBuy6" id="rightSideTicketBuy6">
