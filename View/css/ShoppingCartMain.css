@@ -1,0 +1,65 @@
+.MainCart{
+    background-color: darkgray;
+    font-size: 35px;
+    color: black;
+    height: 100px;
+    margin-top: -30px;
+}
+#CartTitle{
+    margin-left: 70px;
+}
+#CartTable{
+    float: left;
+    margin-top: 100px;
+    margin-left: 30px;
+    border-color: black;
+    border: 2px solid #000000;
+    font-size: 20px;
+    text-align: left;
+    margin-bottom: 200px;
+}
+#TableHead{
+    background-color: lightgray;    
+}
+#TabledataCart{
+    text-align: left;
+    padding-right: 50px;
+    padding-bottom: 300px;
+}
+#Tabledata1{
+    text-align: left;
+    padding-right: 50px;
+    padding-bottom: 300px;
+    width: 280px;
+}
+#Tabledata2{
+    text-align: left;
+    padding-bottom: 300px;
+    padding-right: 80px;
+}
+#Tabledata3{
+    text-align: left;
+    padding-right: 80px;
+}
+#Ordertable{
+    float: right;
+    margin-top: 100px;
+    margin-left: 30px;
+    margin-right: 200px;
+    border-color: black;
+    border: 2px solid #000000;
+    font-size: 20px;
+    text-align: left;
+}
+#ProceedButton{
+    float: right;
+    margin-right: 270px;
+    margin-top: 100px;
+    width: 100px;
+}
+#-Button{
+    margin-right: 10px;
+}
+#PlusButton{
+    margin-left: 10px;
+}
