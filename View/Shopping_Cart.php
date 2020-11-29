@@ -25,7 +25,7 @@
     <a href="Jazz_Main.php">Jazz</a>
     <a href="Historic_Main.php">Historic</a>
     <a href="Program_Main.php">Program</a>
-    <!-- <a  class="active" href="Shopping_Cart.php"><img src="images/icon_shoppingcart_active.png"></a> -->
+     <a  class="active" href="Shopping_Cart.php"><img src="images/icon_shoppingcart_active.png"></a>
 </section>
 
 <section class="MainCart">
