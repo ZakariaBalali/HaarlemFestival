@@ -1,38 +1,38 @@
 .FoodImageContainer{
     position: relative;
-    width: 1536px;
     background-color: black;
-    height: 270px;
+    height: 16.875rem;
+    margin-top: 10.5rem;
 }
 .FoodImage{
     opacity: 0.45;
     width: 100%;
-    height: 260px;
+    height: 16.875rem;
 }
 .FoodHeader{
-    font-size: 3em;
+    font-size: 3rem;
     position: absolute;
-    top: -15px;
-    left: 50%;
+    top: -2rem;
+    left: 45%;
 }
 .RestaurantsHeader{
-    font-size: 2.5em;
+    font-size: 2.5rem;
     position: absolute;
-    bottom: -10px;
+    bottom: -0.625rem;
     left: 3%;
 }
 .FoodMainText1{
     position: absolute;
-    top: 85px;
+    top: 5.3125rem;
     left: 24%;
 }
 .ReservationFeeText{
     position: absolute;
-    top: 125px;
-    left: 25.5%;
+    top: 7.8125rem;
+    left: 25%;
 }
 .FoodMainText2{
     position: absolute;
-    top: 110px;
-    left: 44%;
+    top: 6.875rem;
+    left: 40%;
 }

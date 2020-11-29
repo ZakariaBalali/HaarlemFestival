@@ -25,12 +25,12 @@
     <a href="Jazz_Main.php">Jazz</a>
     <a href="Historic_Main.php">Historic</a>
     <a href="Program_Main.php">Program</a>
-    <!-- <a href="Shopping_Cart.php"><img src="images/icon_shoppingcart.png"></a> -->
+    <a href="Shopping_Cart.php"><img src="images/icon_shoppingcart.png"></a>
 </section>
 
 <section class="FoodImageContainer">
     <img class="FoodImage" src="images/foie-gras-and-cranberry.jpg">
-    <h1 class="FoodHeader">Food</h4>
+    <h4 class="FoodHeader">Food</h4>
     <h1 class= "RestaurantsHeader">Restaurants</h1>
     <p class="FoodMainText1">
         On this page we have a selection of Haarlem's finest restaurants. The choice is all yours with different cuisines to choose from. 
