@@ -81,15 +81,57 @@
                 <input type="radio" id="chinese" name="language" value="chinese">Chinese
             </label>
         </form>
-        <section id=programTable>
-        </section>
-        <button id="buyButton">Get your tickets now!</button>
+        <table id=programTable>
+            <tr>
+                <th>Time</th>
+                <th>Language</th>
+                <th>Seats left</th>
+            </tr>
+            <tr>
+                <td>8:00</td>
+                <td>English</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>10:00</td>
+                <td>English</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>12:00</td>
+                <td>English</td>
+                <td>12</td>
+            </tr>
+        </table>
+        <!-- comment-->
+        <form>
+            <button id="buyButton" formaction="#popup">Get your tickets now!</button>
+        </form>
+       <!-- <button id="buyButton" href="#popup">Get your tickets now!</button>-->
+    </section>
+    <section class="popup">
+        <form class=orderTicket>
+        
+        </form>
     </section>
     <section class="venuesBox">
         <section id=venuesInfo>
             <h3>Venues</h3>
             <p>In these historic tours we will come across the following 9 venues.</p>
-            <img src='images/historic/historic_googleMaps_locaties.jpg' alt="Locations of venues which will be visited" id="venuesImage">
+
+            <img src='images/historic/historic_googleMaps_locaties.jpg' alt="Locations of venues which will be visited" id="googleMapsImage">
+        </section>
+        <section id=venuesTekst>
+            <p>1  Church of St. Bavo</p>
+            <p>2  Grote Markt</p>
+            <p>3  De Hallen</p>
+            <p>4  Proveniershof</p>
+            <p>5  Jopenkerk (Break location)</p>
+            <p>6  Waalse Kerk Haarlem</p>
+            <p>7  Molen de Adriaan</p>
+            <p>8  Amsterdamse Poort</p>
+            <p>9  Hof van Bakenes</p>
+            <img src='images/historic/historic_venues.jpg' id="venuesImage">
         </section>
     </section>
 </section>
