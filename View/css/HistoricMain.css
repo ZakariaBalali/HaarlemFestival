@@ -126,9 +126,26 @@ body{
     position: relative;
     cursor: pointer;
 }
+table, th, td {
+    border: 0.1em solid black;
+    width: 25em;
+    text-align: center;
+  }
+
+th{
+    font-weight: bold;
+    border: none;
+}
+#programTable{
+    top: 15em;
+    left: 4em;
+    position: relative;
+    font-size: 1.1em;
+    color:black;
+}
 #buyButton{
-    top: 24em;
-    left: 40em;
+    top: 43em;
+    left: 86em;
     font-size: 1.1em;
     background: url('../images/icon_shoppingcart.png');
     background-repeat: no-repeat;
@@ -139,7 +156,7 @@ body{
     font-weight: bold;
     text-align: right;
     border: none;
-    position: relative;
+    position: absolute;
     cursor: pointer;
     border-radius: 0.4em;
     padding: 1em;
@@ -155,10 +172,53 @@ body{
     padding: 0.5em;
     margin-bottom: .4em;
 }
-#venuesImage{
+#googleMapsImage{
     margin-top: 2em;   
     width: max-content;
     height: max-content;
 }
+#venuesTekst p{
+    left: 46.5em;
+    top: 8em;
+    font-size: 1.1em;
+    color: black;
+    position: relative; 
+    font-weight: bold;
+    max-width: 50%;
+    line-height: 2.5mm;
+    padding: 0.5em;
+    margin-bottom: .4em;
+}
+#venuesImage{
+    position: absolute;
+    top: 67em;
+    margin-left: 72em;   
+    width: max-content;
+    height: max-content;
+}
+.popup{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+.popup:target{
+    visibility: visible;
+    opacity: 1;
+}
+.orderTicket{
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+}
+
 
 
