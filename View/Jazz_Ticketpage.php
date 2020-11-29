@@ -60,8 +60,11 @@
             </section>
             <section class="popup-footer">
                 <button class="closeButton" id="closeButton">Continue Shopping</button>
-                <button onclick="window.location.href='Program_Main.php';" class="programButton">View in Program</button>
-                <button onclick="window.location.href='Shopping_Cart.php';" class="shoppingCartButton">To Shopping cart</button>
+                <button onclick="window.location.href='Program_Main.php';" class="programButton">View in Program
+                </button>
+                <button onclick="window.location.href='Shopping_Cart.php';" class="shoppingCartButton">To Shopping
+                    cart
+                </button>
             </section>
         </section>
     </section>

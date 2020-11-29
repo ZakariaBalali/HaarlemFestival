@@ -475,6 +475,8 @@ body {
     height: 15.875rem;
     background-color: #FC5757;
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 
@@ -484,6 +486,8 @@ body {
     height: 15.875rem;
     background-color: rgba(255, 255, 255, 0.68);
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 .leftSideTicketBuy1 {
@@ -494,6 +498,8 @@ body {
     height: 15.875rem;
     background-color: rgba(255, 255, 255, 1);
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 .rightSideTicketBuy1 {
@@ -504,6 +510,8 @@ body {
     height: 15.875rem;
     background-color: #FC5757;
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 .rightSideTicketBuy1 img {
@@ -519,6 +527,8 @@ body {
     height: 15.875rem;
     background-color: #FC5757;
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 .leftSideTicket2 {
@@ -527,6 +537,8 @@ body {
     height: 15.875rem;
     background-color: rgba(255, 255, 255, 0.68);
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 .leftSideTicketBuy2 {
@@ -537,6 +549,8 @@ body {
     height: 15.875rem;
     background-color: rgba(255, 255, 255, 1);
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 .rightSideTicketBuy2 {
@@ -547,6 +561,8 @@ body {
     height: 15.875rem;
     background-color: #FC5757;
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 .rightSideTicketBuy2 img {
@@ -562,6 +578,8 @@ body {
     height: 15.875rem;
     background-color: #578EFC;
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 .leftSideTicket3 {
@@ -571,6 +589,8 @@ body {
     height: 15.875rem;
     background-color: rgba(255, 255, 255, 0.68);
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 .leftSideTicketBuy3 {
@@ -581,6 +601,8 @@ body {
     height: 15.875rem;
     background-color: rgba(255, 255, 255, 1);
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 .rightSideTicketBuy3 {
@@ -591,6 +613,8 @@ body {
     height: 15.875rem;
     background-color: #578EFC;
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 .rightSideTicketBuy3 img {
@@ -606,6 +630,8 @@ body {
     height: 15.875rem;
     background-color: #578EFC;
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 .leftSideTicket4 {
@@ -614,6 +640,8 @@ body {
     height: 15.875rem;
     background-color: rgba(255, 255, 255, 0.68);
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 .leftSideTicketBuy4 {
@@ -624,6 +652,8 @@ body {
     height: 15.875rem;
     background-color: rgba(255, 255, 255, 1);
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 .rightSideTicketBuy4 {
@@ -634,6 +664,8 @@ body {
     height: 15.875rem;
     background-color: #578EFC;
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 
@@ -650,6 +682,8 @@ body {
     height: 15.875rem;
     background-color: #FF9130;
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 .leftSideTicket5 {
@@ -659,6 +693,8 @@ body {
     height: 15.875rem;
     background-color: rgba(255, 255, 255, 0.68);
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 .leftSideTicketBuy5 {
@@ -669,6 +705,8 @@ body {
     height: 15.875rem;
     background-color: rgba(255, 255, 255, 1);
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 .rightSideTicketBuy5 {
@@ -679,6 +717,8 @@ body {
     height: 15.875rem;
     background-color: #FF9130;
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 .rightSideTicketBuy5 img {
@@ -694,6 +734,8 @@ body {
     height: 15.875rem;
     background-color: #FF9130;
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 .leftSideTicket6 {
@@ -702,6 +744,8 @@ body {
     height: 15.875rem;
     background-color: rgba(255, 255, 255, 0.68);
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 .leftSideTicketBuy6 {
@@ -712,6 +756,8 @@ body {
     height: 15.875rem;
     background-color: rgba(255, 255, 255, 1);
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 .rightSideTicketBuy6 {
@@ -722,6 +768,8 @@ body {
     height: 15.875rem;
     background-color: #FF9130;
     border: #707070 0.0625rem solid;
+    animation-name: animatetop;
+    animation-duration: 1s;
 }
 
 .rightSideTicketBuy6 img {
@@ -729,7 +777,6 @@ body {
     width: 9.1875rem;
     height: 9.5rem;
 }
-
 
 .ticketGridArea {
     display: grid;
@@ -741,7 +788,6 @@ body {
     margin-top: 1rem;
     grid-template-areas: "titleGrid priceGrid amountGrid ." "titleArtist priceArtist amountArtist ." "titleAllAccessDay priceAllAccessDay amountAllAccessDay ." "titleAllAccessWeekend priceAllAccessWeekend amountAllAccessWeekend .";
     color: #000000;
-
 }
 
 .ticketGridArea label {
