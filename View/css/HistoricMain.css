@@ -1,81 +1,79 @@
-body{
+body {
     background-attachment: fixed;
     background-image: url(../images/historic/historic_main_background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 /*
 body:not(.NavigationBar) {
     filter: blur(0.5rem);
     backdrop-filter: blur(0.5rem);
 }*/
 
-.MainContent{
+.MainContent {
     display: grid;
     grid-template-columns: 4em repeat(2, 18em) repeat(3, 18em);
     grid-template-rows: 14em repeat(4, 6em) repeat(5, 6em);
     gap: 3.5em;
-    grid-template-areas:
-        ". . . . . ."
-        ". info info program program program"
-        ". info info program program program"
-        ". info info program program program"
-        ". info info program program program"
-        ". venues venues venues venues venues"
-        ". venues venues venues venues venues"
-        ". venues venues venues venues venues"
-        ". venues venues venues venues venues"
-        ". venues venues venues venues venues"
-        ". . . . . .";
-  }
+    grid-template-areas: ". . . . . ." ". info info program program program" ". info info program program program" ". info info program program program" ". info info program program program" ". venues venues venues venues venues" ". venues venues venues venues venues" ". venues venues venues venues venues" ". venues venues venues venues venues" ". venues venues venues venues venues" ". . . . . .";
+}
 
-.infoBox{
+.infoBox {
     background-color: white;
     border-radius: 1em;
     grid-area: info;
 }
-.programBox{
+
+.programBox {
     background-color: white;
     border-radius: 1em;
     grid-area: program
 }
-.venuesBox{
+
+.venuesBox {
     background-color: white;
     border-radius: 1em;
     grid-area: venues
 }
-.eventName{
+
+.eventName {
     position: absolute;
     font-size: 2em;
     left: 21em;
     color: black;
     top: 5em;
 }
-.infoBox h3, .programBox h3, .venuesBox h3{
+
+.infoBox h3, .programBox h3, .venuesBox h3 {
     font-size: 1.5em;
-    color: black; 
+    color: black;
     font-weight: bold;
 }
-.infoBox p, .programBox p, .venuesBox p{
-    color: black; 
+
+.infoBox p, .programBox p, .venuesBox p {
+    color: black;
     max-width: 70%;
     font-size: medium;
     margin-top: -0.7em;
 }
-.programBox p{
+
+.programBox p {
     max-width: 90%;
 }
 
-.infoBox, .programBox, .venuesBox{
+.infoBox, .programBox, .venuesBox {
     padding-left: 2em;
 }
-#programQuestion{
+
+#programQuestion {
     text-decoration: underline;
     font-weight: bold;
 }
-.dayButton{
+
+.dayButton {
     font-size: 1em;
-    color: black; 
+    color: black;
     text-align: center;
     left: -0.5em;
     transition: 0.3s;
@@ -85,14 +83,16 @@ body:not(.NavigationBar) {
     padding: 0.4em;
     margin-left: 0.5em;
     border: none;
-    width: 8em;    
+    width: 8em;
 }
-.dayButton:hover{
+
+.dayButton:hover {
     background-color: #3e8e41;
     color: white;
-    
+
 }
-.radioButtonLanguage{
+
+.radioButtonLanguage {
     top: 1em;
     font-size: 1em;
     color: black;
@@ -100,23 +100,26 @@ body:not(.NavigationBar) {
     position: relative;
     cursor: pointer;
 }
-table, th, td {
+
+.programTable, td{
     border: 0.1em solid black;
     width: 25em;
     text-align: center;
-  }
+}
 
-th{
+th {
     font-weight: bold;
     border: none;
 }
-#programTable{
+
+#programTable {
     top: 2em;
     position: relative;
     font-size: 1.1em;
-    color:black;
+    color: black;
 }
-#buyButton{
+
+#buyButton {
     top: 43em;
     left: 86em;
     font-size: 1.1em;
@@ -125,7 +128,7 @@ th{
     background-position: 0.5em;
     background-size: 2.5em;
     background-color: yellow;
-    color:black; 
+    color: black;
     font-weight: bold;
     text-align: right;
     border: none;
@@ -133,14 +136,16 @@ th{
     cursor: pointer;
     border-radius: 0.4em;
     padding: 1em;
-    width: 14.3em;   
+    width: 14.3em;
 }
-#googleMapsImage{
-    margin-top: 2em;   
+
+#googleMapsImage {
+    margin-top: 2em;
     width: max-content;
     height: max-content;
 }
-#venuesTekst p{
+
+#venuesTekst p {
     left: 50em;
     bottom: 24em;
     font-weight: bold;
@@ -148,25 +153,27 @@ th{
     position: relative;
 
 }
-#venuesImage{
+
+#venuesImage {
     position: absolute;
     top: 66em;
-    margin-left: 71em;   
+    margin-left: 71em;
     width: max-content;
     height: max-content;
 }
 
-.popupBuyTicket{
+.popupBuyTicket {
     visibility: hidden;
     position: fixed;
     background-color: white;
-    left: 35em;
+    left: 40rem;
     top: 11.2rem;
     z-index: 1;
     border-radius: 2rem;
     border: 0.1em solid black;
 }
-#popupContent{
+
+#popupContent {
     top: 2rem;
     position: relative;
     margin-left: 2em;
@@ -175,24 +182,27 @@ th{
     height: 42em;
     color: black;
 }
-#popupContent h1{
+
+#popupContent h1 {
     text-align: center;
     font-size: 1.5em;
-    color: black; 
+    color: black;
     font-weight: bold;
     margin-top: -0.5em;
-}/*
+}
+
+/*
 .radioButtonPopUp, .radioButtonPopUp input{
     padding-left: 5em;
 }*/
-#warningBox{
+#warningBox {
     background-color: yellow;
     border-radius: 1em;
     width: 32em;
     height: 2.3125em;
 }
 
-#warningsMessage h4{
+#warningsMessage h4 {
     position: relative;
     color: black;
     font-weight: bold;
@@ -200,37 +210,41 @@ th{
     left: 1em;
 
 }
-#warningsMessage p{
+
+#warningsMessage p {
     color: black;
     font-size: 0.8em;
     bottom: 2.9em;
     position: relative;
     left: 16em;
 }
-.selectLanguageText, .selectTicketText, .selectTimeText, .selectDateText{
+
+.selectLanguageText, .selectTicketText, .selectTimeText, .selectDateText {
     font-size: 1.1em;
     font-weight: bold;
 }
-#SelectDate{
+
+#SelectDate {
     left: 6.55em;
     font-size: 1.1em;
     position: relative;
-} 
+}
 
-#SelectTime{
+#SelectTime {
     left: 6em;
     font-size: 1.1em;
     position: relative;
 }
 
-.radioButtonPopUp{
+.radioButtonPopUp {
     text-align: center;
     left: 12em;
     font-size: 1.1em;
     position: relative;
 }
-#normalTicket{
-    background-color:#D5D5D5;
+
+#normalTicket {
+    background-color: #D5D5D5;
     position: relative;
     color: black;
     bottom: 2.5em;
@@ -239,7 +253,7 @@ th{
     height: 3.5em;
 }
 
-#normalTicket h3{
+#normalTicket h3 {
     font-size: 1.1em;
     font-weight: bold;
     position: relative;
@@ -247,24 +261,26 @@ th{
     top: 1em;
     text-align: left;
 }
-#normalTicket p{
+
+#normalTicket p {
     font-size: 1.1em;
     position: relative;
     text-align: center;
     bottom: 1.15em;
-    left:2em;
+    left: 2em;
 }
-#normalTicketAmount{
+
+#normalTicketAmount {
     font-size: 1.1em;
     position: relative;
     text-align: right;
     left: 20em;
     bottom: 3.5em;
-    
+
 }
 
-#familyTicket{
-    background-color:#f7f5f5;
+#familyTicket {
+    background-color: #f7f5f5;
     position: relative;
     color: black;
     bottom: 3.5em;
@@ -273,7 +289,7 @@ th{
     height: 3.5em;
 }
 
-#familyTicket h3{
+#familyTicket h3 {
     font-size: 1.1em;
     font-weight: bold;
     position: relative;
@@ -281,45 +297,51 @@ th{
     top: 0.5em;
     text-align: left;
 }
-#familyTicket p{
+
+#familyTicket p {
     font-size: 1.1em;
     position: relative;
     text-align: center;
     bottom: 1.15em;
-    left:2em;
+    left: 2em;
 }
-#familyTicketAmount{
+
+#familyTicketAmount {
     font-size: 1.1em;
     position: relative;
     text-align: right;
     left: 20em;
     bottom: 3.5em;
 }
-#familyTicket h6{
+
+#familyTicket h6 {
     position: relative;
     bottom: 9em;
     left: 3.2em;
 }
-#discountImage{
+
+#discountImage {
     position: absolute;
     bottom: 0.95em;
-    left: 12.5em; 
+    left: 12.5em;
     width: 2.3em;
     height: 1.5em;
 }
-#familyTicket h4{
+
+#familyTicket h4 {
     position: relative;
     font-size: 1.1em;
     bottom: 5em;
 }
 
-#totalPriceTickets{
+#totalPriceTickets {
     position: relative;
     font-size: 1.1em;
     bottom: 7.5em;
     left: 24.5em;
 }
-#addToCartButton{
+
+#addToCartButton {
     position: absolute;
     font-size: 1em;
     width: 11em;
@@ -328,12 +350,13 @@ th{
     bottom: 4em;
     font-weight: bold;
     cursor: pointer;
-    color:white;
-    background-color:#187FF5;
+    color: white;
+    background-color: #187FF5;
     border: 0.01em solid black;
     border-radius: 0.2em;
 }
-#cancelButton{
+
+#cancelButton {
     position: absolute;
     font-size: 1em;
     width: 11em;
@@ -341,10 +364,117 @@ th{
     bottom: 4em;
     font-weight: bold;
     cursor: pointer;
-    color:black;
+    color: black;
     background-color: white;
     border: 0.01em solid black;
     border-radius: 0.2em;
+}
+
+
+.popupAddedTicket {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 10rem;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(0.5rem);
+}
+
+.popup-content {
+    top: 2rem;
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 0.1875rem solid #606060;
+    width: 69.25rem;
+    height: 46.8125rem;
+    box-shadow: 0rem 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2), 0 0.375rem 1.25rem 0 rgba(0, 0, 0, 0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    color: black;
+    display: grid;
+}
+
+.popup-content img {
+    width: 6.375rem;
+    height: 6.0625rem;
+    float: left;
+    margin-top: 0.4rem;
+    margin-left: 15rem;
+    margin-right: 1rem;
+}
+
+.popup-content h1 {
+    color: black;
+    float: left;
+    line-height: 0.2rem;
+    font-family: Segoe UI;
+    font-size: 1.9375rem;
+    font-weight: bold;
+}
+
+.popup-body {
+    margin-left: 14rem;
+}
+
+.addedTickets tr, .addedTickets th {
+    font-family: "Segoe UI";
+    font-size: 1.5rem;
+    text-align: left;
+    padding-right: 2rem;
+}
+
+.tableContent th {
+    font-weight: normal;
+    text-align: left;
+}
+
+.popup-footer {
+    margin-top: 20rem;
+}
+
+.popup-footer button {
+    width: 17.375rem;
+    height: 4.6875rem;
+    margin-left: 2rem;
+    color: black;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    font-size: 1.5625rem;
+    border: 0.0125rem #707070 solid;
+    border-radius: 0.875rem;
+    cursor: pointer;
+}
+
+.closeButton {
+    background-color: #C7C7C7;
+    margin-right: 8rem;
+}
+
+.programButton {
+    background-color: #A5CD38;
+}
+
+.shoppingCartButton {
+    background-color: #A5CD38;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {
+        top: -18.75rem;
+        opacity: 0
+    }
+    to {
+        top: 10rem;
+        opacity: 1
+    }
 }
 
 

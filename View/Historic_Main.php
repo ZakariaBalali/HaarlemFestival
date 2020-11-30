@@ -8,6 +8,7 @@
     <link href="css/HistoricMain.css" rel="stylesheet" type="text/css">
     <link href="css/Banner.css" rel="stylesheet" type="text/css">
     <script src="js/HistoricScript.js"></script>
+    <script src="js/MainScript.js"></script>
 </head>
 <body>
 <section class="Banner">
@@ -30,6 +31,43 @@
 </section>
 
 <section class="MainContent">
+
+    <section id="popupAddedTicket" class="popupAddedTicket">
+        <section class="popup-content">
+
+            <section class="popup-header">
+                <img src="images/icon_successfull.png">
+                <h1>Item(s) added to Shopping cart</h1>
+            </section>
+            <section class="popup-body">
+                <table class="addedTickets">
+                    <tr>
+                        <th>Amount</th>
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>Timeslot</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr class="tableContent">
+                        <th>1x</th>
+                        <th>Historic English</th>
+                        <th>Sat Jul 28th</th>
+                        <th>13:00-15:00</th>
+                        <th>€17,50</th>
+                    </tr>
+                </table>
+            </section>
+            <section class="popup-footer">
+                <button class="closeButton" id="closeButton">Continue Shopping</button>
+                <button onclick="window.location.href='Program_Main.php';" class="programButton">View in Program
+                </button>
+                <button onclick="window.location.href='Shopping_Cart.php';" class="shoppingCartButton">To Shopping
+                    cart
+                </button>
+            </section>
+        </section>
+    </section>
+
     <section class=eventName>
         <h2>Haarlem Historic tour</h2>
     </section>
@@ -76,7 +114,7 @@
                 <input type="radio" id="chinese" name="language" value="chinese">Chinese
             </label>
         </form>
-        <table id=programTable>
+        <table class="programTable" id=programTable>
             <tr>
                 <th>Time</th>
                 <th>Language</th>
@@ -98,12 +136,12 @@
                 <td>12</td>
             </tr>
         </table>
-        <button id="buyButton" onclick="showPopUp()">Get your tickets now!</button>
+        <button id="buyButton" onclick="showPopUp('popupBuyTicket')">Get your tickets now!</button>
     </section>
     <section id="popupBuyTicket" class="popupBuyTicket">
         <section id="popupContent">
             <h1>Order your tickets for the historic event</h1>
-            <form class=orderTicket method="post">
+            <section class=orderTicket>
                 <label class="selectDateText" for="selectDate">Select day:</label>
                 <select id="SelectDate" name="selectDate">
                     <option value="" disabled selected>Select a day</option>
@@ -167,11 +205,14 @@
                             <h4>Total</h4>
                             <p3 id="totalPriceTickets">€0,00</p3>
                         </section>
-                        <button id="cancelButton" onclick="closePopUp()">Cancel</button>
-                        <button id="addToCartButton" onclick="">Add to cart</button>
+                        <button id="cancelButton" onclick="closePopUp('popupBuyTicket')">Cancel</button>
+                        <button id="addToCartButton" onclick="closePopUp('popupBuyTicket')">Add to cart</button>
+                        <script>
+                            modal('popupAddedTicket', 'addToCartButton', 'closeButton')
+                        </script>
                     </section>
                 </section>
-            </form>
+            </section>
         </section>
     </section>
     <section class="venuesBox">
