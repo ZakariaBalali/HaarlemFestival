@@ -57,6 +57,7 @@
     margin-left: 3.125rem;
     width: 15.625rem;
     height: 15.625rem;
+    object-fit: cover;
 }
 #Rest1Header{
     color: black;
