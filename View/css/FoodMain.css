@@ -22,17 +22,108 @@
     left: 3%;
 }
 .FoodMainText1{
+    display: flex;
     position: absolute;
-    top: 5.3125rem;
+    top: 6.25rem;
     left: 24%;
 }
-.ReservationFeeText{
+.FoodMainText2{
+    display: flex;
     position: absolute;
     top: 7.8125rem;
     left: 25%;
 }
-.FoodMainText2{
-    position: absolute;
-    top: 6.875rem;
-    left: 40%;
+
+.Restaurants{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 10px;
+    margin-bottom: 100px;
+}    
+.Rest1 { grid-area: 1 / 1 / 3 / 4; }
+.Rest2 { grid-area: 1 / 4 / 3 / 7; }
+.Rest3 { grid-area: 3 / 1 / 5 / 4; }
+.Rest4 { grid-area: 3 / 4 / 5 / 7; }
+.Rest5 { grid-area: 5 / 1 / 7 / 4; }
+.Rest6 { grid-area: 5 / 4 / 7 / 7; }
+.Rest7 { grid-area: 7 / 1 / 9 / 4; }
+.Rest8 { grid-area: 7 / 4 / 9 / 7; }
+
+#MrAndMrs{
+    float: left;
+    margin-top: 40px;
+    margin-left: 50px;
+    width: 250px;
+    height: 250px;
+}
+#Rest1Header{
+    color: black;
+    margin-top: 37px;
+    margin-left: 320px;
+}
+#Rest1Cuisine{
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    margin-top: -30px;
+    margin-left: 720px;
+}
+#Rest1Text{
+    color: black;
+    margin-top: 40px;
+    margin-left: 320px;
+    margin-right: 240px;
+}
+#Stars4{
+    float: right;
+    background: transparent;
+    width: 150px;
+    height: 30px;
+    margin-right: 40px;
+    margin-top: -50px;
+}
+#Rest1Price{
+    float: left;
+    color: black;
+    font-size: 22px;
+    margin-left: 20px;
+    margin-top: 60px;
+
+}
+#ReserveButton{
+    float: right;
+    border-radius: 20px;
+    background-color: crimson;
+    color: white;
+    padding: 13px;
+    font-size: 17px;
+    margin-top: 25px;
+    margin-right: 28px;
+}
+#Stars3{
+    float: right;
+    background: transparent;
+    width: 110px;
+    height: 30px;
+    margin-right: 58px;
+    margin-top: -70px;
+}
+#Rest2Price{
+    float: left;
+    color: black;
+    font-size: 22px;
+    margin-left: 20px;
+    margin-top: 47px;
+}
+#ReserveButton2{
+    float: right;
+    border-radius: 20px;
+    background-color: crimson;
+    color: white;
+    padding: 13px;
+    font-size: 17px;
+    margin-top: 5px;
+    margin-right: 28px;
 }
