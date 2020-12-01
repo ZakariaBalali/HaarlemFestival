@@ -184,8 +184,51 @@
     object-fit: cover;
 
 }
-
-.buyTicketBtn {
+.buyButtonTicketRow1{
+    text-align: center;
+    height: 3.125rem;
+    width: 10.9375rem;
+    margin-left: 3.4375rem;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: segoe ui;
+    background-color: #0D7EFF;
+    color: whitesmoke;
+}
+.buyTicket1Btn {
+    text-align: center;
+    height: 3.125rem;
+    width: 10.9375rem;
+    margin-left: 3.4375rem;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: segoe ui;
+    background-color: #0D7EFF;
+    color: whitesmoke;
+}
+.buyTicket2Btn {
+    text-align: center;
+    height: 3.125rem;
+    width: 10.9375rem;
+    margin-left: 3.4375rem;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: segoe ui;
+    background-color: #0D7EFF;
+    color: whitesmoke;
+}
+.buyTicket3Btn {
+    text-align: center;
+    height: 3.125rem;
+    width: 10.9375rem;
+    margin-left: 3.4375rem;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: segoe ui;
+    background-color: #0D7EFF;
+    color: whitesmoke;
+}
+.buyTicket4Btn {
     text-align: center;
     height: 3.125rem;
     width: 10.9375rem;
@@ -248,7 +291,29 @@
     color: black;
     height: 18.75rem;
 }
-
+.leftSideTicketBuy1 {
+    display: none;
+    grid-area: leftSideTicket1;
+    margin-left: 11.5rem;
+    width: 43.6875rem;
+    height: 15.875rem;
+    background-color: rgba(255, 255, 255, 1);
+    border: #707070 0.0625rem solid;
+}
+.rightSideTicketBuy1 {
+    display: none;
+    margin-bottom: 3.125rem;
+    grid-area: leftSideTicket1;
+    width: 11.5rem;
+    height: 15.875rem;
+    background-color: #FC5757;
+    border: #707070 0.0625rem solid;
+}
+.rightSideTicketBuy1 img {
+    margin-top: 1.2rem;
+    width: 9.1875rem;
+    height: 9.5rem;
+}
  
 
 
