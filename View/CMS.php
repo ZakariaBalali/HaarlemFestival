@@ -22,8 +22,6 @@
     </ul>
 </section>
 
-<h1>Welcome Daan de Jong</h1>
-
 <section class="workSpace">
     <h1 id="welcome">Welcome Daan de Jong</h1>
 
