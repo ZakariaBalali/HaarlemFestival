@@ -90,7 +90,7 @@
             </p>
             <img id="Stars3" src="images/3stars.png">
             <strong id="Rest2Price">Price: &euro;35</strong>
-            <button id="ReserveButton">Make Reservation</button>
+            <button id="ReserveButton2">Make Reservation</button>
         </section>
 
         <section class="Rest5">
@@ -113,8 +113,8 @@
                 Known for good food, perfect coffee and staff who provide excellent service with passion and pleasure. Visit Cafe Brinkman for a meal you won't forget.
             </p>
             <img id="Stars3" src="images/3stars.png">
-            <strong id="Rest1Price">Price: &euro;35</strong>
-            <button id="ReserveButton">Make Reservation</button>
+            <strong id="Rest2Price">Price: &euro;35</strong>
+            <button id="ReserveButton2">Make Reservation</button>
         </section>
 
         <section class="Rest7">
