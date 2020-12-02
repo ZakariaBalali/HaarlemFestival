@@ -1,3 +1,6 @@
+<?php
+require_once '../Logic/JazzLogic.php';
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -87,510 +90,110 @@
             <section class="sundayButton" id="sundayButton"><a id="saturdayButtonLink" href="#">Sunday</a></section>
         </section>
     </section>
-    <section class="tickets" id="tickets">
-        <section class="leftSideTicket1" id="leftSideTicket1">
-            <img src="images/GumboKings1.jpg">
-            <h1>Gumbo Kings</h1>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <p>Morbi semper hendrerit ex eu semper. Sed vitae lectus in nibh facilisis vestibulum at non est.
-                Suspendisse feugiat, odio eget consectetur varius, augue mauris sodales ipsum, sed ultrices mi ipsum
-                eu
-                sem.</p>
-        </section>
-        <section class="rightSideTicket1" id="rightSideTicket1">
-            <label class="dayLabel">Thu 28 Jul</label>
-            <label class="timeLabel">18:00-19:00</label>
-            <label class="priceLabel">€15,00</label>
-            <label class="locationLabel">Patronaat</label>
-            <section class="buyButtonTicket1" >
-                <a href="javascript:SwapToBuyScreen('leftSideTicket1','rightSideTicket1', 'leftSideTicketBuy1','rightSideTicketBuy1' )">
-                    <img src="images/BuyIcon.png">
-                    <label class="buyLabel">Buy Now</label>
-                </a>
+    <section class="ticketsThursday" id="tickets">
+        <?php
+        $JazzEvents = [];
+        $jazzLogic = new JazzLogic();
+        $JazzEvents = (array)$jazzLogic->GetAllJazzEvents();
+        $i = 1;
+        ?>
+
+        <?php
+
+
+        foreach ($JazzEvents as $jazz) {
+
+            ?>
+
+            <section class="leftSideTicket<?php echo $i ?>" id="leftSideTicket<?php echo $i ?>">
+                <img src="images/<?php echo $jazz->getImage() ?>.jpg">
+                <h1><?php echo $jazz->getBandName() ?></h1>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p><?php echo $jazz->getDescription() ?></p>
             </section>
-        </section>
-        <section class="leftSideTicketBuy1" id="leftSideTicketBuy1">
-            <section class="CloseAndAddButton">
-                <section class="closeTicketScreenTicket1" id="closeTicketScreenTicket1">
-                    <a href="javascript:SwapBackToTicketScreen('leftSideTicket1','rightSideTicket1', 'leftSideTicketBuy1','rightSideTicketBuy1' )">
+            <section class="rightSideTicket<?php echo $i ?>" id="rightSideTicket<?php echo $i ?>">
+                <label class="dayLabel">Thu 26 Jul</label>
+                <label class="timeLabel"><?php echo $timeFormat = date('H:i', strtotime($jazz->getEvent()->getStartTime())); ?>
+                    -<?php echo $timeFormat = date('H:i', strtotime($jazz->getEvent()->getEndTime())); ?></label>
+                <label class="priceLabel">€<?php echo number_format((float)$jazz->getEvent()->getPrice(), 2, ',', ''); ?></label>
+                <label class="locationLabel"><?php echo $jazz->getLocation() ?></label>
+                <section class="buyButtonTicket<?php echo $i ?>">
+                    <a href="javascript:SwapToBuyScreen('leftSideTicket<?php echo $i ?>','rightSideTicket<?php echo $i ?>', 'leftSideTicketBuy<?php echo $i ?>','rightSideTicketBuy<?php echo $i ?>' )">
                         <img src="images/BuyIcon.png">
-                        <label class="closeLabel">Back</label>
+                        <label class="buyLabel">Buy Now</label>
                     </a>
                 </section>
-                <button class="AddToCartButton" id="AddToCartButton1">
-                    <img src="images/ShoppingCart.png">
-                    <label>Add to Cart</label>
-                </button>
-                <script>
-                    modal('popupAddedTicket', 'AddToCartButton1', 'closeButton')
-                </script>
             </section>
-            <section class="ticketGridArea">
-                <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
-                <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
-                <label style="font-weight: bold; font-size: 1.4375rem" class="amountGrid">Amount</label>
-                <label class="titleArtist">Gare du Nord Saturday</label>
-                <label class="priceArtist">€15,00</label>
-                <section class="amountArtist">
-                    <button class="minusArtist" id="minusArtist1">−</button>
-                    <input class="inputArtist" type="number" value="0" id="inputArtist1"/>
-                    <button class="plusArtist" id="plusArtist1">+</button>
+            <section class="leftSideTicketBuy<?php echo $i ?>" id="leftSideTicketBuy<?php echo $i ?>">
+                <section class="CloseAndAddButton">
+                    <section class="closeTicketScreenTicket<?php echo $i ?>"
+                             id="closeTicketScreenTicket<?php echo $i ?>">
+                        <a href="javascript:SwapBackToTicketScreen('leftSideTicket<?php echo $i ?>','rightSideTicket<?php echo $i ?>', 'leftSideTicketBuy<?php echo $i ?>','rightSideTicketBuy<?php echo $i ?>' )">
+                            <img src="images/BuyIcon.png">
+                            <label class="closeLabel">Back</label>
+                        </a>
+                    </section>
+                    <button class="AddToCartButton" id="AddToCartButton<?php echo $i ?>">
+                        <img src="images/ShoppingCart.png">
+                        <label>Add to Cart</label>
+                    </button>
                     <script>
-                        addTicket('minusArtist1', 'inputArtist1', 'plusArtist1')
+                        modal('popupAddedTicket', 'AddToCartButton<?php echo $i?>', 'closeButton')
                     </script>
                 </section>
-                <label class="titleAllAccessDay">All-Access Thursday</label>
-                <label class="priceAllAccessDay">€35,00</label>
-                <section class="amountAllAccessDay">
-                    <button class="minusAllAccessDay" id="minusAllAccessDay1">−</button>
-                    <input class="inputAllAccessday" type="number" value="0" id="inputAllAccessDay1"/>
-                    <button class="plusAllAccessDay" id="plusAllAccessDay1">+</button>
-                    <script>
-                        addTicket('minusAllAccessDay1', 'inputAllAccessDay1', 'plusAllAccessDay1')
-                    </script>
-                </section>
-                <label class="titleAllAccessWeekend">All-Access Weekend</label>
-                <label class="priceAllAccessWeekend"> €80,00</label>
-                <section class="amountAllAccessWeekend">
-                    <button class="minusAllAccessWeekend" id="minusAllAccessWeekend1">−</button>
-                    <input class="inputAllAccessWeekend" type="number" value="0" id="inputAllAccessWeekend1"/>
-                    <button class="plusAllAccessWeekend" id="plusAllAccessWeekend1">+</button>
-                    <script>
-                        addTicket('minusAllAccessWeekend1', 'inputAllAccessWeekend1', 'plusAllAccessWeekend1')
-                    </script>
-                </section>
+                <section class="ticketGridArea">
+                    <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
+                    <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
+                    <label style="font-weight: bold; font-size: 1.4375rem" class="amountGrid">Amount</label>
+                    <label class="titleArtist"><?php echo $jazz->getBandName();?></label>
+                    <label class="priceArtist">€<?php echo number_format((float)$jazz->getEvent()->getPrice(), 2, ',', ''); ?></label>
+                    <section class="amountArtist">
+                        <button class="minusArtist" id="minusArtist<?php echo $i ?>">−</button>
+                        <input class="inputArtist" type="number" value="0" id="inputArtist<?php echo $i ?>"/>
+                        <button class="plusArtist" id="plusArtist<?php echo $i ?>">+</button>
+                        <script>
+                            addTicket('minusArtist<?php echo $i?>', 'inputArtist<?php echo $i?>', 'plusArtist<?php echo $i?>')
+                        </script>
+                    </section>
+                    <label class="titleAllAccessDay">All-Access Thursday</label>
+                    <label class="priceAllAccessDay">€35,00</label>
+                    <section class="amountAllAccessDay">
+                        <button class="minusAllAccessDay" id="minusAllAccessDay<?php echo $i ?>">−</button>
+                        <input class="inputAllAccessday" type="number" value="0"
+                               id="inputAllAccessDay<?php echo $i ?>"/>
+                        <button class="plusAllAccessDay" id="plusAllAccessDay<?php echo $i ?>">+</button>
+                        <script>
+                            addTicket('minusAllAccessDay<?php echo $i?>', 'inputAllAccessDay<?php echo $i?>', 'plusAllAccessDay<?php echo $i?>')
+                        </script>
+                    </section>
+                    <label class="titleAllAccessWeekend">All-Access Weekend</label>
+                    <label class="priceAllAccessWeekend"> €80,00</label>
+                    <section class="amountAllAccessWeekend">
+                        <button class="minusAllAccessWeekend" id="minusAllAccessWeekend<?php echo $i ?>">−</button>
+                        <input class="inputAllAccessWeekend" type="number" value="0"
+                               id="inputAllAccessWeekend<?php echo $i ?>"/>
+                        <button class="plusAllAccessWeekend" id="plusAllAccessWeekend<?php echo $i ?>">+</button>
+                        <script>
+                            addTicket('minusAllAccessWeekend<?php echo $i?>', 'inputAllAccessWeekend<?php echo $i?>', 'plusAllAccessWeekend<?php echo $i?>')
+                        </script>
+                    </section>
 
+                </section>
+            </section>
+            <section class="rightSideTicketBuy<?php echo $i ?>" id="rightSideTicketBuy<?php echo $i ?>">
+                <label class="artistLabel"><?php echo $jazz->getBandName(); ?></label>
+                <label class="timeLabelBuy"><?php echo $timeFormat = date('H:i', strtotime($jazz->getEvent()->getStartTime())); ?>
+                    -<?php echo $timeFormat = date('H:i', strtotime($jazz->getEvent()->getEndTime())); ?></label>
+                <label class="locationLabelBuy"><?php echo $jazz->getLocation(); ?></label>
+                <img src="images/<?php echo $jazz->getImage(); ?>.jpg">
             </section>
 
-        </section>
-        <section class="rightSideTicketBuy1" id="rightSideTicketBuy1">
-            <label class="artistLabel">Gumbo Kings</label>
-            <label class="timeLabelBuy">18:00-19:00</label>
-            <label class="locationLabelBuy">Location: Patronaat</label>
-            <img src="images/GumboKings1.jpg">
-        </section>
-
-
-        <section class="leftSideTicket2" id="leftSideTicket2">
-            <img src="images/WickedJazzSounds1.jpg">
-            <h1>Wicked Jazz Sounds</h1>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <p>Suspendisse egestas, lorem efficitur lobortis pulvinar, purus mi maximus risus, nec ullamcorper nulla
-                lacus at dolor.</p>
-        </section>
-        <section class="rightSideTicket2" id="rightSideTicket2">
-            <label class="dayLabel">Thu 28 Jul</label>
-            <label class="timeLabel">18:00-19:00</label>
-            <label class="priceLabel">€15,00</label>
-            <label class="locationLabel">Patronaat</label>
-            <section class="buyButtonTicket2">
-                <a href="javascript:SwapToBuyScreen('leftSideTicket2','rightSideTicket2', 'leftSideTicketBuy2','rightSideTicketBuy2' )">
-                    <img src="images/BuyIcon.png">
-                    <label class="buyLabel">Buy Now</label>
-                </a>
-            </section>
-        </section>
-        <section class="leftSideTicketBuy2" id="leftSideTicketBuy2">
-            <section class="CloseAndAddButton">
-                <section class="closeTicketScreenTicket2" id="closeTicketScreenTicket2">
-                    <a href="javascript:SwapBackToTicketScreen('leftSideTicket2','rightSideTicket2', 'leftSideTicketBuy2','rightSideTicketBuy2' )">
-                        <img src="images/BuyIcon.png">
-                        <label class="closeLabel">Back</label>
-                    </a>
-                </section>
-                <button class="AddToCartButton" id="AddToCartButton2">
-                    <img src="images/ShoppingCart.png">
-                    <label>Add to Cart</label>
-                </button>
-                <script>
-                    modal('popupAddedTicket', 'AddToCartButton2', 'closeButton')
-                </script>
-            </section>
-            <section class="ticketGridArea">
-                <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
-                <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
-                <label style="font-weight: bold; font-size: 1.4375rem" class="amountGrid">Amount</label>
-
-                <label class="titleArtist">Wicked Jazz Sounds Saturday</label>
-                <label class="priceArtist">€15,00</label>
-                <section class="amountArtist">
-                    <button class="minusArtist" id="minusArtist2">−</button>
-                    <input class="inputArtist" type="number" value="0" id="inputArtist2"/>
-                    <button class="plusArtist" id="plusArtist2">+</button>
-                    <script>
-                        addTicket('minusArtist2', 'inputArtist2', 'plusArtist2')
-                    </script>
-                </section>
-                <label class="titleAllAccessDay">All-Access Thursday</label>
-                <label class="priceAllAccessDay">€35,00</label>
-                <section class="amountAllAccessDay">
-                    <button class="minusAllAccessDay" id="minusAllAccessDay2">−</button>
-                    <input class="inputAllAccessday" type="number" value="0" id="inputAllAccessDay2"/>
-                    <button class="plusAllAccessDay" id="plusAllAccessDay2">+</button>
-                    <script>
-                        addTicket('minusAllAccessDay2', 'inputAllAccessDay2', 'plusAllAccessDay2')
-                    </script>
-                </section>
-                <label class="titleAllAccessWeekend">All-Access Weekend</label>
-                <label class="priceAllAccessWeekend"> €80,00</label>
-                <section class="amountAllAccessWeekend">
-                    <button class="minusAllAccessWeekend" id="minusAllAccessWeekend2">−</button>
-                    <input class="inputAllAccessWeekend" type="number" value="0" id="inputAllAccessWeekend2"/>
-                    <button class="plusAllAccessWeekend" id="plusAllAccessWeekend2">+</button>
-                    <script>
-                        addTicket('minusAllAccessWeekend2', 'inputAllAccessWeekend2', 'plusAllAccessWeekend2')
-                    </script>
-                </section>
-            </section>
-        </section>
-        <section class="rightSideTicketBuy2" id="rightSideTicketBuy2">
-            <label class="timeLabelBuy">Wicked Jazz Sounds</label>
-            <label class="timeLabelBuy">18:00-19:00</label>
-            <label class="locationLabelBuy">Location: Patronaat</label>
-            <img src="images/WickedJazzSounds1.jpg">
-        </section>
-        <section class="leftSideTicket3" id="leftSideTicket3">
-            <img src="images/Evolve1.jpg">
-            <h1>Evolve</h1>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <p>Proin pulvinar tellus sed lacus interdum porttitor. Donec finibus neque sed dignissim tempor. Vivamus
-                tincidunt felis in nunc consectetur viverra. Praesent egestas semper auctor. Cras fringilla pharetra mi,
-                in pulvinar erat venenatis a. Nullam rutrum mollis lacinia.</p>
-        </section>
-        <section class="rightSideTicket3" id="rightSideTicket3">
-            <label class="dayLabel">Thu 28 Jul</label>
-            <label class="timeLabel">19:30-20:30</label>
-            <label class="priceLabel">€15,00</label>
-            <label class="locationLabel">Patronaat</label>
-            <section class="buyButtonTicket3">
-                <a href="javascript:SwapToBuyScreen('leftSideTicket3','rightSideTicket3', 'leftSideTicketBuy3','rightSideTicketBuy3' )">
-                    <img src="images/BuyIcon.png">
-                    <label class="buyLabel">Buy Now</label>
-                </a>
-            </section>
-        </section>
-        <section class="leftSideTicketBuy3" id="leftSideTicketBuy3">
-            <section class="CloseAndAddButton">
-                <section class="closeTicketScreenTicket3" id="closeTicketScreenTicket3">
-                    <a href="javascript:SwapBackToTicketScreen('leftSideTicket3','rightSideTicket3', 'leftSideTicketBuy3','rightSideTicketBuy3' )">
-                        <img src="images/BuyIcon.png">
-                        <label class="closeLabel">Back</label>
-                    </a>
-                </section>
-                <button class="AddToCartButton" id="AddToCartButton3">
-                    <img src="images/ShoppingCart.png">
-                    <label>Add to Cart</label>
-                </button>
-                <script>
-                    modal('popupAddedTicket', 'AddToCartButton3', 'closeButton')
-                </script>
-            </section>
-            <section class="ticketGridArea">
-                <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
-                <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
-                <label style="font-weight: bold; font-size: 1.4375rem" class="amountGrid">Amount</label>
-
-                <label class="titleArtist">Evolve</label>
-                <label class="priceArtist">€15,00</label>
-                <section class="amountArtist">
-                    <button class="minusArtist" id="minusArtist3">−</button>
-                    <input class="inputArtist" type="number" value="0" id="inputArtist3"/>
-                    <button class="plusArtist" id="plusArtist3">+</button>
-                    <script>
-                        addTicket('minusArtist3', 'inputArtist3', 'plusArtist3')
-                    </script>
-                </section>
-                <label class="titleAllAccessDay">All-Access Thursday</label>
-                <label class="priceAllAccessDay">€35,00</label>
-                <section class="amountAllAccessDay">
-                    <button class="minusAllAccessDay" id="minusAllAccessDay3">−</button>
-                    <input class="inputAllAccessday" type="number" value="0" id="inputAllAccessDay3"/>
-                    <button class="plusAllAccessDay" id="plusAllAccessDay3">+</button>
-                    <script>
-                        addTicket('minusAllAccessDay3', 'inputAllAccessDay3', 'plusAllAccessDay3')
-                    </script>
-                </section>
-                <label class="titleAllAccessWeekend">All-Access Weekend</label>
-                <label class="priceAllAccessWeekend"> €80,00</label>
-                <section class="amountAllAccessWeekend">
-                    <button class="minusAllAccessWeekend" id="minusAllAccessWeekend3">−</button>
-                    <input class="inputAllAccessWeekend" type="number" value="0" id="inputAllAccessWeekend3"/>
-                    <button class="plusAllAccessWeekend" id="plusAllAccessWeekend3">+</button>
-                    <script>
-                        addTicket('minusAllAccessWeekend3', 'inputAllAccessWeekend3', 'plusAllAccessWeekend3')
-                    </script>
-                </section>
-            </section>
-        </section>
-        <section class="rightSideTicketBuy3" id="rightSideTicketBuy3">
-            <label class="artistLabel">Evolve</label>
-            <label class="timeLabelBuy">19:30-20:30</label>
-            <label class="locationLabelBuy">Location: Patronaat</label>
-            <img src="images/Evolve1.jpg">
-        </section>
-        <section class="leftSideTicket4" id="leftSideTicket4">
-            <img src="images/TomThomsonAssemble1.jpg">
-            <h1>Tom Thomson Assemble</h1>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <p>Proin pulvinar tellus sed lacus interdum porttitor. Donec finibus neque sed dignissim tempor. Vivamus
-                tincidunt felis in nunc consectetur viverra. Praesent egestas semper auctor. Cras fringilla pharetra mi,
-                in pulvinar erat venenatis a. Nullam rutrum mollis lacinia.</p>
-        </section>
-        <section class="rightSideTicket4" id="rightSideTicket4">
-            <label class="dayLabel">Thu 28 Jul</label>
-            <label class="timeLabel">19:30-20:30</label>
-            <label class="priceLabel">€15,00</label>
-            <label class="locationLabel">Patronaat</label>
-            <section class="buyButtonTicket4">
-                <a href="javascript:SwapToBuyScreen('leftSideTicket4','rightSideTicket4', 'leftSideTicketBuy4','rightSideTicketBuy4' )">
-                    <img src="images/BuyIcon.png">
-                    <label class="buyLabel">Buy Now</label>
-                </a>
-            </section>
-        </section>
-        <section class="leftSideTicketBuy4" id="leftSideTicketBuy4">
-            <section class="CloseAndAddButton">
-                <section class="closeTicketScreenTicket4" id="closeTicketScreenTicket4">
-                    <a href="javascript:SwapBackToTicketScreen('leftSideTicket4','rightSideTicket4', 'leftSideTicketBuy4','rightSideTicketBuy4' )">
-                        <img src="images/BuyIcon.png">
-                        <label class="closeLabel">Back</label>
-                    </a>
-                </section>
-
-                <button class="AddToCartButton" id="AddToCartButton4">
-                    <img src="images/ShoppingCart.png">
-                    <label>Add to Cart</label>
-                </button>
-                <script>
-                    modal('popupAddedTicket', 'AddToCartButton4', 'closeButton')
-                </script>
-            </section>
-            <section class="ticketGridArea">
-                <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
-                <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
-                <label style="font-weight: bold; font-size: 1.4375rem" class="amountGrid">Amount</label>
-
-                <label class="titleArtist">Tom Thomson Assemble</label>
-                <label class="priceArtist">€15,00</label>
-                <section class="amountArtist">
-                    <button class="minusArtist" id="minusArtist4">−</button>
-                    <input class="inputArtist" type="number" value="0" id="inputArtist4"/>
-                    <button class="plusArtist" id="plusArtist4">+</button>
-                    <script>
-                        addTicket('minusArtist4', 'inputArtist4', 'plusArtist4')
-                    </script>
-                </section>
-                <label class="titleAllAccessDay">All-Access Thursday</label>
-                <label class="priceAllAccessDay">€35,00</label>
-                <section class="amountAllAccessDay">
-                    <button class="minusAllAccessDay" id="minusAllAccessDay4">−</button>
-                    <input class="inputAllAccessday" type="number" value="0" id="inputAllAccessDay4"/>
-                    <button class="plusAllAccessDay" id="plusAllAccessDay4">+</button>
-                    <script>
-                        addTicket('minusAllAccessDay4', 'inputAllAccessDay4', 'plusAllAccessDay4')
-                    </script>
-                </section>
-                <label class="titleAllAccessWeekend">All-Access Weekend</label>
-                <label class="priceAllAccessWeekend"> €80,00</label>
-                <section class="amountAllAccessWeekend">
-                    <button class="minusAllAccessWeekend" id="minusAllAccessWeekend4">−</button>
-                    <input class="inputAllAccessWeekend" type="number" value="0" id="inputAllAccessWeekend4"/>
-                    <button class="plusAllAccessWeekend" id="plusAllAccessWeekend4">+</button>
-                    <script>
-                        addTicket('minusAllAccessWeekend4', 'inputAllAccessWeekend4', 'plusAllAccessWeekend4')
-                    </script>
-                </section>
-            </section>
-        </section>
-        <section class="rightSideTicketBuy4" id="rightSideTicketBuy4">
-            <label class="artistLabel">Tom Thomson</label>
-            <label class="timeLabelBuy">19:30-20:30</label>
-            <label class="locationLabelBuy">Location: Patronaat</label>
-            <img src="images/TomThomsonAssemble1.jpg">
-        </section>
-        <section class="leftSideTicket5" id="leftSideTicket5">
-            <img src="images/NtjamRosie1.jpg">
-            <h1>Ntjam Rosie</h1>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <p>Sed vel commodo risus. Fusce est ante, posuere mattis cursus non, laoreet et libero. Curabitur
-                ullamcorper arcu at blandit faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a
-                molestie risus.</p>
-        </section>
-        <section class="rightSideTicket5" id="rightSideTicket5">
-            <label class="dayLabel">Thu 28 Jul</label>
-            <label class="timeLabel">21:00-22:00</label>
-            <label class="priceLabel">€15,00</label>
-            <label class="locationLabel">Patronaat</label>
-            <section class="buyButtonTicket5">
-                <a href="javascript:SwapToBuyScreen('leftSideTicket5','rightSideTicket5', 'leftSideTicketBuy5','rightSideTicketBuy5' )">
-                    <img src="images/BuyIcon.png">
-                    <label class="buyLabel">Buy Now</label>
-                </a>
-            </section>
-        </section>
-        <section class="leftSideTicketBuy5" id="leftSideTicketBuy5">
-            <section class="CloseAndAddButton">
-                <section class="closeTicketScreenTicket5" id="closeTicketScreenTicket5">
-                    <a href="javascript:SwapBackToTicketScreen('leftSideTicket5','rightSideTicket5', 'leftSideTicketBuy5','rightSideTicketBuy5' )">
-                        <img src="images/BuyIcon.png">
-                        <label class="closeLabel">Back</label>
-                    </a>
-                </section>
-                <button class="AddToCartButton" id="AddToCartButton5">
-                    <img src="images/ShoppingCart.png">
-                    <label>Add to Cart</label>
-                </button>
-                <script>
-                    modal('popupAddedTicket', 'AddToCartButton5', 'closeButton')
-                </script>
-            </section>
-            <section class="ticketGridArea">
-                <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
-                <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
-                <label style="font-weight: bold; font-size: 1.4375rem" class="amountGrid">Amount</label>
-
-                <label class="titleArtist">Ntjam Rosie</label>
-                <label class="priceArtist">€15,00</label>
-                <section class="amountArtist">
-                    <button class="minusArtist" id="minusArtist5">−</button>
-                    <input class="inputArtist" type="number" value="0" id="inputArtist5"/>
-                    <button class="plusArtist" id="plusArtist5">+</button>
-                    <script>
-                        addTicket('minusArtist5', 'inputArtist5', 'plusArtist5')
-                    </script>
-                </section>
-                <label class="titleAllAccessDay">All-Access Thursday</label>
-                <label class="priceAllAccessDay">€35,00</label>
-                <section class="amountAllAccessDay">
-                    <button class="minusAllAccessDay" id="minusAllAccessDay5">−</button>
-                    <input class="inputAllAccessday" type="number" value="0" id="inputAllAccessDay5"/>
-                    <button class="plusAllAccessDay" id="plusAllAccessDay5">+</button>
-                    <script>
-                        addTicket('minusAllAccessDay5', 'inputAllAccessDay5', 'plusAllAccessDay5')
-                    </script>
-                </section>
-                <label class="titleAllAccessWeekend">All-Access Weekend</label>
-                <label class="priceAllAccessWeekend"> €80,00</label>
-                <section class="amountAllAccessWeekend">
-                    <button class="minusAllAccessWeekend" id="minusAllAccessWeekend5">−</button>
-                    <input class="inputAllAccessWeekend" type="number" value="0" id="inputAllAccessWeekend5"/>
-                    <button class="plusAllAccessWeekend" id="plusAllAccessWeekend5">+</button>
-                    <script>
-                        addTicket('minusAllAccessWeekend5', 'inputAllAccessWeekend5', 'plusAllAccessWeekend5')
-                    </script>
-                </section>
-            </section>
-        </section>
-        <section class="rightSideTicketBuy5" id="rightSideTicketBuy5">
-            <label class="artistLabel">Ntjam Rosie</label>
-            <label class="timeLabelBuy">21:00-22:00</label>
-            <label class="locationLabelBuy">Location: Patronaat</label>
-            <img src="images/NtjamRosie1.jpg">
-        </section>
-        <section class="leftSideTicket6" id="leftSideTicket6">
-            <img src="images/JonnaFraser1.jpg">
-            <h1>Jonna Fraser</h1>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <p>Proin pulvinar tellus sed lacus interdum porttitor. Donec finibus neque sed dignissim tempor. Vivamus
-                tincidunt felis in nunc consectetur viverra. Praesent egestas semper auctor. Cras fringilla pharetra mi,
-                in pulvinar erat venenatis a. Nullam rutrum mollis lacinia.</p>
-        </section>
-        <section class="rightSideTicket6" id="rightSideTicket6">
-            <label class="dayLabel">Thu 28 Jul</label>
-            <label class="timeLabel">21:00-22:00</label>
-            <label class="priceLabel">€15,00</label>
-            <label class="locationLabel">Patronaat</label>
-            <section class="buyButtonTicket6">
-                <a href="javascript:SwapToBuyScreen('leftSideTicket6','rightSideTicket6', 'leftSideTicketBuy6','rightSideTicketBuy6' )">
-                    <img src="images/BuyIcon.png">
-                    <label class="buyLabel">Buy Now</label>
-                </a>
-            </section>
-        </section>
-        <section class="leftSideTicketBuy6" id="leftSideTicketBuy6">
-            <section class="CloseAndAddButton">
-                <section class="closeTicketScreenTicket6" id="closeTicketScreenTicket6">
-                    <a href="javascript:SwapBackToTicketScreen('leftSideTicket6','rightSideTicket6', 'leftSideTicketBuy6','rightSideTicketBuy6' )">
-                        <img src="images/BuyIcon.png">
-                        <label class="closeLabel">Back</label>
-                    </a>
-                </section>
-                <button class="AddToCartButton" id="AddToCartButton6">
-                    <img src="images/ShoppingCart.png">
-                    <label>Add to Cart</label>
-                </button>
-                <script>
-                    modal('popupAddedTicket', 'AddToCartButton6', 'closeButton')
-                </script>
-            </section>
-            <section class="ticketGridArea">
-                <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
-                <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
-                <label style="font-weight: bold; font-size: 1.4375rem" class="amountGrid">Amount</label>
-
-                <label class="titleArtist">Jonna Fraser</label>
-                <label class="priceArtist">€15,00</label>
-                <section class="amountArtist">
-                    <button class="minusArtist" id="minusArtist6">−</button>
-                    <input class="inputArtist" type="number" value="0" id="inputArtist6"/>
-                    <button class="plusArtist" id="plusArtist6">+</button>
-                    <script>
-                        addTicket('minusArtist6', 'inputArtist6', 'plusArtist6')
-                    </script>
-                </section>
-                <label class="titleAllAccessDay">All-Access Thursday</label>
-                <label class="priceAllAccessDay">€35,00</label>
-                <section class="amountAllAccessDay">
-                    <button class="minusAllAccessDay" id="minusAllAccessDay6">−</button>
-                    <input class="inputAllAccessday" type="number" value="0" id="inputAllAccessDay6"/>
-                    <button class="plusAllAccessDay" id="plusAllAccessDay6">+</button>
-                    <script>
-                        addTicket('minusAllAccessDay6', 'inputAllAccessDay6', 'plusAllAccessDay6')
-                    </script>
-                </section>
-                <label class="titleAllAccessWeekend">All-Access Weekend</label>
-                <label class="priceAllAccessWeekend"> €80,00</label>
-                <section class="amountAllAccessWeekend">
-                    <button class="minusAllAccessWeekend" id="minusAllAccessWeekend6">−</button>
-                    <input class="inputAllAccessWeekend" type="number" value="0" id="inputAllAccessWeekend6"/>
-                    <button class="plusAllAccessWeekend" id="plusAllAccessWeekend6">+</button>
-                    <script>
-                        addTicket('minusAllAccessWeekend6', 'inputAllAccessWeekend6', 'plusAllAccessWeekend6')
-                    </script>
-                </section>
-            </section>
-        </section>
-        <section class="rightSideTicketBuy6" id="rightSideTicketBuy6">
-            <label class="artistLabel">Jonna Fraser</label>
-            <label class="timeLabelBuy">21:00-22:00</label>
-            <label class="locationLabelBuy">Location: Patronaat</label>
-            <img src="images/JonnaFraser1.jpg">
-        </section>
+            <?php $i++;
+        } ?>
     </section>
-</section>
 </body>
 </html>

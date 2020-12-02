@@ -16,7 +16,7 @@ class JazzDAL
 
     function GetAllJazzEvents()
     {
-        $sql = "SELECT E.StartTime, E.EndTime, E.Price, J.BandName, J.Description, J.Image, J.Location FROM Event E INNER JOIN Event_Jazz J ON E.Event_ID = J.Event_ID ORDER BY E.StartTime ASC";
+        $sql = "SELECT E.StartTime, E.EndTime , E.Price, J.BandName, J.Description, J.Image, J.Location FROM Event E INNER JOIN Event_Jazz J ON E.Event_ID = J.Event_ID WHERE E.StartTime >='2018-07-26 00:00:00' AND StartTime <'2018-07-27 00:00:00'  ORDER BY E.StartTime ASC";
         $JazzEvents = [];
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
