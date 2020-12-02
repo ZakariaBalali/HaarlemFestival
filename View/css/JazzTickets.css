@@ -295,36 +295,23 @@ body {
     font-size: 1.0625rem;
 }
 
-.buyButtonTicketRow1 {
-    margin-top: 1.5625rem;
-    margin-left: 0.3125rem;
-    width: 10.6875rem;
-    height: 3.75rem;
-    background-color: #FC5757;
-    border: #FFFFFF 0.125rem solid;
-}
-
-.buyButtonTicketRow1:hover {
-    background-color: #FF2323;
-}
-
 .CloseAndAddButton {
     float: right;
     display: grid;
 }
 
-.closeTicketScreenRow1 {
+.closeTicketScreenTicket1 {
     width: 10.6875rem;
     height: 3.75rem;
     margin-left: 1rem;
     background-color: #FC5757;
 }
 
-.closeTicketScreenRow1:hover {
+.closeTicketScreenTicket1:hover {
     background-color: #FF2323;
 }
 
-.closeTicketScreenRow1 img {
+.closeTicketScreenTicket1 img {
     margin-top: 1.5rem;
     margin-left: 0.3125rem;
     margin-right: 0rem;
@@ -334,7 +321,7 @@ body {
     object-fit: cover;
 }
 
-.closeTicketScreenRow1 label {
+.closeTicketScreenTicket1 label {
     cursor: pointer;
     font-family: "Arial Rounded MT";
     color: #FFFFFF;
@@ -344,18 +331,49 @@ body {
 }
 
 
-.closeTicketScreenRow2 {
+.closeTicketScreenTicket2 {
+    width: 10.6875rem;
+    height: 3.75rem;
+    margin-left: 1rem;
+    background-color: #FC5757;
+}
+
+.closeTicketScreenTicket2:hover {
+    background-color: #FF2323;
+}
+
+.closeTicketScreenTicket2 img {
+    margin-top: 1.5rem;
+    margin-left: 0.3125rem;
+    margin-right: 0rem;
+    height: 1.125rem;
+    width: 1.1875rem;
+    float: left;
+    object-fit: cover;
+}
+
+.closeTicketScreenTicket2 label {
+    cursor: pointer;
+    font-family: "Arial Rounded MT";
+    color: #FFFFFF;
+    margin-right: 0.9375rem;
+    font-size: 1.25rem;
+    line-height: 3.75rem;
+}
+
+
+.closeTicketScreenTicket3 {
     width: 10.6875rem;
     height: 3.75rem;
     margin-left: 1rem;
     background-color: #578EFC;
 }
 
-.closeTicketScreenRow2:hover {
+.closeTicketScreenTicket3:hover {
     background-color: #2069FC;
 }
 
-.closeTicketScreenRow2 img {
+.closeTicketScreenTicket3 img {
     margin-top: 1.5rem;
     margin-left: 0.3125rem;
     margin-right: 0rem;
@@ -365,7 +383,7 @@ body {
     object-fit: cover;
 }
 
-.closeTicketScreenRow2 label {
+.closeTicketScreenTicket3 label {
     cursor: pointer;
     font-family: "Arial Rounded MT";
     color: #FFFFFF;
@@ -374,18 +392,47 @@ body {
     line-height: 3.75rem;
 }
 
-.closeTicketScreenRow3 {
+.closeTicketScreenTicket4 {
+    width: 10.6875rem;
+    height: 3.75rem;
+    margin-left: 1rem;
+    background-color: #578EFC;
+}
+
+.closeTicketScreenTicket4:hover {
+    background-color: #2069FC;
+}
+
+.closeTicketScreenTicket4 img {
+    margin-top: 1.5rem;
+    margin-left: 0.3125rem;
+    margin-right: 0rem;
+    height: 1.125rem;
+    width: 1.1875rem;
+    float: left;
+    object-fit: cover;
+}
+
+.closeTicketScreenTicket4 label {
+    cursor: pointer;
+    font-family: "Arial Rounded MT";
+    color: #FFFFFF;
+    margin-right: 0.9375rem;
+    font-size: 1.25rem;
+    line-height: 3.75rem;
+}
+.closeTicketScreenTicket5 {
     width: 10.6875rem;
     height: 3.75rem;
     margin-left: 1rem;
     background-color: #FF9130;
 }
 
-.closeTicketScreenRow3:hover {
+.closeTicketScreenTicket5:hover {
     background-color: #FF7700;
 }
 
-.closeTicketScreenRow3 img {
+.closeTicketScreenTicket5 img {
     margin-top: 1.5rem;
     margin-left: 0.3125rem;
     margin-right: 0rem;
@@ -395,7 +442,7 @@ body {
     object-fit: cover;
 }
 
-.closeTicketScreenRow3 label {
+.closeTicketScreenTicket5 label {
     cursor: pointer;
     font-family: "Arial Rounded MT";
     color: #FFFFFF;
@@ -404,7 +451,62 @@ body {
     line-height: 3.75rem;
 }
 
-.buyButtonTicketRow2 {
+.closeTicketScreenTicket6 {
+    width: 10.6875rem;
+    height: 3.75rem;
+    margin-left: 1rem;
+    background-color: #FF9130;
+}
+
+.closeTicketScreenTicket6:hover {
+    background-color: #FF7700;
+}
+
+.closeTicketScreenTicket6 img {
+    margin-top: 1.5rem;
+    margin-left: 0.3125rem;
+    margin-right: 0rem;
+    height: 1.125rem;
+    width: 1.1875rem;
+    float: left;
+    object-fit: cover;
+}
+
+.closeTicketScreenTicket6 label {
+    cursor: pointer;
+    font-family: "Arial Rounded MT";
+    color: #FFFFFF;
+    margin-right: 0.9375rem;
+    font-size: 1.25rem;
+    line-height: 3.75rem;
+}
+
+.buyButtonTicket1 {
+    margin-top: 1.5625rem;
+    margin-left: 0.3125rem;
+    width: 10.6875rem;
+    height: 3.75rem;
+    background-color: #FC5757;
+    border: #FFFFFF 0.125rem solid;
+}
+
+.buyButtonTicket1:hover {
+    background-color: #FF2323;
+}
+
+.buyButtonTicket2 {
+    margin-top: 1.5625rem;
+    margin-left: 0.3125rem;
+    width: 10.6875rem;
+    height: 3.75rem;
+    background-color: #FC5757;
+    border: #FFFFFF 0.125rem solid;
+}
+
+.buyButtonTicket2:hover {
+    background-color: #FF2323;
+}
+.buyButtonTicket3 {
     margin-top: 1.5625rem;
     margin-left: 0.3125rem;
     width: 10.6875rem;
@@ -413,11 +515,24 @@ body {
     border: #FFFFFF 0.125rem solid;
 }
 
-.buyButtonTicketRow2:hover {
+.buyButtonTicket3:hover {
     background-color: #2069FC;
 }
 
-.buyButtonTicketRow3 {
+.buyButtonTicket4 {
+    margin-top: 1.5625rem;
+    margin-left: 0.3125rem;
+    width: 10.6875rem;
+    height: 3.75rem;
+    background-color: #578EFC;
+    border: #FFFFFF 0.125rem solid;
+}
+
+.buyButtonTicket4:hover {
+    background-color: #2069FC;
+}
+
+.buyButtonTicket5 {
     margin-top: 1.5625rem;
     margin-left: 0.3125rem;
     width: 10.6875rem;
@@ -426,11 +541,24 @@ body {
     border: #FFFFFF 0.125rem solid;
 }
 
-.buyButtonTicketRow3:hover {
+.buyButtonTicket5:hover {
     background-color: #FF7700;
 }
 
-.buyButtonTicketRow1 img {
+.buyButtonTicket6 {
+    margin-top: 1.5625rem;
+    margin-left: 0.3125rem;
+    width: 10.6875rem;
+    height: 3.75rem;
+    background-color: #FF9130;
+    border: #FFFFFF 0.125rem solid;
+}
+
+.buyButtonTicket6:hover {
+    background-color: #FF7700;
+}
+
+.buyButtonTicket1 img {
     margin-top: 1.5rem;
     margin-left: 0.3125rem;
     margin-right: 0rem;
@@ -440,7 +568,7 @@ body {
     object-fit: cover;
 }
 
-.buyButtonTicketRow2 img {
+.buyButtonTicket2 img {
     margin-top: 1.5rem;
     margin-left: 0.3125rem;
     margin-right: 0rem;
@@ -450,7 +578,27 @@ body {
     object-fit: cover;
 }
 
-.buyButtonTicketRow3 img {
+.buyButtonTicket3 img {
+    margin-top: 1.5rem;
+    margin-left: 0.3125rem;
+    margin-right: 0rem;
+    height: 1.125rem;
+    width: 1.1875rem;
+    float: left;
+    object-fit: cover;
+}
+
+.buyButtonTicket4 img {
+    margin-top: 1.5rem;
+    margin-left: 0.3125rem;
+    margin-right: 0rem;
+    height: 1.125rem;
+    width: 1.1875rem;
+    float: left;
+    object-fit: cover;
+}
+
+.buyButtonTicket5 img {
     margin-top: 1.1875rem;
     margin-left: 0.3125rem;
     margin-right: 0rem;
@@ -459,6 +607,14 @@ body {
     float: left;
 }
 
+.buyButtonTicket6 img {
+    margin-top: 1.1875rem;
+    margin-left: 0.3125rem;
+    margin-right: 0rem;
+    height: 1.125rem;
+    width: 1.1875rem;
+    float: left;
+}
 .buyLabel {
     cursor: pointer;
     color: #FFFFFF;

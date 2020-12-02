@@ -106,7 +106,7 @@
             <label class="timeLabel">18:00-19:00</label>
             <label class="priceLabel">€15,00</label>
             <label class="locationLabel">Patronaat</label>
-            <section class="buyButtonTicketRow1" id="buyButtonTicketRow1">
+            <section class="buyButtonTicket1" >
                 <a href="javascript:SwapToBuyScreen('leftSideTicket1','rightSideTicket1', 'leftSideTicketBuy1','rightSideTicketBuy1' )">
                     <img src="images/BuyIcon.png">
                     <label class="buyLabel">Buy Now</label>
@@ -115,7 +115,7 @@
         </section>
         <section class="leftSideTicketBuy1" id="leftSideTicketBuy1">
             <section class="CloseAndAddButton">
-                <section class="closeTicketScreenRow1" id="closeTicketScreenRow1">
+                <section class="closeTicketScreenTicket1" id="closeTicketScreenTicket1">
                     <a href="javascript:SwapBackToTicketScreen('leftSideTicket1','rightSideTicket1', 'leftSideTicketBuy1','rightSideTicketBuy1' )">
                         <img src="images/BuyIcon.png">
                         <label class="closeLabel">Back</label>
@@ -191,7 +191,7 @@
             <label class="timeLabel">18:00-19:00</label>
             <label class="priceLabel">€15,00</label>
             <label class="locationLabel">Patronaat</label>
-            <section class="buyButtonTicketRow1">
+            <section class="buyButtonTicket2">
                 <a href="javascript:SwapToBuyScreen('leftSideTicket2','rightSideTicket2', 'leftSideTicketBuy2','rightSideTicketBuy2' )">
                     <img src="images/BuyIcon.png">
                     <label class="buyLabel">Buy Now</label>
@@ -200,7 +200,7 @@
         </section>
         <section class="leftSideTicketBuy2" id="leftSideTicketBuy2">
             <section class="CloseAndAddButton">
-                <section class="closeTicketScreenRow1" id="closeTicketScreenRow1">
+                <section class="closeTicketScreenTicket2" id="closeTicketScreenTicket2">
                     <a href="javascript:SwapBackToTicketScreen('leftSideTicket2','rightSideTicket2', 'leftSideTicketBuy2','rightSideTicketBuy2' )">
                         <img src="images/BuyIcon.png">
                         <label class="closeLabel">Back</label>
@@ -274,7 +274,7 @@
             <label class="timeLabel">19:30-20:30</label>
             <label class="priceLabel">€15,00</label>
             <label class="locationLabel">Patronaat</label>
-            <section class="buyButtonTicketRow2">
+            <section class="buyButtonTicket3">
                 <a href="javascript:SwapToBuyScreen('leftSideTicket3','rightSideTicket3', 'leftSideTicketBuy3','rightSideTicketBuy3' )">
                     <img src="images/BuyIcon.png">
                     <label class="buyLabel">Buy Now</label>
@@ -283,7 +283,7 @@
         </section>
         <section class="leftSideTicketBuy3" id="leftSideTicketBuy3">
             <section class="CloseAndAddButton">
-                <section class="closeTicketScreenRow2" id="closeTicketScreenRow2">
+                <section class="closeTicketScreenTicket3" id="closeTicketScreenTicket3">
                     <a href="javascript:SwapBackToTicketScreen('leftSideTicket3','rightSideTicket3', 'leftSideTicketBuy3','rightSideTicketBuy3' )">
                         <img src="images/BuyIcon.png">
                         <label class="closeLabel">Back</label>
@@ -357,7 +357,7 @@
             <label class="timeLabel">19:30-20:30</label>
             <label class="priceLabel">€15,00</label>
             <label class="locationLabel">Patronaat</label>
-            <section class="buyButtonTicketRow2">
+            <section class="buyButtonTicket4">
                 <a href="javascript:SwapToBuyScreen('leftSideTicket4','rightSideTicket4', 'leftSideTicketBuy4','rightSideTicketBuy4' )">
                     <img src="images/BuyIcon.png">
                     <label class="buyLabel">Buy Now</label>
@@ -366,7 +366,7 @@
         </section>
         <section class="leftSideTicketBuy4" id="leftSideTicketBuy4">
             <section class="CloseAndAddButton">
-                <section class="closeTicketScreenRow2" id="closeTicketScreenRow2">
+                <section class="closeTicketScreenTicket4" id="closeTicketScreenTicket4">
                     <a href="javascript:SwapBackToTicketScreen('leftSideTicket4','rightSideTicket4', 'leftSideTicketBuy4','rightSideTicketBuy4' )">
                         <img src="images/BuyIcon.png">
                         <label class="closeLabel">Back</label>
@@ -441,7 +441,7 @@
             <label class="timeLabel">21:00-22:00</label>
             <label class="priceLabel">€15,00</label>
             <label class="locationLabel">Patronaat</label>
-            <section class="buyButtonTicketRow3">
+            <section class="buyButtonTicket5">
                 <a href="javascript:SwapToBuyScreen('leftSideTicket5','rightSideTicket5', 'leftSideTicketBuy5','rightSideTicketBuy5' )">
                     <img src="images/BuyIcon.png">
                     <label class="buyLabel">Buy Now</label>
@@ -450,7 +450,7 @@
         </section>
         <section class="leftSideTicketBuy5" id="leftSideTicketBuy5">
             <section class="CloseAndAddButton">
-                <section class="closeTicketScreenRow3" id="closeTicketScreenRow3">
+                <section class="closeTicketScreenTicket5" id="closeTicketScreenTicket5">
                     <a href="javascript:SwapBackToTicketScreen('leftSideTicket5','rightSideTicket5', 'leftSideTicketBuy5','rightSideTicketBuy5' )">
                         <img src="images/BuyIcon.png">
                         <label class="closeLabel">Back</label>
@@ -524,7 +524,7 @@
             <label class="timeLabel">21:00-22:00</label>
             <label class="priceLabel">€15,00</label>
             <label class="locationLabel">Patronaat</label>
-            <section class="buyButtonTicketRow3">
+            <section class="buyButtonTicket6">
                 <a href="javascript:SwapToBuyScreen('leftSideTicket6','rightSideTicket6', 'leftSideTicketBuy6','rightSideTicketBuy6' )">
                     <img src="images/BuyIcon.png">
                     <label class="buyLabel">Buy Now</label>
@@ -533,7 +533,7 @@
         </section>
         <section class="leftSideTicketBuy6" id="leftSideTicketBuy6">
             <section class="CloseAndAddButton">
-                <section class="closeTicketScreenRow3" id="closeTicketScreenRow3">
+                <section class="closeTicketScreenTicket6" id="closeTicketScreenTicket6">
                     <a href="javascript:SwapBackToTicketScreen('leftSideTicket6','rightSideTicket6', 'leftSideTicketBuy6','rightSideTicketBuy6' )">
                         <img src="images/BuyIcon.png">
                         <label class="closeLabel">Back</label>
