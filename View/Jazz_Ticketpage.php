@@ -94,17 +94,12 @@ require_once '../Logic/JazzLogic.php';
         <?php
         $JazzEvents = [];
         $jazzLogic = new JazzLogic();
-        $JazzEvents = (array)$jazzLogic->GetAllJazzEvents();
+        $JazzEvents = (array)$jazzLogic->GetAllJazzEvents("2018-07-26 00:00:00", "2018-07-27 00:00:00");
         $i = 1;
         ?>
-
         <?php
-
-
         foreach ($JazzEvents as $jazz) {
-
             ?>
-
             <section class="leftSideTicket<?php echo $i ?>" id="leftSideTicket<?php echo $i ?>">
                 <img src="images/<?php echo $jazz->getImage() ?>.jpg">
                 <h1><?php echo $jazz->getBandName() ?></h1>

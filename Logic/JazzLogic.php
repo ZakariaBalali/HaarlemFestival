@@ -11,8 +11,8 @@ class JazzLogic
     }
 
 //Gets functions from DAL layer
-    function GetAllJazzEvents()
+    function GetAllJazzEvents($TimeStartDay, $TimeEndDay)
     {
-        return $this->jazzDAL->GetAllJazzEvents();
+        return $this->jazzDAL->GetJazzEventsByDay($TimeStartDay, $TimeEndDay);
     }
 }
