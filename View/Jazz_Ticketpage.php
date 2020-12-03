@@ -83,14 +83,22 @@ require_once '../Logic/JazzLogic.php';
             </section>
         </section>
         <section class="JazzDayButtons">
-            <section class="thursdayButton" id="thursdayButton"><a id="thursdayButtonLink" href="#">Thursday</a>
+            <section class="thursdayButton" id="thursdayButton">
+                <a id="thursdayButtonLink"
+                   href="javascript:filterSelection('thursdayButton','fridayButton','saturdayButton','sundayButton', 'thursdayButtonLink',
+                   'fridayButtonLink', 'saturdayButtonLink', 'sundayButtonLink', 'ticketsThursday','ticketsFriday','ticketsSaturday','ticketsSunday')">Thursday</a>
             </section>
-            <section class="fridayButton" id="fridayButton"><a id="fridayButtonLink" href="# ">Friday</a></section>
+            <section class="fridayButton" id="fridayButton">
+                <a id="fridayButtonLink"
+                   href="javascript:filterSelection('fridayButton','thursdayButton','saturdayButton','sundayButton', 'fridayButtonLink',
+                   'thursdayButtonLink', 'saturdayButtonLink', 'sundayButtonLink','ticketsFriday','ticketsThursday','ticketsSaturday','ticketsSunday')">
+                    Friday</a>
+            </section>
             <section class="saturdayButton" id="fridayButton"><a id="saturdayButtonLink" href="#">Saturday</a></section>
             <section class="sundayButton" id="sundayButton"><a id="saturdayButtonLink" href="#">Sunday</a></section>
         </section>
     </section>
-    <section class="ticketsThursday" id="tickets">
+    <section class="ticketsThursday" id="ticketsThursday">
         <?php
         $JazzEvents = [];
         $jazzLogic = new JazzLogic();
@@ -100,7 +108,7 @@ require_once '../Logic/JazzLogic.php';
         <?php
         foreach ($JazzEvents as $jazz) {
             ?>
-            <section class="leftSideTicket<?php echo $i ?>" id="leftSideTicket<?php echo $i ?>">
+            <section class="leftSideTicket<?php echo $i ?>" id="leftSideTicket<?php echo $jazz->getEvent_ID() ?>">
                 <img src="images/<?php echo $jazz->getImage() ?>.jpg">
                 <h1><?php echo $jazz->getBandName() ?></h1>
                 <br>
@@ -110,76 +118,408 @@ require_once '../Logic/JazzLogic.php';
                 <br>
                 <p><?php echo $jazz->getDescription() ?></p>
             </section>
-            <section class="rightSideTicket<?php echo $i ?>" id="rightSideTicket<?php echo $i ?>">
+            <section class="rightSideTicket<?php echo $i ?>" id="rightSideTicket<?php echo $jazz->getEvent_ID() ?>">
                 <label class="dayLabel">Thu 26 Jul</label>
                 <label class="timeLabel"><?php echo $timeFormat = date('H:i', strtotime($jazz->getEvent()->getStartTime())); ?>
                     -<?php echo $timeFormat = date('H:i', strtotime($jazz->getEvent()->getEndTime())); ?></label>
                 <label class="priceLabel">€<?php echo number_format((float)$jazz->getEvent()->getPrice(), 2, ',', ''); ?></label>
                 <label class="locationLabel"><?php echo $jazz->getLocation() ?></label>
                 <section class="buyButtonTicket<?php echo $i ?>">
-                    <a href="javascript:SwapToBuyScreen('leftSideTicket<?php echo $i ?>','rightSideTicket<?php echo $i ?>', 'leftSideTicketBuy<?php echo $i ?>','rightSideTicketBuy<?php echo $i ?>' )">
+                    <a href="javascript:SwapToBuyScreen('leftSideTicket<?php echo $jazz->getEvent_ID() ?>','rightSideTicket<?php echo $jazz->getEvent_ID() ?>', 'leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>','rightSideTicketBuy<?php echo $jazz->getEvent_ID() ?>' )">
                         <img src="images/BuyIcon.png">
                         <label class="buyLabel">Buy Now</label>
                     </a>
                 </section>
             </section>
-            <section class="leftSideTicketBuy<?php echo $i ?>" id="leftSideTicketBuy<?php echo $i ?>">
+            <section class="leftSideTicketBuy<?php echo $i ?>" id="leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>">
                 <section class="CloseAndAddButton">
                     <section class="closeTicketScreenTicket<?php echo $i ?>"
                              id="closeTicketScreenTicket<?php echo $i ?>">
-                        <a href="javascript:SwapBackToTicketScreen('leftSideTicket<?php echo $i ?>','rightSideTicket<?php echo $i ?>', 'leftSideTicketBuy<?php echo $i ?>','rightSideTicketBuy<?php echo $i ?>' )">
+                        <a href="javascript:SwapBackToTicketScreen('leftSideTicket<?php echo $jazz->getEvent_ID() ?>','rightSideTicket<?php echo $jazz->getEvent_ID() ?>', 'leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>','rightSideTicketBuy<?php echo $jazz->getEvent_ID() ?>' )">
                             <img src="images/BuyIcon.png">
                             <label class="closeLabel">Back</label>
                         </a>
                     </section>
-                    <button class="AddToCartButton" id="AddToCartButton<?php echo $i ?>">
+                    <button class="AddToCartButton" id="AddToCartButton<?php echo $jazz->getEvent_ID() ?>">
                         <img src="images/ShoppingCart.png">
                         <label>Add to Cart</label>
                     </button>
                     <script>
-                        modal('popupAddedTicket', 'AddToCartButton<?php echo $i?>', 'closeButton')
+                        modal('popupAddedTicket', 'AddToCartButton<?php echo $jazz->getEvent_ID()?>', 'closeButton')
                     </script>
                 </section>
                 <section class="ticketGridArea">
                     <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
                     <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
                     <label style="font-weight: bold; font-size: 1.4375rem" class="amountGrid">Amount</label>
-                    <label class="titleArtist"><?php echo $jazz->getBandName();?></label>
+                    <label class="titleArtist"><?php echo $jazz->getBandName(); ?></label>
                     <label class="priceArtist">€<?php echo number_format((float)$jazz->getEvent()->getPrice(), 2, ',', ''); ?></label>
                     <section class="amountArtist">
-                        <button class="minusArtist" id="minusArtist<?php echo $i ?>">−</button>
-                        <input class="inputArtist" type="number" value="0" id="inputArtist<?php echo $i ?>"/>
-                        <button class="plusArtist" id="plusArtist<?php echo $i ?>">+</button>
+                        <button class="minusArtist" id="minusArtist<?php echo $jazz->getEvent_ID() ?>">−</button>
+                        <input class="inputArtist" type="number" value="0"
+                               id="inputArtist<?php echo $jazz->getEvent_ID() ?>"/>
+                        <button class="plusArtist" id="plusArtist<?php echo $jazz->getEvent_ID() ?>">+</button>
                         <script>
-                            addTicket('minusArtist<?php echo $i?>', 'inputArtist<?php echo $i?>', 'plusArtist<?php echo $i?>')
+                            addTicket('minusArtist<?php echo $jazz->getEvent_ID()?>', 'inputArtist<?php echo $jazz->getEvent_ID()?>', 'plusArtist<?php echo $jazz->getEvent_ID()?>')
                         </script>
                     </section>
                     <label class="titleAllAccessDay">All-Access Thursday</label>
                     <label class="priceAllAccessDay">€35,00</label>
                     <section class="amountAllAccessDay">
-                        <button class="minusAllAccessDay" id="minusAllAccessDay<?php echo $i ?>">−</button>
+                        <button class="minusAllAccessDay" id="minusAllAccessDay<?php echo $jazz->getEvent_ID() ?>">−
+                        </button>
                         <input class="inputAllAccessday" type="number" value="0"
-                               id="inputAllAccessDay<?php echo $i ?>"/>
-                        <button class="plusAllAccessDay" id="plusAllAccessDay<?php echo $i ?>">+</button>
+                               id="inputAllAccessDay<?php echo $jazz->getEvent_ID() ?>"/>
+                        <button class="plusAllAccessDay" id="plusAllAccessDay<?php echo $jazz->getEvent_ID() ?>">+
+                        </button>
                         <script>
-                            addTicket('minusAllAccessDay<?php echo $i?>', 'inputAllAccessDay<?php echo $i?>', 'plusAllAccessDay<?php echo $i?>')
+                            addTicket('minusAllAccessDay<?php echo $jazz->getEvent_ID()?>', 'inputAllAccessDay<?php echo $jazz->getEvent_ID()?>', 'plusAllAccessDay<?php echo $jazz->getEvent_ID()?>')
                         </script>
                     </section>
                     <label class="titleAllAccessWeekend">All-Access Weekend</label>
                     <label class="priceAllAccessWeekend"> €80,00</label>
                     <section class="amountAllAccessWeekend">
-                        <button class="minusAllAccessWeekend" id="minusAllAccessWeekend<?php echo $i ?>">−</button>
+                        <button class="minusAllAccessWeekend"
+                                id="minusAllAccessWeekend<?php echo $jazz->getEvent_ID() ?>">−
+                        </button>
                         <input class="inputAllAccessWeekend" type="number" value="0"
-                               id="inputAllAccessWeekend<?php echo $i ?>"/>
-                        <button class="plusAllAccessWeekend" id="plusAllAccessWeekend<?php echo $i ?>">+</button>
+                               id="inputAllAccessWeekend<?php echo $jazz->getEvent_ID() ?>"/>
+                        <button class="plusAllAccessWeekend"
+                                id="plusAllAccessWeekend<?php echo $jazz->getEvent_ID() ?>">+
+                        </button>
                         <script>
-                            addTicket('minusAllAccessWeekend<?php echo $i?>', 'inputAllAccessWeekend<?php echo $i?>', 'plusAllAccessWeekend<?php echo $i?>')
+                            addTicket('minusAllAccessWeekend<?php echo $jazz->getEvent_ID()?>', 'inputAllAccessWeekend<?php echo $jazz->getEvent_ID()?>', 'plusAllAccessWeekend<?php echo $jazz->getEvent_ID()?>')
                         </script>
                     </section>
 
                 </section>
             </section>
-            <section class="rightSideTicketBuy<?php echo $i ?>" id="rightSideTicketBuy<?php echo $i ?>">
+            <section class="rightSideTicketBuy<?php echo $i ?>"
+                     id="rightSideTicketBuy<?php echo $jazz->getEvent_ID() ?>">
+                <label class="artistLabel"><?php echo $jazz->getBandName(); ?></label>
+                <label class="timeLabelBuy"><?php echo $timeFormat = date('H:i', strtotime($jazz->getEvent()->getStartTime())); ?>
+                    -<?php echo $timeFormat = date('H:i', strtotime($jazz->getEvent()->getEndTime())); ?></label>
+                <label class="locationLabelBuy"><?php echo $jazz->getLocation(); ?></label>
+                <img src="images/<?php echo $jazz->getImage(); ?>.jpg">
+            </section>
+
+            <?php $i++;
+        } ?>
+    </section>
+    <section class="ticketsFriday" id="ticketsFriday">
+        <?php
+        $JazzEvents = [];
+        $jazzLogic = new JazzLogic();
+        $JazzEvents = (array)$jazzLogic->GetAllJazzEvents("2018-07-27 00:00:00", "2018-07-28 00:00:00");
+        $i = 1;
+        ?>
+        <?php
+        foreach ($JazzEvents as $jazz) {
+            ?>
+            <section class="leftSideTicket<?php echo $i ?>" id="leftSideTicket<?php echo $jazz->getEvent_ID() ?>">
+                <img src="images/<?php echo $jazz->getImage() ?>.jpg">
+                <h1><?php echo $jazz->getBandName() ?></h1>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p><?php echo $jazz->getDescription() ?></p>
+            </section>
+            <section class="rightSideTicket<?php echo $i ?>" id="rightSideTicket<?php echo $jazz->getEvent_ID() ?>">
+                <label class="dayLabel">Fri 27 Jul</label>
+                <label class="timeLabel"><?php echo $timeFormat = date('H:i', strtotime($jazz->getEvent()->getStartTime())); ?>
+                    -<?php echo $timeFormat = date('H:i', strtotime($jazz->getEvent()->getEndTime())); ?></label>
+                <label class="priceLabel">€<?php echo number_format((float)$jazz->getEvent()->getPrice(), 2, ',', ''); ?></label>
+                <label class="locationLabel"><?php echo $jazz->getLocation() ?></label>
+                <section class="buyButtonTicket<?php echo $i ?>">
+                    <a href="javascript:SwapToBuyScreen('leftSideTicket<?php echo $jazz->getEvent_ID() ?>','rightSideTicket<?php echo $jazz->getEvent_ID() ?>', 'leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>','rightSideTicketBuy<?php echo $jazz->getEvent_ID() ?>' )">
+                        <img src="images/BuyIcon.png">
+                        <label class="buyLabel">Buy Now</label>
+                    </a>
+                </section>
+            </section>
+            <section class="leftSideTicketBuy<?php echo $i ?>" id="leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>">
+                <section class="CloseAndAddButton">
+                    <section class="closeTicketScreenTicket<?php echo $i ?>"
+                             id="closeTicketScreenTicket<?php echo $i ?>">
+                        <a href="javascript:SwapBackToTicketScreen('leftSideTicket<?php echo $jazz->getEvent_ID() ?>','rightSideTicket<?php echo $jazz->getEvent_ID() ?>', 'leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>','rightSideTicketBuy<?php echo $jazz->getEvent_ID() ?>' )">
+                            <img src="images/BuyIcon.png">
+                            <label class="closeLabel">Back</label>
+                        </a>
+                    </section>
+                    <button class="AddToCartButton" id="AddToCartButton<?php echo $jazz->getEvent_ID() ?>">
+                        <img src="images/ShoppingCart.png">
+                        <label>Add to Cart</label>
+                    </button>
+                    <script>
+                        modal('popupAddedTicket', 'AddToCartButton<?php echo $jazz->getEvent_ID()?>', 'closeButton')
+                    </script>
+                </section>
+                <section class="ticketGridArea">
+                    <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
+                    <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
+                    <label style="font-weight: bold; font-size: 1.4375rem" class="amountGrid">Amount</label>
+                    <label class="titleArtist"><?php echo $jazz->getBandName(); ?></label>
+                    <label class="priceArtist">€<?php echo number_format((float)$jazz->getEvent()->getPrice(), 2, ',', ''); ?></label>
+                    <section class="amountArtist">
+                        <button class="minusArtist" id="minusArtist<?php echo $jazz->getEvent_ID() ?>">−</button>
+                        <input class="inputArtist" type="number" value="0"
+                               id="inputArtist<?php echo $jazz->getEvent_ID() ?>"/>
+                        <button class="plusArtist" id="plusArtist<?php echo $jazz->getEvent_ID() ?>">+</button>
+                        <script>
+                            addTicket('minusArtist<?php echo $jazz->getEvent_ID()?>', 'inputArtist<?php echo $jazz->getEvent_ID()?>', 'plusArtist<?php echo $jazz->getEvent_ID()?>')
+                        </script>
+                    </section>
+                    <label class="titleAllAccessDay">All-Access Thursday</label>
+                    <label class="priceAllAccessDay">€35,00</label>
+                    <section class="amountAllAccessDay">
+                        <button class="minusAllAccessDay" id="minusAllAccessDay<?php echo $jazz->getEvent_ID() ?>">−
+                        </button>
+                        <input class="inputAllAccessday" type="number" value="0"
+                               id="inputAllAccessDay<?php echo $jazz->getEvent_ID() ?>"/>
+                        <button class="plusAllAccessDay" id="plusAllAccessDay<?php echo $jazz->getEvent_ID() ?>">+
+                        </button>
+                        <script>
+                            addTicket('minusAllAccessDay<?php echo $jazz->getEvent_ID()?>', 'inputAllAccessDay<?php echo $jazz->getEvent_ID()?>', 'plusAllAccessDay<?php echo $jazz->getEvent_ID()?>')
+                        </script>
+                    </section>
+                    <label class="titleAllAccessWeekend">All-Access Weekend</label>
+                    <label class="priceAllAccessWeekend"> €80,00</label>
+                    <section class="amountAllAccessWeekend">
+                        <button class="minusAllAccessWeekend"
+                                id="minusAllAccessWeekend<?php echo $jazz->getEvent_ID() ?>">−
+                        </button>
+                        <input class="inputAllAccessWeekend" type="number" value="0"
+                               id="inputAllAccessWeekend<?php echo $jazz->getEvent_ID() ?>"/>
+                        <button class="plusAllAccessWeekend"
+                                id="plusAllAccessWeekend<?php echo $jazz->getEvent_ID() ?>">+
+                        </button>
+                        <script>
+                            addTicket('minusAllAccessWeekend<?php echo $jazz->getEvent_ID()?>', 'inputAllAccessWeekend<?php echo $jazz->getEvent_ID()?>', 'plusAllAccessWeekend<?php echo $jazz->getEvent_ID()?>')
+                        </script>
+                    </section>
+
+                </section>
+            </section>
+            <section class="rightSideTicketBuy<?php echo $i ?>"
+                     id="rightSideTicketBuy<?php echo $jazz->getEvent_ID() ?>">
+                <label class="artistLabel"><?php echo $jazz->getBandName(); ?></label>
+                <label class="timeLabelBuy"><?php echo $timeFormat = date('H:i', strtotime($jazz->getEvent()->getStartTime())); ?>
+                    -<?php echo $timeFormat = date('H:i', strtotime($jazz->getEvent()->getEndTime())); ?></label>
+                <label class="locationLabelBuy"><?php echo $jazz->getLocation(); ?></label>
+                <img src="images/<?php echo $jazz->getImage(); ?>.jpg">
+            </section>
+
+            <?php $i++;
+        } ?>
+    </section>
+    <section class="ticketsSaturday" id="ticketsSaturday">
+        <?php
+        $JazzEvents = [];
+        $jazzLogic = new JazzLogic();
+        $JazzEvents = (array)$jazzLogic->GetAllJazzEvents("2018-07-28 00:00:00", "2018-07-29 00:00:00");
+        $i = 1;
+        ?>
+        <?php
+        foreach ($JazzEvents as $jazz) {
+            ?>
+            <section class="leftSideTicket<?php echo $i ?>" id="leftSideTicket<?php echo $jazz->getEvent_ID() ?>">
+                <img src="images/<?php echo $jazz->getImage() ?>.jpg">
+                <h1><?php echo $jazz->getBandName() ?></h1>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p><?php echo $jazz->getDescription() ?></p>
+            </section>
+            <section class="rightSideTicket<?php echo $i ?>" id="rightSideTicket<?php echo $jazz->getEvent_ID() ?>">
+                <label class="dayLabel">Sat 28 Jul</label>
+                <label class="timeLabel"><?php echo $timeFormat = date('H:i', strtotime($jazz->getEvent()->getStartTime())); ?>
+                    -<?php echo $timeFormat = date('H:i', strtotime($jazz->getEvent()->getEndTime())); ?></label>
+                <label class="priceLabel">€<?php echo number_format((float)$jazz->getEvent()->getPrice(), 2, ',', ''); ?></label>
+                <label class="locationLabel"><?php echo $jazz->getLocation() ?></label>
+                <section class="buyButtonTicket<?php echo $i ?>">
+                    <a href="javascript:SwapToBuyScreen('leftSideTicket<?php echo $jazz->getEvent_ID() ?>','rightSideTicket<?php echo $jazz->getEvent_ID() ?>', 'leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>','rightSideTicketBuy<?php echo $jazz->getEvent_ID() ?>' )">
+                        <img src="images/BuyIcon.png">
+                        <label class="buyLabel">Buy Now</label>
+                    </a>
+                </section>
+            </section>
+            <section class="leftSideTicketBuy<?php echo $i ?>" id="leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>">
+                <section class="CloseAndAddButton">
+                    <section class="closeTicketScreenTicket<?php echo $i ?>"
+                             id="closeTicketScreenTicket<?php echo $i ?>">
+                        <a href="javascript:SwapBackToTicketScreen('leftSideTicket<?php echo $jazz->getEvent_ID() ?>','rightSideTicket<?php echo $jazz->getEvent_ID() ?>', 'leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>','rightSideTicketBuy<?php echo $jazz->getEvent_ID() ?>' )">
+                            <img src="images/BuyIcon.png">
+                            <label class="closeLabel">Back</label>
+                        </a>
+                    </section>
+                    <button class="AddToCartButton" id="AddToCartButton<?php echo $jazz->getEvent_ID() ?>">
+                        <img src="images/ShoppingCart.png">
+                        <label>Add to Cart</label>
+                    </button>
+                    <script>
+                        modal('popupAddedTicket', 'AddToCartButton<?php echo $jazz->getEvent_ID()?>', 'closeButton')
+                    </script>
+                </section>
+                <section class="ticketGridArea">
+                    <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
+                    <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
+                    <label style="font-weight: bold; font-size: 1.4375rem" class="amountGrid">Amount</label>
+                    <label class="titleArtist"><?php echo $jazz->getBandName(); ?></label>
+                    <label class="priceArtist">€<?php echo number_format((float)$jazz->getEvent()->getPrice(), 2, ',', ''); ?></label>
+                    <section class="amountArtist">
+                        <button class="minusArtist" id="minusArtist<?php echo $jazz->getEvent_ID() ?>">−</button>
+                        <input class="inputArtist" type="number" value="0"
+                               id="inputArtist<?php echo $jazz->getEvent_ID() ?>"/>
+                        <button class="plusArtist" id="plusArtist<?php echo $jazz->getEvent_ID() ?>">+</button>
+                        <script>
+                            addTicket('minusArtist<?php echo $jazz->getEvent_ID()?>', 'inputArtist<?php echo $jazz->getEvent_ID()?>', 'plusArtist<?php echo $jazz->getEvent_ID()?>')
+                        </script>
+                    </section>
+                    <label class="titleAllAccessDay">All-Access Thursday</label>
+                    <label class="priceAllAccessDay">€35,00</label>
+                    <section class="amountAllAccessDay">
+                        <button class="minusAllAccessDay" id="minusAllAccessDay<?php echo $jazz->getEvent_ID() ?>">−
+                        </button>
+                        <input class="inputAllAccessday" type="number" value="0"
+                               id="inputAllAccessDay<?php echo $jazz->getEvent_ID() ?>"/>
+                        <button class="plusAllAccessDay" id="plusAllAccessDay<?php echo $jazz->getEvent_ID() ?>">+
+                        </button>
+                        <script>
+                            addTicket('minusAllAccessDay<?php echo $jazz->getEvent_ID()?>', 'inputAllAccessDay<?php echo $jazz->getEvent_ID()?>', 'plusAllAccessDay<?php echo $jazz->getEvent_ID()?>')
+                        </script>
+                    </section>
+                    <label class="titleAllAccessWeekend">All-Access Weekend</label>
+                    <label class="priceAllAccessWeekend"> €80,00</label>
+                    <section class="amountAllAccessWeekend">
+                        <button class="minusAllAccessWeekend"
+                                id="minusAllAccessWeekend<?php echo $jazz->getEvent_ID() ?>">−
+                        </button>
+                        <input class="inputAllAccessWeekend" type="number" value="0"
+                               id="inputAllAccessWeekend<?php echo $jazz->getEvent_ID() ?>"/>
+                        <button class="plusAllAccessWeekend"
+                                id="plusAllAccessWeekend<?php echo $jazz->getEvent_ID() ?>">+
+                        </button>
+                        <script>
+                            addTicket('minusAllAccessWeekend<?php echo $jazz->getEvent_ID()?>', 'inputAllAccessWeekend<?php echo $jazz->getEvent_ID()?>', 'plusAllAccessWeekend<?php echo $jazz->getEvent_ID()?>')
+                        </script>
+                    </section>
+
+                </section>
+            </section>
+            <section class="rightSideTicketBuy<?php echo $i ?>"
+                     id="rightSideTicketBuy<?php echo $jazz->getEvent_ID() ?>">
+                <label class="artistLabel"><?php echo $jazz->getBandName(); ?></label>
+                <label class="timeLabelBuy"><?php echo $timeFormat = date('H:i', strtotime($jazz->getEvent()->getStartTime())); ?>
+                    -<?php echo $timeFormat = date('H:i', strtotime($jazz->getEvent()->getEndTime())); ?></label>
+                <label class="locationLabelBuy"><?php echo $jazz->getLocation(); ?></label>
+                <img src="images/<?php echo $jazz->getImage(); ?>.jpg">
+            </section>
+
+            <?php $i++;
+        } ?>
+    </section>
+    <section class="ticketsSunday" id="ticketsSunday">
+        <?php
+        $JazzEvents = [];
+        $jazzLogic = new JazzLogic();
+        $JazzEvents = (array)$jazzLogic->GetAllJazzEvents("2018-07-29 00:00:00", "2018-07-30 00:00:00");
+        $i = 1;
+        ?>
+        <?php
+        foreach ($JazzEvents as $jazz) {
+            ?>
+            <section class="leftSideTicket<?php echo $i ?>" id="leftSideTicket<?php echo $jazz->getEvent_ID() ?>">
+                <img src="images/<?php echo $jazz->getImage() ?>.jpg">
+                <h1><?php echo $jazz->getBandName() ?></h1>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p><?php echo $jazz->getDescription() ?></p>
+            </section>
+            <section class="rightSideTicket<?php echo $i ?>" id="rightSideTicket<?php echo $jazz->getEvent_ID() ?>">
+                <label class="dayLabel">Sun 29 Jul</label>
+                <label class="timeLabel"><?php echo $timeFormat = date('H:i', strtotime($jazz->getEvent()->getStartTime())); ?>
+                    -<?php echo $timeFormat = date('H:i', strtotime($jazz->getEvent()->getEndTime())); ?></label>
+                <label class="priceLabel">€<?php echo number_format((float)$jazz->getEvent()->getPrice(), 2, ',', ''); ?></label>
+                <label class="locationLabel"><?php echo $jazz->getLocation() ?></label>
+                <section class="buyButtonTicket<?php echo $i ?>">
+                    <a href="javascript:SwapToBuyScreen('leftSideTicket<?php echo $jazz->getEvent_ID() ?>','rightSideTicket<?php echo $jazz->getEvent_ID() ?>', 'leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>','rightSideTicketBuy<?php echo $jazz->getEvent_ID() ?>' )">
+                        <img src="images/BuyIcon.png">
+                        <label class="buyLabel">Buy Now</label>
+                    </a>
+                </section>
+            </section>
+            <section class="leftSideTicketBuy<?php echo $i ?>" id="leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>">
+                <section class="CloseAndAddButton">
+                    <section class="closeTicketScreenTicket<?php echo $i ?>"
+                             id="closeTicketScreenTicket<?php echo $i ?>">
+                        <a href="javascript:SwapBackToTicketScreen('leftSideTicket<?php echo $jazz->getEvent_ID() ?>','rightSideTicket<?php echo $jazz->getEvent_ID() ?>', 'leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>','rightSideTicketBuy<?php echo $jazz->getEvent_ID() ?>' )">
+                            <img src="images/BuyIcon.png">
+                            <label class="closeLabel">Back</label>
+                        </a>
+                    </section>
+                    <button class="AddToCartButton" id="AddToCartButton<?php echo $jazz->getEvent_ID() ?>">
+                        <img src="images/ShoppingCart.png">
+                        <label>Add to Cart</label>
+                    </button>
+                    <script>
+                        modal('popupAddedTicket', 'AddToCartButton<?php echo $jazz->getEvent_ID()?>', 'closeButton')
+                    </script>
+                </section>
+                <section class="ticketGridArea">
+                    <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
+                    <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
+                    <label style="font-weight: bold; font-size: 1.4375rem" class="amountGrid">Amount</label>
+                    <label class="titleArtist"><?php echo $jazz->getBandName(); ?></label>
+                    <label class="priceArtist">€<?php echo number_format((float)$jazz->getEvent()->getPrice(), 2, ',', ''); ?></label>
+                    <section class="amountArtist">
+                        <button class="minusArtist" id="minusArtist<?php echo $jazz->getEvent_ID() ?>">−</button>
+                        <input class="inputArtist" type="number" value="0"
+                               id="inputArtist<?php echo $jazz->getEvent_ID() ?>"/>
+                        <button class="plusArtist" id="plusArtist<?php echo $jazz->getEvent_ID() ?>">+</button>
+                        <script>
+                            addTicket('minusArtist<?php echo $jazz->getEvent_ID()?>', 'inputArtist<?php echo $jazz->getEvent_ID()?>', 'plusArtist<?php echo $jazz->getEvent_ID()?>')
+                        </script>
+                    </section>
+                    <label class="titleAllAccessDay">All-Access Thursday</label>
+                    <label class="priceAllAccessDay">€35,00</label>
+                    <section class="amountAllAccessDay">
+                        <button class="minusAllAccessDay" id="minusAllAccessDay<?php echo $jazz->getEvent_ID() ?>">−
+                        </button>
+                        <input class="inputAllAccessday" type="number" value="0"
+                               id="inputAllAccessDay<?php echo $jazz->getEvent_ID() ?>"/>
+                        <button class="plusAllAccessDay" id="plusAllAccessDay<?php echo $jazz->getEvent_ID() ?>">+
+                        </button>
+                        <script>
+                            addTicket('minusAllAccessDay<?php echo $jazz->getEvent_ID()?>', 'inputAllAccessDay<?php echo $jazz->getEvent_ID()?>', 'plusAllAccessDay<?php echo $jazz->getEvent_ID()?>')
+                        </script>
+                    </section>
+                    <label class="titleAllAccessWeekend">All-Access Weekend</label>
+                    <label class="priceAllAccessWeekend"> €80,00</label>
+                    <section class="amountAllAccessWeekend">
+                        <button class="minusAllAccessWeekend"
+                                id="minusAllAccessWeekend<?php echo $jazz->getEvent_ID() ?>">−
+                        </button>
+                        <input class="inputAllAccessWeekend" type="number" value="0"
+                               id="inputAllAccessWeekend<?php echo $jazz->getEvent_ID() ?>"/>
+                        <button class="plusAllAccessWeekend"
+                                id="plusAllAccessWeekend<?php echo $jazz->getEvent_ID() ?>">+
+                        </button>
+                        <script>
+                            addTicket('minusAllAccessWeekend<?php echo $jazz->getEvent_ID()?>', 'inputAllAccessWeekend<?php echo $jazz->getEvent_ID()?>', 'plusAllAccessWeekend<?php echo $jazz->getEvent_ID()?>')
+                        </script>
+                    </section>
+
+                </section>
+            </section>
+            <section class="rightSideTicketBuy<?php echo $i ?>"
+                     id="rightSideTicketBuy<?php echo $jazz->getEvent_ID() ?>">
                 <label class="artistLabel"><?php echo $jazz->getBandName(); ?></label>
                 <label class="timeLabelBuy"><?php echo $timeFormat = date('H:i', strtotime($jazz->getEvent()->getStartTime())); ?>
                     -<?php echo $timeFormat = date('H:i', strtotime($jazz->getEvent()->getEndTime())); ?></label>

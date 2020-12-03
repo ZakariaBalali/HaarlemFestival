@@ -6,6 +6,10 @@ body {
     background-repeat: no-repeat;
 }
 
+a {
+    text-decoration: none;
+}
+
 .MainContent {
     margin-top: 13.25rem;
     height: 82.5rem;
@@ -58,8 +62,8 @@ body {
     cursor: pointer;
 }
 
-.thursdayButton a {
-    text-decoration: none;
+#thursdayButtonLink {
+    display: block;
     color: #FFFFFF;
 }
 
@@ -73,7 +77,7 @@ body {
 }
 
 .fridayButton {
-
+    text-decoration: none;
     border: 0.1875rem solid black;
     border-radius: 1.125rem;
     font-family: "Segoe UI";
@@ -90,7 +94,7 @@ body {
 }
 
 .fridayButton a {
-    text-decoration: none;
+    display: block;
     color: #000000;
 }
 
@@ -120,7 +124,7 @@ body {
 }
 
 .saturdayButton a {
-    text-decoration: none;
+    display: block;
     color: #000000;
 }
 
@@ -150,7 +154,8 @@ body {
 }
 
 .sundayButton a {
-    text-decoration: none;
+
+    display: block;
     color: #000000;
 }
 
@@ -260,6 +265,158 @@ body {
 }
 
 .ticketsThursday a {
+    text-decoration: none;
+}
+
+
+.ticketsFriday {
+    display: none;
+    float: left;
+    margin-top: 1.875rem;
+    padding-left: 3.125rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0rem 3.125rem;
+    grid-template-areas: "leftSideTicket1  leftSideTicket2 " "leftSideTicket3  leftSideTicket4 " "leftSideTicket5 leftSideTicket6 ";
+}
+
+.ticketsFriday img {
+    float: left;
+    height: 12.4375rem;
+    width: 12.0625rem;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+    margin-top: 1.875rem;
+    object-fit: cover;
+
+}
+
+.ticketsFriday h1 {
+    margin-top: 2.5rem;
+    float: left;
+    font-size: 1.625rem;
+    font-family: "Arial Rounded MT";
+    font-weight: bold;
+    color: #E81212;
+}
+
+.ticketsFriday p {
+    font-family: "Arial Rounded MT";
+    color: black;
+    float: start;
+    margin-right: 5rem;
+
+}
+
+.ticketsFriday label {
+    font-family: "Arial Rounded MT";
+    display: block;
+    text-align: center;
+
+}
+
+.ticketsFriday a {
+    text-decoration: none;
+}
+
+
+.ticketsSaturday {
+    display: none;
+    float: left;
+    margin-top: 1.875rem;
+    padding-left: 3.125rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0rem 3.125rem;
+    grid-template-areas: "leftSideTicket1  leftSideTicket2 " "leftSideTicket3  leftSideTicket4 " "leftSideTicket5 leftSideTicket6 ";
+}
+
+.ticketsSaturday img {
+    float: left;
+    height: 12.4375rem;
+    width: 12.0625rem;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+    margin-top: 1.875rem;
+    object-fit: cover;
+
+}
+
+.ticketsSaturday h1 {
+    margin-top: 2.5rem;
+    float: left;
+    font-size: 1.625rem;
+    font-family: "Arial Rounded MT";
+    font-weight: bold;
+    color: #E81212;
+}
+
+.ticketsSaturday p {
+    font-family: "Arial Rounded MT";
+    color: black;
+    float: start;
+    margin-right: 5rem;
+
+}
+
+.ticketsSaturday label {
+    font-family: "Arial Rounded MT";
+    display: block;
+    text-align: center;
+
+}
+
+.ticketsSaturday a {
+    text-decoration: none;
+}
+
+.ticketsSunday {
+    display: none;
+    float: left;
+    margin-top: 1.875rem;
+    padding-left: 3.125rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0rem 3.125rem;
+    grid-template-areas: "leftSideTicket1  leftSideTicket2 " "leftSideTicket3  leftSideTicket4 " "leftSideTicket5 leftSideTicket6 ";
+}
+
+.ticketsSunday img {
+    float: left;
+    height: 12.4375rem;
+    width: 12.0625rem;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+    margin-top: 1.875rem;
+    object-fit: cover;
+
+}
+
+.ticketsSunday h1 {
+    margin-top: 2.5rem;
+    float: left;
+    font-size: 1.625rem;
+    font-family: "Arial Rounded MT";
+    font-weight: bold;
+    color: #E81212;
+}
+
+.ticketsSunday p {
+    font-family: "Arial Rounded MT";
+    color: black;
+    float: start;
+    margin-right: 5rem;
+
+}
+
+.ticketsSunday label {
+    font-family: "Arial Rounded MT";
+    display: block;
+    text-align: center;
+
+}
+
+.ticketsSunday a {
     text-decoration: none;
 }
 
@@ -421,6 +578,7 @@ body {
     font-size: 1.25rem;
     line-height: 3.75rem;
 }
+
 .closeTicketScreenTicket5 {
     width: 10.6875rem;
     height: 3.75rem;
@@ -506,6 +664,7 @@ body {
 .buyButtonTicket2:hover {
     background-color: #FF2323;
 }
+
 .buyButtonTicket3 {
     margin-top: 1.5625rem;
     margin-left: 0.3125rem;
@@ -615,6 +774,7 @@ body {
     width: 1.1875rem;
     float: left;
 }
+
 .buyLabel {
     cursor: pointer;
     color: #FFFFFF;
@@ -1176,22 +1336,23 @@ body {
     margin-left: 14rem;
 }
 
-.addedTickets tr, .addedTickets th{
+.addedTickets tr, .addedTickets th {
     font-family: "Segoe UI";
     font-size: 1.5rem;
     text-align: left;
     padding-right: 2rem;
 }
 
-.tableContent th{
+.tableContent th {
     font-weight: normal;
     text-align: left;
 }
 
-.popup-footer{
+.popup-footer {
     margin-top: 20rem;
 }
-.popup-footer button{
+
+.popup-footer button {
     width: 17.375rem;
     height: 4.6875rem;
     margin-left: 2rem;
@@ -1204,16 +1365,16 @@ body {
     cursor: pointer;
 }
 
-.closeButton{
+.closeButton {
     background-color: #C7C7C7;
     margin-right: 8rem;
 }
 
-.programButton{
+.programButton {
     background-color: #A5CD38;
 }
 
-.shoppingCartButton{
+.shoppingCartButton {
     background-color: #A5CD38;
 }
 

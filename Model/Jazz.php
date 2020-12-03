@@ -3,19 +3,31 @@ require_once '../Model/Event.php';
 
 class Jazz
 {
+    private $Event_ID;
     private $BandName;
     private $Description;
     private $Location;
     private $Image;
     private $Event;
 
-    function __construct($BandName, $Description, $Location, $Image, $StartTime, $EndTime, $Price)
+    function __construct($Event_ID, $BandName, $Description, $Location, $Image, $StartTime, $EndTime, $Price)
     {
-        $this->BandName=$BandName;
-        $this->Description=$Description;
-        $this->Location=$Location;
-        $this->Image=$Image;
-        $this->Event= new Event($StartTime, $EndTime, $Price);
+        $this->Event_ID = $Event_ID;
+        $this->BandName = $BandName;
+        $this->Description = $Description;
+        $this->Location = $Location;
+        $this->Image = $Image;
+        $this->Event = new Event($StartTime, $EndTime, $Price);
+    }
+
+    public function getEvent_ID()
+    {
+        return $this->Event_ID;
+    }
+
+    public function setEvent_ID($Event_ID)
+    {
+        $this->Event_ID = $Event_ID;
     }
 
     /**
