@@ -273,7 +273,7 @@ require_once '../Logic/JazzLogic.php';
                             addTicket('minusArtist<?php echo $jazz->getEvent_ID()?>', 'inputArtist<?php echo $jazz->getEvent_ID()?>', 'plusArtist<?php echo $jazz->getEvent_ID()?>')
                         </script>
                     </section>
-                    <label class="titleAllAccessDay">All-Access Thursday</label>
+                    <label class="titleAllAccessDay">All-Access Friday</label>
                     <label class="priceAllAccessDay">€35,00</label>
                     <section class="amountAllAccessDay">
                         <button class="minusAllAccessDay" id="minusAllAccessDay<?php echo $jazz->getEvent_ID() ?>">−
@@ -381,7 +381,7 @@ require_once '../Logic/JazzLogic.php';
                             addTicket('minusArtist<?php echo $jazz->getEvent_ID()?>', 'inputArtist<?php echo $jazz->getEvent_ID()?>', 'plusArtist<?php echo $jazz->getEvent_ID()?>')
                         </script>
                     </section>
-                    <label class="titleAllAccessDay">All-Access Thursday</label>
+                    <label class="titleAllAccessDay">All-Access Saturday</label>
                     <label class="priceAllAccessDay">€35,00</label>
                     <section class="amountAllAccessDay">
                         <button class="minusAllAccessDay" id="minusAllAccessDay<?php echo $jazz->getEvent_ID() ?>">−
@@ -472,7 +472,7 @@ require_once '../Logic/JazzLogic.php';
                     <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
                     <label class="titleArtist"><?php echo $jazz->getBandName(); ?></label>
                     <label class="priceArtist">€<?php echo number_format((float)$jazz->getEvent()->getPrice(), 2, ',', ''); ?></label>
-                    <label class="titleAllAccessDay">All-Access Thursday</label>
+                    <label class="titleAllAccessDay">All-Access Sunday</label>
                     <label class="priceAllAccessDay">€0,00</label>
                     <label class="titleAllAccessWeekend">All jazz events are free to visit on sunday!</label>
 
