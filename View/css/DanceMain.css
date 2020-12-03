@@ -129,7 +129,21 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 0fr 0fr 0fr 0fr;
     gap: 0rem 0rem;
-    grid-template-areas: "ticket1Title ticket2Title" "ticket1Detail ticket2Detail" "ticket3Title ticket4Title" "ticket3Detail ticket4Detail";
+    grid-template-areas:
+    "ticket1Title ticket2Title"
+    "ticket1Detail ticket2Detail"
+    "ticket3Title ticket4Title"
+    "ticket3Detail ticket4Detail"
+    "ticket5Title ticket6Title"
+    "ticket5Detail ticket6Detail"
+    "ticket7Title ticket8Title"
+    "ticket7Detail ticket8Detail"
+    "ticket9Title ticket10Title"
+    "ticket9Detail ticket10Detail"
+    "ticket11Title ticket12Title"
+    "ticket11Detail ticket12Detail"
+    "ticket13Title ticket14Title"
+    "ticket13Detail ticket14Detail";
 }
 
 .ticket1Title {
@@ -166,6 +180,52 @@
     color: black;
     height: 18.75rem;
 
+}
+.TicketAchterkant{
+    grid-area: ticket1Detail;
+    background-color: white;
+    margin-right: 1.25rem;
+    margin-left: 18.75rem;
+    margin-bottom: 5rem;
+    color: black;
+    height: 18.75rem;
+    visibility: hidden;
+}
+.AchterkantTitle{
+    grid-area: ticket1Title;
+    background-color: #11557C;
+  
+
+}
+.AchterkantLeftside{
+    background-color: #0D7EFF;
+    height: 18.75rem;
+    width: 12.75rem;
+    text-align: center;
+    font-family: Segoe UI;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+}
+.AchterkantLeftside img{
+    height: 8.75rem;
+    width: 8.75rem;
+    margin-left: 1.75rem;
+    float: left;
+    object-fit: cover;
+    background-color: #0D7EFF;
+}
+.AchterkantRightside{
+    float: right;
+    text-align: left;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: Segoe UI;
+    margin-left: 12rem;
+    position: relative;
+    
+    color: black;
+    bottom: 22rem;
 }
 
 .rightsideDetail {
@@ -291,30 +351,397 @@
     color: black;
     height: 18.75rem;
 }
-.leftSideTicketBuy1 {
-    display: none;
-    grid-area: leftSideTicket1;
-    margin-left: 11.5rem;
-    width: 43.6875rem;
-    height: 15.875rem;
-    background-color: rgba(255, 255, 255, 1);
-    border: #707070 0.0625rem solid;
+.ticket5Title {
+    grid-area: ticket5Title;
+    background-color: #F9007D;
+    margin-right: 1.25rem;
+    margin-left: 18.75rem;
+    font-size: 1.5625rem;
+    font-family: Segoe UI;
+    text-align: center;
+    font-weight: bold;
+    height: 3.125rem;
+
 }
-.rightSideTicketBuy1 {
-    display: none;
-    margin-bottom: 3.125rem;
-    grid-area: leftSideTicket1;
-    width: 11.5rem;
-    height: 15.875rem;
-    background-color: #FC5757;
-    border: #707070 0.0625rem solid;
+.ticket5Detail {
+    grid-area: ticket5Detail;
+    background-color: white;
+    margin-right: 1.25rem;
+    margin-left: 18.75rem;
+    margin-bottom: 5rem;
+    color: black;
+    height: 18.75rem;
+
 }
-.rightSideTicketBuy1 img {
+.ticket6Title {
+    grid-area: ticket6Title;
+    background-color: #F9007D;
+    margin-right: 18.75rem;
+    margin-left: 1.25rem;
+    font-size: 1.5625rem;
+    font-family: Segoe UI;
+    text-align: center;
+    font-weight: bold;
+    height: 3.125rem;
+}
+.ticket6Detail {
+    grid-area: ticket6Detail;
+    background-color: white;
+    margin-right: 18.75rem;
+    margin-left: 1.25rem;
+    color: black;
+    height: 18.75rem;
+}
+.ticket7Title {
+    grid-area: ticket7Title;
+    background-color: #F9007D;
+    margin-right: 1.25rem;
+    margin-left: 18.75rem;
+    font-size: 1.5625rem;
+    font-family: Segoe UI;
+    text-align: center;
+    font-weight: bold;
+    height: 3.125rem;
+
+}
+.ticket7Detail {
+    grid-area: ticket7Detail;
+    background-color: white;
+    margin-right: 1.25rem;
+    margin-left: 18.75rem;
+    margin-bottom: 5rem;
+    color: black;
+    height: 18.75rem;
+
+}
+.ticket8Title {
+    grid-area: ticket8Title;
+    background-color: #F9007D;
+    margin-right: 18.75rem;
+    margin-left: 1.25rem;
+    font-size: 1.5625rem;
+    font-family: Segoe UI;
+    text-align: center;
+    font-weight: bold;
+    height: 3.125rem;
+}
+.ticket8Detail {
+    grid-area: ticket8Detail;
+    background-color: white;
+    margin-right: 18.75rem;
+    margin-left: 1.25rem;
+    color: black;
+    height: 18.75rem;
+}
+.ticket9Title {
+    grid-area: ticket9Title;
+    background-color: #F9007D;
+    margin-right: 1.25rem;
+    margin-left: 18.75rem;
+    font-size: 1.5625rem;
+    font-family: Segoe UI;
+    text-align: center;
+    font-weight: bold;
+    height: 3.125rem;
+
+}
+.ticket9Detail {
+    grid-area: ticket9Detail;
+    background-color: white;
+    margin-right: 1.25rem;
+    margin-left: 18.75rem;
+    margin-bottom: 5rem;
+    color: black;
+    height: 18.75rem;
+
+}
+.ticket10Title {
+    grid-area: ticket10Title;
+    background-color: #F9007D;
+    margin-right: 18.75rem;
+    margin-left: 1.25rem;
+    font-size: 1.5625rem;
+    font-family: Segoe UI;
+    text-align: center;
+    font-weight: bold;
+    height: 3.125rem;
+}
+.ticket10Detail {
+    grid-area: ticket10Detail;
+    background-color: white;
+    margin-right: 18.75rem;
+    margin-left: 1.25rem;
+    color: black;
+    height: 18.75rem;
+}
+.ticket11Title {
+    grid-area: ticket11Title;
+    background-color: #F9007D;
+    margin-right: 1.25rem;
+    margin-left: 18.75rem;
+    font-size: 1.5625rem;
+    font-family: Segoe UI;
+    text-align: center;
+    font-weight: bold;
+    height: 3.125rem;
+
+}
+.ticket11Detail {
+    grid-area: ticket11Detail;
+    background-color: white;
+    margin-right: 1.25rem;
+    margin-left: 18.75rem;
+    margin-bottom: 5rem;
+    color: black;
+    height: 18.75rem;
+
+}
+.ticket12Title {
+    grid-area: ticket12Title;
+    background-color: #F9007D;
+    margin-right: 18.75rem;
+    margin-left: 1.25rem;
+    font-size: 1.5625rem;
+    font-family: Segoe UI;
+    text-align: center;
+    font-weight: bold;
+    height: 3.125rem;
+}
+.ticket12Detail {
+    grid-area: ticket12Detail;
+    background-color: white;
+    margin-right: 18.75rem;
+    margin-left: 1.25rem;
+    color: black;
+    height: 18.75rem;
+}
+.ticket13Title {
+    grid-area: ticket13Title;
+    background-color: #F9007D;
+    margin-right: 1.25rem;
+    margin-left: 18.75rem;
+    font-size: 1.5625rem;
+    font-family: Segoe UI;
+    text-align: center;
+    font-weight: bold;
+    height: 3.125rem;
+
+}
+.ticket13Detail {
+    grid-area: ticket13Detail;
+    background-color: white;
+    margin-right: 1.25rem;
+    margin-left: 18.75rem;
+    margin-bottom: 5rem;
+    color: black;
+    height: 18.75rem;
+
+}
+.ticketGridArea {
+    display: grid;
+    text-align: left;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1rem 0rem;
+    float: right;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    grid-template-areas: "titleGrid priceGrid amountGrid ." "titleArtist priceArtist amountArtist ." "titleAllAccessDay priceAllAccessDay amountAllAccessDay ." "titleAllAccessWeekend priceAllAccessWeekend amountAllAccessWeekend .";
+    color: #000000;
+}
+.ticketGridArea label {
+    text-align: left;
+    font-family: "Segoe UI";
+    font-weight: normal;
+    font-size: 1.25rem;
+}
+
+.titleGrid {
+    grid-area: titleGrid;
+    font-weight: bold;
+}
+
+.priceGrid {
+    grid-area: priceGrid;
+}
+
+.amountGrid {
+    grid-area: amountGrid;
+}
+
+.titleArtist {
+    font-family: "Segoe UI";
+    font-weight: normal;
+    grid-area: titleArtist;
+
+}
+
+.priceArtist {
+    grid-area: priceArtist;
+}
+
+.amountArtist {
+    grid-area: amountArtist;
+}
+
+.amountArtist button {
+    width: 1.4375rem;
+    height: 1.4375rem;
+}
+
+.amountArtist input {
+    width: 2rem;
+    border: none;
+    border: 0.125rem #BCE0FD solid;
+    border-radius: 0.3125rem;
+    background-color: #F1F9FF;
+    text-align: right;
+}
+
+.minusArtist {
+    border: none;
+    background-color: #AA2828;
+    color: #FFFFFF;
+    border-radius: 50%;
+
+}
+
+.plusArtist {
+    border: none;
+    background-color: #2699FB;
+    color: #FFFFFF;
+    border-radius: 50%;
+}
+
+.titleAllAccessDay {
+    grid-area: titleAllAccessDay;
+}
+
+.priceAllAccessDay {
+    grid-area: priceAllAccessDay;
+}
+
+.amountAllAccessDay {
+    grid-area: amountAllAccessDay;
+}
+
+.amountAllAccessDay button {
+    width: 1.4375rem;
+    height: 1.4375rem;
+}
+
+.amountAllAccessDay input {
+    width: 2rem;
+    border: none;
+    border: 0.125rem #BCE0FD solid;
+    border-radius: 0.3125rem;
+    background-color: #F1F9FF;
+    text-align: right;
+
+}
+
+.minusAllAccessDay {
+    border: none;
+    background-color: #AA2828;
+    color: #FFFFFF;
+    border-radius: 50%;
+}
+
+.plusAllAccessDay {
+    border: none;
+    background-color: #2699FB;
+    color: #FFFFFF;
+    border-radius: 50%;
+}
+
+.titleAllAccessWeekend {
+    grid-area: titleAllAccessWeekend;
+}
+
+.priceAllAccessWeekend {
+    grid-area: priceAllAccessWeekend;
+}
+
+.amountAllAccessWeekend {
+    grid-area: amountAllAccessWeekend;
+}
+
+.amountAllAccessWeekend button {
+    width: 1.4375rem;
+    height: 1.4375rem;
+}
+
+.amountAllAccessWeekend input {
+    width: 2rem;
+    border: none;
+    border: 0.125rem #BCE0FD solid;
+    border-radius: 0.3125rem;
+    background-color: #F1F9FF;
+    text-align: right;
+}
+
+.minusAllAccessWeekend {
+    border: none;
+    background-color: #AA2828;
+    color: #FFFFFF;
+    border-radius: 50%;
+}
+
+.plusAllAccessWeekend {
+    border: none;
+    background-color: #2699FB;
+    color: #FFFFFF;
+    border-radius: 50%;
+}
+
+.AddToCartButton {
+    background-color: #0D7EFF;
+    border: 0.0625rem #707070 solid;
+    width: 9.6875rem;
+    height: 6rem;
     margin-top: 1.2rem;
-    width: 9.1875rem;
-    height: 9.5rem;
+    margin-left: 1.7rem;
 }
- 
+
+.AddToCartButton:hover {
+    background-color: #00408A;
+}
+
+.AddToCartButton label {
+    font-size: 1.0625rem;
+    font-family: "Segoe UI";
+    text-align: center;
+    line-height: 6rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.AddToCartButton img {
+    margin-top: 2.2rem;
+    margin-left: 0.3125rem;
+    margin-right: 0rem;
+    height: 1.678125rem;
+    width: 1.678125rem;
+    float: left;
+    object-fit: cover;
+}
+.buttonAddTicket{
+    text-align: center;
+    height: 3.125rem;
+    width: 10.9375rem;
+    margin-left: 3.7rem;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    top: 16rem;
+    left: 3.5rem;
+    font-family: segoe ui;
+    background-color: #11557C;
+    color: whitesmoke;
+}
+
+
 
 
   
