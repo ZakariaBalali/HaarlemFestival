@@ -60,13 +60,12 @@
                  <!--tickets -->
        
     <section class="Tickets">
-      <div class="grid-container">
-
-                       <!--ticket1 -->
-      <div class="ticket1Title" id="ticket1Title">Nicky Romero/Afrojack</div>
-      <div class="ticket1Detail" id="ticket1Detail">
-      <section class="rightsideDetail">
-      <label class="dayLabel">Date: 2020-07-27</label>
+        <!--ticket1 -->
+    <div class="grid-container">
+    <div class="ticket1Title" id="ticket1Title">Nicky Romero/Afrojack</div>
+    <div class="ticket1Detail" id="ticket1Detail">
+        <section class="rightsideDetail">
+            <label class="dayLabel">Date: 2020-07-27</label>
             <br>
             <label class="timeLabel">Time: 20:00</label>
             <br>
@@ -77,38 +76,32 @@
             <label class="priceLabel">Price: €75,00</label>
             <br>
             <br>
-           <<!--<section class="buyButtonTicketRow1" id="buyButtonTicketRow1">
-                <a href="javascript:SwapToBuyScreen('ticket1Title','ticket1Detail', 'leftSideTicketBuy1','rightSideTicketBuy1' )">
-                    <img src="images/BuyIcon.png"> -->
-                <button class="buyTicket1Btn" onClick="switchTicket()">Buy now</button>
-                </a>>
+           
+            <button class="buyTicket1Btn" onclick="showBuyTicket()">Buy now</button>
+                
+        </section>
+        <section class="leftsideDetail">
+            <img class="imagesLeft" src="images/nickyromeroafrojack.png">
+        </section>
+    </div>
+                         <!-- achterkant ticket1 -->
+    <section class="TicketAchterkant" id="TicketAchterkant">
+    <section class="AchterkantTitle">
+        
     </section>
-    <section class="leftsideDetail">
-    <img class="imagesLeft" src="images/nickyromeroafrojack.png">
-    </section>
-      </div>
-                       <!--ticket1 swipe -->
-<!--<section class="leftSideTicketBuy1" id="leftSideTicketBuy1">
-            <section class="CloseAndAddButton">
-                <section class="closeTicketScreenRow1" id="closeTicketScreenRow1">
-                    <a href="javascript:SwapBackToTicketScreen('ticket1Title','ticket1Detail', 'leftSideTicketBuy1','rightSideTicketBuy1' )">
-                        <img src="images/BuyIcon.png">
-                        <label class="closeLabel">Back</label>
-                    </a>
-                </section>
-                <button class="AddToCartButton" id="AddToCartButton1">
-                    <img src="images/ShoppingCart.png">
-                    <label>Add to Cart</label>
-                </button>
-                <script>
-                    modal('popupAddedTicket', 'AddToCartButton1', 'closeButton')
-                </script>
-            </section>
-            <section class="ticketGridArea">
-                <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
-                <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
-                <label style="font-weight: bold; font-size: 1.4375rem" class="amountGrid">Amount</label>
-                <label class="titleArtist">Gare du Nord Saturday</label>
+        <section class="AchterkantLeftside">
+        <label class="dayLabel">Date: 2020-07-27</label>
+            <br>
+            <label class="timeLabel">Time: 20:00</label>
+            <br>
+            <label class="locationLabel">Location: Lichtfabriek</label>
+            <br>
+        <img class="imagesLeft" src="images/nickyromeroafrojack.png">
+        </section>
+        <section class="AchterkantRightside">
+        <section class="ticketGridArea">
+                
+                <label class="titleArtist">Regular ticket</label>
                 <label class="priceArtist">€15,00</label>
                 <section class="amountArtist">
                     <button class="minusArtist" id="minusArtist1">−</button>
@@ -118,7 +111,7 @@
                         addTicket('minusArtist1', 'inputArtist1', 'plusArtist1')
                     </script>
                 </section>
-                <label class="titleAllAccessDay">All-Access Thursday</label>
+                <label class="titleAllAccessDay">All-Access Friday</label>
                 <label class="priceAllAccessDay">€35,00</label>
                 <section class="amountAllAccessDay">
                     <button class="minusAllAccessDay" id="minusAllAccessDay1">−</button>
@@ -137,10 +130,18 @@
                     <script>
                         addTicket('minusAllAccessWeekend1', 'inputAllAccessWeekend1', 'plusAllAccessWeekend1')
                     </script>
+                    
                 </section>
-
+                <button class="buttonAddTicket"> Add</button>
             </section>
--->
+        
+        </section>
+        
+            
+            
+    </section>
+             
+
                        <!--ticket2 -->
       <div class="ticket2Title"  id="ticket2Title">Tiesto</div>
       <div class="ticket2Detail" id="ticket2Detail">
@@ -162,10 +163,10 @@
     <section class="leftsideDetail">
     <img class="imagesLeft" src="images/tiesto1.jpg">
     </section>
-
       </div>
+
+
       <div class="ticket3Title">Hardwell</div>
-      <div class="ticket4Title">Armin van Buuren</div>
       <div class="ticket3Detail">
       <section class="rightsideDetail">
       <label class="dayLabel">Date: 2020-07-27</label>
@@ -186,6 +187,9 @@
     <img class="imagesLeft" src="images/hardwell1.jpg">
     </section>
       </div>
+
+
+     <div class="ticket4Title">Armin van Buuren</div>
      <div class="ticket4Detail">
      <section class="rightsideDetail">
       <label class="dayLabel">Date: 2020-07-27</label>
@@ -206,8 +210,60 @@
     <img class="imagesLeft" src="images/arminvanbuuren1.jpg">
     </section>
      </div>
+
+     <div class="ticket5Title" id="ticket5Title">Nicky Romero/Afrojack</div>
+    <div class="ticket5Detail" id="ticket5Detail">
+        <section class="rightsideDetail">
+            <label class="dayLabel">Date: 2020-07-27</label>
+            <br>
+            <label class="timeLabel">Time: 20:00</label>
+            <br>
+            <label class="locationLabel">Location: Lichtfabriek</label>
+            <br>
+            <label class="durationLabel">Duration: 360 min</label>
+            <br>
+            <label class="priceLabel">Price: €75,00</label>
+            <br>
+            <br>
+           
+            <button class="buyTicket5Btn" onclick="showBuyTicket()">Buy now</button>
+                
+        </section>
+        <section class="leftsideDetail">
+            <img class="imagesLeft" src="images/nickyromeroafrojack.png">
+        </section>
     </div>
- 
+
+    <div class="ticket6Title"  id="ticket6Title">Tiesto</div>
+      <div class="ticket6Detail" id="ticket6Detail">
+    <section class="rightsideDetail">
+      <label class="dayLabel">Date: 2020-07-27</label>
+            <br>
+            <label class="timeLabel">Time: 22:00</label>
+            <br>
+            <label class="locationLabel">Location: Club Stalker</label>
+            <br>
+            <label class="durationLabel">Duration: 90 min</label>
+            <br>
+            <label class="priceLabel">Price: €60,00</label>
+            <br>
+            <br>
+            <button class="buyTicket6Btn">Buy now</button>
+            </br>
+    </section>
+    <section class="leftsideDetail">
+    <img class="imagesLeft" src="images/tiesto1.jpg">
+    </section>
+      </div>
+</div>
+
+
+
+    
+
+
+    </div>
+    
         </section>
 
         </section>
