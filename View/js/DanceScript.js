@@ -30,3 +30,8 @@ function addTicket(minButton, input, addButton) {
         inputField.value = currentValue + 1;
     });
 }
+function showBuyTicket(){
+    document.getElementById("TicketAchterkant").style.visibility="visible";
+    document.getElementById("ticket1Title").style.backgroundColor="#11557C"
+    
+}
