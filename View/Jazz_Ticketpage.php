@@ -94,8 +94,10 @@ require_once '../Logic/JazzLogic.php';
                    'thursdayButtonLink', 'saturdayButtonLink', 'sundayButtonLink','ticketsFriday','ticketsThursday','ticketsSaturday','ticketsSunday')">
                     Friday</a>
             </section>
-            <section class="saturdayButton" id="fridayButton"><a id="saturdayButtonLink" href="#">Saturday</a></section>
-            <section class="sundayButton" id="sundayButton"><a id="saturdayButtonLink" href="#">Sunday</a></section>
+            <section class="saturdayButton" id="fridayButton"><a id="saturdayButtonLink" href="">Saturday</a></section>
+            <section class="sundayButton" id="sundayButton"><a id="saturdayButtonLink" href="javascript:filterSelection('sundayButton','thursdayButton','saturdayButton','fridayButton', 'sundayButtonLink',
+                   'thursdayButtonLink', 'saturdayButtonLink', 'sundayButtonLink','ticketsSunday','ticketsThursday','ticketsSaturday','ticketsFriday')">Sunday</a>
+            </section>
         </section>
     </section>
     <section class="ticketsThursday" id="ticketsThursday">
@@ -464,57 +466,15 @@ require_once '../Logic/JazzLogic.php';
                             <label class="closeLabel">Back</label>
                         </a>
                     </section>
-                    <button class="AddToCartButton" id="AddToCartButton<?php echo $jazz->getEvent_ID() ?>">
-                        <img src="images/ShoppingCart.png">
-                        <label>Add to Cart</label>
-                    </button>
-                    <script>
-                        modal('popupAddedTicket', 'AddToCartButton<?php echo $jazz->getEvent_ID()?>', 'closeButton')
-                    </script>
                 </section>
                 <section class="ticketGridArea">
                     <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
                     <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
-                    <label style="font-weight: bold; font-size: 1.4375rem" class="amountGrid">Amount</label>
                     <label class="titleArtist"><?php echo $jazz->getBandName(); ?></label>
                     <label class="priceArtist">€<?php echo number_format((float)$jazz->getEvent()->getPrice(), 2, ',', ''); ?></label>
-                    <section class="amountArtist">
-                        <button class="minusArtist" id="minusArtist<?php echo $jazz->getEvent_ID() ?>">−</button>
-                        <input class="inputArtist" type="number" value="0"
-                               id="inputArtist<?php echo $jazz->getEvent_ID() ?>"/>
-                        <button class="plusArtist" id="plusArtist<?php echo $jazz->getEvent_ID() ?>">+</button>
-                        <script>
-                            addTicket('minusArtist<?php echo $jazz->getEvent_ID()?>', 'inputArtist<?php echo $jazz->getEvent_ID()?>', 'plusArtist<?php echo $jazz->getEvent_ID()?>')
-                        </script>
-                    </section>
                     <label class="titleAllAccessDay">All-Access Thursday</label>
-                    <label class="priceAllAccessDay">€35,00</label>
-                    <section class="amountAllAccessDay">
-                        <button class="minusAllAccessDay" id="minusAllAccessDay<?php echo $jazz->getEvent_ID() ?>">−
-                        </button>
-                        <input class="inputAllAccessday" type="number" value="0"
-                               id="inputAllAccessDay<?php echo $jazz->getEvent_ID() ?>"/>
-                        <button class="plusAllAccessDay" id="plusAllAccessDay<?php echo $jazz->getEvent_ID() ?>">+
-                        </button>
-                        <script>
-                            addTicket('minusAllAccessDay<?php echo $jazz->getEvent_ID()?>', 'inputAllAccessDay<?php echo $jazz->getEvent_ID()?>', 'plusAllAccessDay<?php echo $jazz->getEvent_ID()?>')
-                        </script>
-                    </section>
-                    <label class="titleAllAccessWeekend">All-Access Weekend</label>
-                    <label class="priceAllAccessWeekend"> €80,00</label>
-                    <section class="amountAllAccessWeekend">
-                        <button class="minusAllAccessWeekend"
-                                id="minusAllAccessWeekend<?php echo $jazz->getEvent_ID() ?>">−
-                        </button>
-                        <input class="inputAllAccessWeekend" type="number" value="0"
-                               id="inputAllAccessWeekend<?php echo $jazz->getEvent_ID() ?>"/>
-                        <button class="plusAllAccessWeekend"
-                                id="plusAllAccessWeekend<?php echo $jazz->getEvent_ID() ?>">+
-                        </button>
-                        <script>
-                            addTicket('minusAllAccessWeekend<?php echo $jazz->getEvent_ID()?>', 'inputAllAccessWeekend<?php echo $jazz->getEvent_ID()?>', 'plusAllAccessWeekend<?php echo $jazz->getEvent_ID()?>')
-                        </script>
-                    </section>
+                    <label class="priceAllAccessDay">€0,00</label>
+                    <label class="titleAllAccessWeekend">All jazz events are free to visit on sunday!</label>
 
                 </section>
             </section>
