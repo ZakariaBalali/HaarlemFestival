@@ -5,7 +5,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    height: 150rem;
+    height: 230rem;
     margin-top: 10rem;
 
 }
@@ -52,10 +52,11 @@
     height: 3.125rem;
     width: 20%;
     border-radius: 1.5625rem;
-    border-color: white;
+    border-color: black;
     font-family: Segoe UI;
     font-weight: bold;
     font-size: 1.4375rem;
+    background-color: lime;
 }
 
 .allTicketsBtn:hover {
@@ -181,7 +182,7 @@
     height: 18.75rem;
 
 }
-.TicketAchterkant{
+.buyTicket1{
     grid-area: ticket1Detail;
     background-color: white;
     margin-right: 1.25rem;
@@ -191,13 +192,211 @@
     height: 18.75rem;
     visibility: hidden;
 }
-.AchterkantTitle{
+.buyTicket1Title{
     grid-area: ticket1Title;
     background-color: #11557C;
   
 
 }
-.AchterkantLeftside{
+.buyTicket2{
+ 
+    grid-area: ticket2Detail;
+    background-color: white;
+    margin-right: 18.75rem;
+    margin-left: 1.25rem;
+    color: black;
+    height: 18.75rem;
+    visibility: hidden;
+}
+.buyTicket2Title{
+    grid-area: ticket2Title;
+    background-color: #11557C;
+  
+
+}
+.buyTicket3{
+ 
+    grid-area: ticket3Detail;
+    background-color: white;
+    margin-right: 1.25rem;
+    margin-left: 18.75rem;
+    margin-bottom: 5rem;
+    color: black;
+    height: 18.75rem;
+    visibility: hidden;
+}
+.buyTicket3Title{
+    grid-area: ticket3Title;
+    background-color: #11557C;
+  
+
+}
+.buyTicket4{
+ 
+    grid-area: ticket4Detail;
+    background-color: white;
+    margin-right: 18.75rem;
+    margin-left: 1.25rem;
+    color: black;
+    height: 18.75rem;
+    visibility: hidden;
+}
+.buyTicket4Title{
+    grid-area: ticket4Title;
+    background-color: #11557C;
+  
+
+}
+.buyTicket5{
+ 
+    grid-area: ticket5Detail;
+    background-color: white;
+    margin-right: 1.25rem;
+    margin-left: 18.75rem;
+    margin-bottom: 5rem;
+    color: black;
+    height: 18.75rem;
+    visibility: hidden;
+}
+.buyTicket5Title{
+    grid-area: ticket5Title;
+    background-color: #11557C;
+  
+
+}
+.buyTicket6{
+ 
+    grid-area: ticket6Detail;
+    background-color: white;
+    margin-right: 18.75rem;
+    margin-left: 1.25rem;
+    color: black;
+    height: 18.75rem;
+    visibility: hidden;
+}
+.buyTicket6Title{
+    grid-area: ticket6Title;
+    background-color: #11557C;
+  
+
+}
+.buyTicket7{
+ 
+    grid-area: ticket7Detail;
+    background-color: white;
+    margin-right: 1.25rem;
+    margin-left: 18.75rem;
+    margin-bottom: 5rem;
+    color: black;
+    height: 18.75rem;
+    visibility: hidden;
+}
+.buyTicket7Title{
+    grid-area: ticket7Title;
+    background-color: #11557C;
+  
+
+}
+.buyTicket8{
+ 
+    grid-area: ticket8Detail;
+    background-color: white;
+    margin-right: 18.75rem;
+    margin-left: 1.25rem;
+    color: black;
+    height: 18.75rem;
+    visibility: hidden;
+}
+.buyTicket8Title{
+    grid-area: ticket8Title;
+    background-color: #11557C;
+  
+
+}
+.buyTicket9{
+ 
+    grid-area: ticket9Detail;
+    background-color: white;
+    margin-right: 1.25rem;
+    margin-left: 18.75rem;
+    margin-bottom: 5rem;
+    color: black;
+    height: 18.75rem;
+    visibility: hidden;
+}
+.buyTicket9Title{
+    grid-area: ticket9Title;
+    background-color: #11557C;
+  
+
+}
+.buyTicket10{
+ 
+    grid-area: ticket10Detail;
+    background-color: white;
+    margin-right: 18.75rem;
+    margin-left: 1.25rem;
+    color: black;
+    height: 18.75rem;
+    visibility: hidden;
+}
+.buyTicket10Title{
+    grid-area: ticket10Title;
+    background-color: #11557C;
+  
+
+}
+.buyTicket11{
+ 
+    grid-area: ticket11Detail;
+    background-color: white;
+    margin-right: 1.25rem;
+    margin-left: 18.75rem;
+    margin-bottom: 5rem;
+    color: black;
+    height: 18.75rem;
+    visibility: hidden;
+}
+.buyTicket11Title{
+    grid-area: ticket11Title;
+    background-color: #11557C;
+  
+
+}
+.buyTicket12{
+ 
+    grid-area: ticket12Detail;
+    background-color: white;
+    margin-right: 18.75rem;
+    margin-left: 1.25rem;
+    color: black;
+    height: 18.75rem;
+    visibility: hidden;
+}
+.buyTicket12Title{
+    grid-area: ticket12Title;
+    background-color: #11557C;
+  
+
+}
+.buyTicket13{
+ 
+    grid-area: ticket13Detail;
+    background-color: white;
+    margin-right: 1.25rem;
+    margin-left: 18.75rem;
+    margin-bottom: 5rem;
+    color: black;
+    height: 18.75rem;
+    visibility: hidden;
+}
+.buyTicket13Title{
+    grid-area: ticket13Title;
+    background-color: #11557C;
+  
+
+}
+.buyTicketLeftside{
     background-color: #0D7EFF;
     height: 18.75rem;
     width: 12.75rem;
@@ -207,7 +406,7 @@
     font-size: 1.2rem;
     color: white;
 }
-.AchterkantLeftside img{
+.buyTicketLeftside img{
     height: 8.75rem;
     width: 8.75rem;
     margin-left: 1.75rem;
@@ -215,7 +414,7 @@
     object-fit: cover;
     background-color: #0D7EFF;
 }
-.AchterkantRightside{
+.buyTicketRightside{
     float: right;
     text-align: left;
     font-size: 1.6rem;
@@ -289,6 +488,105 @@
     color: whitesmoke;
 }
 .buyTicket4Btn {
+    text-align: center;
+    height: 3.125rem;
+    width: 10.9375rem;
+    margin-left: 3.4375rem;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: segoe ui;
+    background-color: #0D7EFF;
+    color: whitesmoke;
+}
+.buyTicket5Btn {
+    text-align: center;
+    height: 3.125rem;
+    width: 10.9375rem;
+    margin-left: 3.4375rem;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: segoe ui;
+    background-color: #0D7EFF;
+    color: whitesmoke;
+}
+.buyTicket6Btn {
+    text-align: center;
+    height: 3.125rem;
+    width: 10.9375rem;
+    margin-left: 3.4375rem;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: segoe ui;
+    background-color: #0D7EFF;
+    color: whitesmoke;
+}
+.buyTicket7Btn {
+    text-align: center;
+    height: 3.125rem;
+    width: 10.9375rem;
+    margin-left: 3.4375rem;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: segoe ui;
+    background-color: #0D7EFF;
+    color: whitesmoke;
+}
+.buyTicket8Btn {
+    text-align: center;
+    height: 3.125rem;
+    width: 10.9375rem;
+    margin-left: 3.4375rem;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: segoe ui;
+    background-color: #0D7EFF;
+    color: whitesmoke;
+}
+.buyTicket9Btn {
+    text-align: center;
+    height: 3.125rem;
+    width: 10.9375rem;
+    margin-left: 3.4375rem;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: segoe ui;
+    background-color: #0D7EFF;
+    color: whitesmoke;
+}
+.buyTicket10Btn {
+    text-align: center;
+    height: 3.125rem;
+    width: 10.9375rem;
+    margin-left: 3.4375rem;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: segoe ui;
+    background-color: #0D7EFF;
+    color: whitesmoke;
+}
+.buyTicket11Btn {
+    text-align: center;
+    height: 3.125rem;
+    width: 10.9375rem;
+    margin-left: 3.4375rem;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: segoe ui;
+    background-color: #0D7EFF;
+    color: whitesmoke;
+}
+.buyTicket12Btn {
+    text-align: center;
+    height: 3.125rem;
+    width: 10.9375rem;
+    margin-left: 3.4375rem;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: segoe ui;
+    background-color: #0D7EFF;
+    color: whitesmoke;
+}
+.buyTicket13Btn {
     text-align: center;
     height: 3.125rem;
     width: 10.9375rem;
