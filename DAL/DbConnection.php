@@ -1,7 +1,7 @@
 <?php
-define ('DB_HOST', 'localhost');
-define ('DB_USER', 'root');
-define ('DB_PASSWORD', '');
+define ('DB_HOST', 'chocomel.infhaarlem.nl');
+define ('DB_USER', 'chocomel');
+define ('DB_PASSWORD', 'Groep1');
 define ('DB_DB', 'chocomel_HfTeam1');
 
 class DbConnection {

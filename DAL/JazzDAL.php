@@ -16,7 +16,7 @@ class JazzDAL
 
     function GetJazzEventsByDay($TimeStartDay, $TimeEndDay)
     {
-        $sql = "SELECT E.StartTime, E.EndTime , E.Price, J.Event_ID, J.BandName, J.Description, J.Image, J.Location FROM Event E INNER JOIN Event_Jazz J ON E.Event_ID = J.Event_ID WHERE E.StartTime >= '" . $TimeStartDay . "' AND StartTime < '" . $TimeEndDay . "' ORDER BY E.StartTime ASC";
+        $sql = "SELECT E.StartTime, E.EndTime , E.Price, J.Event_ID, J.BandName, J.Description, J.Image, J.Location FROM Event E INNER JOIN Event_Jazz J ON E.Event_ID = J.Event_ID WHERE E.EventName = 'Jazz' AND E.StartTime >= '" . $TimeStartDay . "' AND StartTime < '" . $TimeEndDay . "' ORDER BY E.StartTime ASC";
         $JazzEvents = [];
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
