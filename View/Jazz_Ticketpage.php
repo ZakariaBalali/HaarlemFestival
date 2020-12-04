@@ -82,25 +82,63 @@ require_once '../Logic/JazzLogic.php';
                 <a href="Jazz_Ticketpage.php">Tickets</a>
             </section>
         </section>
-        <section class="JazzDayButtons">
-            <section class="thursdayButton" id="thursdayButton">
-                <a id="thursdayButtonLink"
-                   href="javascript:filterSelection('thursdayButton','fridayButton','saturdayButton','sundayButton', 'thursdayButtonLink',
-                   'fridayButtonLink', 'saturdayButtonLink', 'sundayButtonLink', 'ticketsThursday','ticketsFriday','ticketsSaturday','ticketsSunday')">Thursday</a>
-            </section>
-            <section class="fridayButton" id="fridayButton">
-                <a id="fridayButtonLink"
-                   href="javascript:filterSelection('fridayButton','thursdayButton','saturdayButton','sundayButton', 'fridayButtonLink',
-                   'thursdayButtonLink', 'saturdayButtonLink', 'sundayButtonLink','ticketsFriday','ticketsThursday','ticketsSaturday','ticketsSunday')">
-                    Friday</a>
-            </section>
-            <section class="saturdayButton" id="fridayButton"><a id="saturdayButtonLink" href="">Saturday</a></section>
-            <section class="sundayButton" id="sundayButton"><a id="saturdayButtonLink" href="javascript:filterSelection('sundayButton','thursdayButton','saturdayButton','fridayButton', 'sundayButtonLink',
-                   'thursdayButtonLink', 'saturdayButtonLink', 'sundayButtonLink','ticketsSunday','ticketsThursday','ticketsSaturday','ticketsFriday')">Sunday</a>
-            </section>
+        <section class="JazzDayButtons" id="myBtnContainer">
+            <button class="dayButton dayActive" onclick="filterSelection('ticketsThursday')" id="thursdayButton">
+                Thursday
+            </button>
+            <button class="dayButton" onclick="filterSelection('ticketsFriday')" id="fridayButton">Friday
+            </button>
+            <button class="dayButton" onclick="filterSelection('ticketsSaturday')" id="saturdayButton">Saturday</button>
+            <button class="dayButton" onclick="filterSelection('ticketsSunday')" id="sundayButton"> Sunday
+            </button>
         </section>
     </section>
-    <section class="ticketsThursday" id="ticketsThursday">
+    <script>
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("ticketSection");
+            if (c == "all") c = "";
+            // Add the "show" class (display:grid) to the filtered elements, and remove the "show" class from the elements that are not selected
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+        }
+        // Show filtered elements
+        function w3AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) {
+                    element.className += " " + arr2[i];
+                }
+            }
+        }
+        // Hide elements that are not selected
+        function w3RemoveClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+        var btns = document.getElementsByClassName("dayButton");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function(){
+                var current = document.getElementsByClassName("dayActive");
+                if (current.length > 0){
+                    current[0].className = current[0].className.replace("dayActive", "");
+                }
+                this.className = "dayButton dayActive";
+            });
+        }
+    </script>
+    <section class="ticketSection ticketsThursday show" id="ticketsThursday">
         <?php
         $JazzEvents = [];
         $jazzLogic = new JazzLogic();
@@ -208,7 +246,7 @@ require_once '../Logic/JazzLogic.php';
             <?php $i++;
         } ?>
     </section>
-    <section class="ticketsFriday" id="ticketsFriday">
+    <section class="ticketSection ticketsFriday" id="ticketsFriday">
         <?php
         $JazzEvents = [];
         $jazzLogic = new JazzLogic();
@@ -316,7 +354,7 @@ require_once '../Logic/JazzLogic.php';
             <?php $i++;
         } ?>
     </section>
-    <section class="ticketsSaturday" id="ticketsSaturday">
+    <section class="ticketSection ticketsSaturday" id="ticketsSaturday">
         <?php
         $JazzEvents = [];
         $jazzLogic = new JazzLogic();
@@ -424,7 +462,7 @@ require_once '../Logic/JazzLogic.php';
             <?php $i++;
         } ?>
     </section>
-    <section class="ticketsSunday" id="ticketsSunday">
+    <section class="ticketSection ticketsSunday" id="ticketsSunday">
         <?php
         $JazzEvents = [];
         $jazzLogic = new JazzLogic();

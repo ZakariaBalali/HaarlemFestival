@@ -45,39 +45,7 @@ a {
     margin: -5rem -1rem;
 }
 
-.thursdayButton {
-
-    border: 0.1875rem solid black;
-    border-radius: 1.125rem;
-    font-family: "Segoe UI";
-    font-weight: bold;
-    font-size: 1.3125rem;
-    background-color: #AA2828;
-    width: 13.375rem;
-    height: 3.8125rem;
-    line-height: 3.75rem;
-    text-align: center;
-    align-self: center;
-    margin: 0 3rem 6rem 3rem;
-    cursor: pointer;
-}
-
-#thursdayButtonLink {
-    display: block;
-    color: #FFFFFF;
-}
-
-.thursdayButton:hover {
-    background-color: #AA2828;
-
-}
-
-.thursdayButton:hover a {
-    color: #FFFFFF;
-}
-
-.fridayButton {
-    text-decoration: none;
+.dayButton {
     border: 0.1875rem solid black;
     border-radius: 1.125rem;
     font-family: "Segoe UI";
@@ -86,87 +54,25 @@ a {
     background-color: #FFFFFF;
     width: 13.375rem;
     height: 3.8125rem;
-    line-height: 3.75rem;
     text-align: center;
     align-self: center;
     margin: 0 3rem 6rem 3rem;
     cursor: pointer;
-}
-
-.fridayButton a {
-    display: block;
+    padding: 0rem;
     color: #000000;
 }
 
-.fridayButton:hover {
+.dayButton:hover{
     background-color: #AA2828;
-}
-
-.fridayButton:hover a {
     color: #FFFFFF;
 }
 
-.saturdayButton {
 
-    border: 0.1875rem solid black;
-    border-radius: 1.125rem;
-    font-family: "Segoe UI";
-    font-weight: bold;
-    font-size: 1.3125rem;
-    background-color: #FFFFFF;
-    width: 13.375rem;
-    height: 3.8125rem;
-    line-height: 3.75rem;
-    text-align: center;
-    align-self: center;
-    margin: 0 3rem 6rem 3rem;
-    cursor: pointer;
-}
 
-.saturdayButton a {
-    display: block;
-    color: #000000;
-}
-
-.saturdayButton:hover {
+.dayButton.dayActive{
     background-color: #AA2828;
-}
-
-.saturdayButton:hover a {
     color: #FFFFFF;
 }
-
-.sundayButton {
-
-    border: 0.1875rem solid black;
-    border-radius: 1.125rem;
-    font-family: "Segoe UI";
-    font-weight: bold;
-    font-size: 1.3125rem;
-    background-color: #FFFFFF;
-    width: 13.375rem;
-    height: 3.8125rem;
-    line-height: 3.75rem;
-    text-align: center;
-    align-self: center;
-    margin: 0 3rem 6rem 3rem;
-    cursor: pointer;
-}
-
-.sundayButton a {
-
-    display: block;
-    color: #000000;
-}
-
-.sundayButton:hover {
-    background-color: #AA2828;
-}
-
-.sundayButton:hover a {
-    color: #FFFFFF;
-}
-
 .activeButton {
 
     border: 0.1875rem solid black;
@@ -219,7 +125,7 @@ a {
 }
 
 .ticketsThursday {
-    display: grid;
+    display: none;
     float: left;
     margin-top: 1.875rem;
     padding-left: 3.125rem;
@@ -1388,4 +1294,8 @@ a {
         top: 10rem;
         opacity: 1
     }
+}
+
+.show{
+    display: grid;
 }

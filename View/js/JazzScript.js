@@ -41,25 +41,3 @@ function addTicket(minButton, input, addButton) {
     });
 }
 
-function filterSelection(activeButton, nonActiveButton1, nonActiveButton2, nonActiveButton3, activeButtonLink, nonActiveButtonLink1, nonActiveButtonLink2, nonActiveButtonLink3, activeSection, nonActiveSection1, nonActiveSection2, nonActiveSection3) {
-
-    //show different day tickets
-    document.getElementById(activeSection).style.display = "grid";
-    document.getElementById(nonActiveSection1).style.display = "none";
-    document.getElementById(nonActiveSection2).style.display = "none";
-    document.getElementById(nonActiveSection3).style.display = "none";
-    //change button background colors
-    document.getElementById(activeButton).style.backgroundColor = "#AA2828";
-    document.getElementById(nonActiveButton1).style.backgroundColor = "#FFFFFF";
-    document.getElementById(nonActiveButton2).style.backgroundColor = "#FFFFFF";
-    document.getElementById(nonActiveButton3).style.backgroundColor = "#FFFFFF";
-    //change button link colors
-    document.getElementById(activeButtonLink).style.color = "#FFFFFF";
-    document.getElementById(nonActiveButtonLink1).style.color = "#000000";
-    document.getElementById(nonActiveButtonLink2).style.color = "#000000";
-    document.getElementById(nonActiveButtonLink3).style.color = "#000000";
-
-}
-
-
-
