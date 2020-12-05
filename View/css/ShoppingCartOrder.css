@@ -1,0 +1,96 @@
+#containerTop{
+    height: 28.875rem;
+}
+#checkmark{
+    margin-top: 12.5rem;
+    margin-left: 35.625rem;
+    height: 6.25rem;
+    width: 6.25rem;
+    float: left;
+}
+#SuccesText{
+    color: black;
+    float: right;
+    font-size: 2.5rem;
+    margin-top: 14.375rem;
+    margin-right: 50rem;
+}
+#Text1{
+    color: black;
+    float: right;
+    font-size: 1.563rem;
+    margin-top: 1.563rem;
+    margin-right: 45.313rem;
+}
+#Text2{
+    color: black;
+    float: right;
+    font-size: 1.563rem;
+    margin-top: 0.625rem;
+    margin-right: 47.813rem;
+}
+#Text3{
+    color: black;
+    float: left;
+    font-size: 1.563rem;
+    margin-top: 0.625rem;
+    margin-left: 47.5rem;
+}
+#Text4{
+    color: black;
+    font-size: 1.563rem;
+    margin-top: 1.25rem;
+    margin-left: 7.188rem;
+    display: inline;
+}
+
+#Text5{
+    color: black;
+    font-size: 1.563rem;
+    margin-top: 0.313rem;
+    margin-left: 7.188rem;
+    display: inline;
+}
+
+#Text6{
+    color: black;
+    font-size: 1.563rem;
+    margin-top: 0.313rem;
+    margin-left: 7.188rem;
+    display: inline;
+}
+
+#Text7{
+    color: black;
+    font-size: 1.563rem;
+    margin-top: 0.313rem;
+    margin-left: 7.188rem;
+    display: inline;
+}
+
+#Text4, #Text5, #Text6, #Text7{
+    display: block;
+}
+
+#header{
+    color: black;
+    margin-top: 1.5rem;
+    margin-right: 38rem;
+    margin-left: 7rem;
+    font-size: 2.188rem;
+}
+hr{
+    color: black;
+}
+
+#pdf{
+    font-size: 1.875rem;
+    margin-left: 7.188rem;
+    margin-top: 0.938rem;
+}
+#BackHome{
+    font-size: 1.875rem;
+    margin-left: 50.938rem;
+    background-color: blue;
+    color: white;
+}
