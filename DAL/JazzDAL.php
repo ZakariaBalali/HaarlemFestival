@@ -38,6 +38,37 @@ class JazzDAL
             echo 'No Jazz events found';
         }
     }
+
+    function GetJazzEventById($Event_ID)
+    {
+        $sql = "SELECT E.StartTime, E.EndTime , E.Price, J.Event_ID, J.BandName, J.Description, J.Image, J.Location FROM Event E 
+        INNER JOIN Event_Jazz J ON E.Event_ID = J.Event_ID WHERE J.Event_ID = $Event_ID";
+        $JazzEvents = [];
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $StartTime = $row["StartTime"];
+                $EndTime = $row["EndTime"];
+                $Price = $row["Price"];
+                $Event_ID=$row["Event_ID"];
+                $BandName = $row["BandName"];
+                $Description = $row["Description"];
+                $Image = $row["Image"];
+                $Location = $row["Location"];
+
+                $Jazz = new Jazz($Event_ID,$BandName, $Description, $Location, $Image, $StartTime, $EndTime, $Price);
+                return $Jazz;
+            }
+            return $JazzEvents;
+        } else {
+            echo 'No Jazz events found';
+        }
+    }
+    
+    function SaveDescription($Event){
+        $sql = "UPDATE Event_Jazz SET Description = $Event->getDescription() WHERE Event_ID = $Event->getEvent_ID()";
+        mysqli_query($this->connection, $sql);
+    }
 }
 
 ?>

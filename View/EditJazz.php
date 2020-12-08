@@ -8,6 +8,7 @@ require_once '../DAL/JazzDAL.php';
     <meta charset="UTF-8">
     <title>CMS</title>
     <link href="css/CMS.css" rel="stylesheet" type="text/css">
+    <link href="css/EditJazz.css" rel="stylesheet" type="text/css">
 </head>
 
 <section class="topBanner">
@@ -27,16 +28,27 @@ require_once '../DAL/JazzDAL.php';
 
 <section class="workSpace">
 
-    <?php 
+    <?php
     $jazzDAL = new JazzDAL();
-    $jazzEvent = $jazzLogic->GetJazzEventById(1);?>
-    <button type="submit" name="editImage">Change image</button>
+    $jazzEvent = $jazzDAL->GetJazzEventById(1); ?>
+    <section class="bandImage" ?>
+        <img src="images/<?php echo $jazzEvent->getImage() ?>.jpg ">
+        <button type="submit" name="editImage">Change image</button>
+    </section>
 
     <h2>About the band</h2>
-    <textarea id="about" name="about" rows="4" cols="50">
-        <?php echo $jazz->getDescription() ?>
-    </textarea>
-    <input type="text" id="bandName" name="bandName"><br><br>
+    <textarea id="about" name="about" rows="10" cols="50"><?php echo $jazzEvent->getDescription(); ?></textarea>
+
+    <!-- <form action="" -->
+    <input type="text" id="bandName" name="bandName" value="<?php echo $jazzEvent->getBandName() ?>">
+
+    <button type="submit">TESTERONI</button>
+
+    <?php
+    if (isset($_POST['submit'])) {
+        $jazzDAL->SaveDescription($jazzEvent);
+    }
+    ?>
 </section>
 
 </html>
