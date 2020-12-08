@@ -1,5 +1,6 @@
 <?php
 require_once '../Logic/JazzLogic.php';
+require_once '../Logic/ShoppingCart.php'
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -65,8 +66,7 @@ require_once '../Logic/JazzLogic.php';
                 <button class="closeButton" id="closeButton">Continue Shopping</button>
                 <button onclick="window.location.href='Program_Main.php';" class="programButton">View in Program
                 </button>
-                <button onclick="window.location.href='Shopping_Cart.php';" class="shoppingCartButton">To Shopping
-                    cart
+                <button onclick="window.location.href='Shopping_Cart.php';" class="shoppingCartButton">To Shopping cart
                 </button>
             </section>
         </section>
@@ -94,6 +94,7 @@ require_once '../Logic/JazzLogic.php';
         </section>
     </section>
     <script>
+        //Function to make the buttons work and filter different ticket section
         function filterSelection(c) {
             var x, i;
             x = document.getElementsByClassName("ticketSection");
@@ -104,6 +105,7 @@ require_once '../Logic/JazzLogic.php';
                 if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
             }
         }
+
         // Show filtered elements
         function w3AddClass(element, name) {
             var i, arr1, arr2;
@@ -115,6 +117,7 @@ require_once '../Logic/JazzLogic.php';
                 }
             }
         }
+
         // Hide elements that are not selected
         function w3RemoveClass(element, name) {
             var i, arr1, arr2;
@@ -127,11 +130,12 @@ require_once '../Logic/JazzLogic.php';
             }
             element.className = arr1.join(" ");
         }
+
         var btns = document.getElementsByClassName("dayButton");
         for (var i = 0; i < btns.length; i++) {
-            btns[i].addEventListener("click", function(){
+            btns[i].addEventListener("click", function () {
                 var current = document.getElementsByClassName("dayActive");
-                if (current.length > 0){
+                if (current.length > 0) {
                     current[0].className = current[0].className.replace("dayActive", "");
                 }
                 this.className = "dayButton dayActive";
@@ -172,22 +176,7 @@ require_once '../Logic/JazzLogic.php';
                 </section>
             </section>
             <section class="leftSideTicketBuy<?php echo $i ?>" id="leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>">
-                <section class="CloseAndAddButton">
-                    <section class="closeTicketScreenTicket<?php echo $i ?>"
-                             id="closeTicketScreenTicket<?php echo $i ?>">
-                        <a href="javascript:SwapBackToTicketScreen('leftSideTicket<?php echo $jazz->getEvent_ID() ?>','rightSideTicket<?php echo $jazz->getEvent_ID() ?>', 'leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>','rightSideTicketBuy<?php echo $jazz->getEvent_ID() ?>' )">
-                            <img src="images/BuyIcon.png">
-                            <label class="closeLabel">Back</label>
-                        </a>
-                    </section>
-                    <button class="AddToCartButton" id="AddToCartButton<?php echo $jazz->getEvent_ID() ?>">
-                        <img src="images/ShoppingCart.png">
-                        <label>Add to Cart</label>
-                    </button>
-                    <script>
-                        modal('popupAddedTicket', 'AddToCartButton<?php echo $jazz->getEvent_ID()?>', 'closeButton')
-                    </script>
-                </section>
+
                 <section class="ticketGridArea">
                     <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
                     <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
@@ -231,7 +220,22 @@ require_once '../Logic/JazzLogic.php';
                             addTicket('minusAllAccessWeekend<?php echo $jazz->getEvent_ID()?>', 'inputAllAccessWeekend<?php echo $jazz->getEvent_ID()?>', 'plusAllAccessWeekend<?php echo $jazz->getEvent_ID()?>')
                         </script>
                     </section>
-
+                </section>
+                <section class="CloseAndAddButton">
+                    <section class="closeTicketScreenTicket<?php echo $i ?>"
+                             id="closeTicketScreenTicket<?php echo $i ?>">
+                        <a href="javascript:SwapBackToTicketScreen('leftSideTicket<?php echo $jazz->getEvent_ID() ?>','rightSideTicket<?php echo $jazz->getEvent_ID() ?>', 'leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>','rightSideTicketBuy<?php echo $jazz->getEvent_ID() ?>' )">
+                            <img src="images/BuyIcon.png">
+                            <label class="closeLabel">Back</label>
+                        </a>
+                    </section>
+                    <button class="AddToCartButton" id="AddToCartButton<?php echo $jazz->getEvent_ID() ?>">
+                        <img src="images/ShoppingCart.png">
+                        <label>Add to Cart</label>
+                    </button>
+                    <script>
+                        modal('popupAddedTicket', 'AddToCartButton<?php echo $jazz->getEvent_ID()?>', 'closeButton')
+                    </script>
                 </section>
             </section>
             <section class="rightSideTicketBuy<?php echo $i ?>"
@@ -280,22 +284,6 @@ require_once '../Logic/JazzLogic.php';
                 </section>
             </section>
             <section class="leftSideTicketBuy<?php echo $i ?>" id="leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>">
-                <section class="CloseAndAddButton">
-                    <section class="closeTicketScreenTicket<?php echo $i ?>"
-                             id="closeTicketScreenTicket<?php echo $i ?>">
-                        <a href="javascript:SwapBackToTicketScreen('leftSideTicket<?php echo $jazz->getEvent_ID() ?>','rightSideTicket<?php echo $jazz->getEvent_ID() ?>', 'leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>','rightSideTicketBuy<?php echo $jazz->getEvent_ID() ?>' )">
-                            <img src="images/BuyIcon.png">
-                            <label class="closeLabel">Back</label>
-                        </a>
-                    </section>
-                    <button class="AddToCartButton" id="AddToCartButton<?php echo $jazz->getEvent_ID() ?>">
-                        <img src="images/ShoppingCart.png">
-                        <label>Add to Cart</label>
-                    </button>
-                    <script>
-                        modal('popupAddedTicket', 'AddToCartButton<?php echo $jazz->getEvent_ID()?>', 'closeButton')
-                    </script>
-                </section>
                 <section class="ticketGridArea">
                     <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
                     <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
@@ -340,6 +328,22 @@ require_once '../Logic/JazzLogic.php';
                         </script>
                     </section>
 
+                </section>
+                <section class="CloseAndAddButton">
+                    <section class="closeTicketScreenTicket<?php echo $i ?>"
+                             id="closeTicketScreenTicket<?php echo $i ?>">
+                        <a href="javascript:SwapBackToTicketScreen('leftSideTicket<?php echo $jazz->getEvent_ID() ?>','rightSideTicket<?php echo $jazz->getEvent_ID() ?>', 'leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>','rightSideTicketBuy<?php echo $jazz->getEvent_ID() ?>' )">
+                            <img src="images/BuyIcon.png">
+                            <label class="closeLabel">Back</label>
+                        </a>
+                    </section>
+                    <form action="../Logic/ShoppingCart.php" method="post" id="AddToCart">
+                        <button form="AddToCart" type="submit"name="AddToShoppingCart"value="submit" class="AddToCartButton"
+                                id="AddToCartButton<?php echo $jazz->getEvent_ID() ?>">
+                            <img src="images/ShoppingCart.png">
+                            <label>Add to Cart</label>
+                        </button>
+                    </form>
                 </section>
             </section>
             <section class="rightSideTicketBuy<?php echo $i ?>"
@@ -388,22 +392,6 @@ require_once '../Logic/JazzLogic.php';
                 </section>
             </section>
             <section class="leftSideTicketBuy<?php echo $i ?>" id="leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>">
-                <section class="CloseAndAddButton">
-                    <section class="closeTicketScreenTicket<?php echo $i ?>"
-                             id="closeTicketScreenTicket<?php echo $i ?>">
-                        <a href="javascript:SwapBackToTicketScreen('leftSideTicket<?php echo $jazz->getEvent_ID() ?>','rightSideTicket<?php echo $jazz->getEvent_ID() ?>', 'leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>','rightSideTicketBuy<?php echo $jazz->getEvent_ID() ?>' )">
-                            <img src="images/BuyIcon.png">
-                            <label class="closeLabel">Back</label>
-                        </a>
-                    </section>
-                    <button class="AddToCartButton" id="AddToCartButton<?php echo $jazz->getEvent_ID() ?>">
-                        <img src="images/ShoppingCart.png">
-                        <label>Add to Cart</label>
-                    </button>
-                    <script>
-                        modal('popupAddedTicket', 'AddToCartButton<?php echo $jazz->getEvent_ID()?>', 'closeButton')
-                    </script>
-                </section>
                 <section class="ticketGridArea">
                     <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
                     <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
@@ -447,7 +435,22 @@ require_once '../Logic/JazzLogic.php';
                             addTicket('minusAllAccessWeekend<?php echo $jazz->getEvent_ID()?>', 'inputAllAccessWeekend<?php echo $jazz->getEvent_ID()?>', 'plusAllAccessWeekend<?php echo $jazz->getEvent_ID()?>')
                         </script>
                     </section>
-
+                </section>
+                <section class="CloseAndAddButton">
+                    <section class="closeTicketScreenTicket<?php echo $i ?>"
+                             id="closeTicketScreenTicket<?php echo $i ?>">
+                        <a href="javascript:SwapBackToTicketScreen('leftSideTicket<?php echo $jazz->getEvent_ID() ?>','rightSideTicket<?php echo $jazz->getEvent_ID() ?>', 'leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>','rightSideTicketBuy<?php echo $jazz->getEvent_ID() ?>' )">
+                            <img src="images/BuyIcon.png">
+                            <label class="closeLabel">Back</label>
+                        </a>
+                    </section>
+                    <button class="AddToCartButton" id="AddToCartButton<?php echo $jazz->getEvent_ID() ?>">
+                        <img src="images/ShoppingCart.png">
+                        <label>Add to Cart</label>
+                    </button>
+                    <script>
+                        modal('popupAddedTicket', 'AddToCartButton<?php echo $jazz->getEvent_ID()?>', 'closeButton')
+                    </script>
                 </section>
             </section>
             <section class="rightSideTicketBuy<?php echo $i ?>"
@@ -496,15 +499,6 @@ require_once '../Logic/JazzLogic.php';
                 </section>
             </section>
             <section class="leftSideTicketBuy<?php echo $i ?>" id="leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>">
-                <section class="CloseAndAddButton">
-                    <section class="closeTicketScreenTicket<?php echo $i ?>"
-                             id="closeTicketScreenTicket<?php echo $i ?>">
-                        <a href="javascript:SwapBackToTicketScreen('leftSideTicket<?php echo $jazz->getEvent_ID() ?>','rightSideTicket<?php echo $jazz->getEvent_ID() ?>', 'leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>','rightSideTicketBuy<?php echo $jazz->getEvent_ID() ?>' )">
-                            <img src="images/BuyIcon.png">
-                            <label class="closeLabel">Back</label>
-                        </a>
-                    </section>
-                </section>
                 <section class="ticketGridArea">
                     <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
                     <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
