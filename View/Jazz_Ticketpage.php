@@ -284,7 +284,10 @@ require_once '../Logic/ShoppingCart.php'
                 </section>
             </section>
             <section class="leftSideTicketBuy<?php echo $i ?>" id="leftSideTicketBuy<?php echo $jazz->getEvent_ID() ?>">
-                <section class="ticketGridArea">
+                <form action="../Logic/ShoppingCart.php" method="post" id="AddToCart<?php echo $i ?>">
+                    <input style="display: none" class="test" name="test2"type="text" value="<?php echo $jazz->getBandName(); ?>"/>
+
+                    <section class="ticketGridArea">
                     <label style="font-weight: bold; font-size: 1.4375rem" class="titleGrid">Title</label>
                     <label style="font-weight: bold; font-size: 1.4375rem" class="priceGrid">Price</label>
                     <label style="font-weight: bold; font-size: 1.4375rem" class="amountGrid">Amount</label>
@@ -292,8 +295,7 @@ require_once '../Logic/ShoppingCart.php'
                     <label class="priceArtist">€<?php echo number_format((float)$jazz->getEvent()->getPrice(), 2, ',', ''); ?></label>
                     <section class="amountArtist">
                         <button class="minusArtist" id="minusArtist<?php echo $jazz->getEvent_ID() ?>">−</button>
-                        <input class="inputArtist" type="number" value="0"
-                               id="inputArtist<?php echo $jazz->getEvent_ID() ?>"/>
+                        <input class="inputArtist" name="test"type="number" value="0"id="inputArtist<?php echo $jazz->getEvent_ID() ?>"/>
                         <button class="plusArtist" id="plusArtist<?php echo $jazz->getEvent_ID() ?>">+</button>
                         <script>
                             addTicket('minusArtist<?php echo $jazz->getEvent_ID()?>', 'inputArtist<?php echo $jazz->getEvent_ID()?>', 'plusArtist<?php echo $jazz->getEvent_ID()?>')
@@ -337,8 +339,7 @@ require_once '../Logic/ShoppingCart.php'
                             <label class="closeLabel">Back</label>
                         </a>
                     </section>
-                    <form action="../Logic/ShoppingCart.php" method="post" id="AddToCart">
-                        <button form="AddToCart" type="submit"name="AddToShoppingCart"value="submit" class="AddToCartButton"
+                        <button form="AddToCart<?php echo $i ?>" type="submit"name="AddToShoppingCart"value="submit" class="AddToCartButton"
                                 id="AddToCartButton<?php echo $jazz->getEvent_ID() ?>">
                             <img src="images/ShoppingCart.png">
                             <label>Add to Cart</label>
