@@ -1,3 +1,6 @@
+<?php
+session_start()
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -25,7 +28,7 @@
     <a href="Jazz_Main.php">Jazz</a>
     <a href="Historic_Main.php">Historic</a>
     <a href="Program_Main.php">Program</a>
-     <a  class="active" href="Shopping_Cart.php"><img src="images/icon_shoppingcart_active.png"></a>
+    <a class="active" href="Shopping_Cart.php"><img src="images/icon_shoppingcart_active.png"></a>
 </section>
 
 <section class="MainCart">
@@ -39,15 +42,31 @@
             <th>Quantity</th>
             <th>Total</th>
         </tr>
+        <?php
+        if (isset($_SESSION['Products'])) {
+            ?>       <a href="DeleteSession.php">DIT MOET ERUIT, MAAR KLIK HIER OM DE SESSIE TE VERWIJDEREN</a> <?php
+            foreach ($_SESSION['Products'] as $item) {
 
-        <tr>
-            <td id="TabledataCart">Food</td>
-            <td id=Tabledata1>Reservation Restaurant Fris, Thu 28 July 19.00</td>
-            <td id="Tabledata2">Geen</td>
-            <td id="TabledataCart">&euro;10</td>
-            <td id="Tabledata2"><button id="-Button">-</button>4<button id="PlusButton">+</button></td>
-            <td id="TabledataCart">&euro;40,00</td>
-        </tr>
+                ?>
+                <tr>
+
+
+                    <td><?php echo $item['EventName']; ?> </td>
+                    <td><?php echo $item['ProductName']; ?> , <?php echo $item['StartTime']; ?> </td>
+                    <td><?php echo "none" ?></td>
+                    <td>&euro; <?php echo $item ['Price']; ?></td>
+                    <td>
+                        <button id="-Button">-</button><?php echo $item ['Amount']; ?>
+                        <button id="PlusButton">+</button>
+                    </td>
+                    <td>&euro;<?php echo($item['Amount'] * $item['Price']) ?></td>
+
+                </tr>
+            <?php }
+        } ?>
+
+
+
     </table>
 
     <table id="Ordertable">

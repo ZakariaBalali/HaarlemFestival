@@ -6,55 +6,74 @@ class ShoppingCartLogic
 {
     private $eventDAL;
 
-    function __construct($amountArtist, $artistID, $amountAllAccessDay, $allAccessDayID, $amountAllAccessWeekend, $allAccessWeekendID)
+    public function __construct()
     {
-        self::checkAmount($amountArtist, $artistID, $amountAllAccessDay, $allAccessDayID, $amountAllAccessWeekend, $allAccessWeekendID);
+        $get_arguments = func_get_args();
+        $number_of_arguments = func_num_args();
+
+        if (method_exists($this, $method_name = '__construct' . $number_of_arguments)) {
+            call_user_func_array(array($this, $method_name), $get_arguments);
+        }
     }
 
-    function checkAmount($amountArtist, $artistID, $amountAllAccessDay, $allAccessDayID, $amountAllAccessWeekend, $allAccessWeekendID)
+    function __construct6($amountArtist, $artistID, $amountAllAccessDay, $allAccessDayID, $amountAllAccessWeekend, $allAccessWeekendID)
     {
-        $eventDAL = new EventDAL();
+        self::CheckAmountFor3Tickets($amountArtist, $artistID, $amountAllAccessDay, $allAccessDayID, $amountAllAccessWeekend, $allAccessWeekendID);
+        header('Location: ../View/Shopping_Cart.php');
+    }
+
+
+    //Check amount of the tickets and calls add to session function when the amount is more than one
+    function CheckAmountFor3Tickets($amountArtist, $artistID, $amountAllAccessDay, $allAccessDayID, $amountAllAccessWeekend, $allAccessWeekendID)
+    {
 
         if ($amountArtist > 0) {
-            $events = (array)$eventDAL->GetEventByID($artistID);
-
-            foreach ($events as $event) {
-                echo "Event ID: ";
-                echo $event->getEventID(); ?> <br> <?php
-                echo $event->getEventName(); ?> <br> <?php
-                echo $event->getProductName(); ?> <br> Amount: <?php
-                echo $amountArtist; ?> <br> <br><?php
-            }
+            $this->AddToSession($artistID, $amountArtist);
         }
         if ($amountAllAccessDay > 0) {
-            $events = (array)$eventDAL->GetEventByID($allAccessDayID);
-
-            foreach ($events as $event) {
-                echo "Event ID: ";
-                echo $event->getEventID(); ?> <br> <?php
-                echo $event->getEventName(); ?> <br> <?php
-                echo $event->getProductName(); ?> <br> Amount: <?php
-                echo $amountAllAccessDay; ?> <br> <br><?php
-            }
+            $this->AddToSession($allAccessDayID, $amountAllAccessDay);
         }
         if ($amountAllAccessWeekend > 0) {
-            $events = (array)$eventDAL->GetEventByID($allAccessWeekendID);
+            $this->AddToSession($allAccessWeekendID, $amountAllAccessWeekend);
 
+        }
+
+    }
+
+    //Adds The item to a session
+    function AddToSession($EventID, $Amount)
+    {
+
+        $eventDAL = new EventDAL();
+        $events = (array)$eventDAL->GetEventByID($EventID);
+        //If there isn't a session, make one and add to it
+        if (!isset($_SESSION['Products']) || empty($_SESSION['Products'])) {
             foreach ($events as $event) {
-                echo "Event ID: ";
-                echo $event->getEventID(); ?> <br> <?php
-                echo $event->getEventName(); ?> <br> <?php
-                echo $event->getProductName(); ?> <br> Amount: <?php
-                echo $amountAllAccessWeekend; ?> <br> <br> <?php
+                $_SESSION['products'] = array();
+                $cart = array('EventID' => $EventID, 'EventName' => $event->getEventName(),
+                    'ProductName' => $event->getProductName(), 'StartTime' => $event->getStartTime(), 'Price' => $event->getPrice(), 'Amount' => $Amount);
+
+            }
+
+        }
+        //Use existing session to add to
+        else{
+            foreach ($events as $event) {
+                $cart = array('EventID' => $EventID, 'EventName' => $event->getEventName(),
+                    'ProductName' => $event->getProductName(), 'StartTime' => $event->getStartTime(), 'Price' => $event->getPrice(), 'Amount' => $Amount);
+
             }
         }
+
+        $_SESSION['Products'][$EventID]= $cart;
+
+        print_r($_SESSION['Products']);
+
+
     }
 
 }
 
-$object1 = new ShoppingCartLogic($_POST["amountArtist"], $_POST["artistID"], $_POST["amountAllAccessDay"], $_POST["allAccessDayID"], $_POST["amountAllAccessWeekend"], $_POST["allAccessWeekendID"]);
+$shoppingCartLogic = new ShoppingCartLogic($_POST["amountArtist"], $_POST["artistID"], $_POST["amountAllAccessDay"], $_POST["allAccessDayID"], $_POST["amountAllAccessWeekend"], $_POST["allAccessWeekendID"]);
 
 ?>
-
-</body>
-</html>
