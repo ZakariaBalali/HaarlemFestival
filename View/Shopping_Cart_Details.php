@@ -39,7 +39,7 @@
        
         <div class="container">
          
-            <h2 class="FormHeader">Details</h3>
+            <h3 class="FormHeader">Details</h3>
                 <label id="label1" for="fname"><strong>First Name</strong><span class="red">&ast;</span></label>
                 <input type="text" id="fname" name="firstname">
 
@@ -59,7 +59,7 @@
 
         <div class="container2">
           
-            <h2 class="FormHeader">Order Summary</h3>
+            <h3 class="FormHeader">Order Summary</h3>
             <div class="container3">
                 <strong id="span1">Food</strong>
                 <span id="span2">Reservation Ratatouille</span>
