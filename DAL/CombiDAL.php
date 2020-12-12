@@ -14,16 +14,18 @@ class CombiDAL
         $this->connection = $this->instance->getConnection();
     }
 
-    function GetCombiEventsByDay($TimeStartDay, $TimeEndDay)
+    function GetCombiEventsByName($ticketName1, $ticketName2)
     {
-        $sql = "SELECT C.TicketName FROM Event E INNER JOIN Event_Combi C ON E.Event_ID = C.Event_ID WHERE E.EventName = 'Combi' AND E.StartTime >= '" . $TimeStartDay . "' AND StartTime < '" . $TimeEndDay . "' ORDER BY E.EndTime ASC";
+        $sql = "SELECT C.Event_ID, E.Price, C.TicketName FROM Event E INNER JOIN Event_Combi C ON E.Event_ID = C.Event_ID WHERE C.TicketName = '" . $ticketName1 . "' OR C.TicketName = '" . $ticketName2 . "'";
         $CombiEvents = [];
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
+                $Event_ID = $row["Event_ID"];
+                $Price = $row["Price"];
                 $TicketName = $row["TicketName"];
 
-                $Combi = new Combi($TicketName);
+                $Combi = new Combi($Event_ID, $Price, $TicketName);
                 $CombiEvents[] = $Combi;
             }
             return $CombiEvents;

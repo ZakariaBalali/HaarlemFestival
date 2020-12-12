@@ -34,9 +34,22 @@ class Event
 
     }
 
+    function __construct6($Event_ID, $EventName, $ProductName, $StartTime, $Price, $Btw){
+        $this->Event_ID = $Event_ID;
+        $this->EventName = $EventName;
+        $this->ProductName = $ProductName;
+        $this->StartTime = $StartTime;
+        $this->Price = $Price;
+        $this->Btw = $Btw;
+    }
+
     function __construct3($StartTime, $EndTime, $Price){
         $this->StartTime = $StartTime;
         $this->EndTime = $EndTime;
+        $this->Price = $Price;
+    }
+
+    function __construct1( $Price){
         $this->Price = $Price;
     }
 
