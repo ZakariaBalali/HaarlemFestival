@@ -61,12 +61,14 @@ class JazzDAL
             }
             return $JazzEvents;
         } else {
-            echo 'No Jazz events found';
+            echo 'No Jazz events found';        
         }
     }
     
-    function SaveDescription($Event){
-        $sql = "UPDATE Event_Jazz SET Description = $Event->getDescription() WHERE Event_ID = $Event->getEvent_ID()";
+    function SaveDescription($jazzEvent){
+        $description = $jazzEvent->getDescription();
+        $id = $jazzEvent->getEvent_ID();
+        $sql = "UPDATE Event_Jazz SET Description = '$description' WHERE Event_ID = $id";
         mysqli_query($this->connection, $sql);
     }
 }

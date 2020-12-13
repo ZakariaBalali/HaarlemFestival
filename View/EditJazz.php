@@ -36,19 +36,28 @@ require_once '../DAL/JazzDAL.php';
         <button type="submit" name="editImage">Change image</button>
     </section>
 
-    <h2>About the band</h2>
-    <textarea id="about" name="about" rows="10" cols="50"><?php echo $jazzEvent->getDescription(); ?></textarea>
-
+    
     <!-- <form action="" -->
     <input type="text" id="bandName" name="bandName" value="<?php echo $jazzEvent->getBandName() ?>">
 
-    <button type="submit">TESTERONI</button>
-
     <?php
-    if (isset($_POST['submit'])) {
-        $jazzDAL->SaveDescription($jazzEvent);
+    if (isset($_POST['save'])) {
+        $description= $_POST['description'];
+        $jazzEvent->setDescription($description);
+        $jazzDAL->SaveDescription($jazzEvent);         
     }
     ?>
+
+    <p> <?php ?> </p>
+
+    <form action="" method="post">
+        <h2>About the band</h2>
+        <textarea id="about" name="description" rows="10" cols="50"><?php echo $description=$jazzEvent->getDescription(); ?></textarea>
+
+        <button type="submit" name="save" class="btnSave">Save Changes</button>
+    </form>
+
+    
 </section>
 
 </html>
