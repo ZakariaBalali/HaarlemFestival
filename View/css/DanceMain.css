@@ -68,8 +68,7 @@
 .allTicketsBtn:focus {
     background-color: lime;
 }
-
-.fridayBtn {
+.dayButton {
     height: 3.125rem;
     width: 20%;
     border-radius: 1.5625rem;
@@ -77,55 +76,24 @@
     font-family: Segoe UI;
     font-weight: bold;
     font-size: 1.4375rem;
-    background-color: lime;
+    background-color: white;
 }
 
-.fridayBtn:hover {
-    background-color: lime;
-    border-color: black;
-}
-
-.fridayBtn:focus {
-    background-color: lime;
-}
-
-.saturdayBtn {
-    height: 3.125rem;
-    width: 20%;
-    border-radius: 1.5625rem;
-    border-color: white;
-    font-family: Segoe UI;
-    font-weight: bold;
-    font-size: 1.4375rem;
-}
-
-.saturdayBtn:hover {
+.dayButton:hover{
     background-color: lime;
     border-color: black;
+    color:black;
 }
 
-.saturdayBtn:focus {
-    background-color: lime;
-}
 
-.sundayBtn {
-    height: 3.125rem;
-    width: 20%;
-    border-radius: 1.5625rem;
-    border-color: white;
-    font-family: Segoe UI;
-    font-weight: bold;
-    font-size: 1.4375rem;
-}
 
-.sundayBtn:hover {
+.dayButton.dayActive{
     background-color: lime;
     border-color: black;
+    color:black;
 }
 
-.sundayBtn:focus {
-    background-color: lime;
-}
+
 
 .grid-container {
     display: grid;
@@ -788,6 +756,9 @@
     font-family: segoe ui;
     background-color: #11557C;
     color: whitesmoke;
+}
+.show{
+    display: grid;
 }
 
 
