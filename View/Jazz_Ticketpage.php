@@ -247,7 +247,7 @@ require_once '../Logic/CombiLogic.php';
                             <label class="closeLabel">Back</label>
                         </a>
                     </section>
-                    <button form="AddToCart<?php echo $jazz->getEvent_ID();?>" type="submit" name="AddToShoppingCart" value="submit"
+                    <button form="AddToCart<?php echo $jazz->getEvent_ID();?>" type="submit" name="AddToShoppingCartMusic" value="submit"
                             class="AddToCartButton"
                             id="AddToCartButton<?php echo $jazz->getEvent_ID() ?>">
                         <img src="images/ShoppingCart.png">
@@ -373,7 +373,7 @@ require_once '../Logic/CombiLogic.php';
                             <label class="closeLabel">Back</label>
                         </a>
                     </section>
-                    <button form="AddToCart<?php echo $jazz->getEvent_ID();?>" type="submit" name="AddToShoppingCart" value="submit"
+                    <button form="AddToCart<?php echo $jazz->getEvent_ID();?>" type="submit" name="AddToShoppingCartMusic" value="submit"
                             class="AddToCartButton"
                             id="AddToCartButton<?php echo $jazz->getEvent_ID() ?>">
                         <img src="images/ShoppingCart.png">
@@ -499,7 +499,7 @@ require_once '../Logic/CombiLogic.php';
                         <label class="closeLabel">Back</label>
                     </a>
                 </section>
-                <button form="AddToCart<?php echo $jazz->getEvent_ID();?>" type="submit" name="AddToShoppingCart" value="submit"
+                <button form="AddToCart<?php echo $jazz->getEvent_ID();?>" type="submit" name="AddToShoppingCartMusic" value="submit"
                         class="AddToCartButton"
                         id="AddToCartButton<?php echo $jazz->getEvent_ID() ?>">
                     <img src="images/ShoppingCart.png">

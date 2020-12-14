@@ -28,23 +28,27 @@ session_start()
     <a href="Jazz_Main.php">Jazz</a>
     <a href="Historic_Main.php">Historic</a>
     <a href="Program_Main.php">Program</a>
+    <?php if (isset($_SESSION['Products'])) { ?>
+        <a href="DeleteSession.php">Delete Session</a>
+    <?php } ?>
     <a class="active" href="Shopping_Cart.php"><img src="images/icon_shoppingcart_active.png"></a>
 </section>
 
 <section class="MainCart">
     <h1 id="CartTitle">Shopping Cart</h1>
-    <table id="CartTable">
-        <tr id="TableHead">
-            <th>Event</th>
-            <th>Product</th>
-            <th>Comments</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
-        </tr>
-        <?php
-        if (isset($_SESSION['Products'])) {
-            ?>       <a href="DeleteSession.php">DIT MOET ERUIT, MAAR KLIK HIER OM DE SESSIE TE VERWIJDEREN</a> <?php
+    <?php
+    if (isset($_SESSION['Products'])) { ?>
+        <table id="CartTable">
+            <tr id="TableHead">
+                <th>Event</th>
+                <th>Product</th>
+                <th>Comments</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+
+            <?php
             foreach ($_SESSION['Products'] as $item) {
 
                 ?>
@@ -63,32 +67,34 @@ session_start()
 
                 </tr>
             <?php }
-        } ?>
+            ?>
 
 
+        </table>
 
-    </table>
+        <table id="Ordertable">
+            <tr>
+                <th id="TableHead">Order summary</th>
+                <th id="TableHead"></th>
+            </tr>
+            <tr>
+                <td id="Tabledata3">Subtotaal</td>
+                <td id="Tabledata4">&euro;36,70</td>
+            </tr>
+            <tr>
+                <td id="Tabledata3">9% Tax</td>
+                <td id="Tabledata4">&euro;3,30</td>
+            </tr>
+        </table>
 
-    <table id="Ordertable">
-        <tr>
-            <th id="TableHead">Order summary</th>
-            <th id="TableHead"></th>
-        </tr>
-        <tr>
-            <td id="Tabledata3">Subtotaal</td>
-            <td id="Tabledata4">&euro;36,70</td>
-        </tr>
-        <tr>
-            <td id="Tabledata3">9% Tax</td>
-            <td id="Tabledata4">&euro;3,30</td>
-        </tr>
-    </table>
+        <p id="TotalPrice">Total (incl. Tax): &euro;40,00</p>
 
-    <p id="TotalPrice">Total (incl. Tax): &euro;40,00</p>
-
-    <button id="ProceedButton" onclick="document.location='Shopping_Cart_Details.php'">
-        Proceed to details
-    </button>
+        <button id="ProceedButton" onclick="document.location='Shopping_Cart_Details.php'">
+            Proceed to details
+        </button>
+    <?php } else {
+        echo "Add items to your shopping cart so you can display them here!";
+    } ?>
 
 </section>
 

@@ -7,4 +7,4 @@ $_SESSION = array();
 // Finally, destroy the session.
 session_destroy();
 
-header('Location: ../View/Homepage.php');
+header('Location: ../View/Shopping_Cart.php');
