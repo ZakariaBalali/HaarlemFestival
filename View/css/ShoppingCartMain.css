@@ -23,26 +23,27 @@
 #TabledataCart{
     text-align: left;
     padding-right: 3.125rem;
-    padding-bottom: 18.75rem;
+    padding-bottom: 2rem;
 }
 #Tabledata1{
     text-align: left;
-    padding-right: 3.125rem;
-    padding-bottom: 18.75rem;
-    width: 17.5rem;
+    padding-right: 5rem;
+    padding-bottom: 2rem;
 }
 #Tabledata2{
     text-align: left;
-    padding-bottom: 18.75rem;
     padding-right: 5rem;
+    padding-bottom: 2rem;
 }
 #Tabledata3{
     text-align: left;
     padding-right: 5rem;
+    padding-bottom: 2rem;
 }
 #Tabledata4{
     text-align: right;
     padding-left: 3rem;
+    padding-bottom: 2rem;
 }
 #Ordertable{
     float: left;
@@ -63,22 +64,37 @@
     width: 16.25rem;
     height: 4rem;
 }
-#-Button{
-    margin-right: 0.625rem;
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    font-size: 1.25rem;
-}
-#PlusButton{
-    margin-left: 0.625rem;
-    background-color: blue;
-    color: white;
-    border-radius: 50%;
-    font-size: 1.25rem;
-}
+
 #TotalPrice{
     font-size: 1.625rem;
     margin-top: 18.75rem;
-    margin-left: 73.5rem;
+    margin-left: 84.5rem;
+}
+
+.input {
+    width: 2rem;
+    border: none;
+    border: 0.125rem #BCE0FD solid;
+    border-radius: 0.3125rem;
+    background-color: #F1F9FF;
+    text-align: right;
+
+}
+
+.minus {
+    width: 1.4375rem;
+    height: 1.4375rem;
+    border: none;
+    background-color: #AA2828;
+    color: #FFFFFF;
+    border-radius: 50%;
+}
+
+.plus {
+    width: 1.4375rem;
+    height: 1.4375rem;
+    border: none;
+    background-color: #2699FB;
+    color: #FFFFFF;
+    border-radius: 50%;
 }

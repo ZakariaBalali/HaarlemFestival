@@ -113,18 +113,18 @@ require_once '../Logic/DanceLogic.php';
         <section class="ticketGridArea">
                 
                 <label class="titleRegular">Regular ticket</label>
-                <label class="priceRegular"><?php echo number_format((float)$dance->getEvent()->getPrice(), 2, ',', ''); ?></label>
+                <label class="priceRegular">€<?php echo number_format((float)$dance->getEvent()->getPrice(), 2, ',', ''); ?></label>
                 <section class="amountRegular">
                     <button class="minusRegular" id="minusRegular<?php echo $dance->getEvent_ID()?>">−</button>
                     <input class="inputRegular" type="number" value="0"
-                        id="<?php echo $dance->getEvent_ID()?>"/>
+                        id="inputRegular<?php echo $dance->getEvent_ID()?>"/>
                     <button class="plusRegular" id="plusRegular<?php echo $dance->getEvent_ID()?>">+</button>
                     <script>
                         addTicket('minusRegular<?php echo $dance->getEvent_ID()?>', 'inputRegular<?php echo $dance->getEvent_ID()?>', 'plusRegular<?php echo $dance->getEvent_ID()?>')
                     </script>
                 </section>
                 <label class="titleAllAccessDay">All-Access Friday</label>
-                <label class="priceAllAccessDay">150,00</label>
+                <label class="priceAllAccessDay">€150,00</label>
                 <section class="amountAllAccessDay">
                     <button class="minusAllAccessDay" id="minusAllAccessDay<?php echo $dance->getEvent_ID()?>">−</button>
                     <input class="inputAllAccessday" type="number" value="0"
@@ -215,7 +215,7 @@ require_once '../Logic/DanceLogic.php';
                 <label class="priceRegular"><?php echo number_format((float)$dance->getEvent()->getPrice(), 2, ',', ''); ?></label>
                 <section class="amountRegular">
                     <button class="minusRegular" id="minusRegular<?php echo $dance->getEvent_ID()?>">−</button>
-                    <input class="inputRegular" type="number" value="0"
+                    <input class="inputRegular"  type="number" value="0"
                         id="<?php echo $dance->getEvent_ID()?>"/>
                     <button class="plusRegular" id="plusRegular<?php echo $dance->getEvent_ID()?>">+</button>
                     <script>

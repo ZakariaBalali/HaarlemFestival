@@ -10,6 +10,7 @@ session_start()
     <meta name="keywords" content="Create your own Programme">
     <link href="css/ShoppingCartMain.css" rel="stylesheet" type="text/css">
     <link href="css/Banner.css" rel="stylesheet" type="text/css">
+    <script src="js/MainScript.js"></script>
 </head>
 <body>
 <section class="Banner">
@@ -28,7 +29,8 @@ session_start()
     <a href="Jazz_Main.php">Jazz</a>
     <a href="Historic_Main.php">Historic</a>
     <a href="Program_Main.php">Program</a>
-    <?php if (isset($_SESSION['Products'])) { ?>
+    <?php
+    if (isset($_SESSION['Products'])) { ?>
         <a href="DeleteSession.php">Delete Session</a>
     <?php } ?>
     <a class="active" href="Shopping_Cart.php"><img src="images/icon_shoppingcart_active.png"></a>
@@ -49,22 +51,33 @@ session_start()
             </tr>
 
             <?php
+            $TotalPrice = 0;
             foreach ($_SESSION['Products'] as $item) {
 
                 ?>
                 <tr>
 
 
-                    <td><?php echo $item['EventName']; ?> </td>
-                    <td><?php echo $item['ProductName']; ?> , <?php echo $item['StartTime']; ?> </td>
-                    <td><?php echo "none" ?></td>
-                    <td>&euro; <?php echo $item ['Price']; ?></td>
-                    <td>
-                        <button id="-Button">-</button><?php echo $item ['Amount']; ?>
-                        <button id="PlusButton">+</button>
+                    <td id ="TabledataCart"><?php echo $item['EventName']; ?> </td>
+                    <td id="Tabledata1"><?php echo $item['ProductName']; ?> <br> <?php echo $timeFormat = date('D d F ', strtotime($item['StartTime'])); ?> </td>
+                    <td id ="Tabledata2"><?php echo "none" ?></td>
+                    <td id="TabledataCart">&euro; <?php echo $item ['Price']; ?></td>
+                    <td id="Tabledata2">
+                        <button class="minus"
+                                id="minus<?php echo $item['EventID'] ?>">−
+                        </button>
+                        <input class="input" name="amount" type="number" value="<?php echo $item ['Amount'] ?>"
+                               id="input<?php echo $item['EventID'] ?>"/>
+                        <button class="plus"
+                                id="plus<?php echo $item['EventID'] ?>">+
+                        </button>
+                        <script>
+                            addTicket('minus<?php echo $item['EventID'] ?>', 'input<?php echo $item['EventID']?>', 'plus<?php echo  $item ['EventID']?>')
+                        </script>
                     </td>
-                    <td>&euro;<?php echo($item['Amount'] * $item['Price']) ?></td>
+                    <td id="TabledataCart">&euro;<?php echo($item['Amount'] * $item['Price']) ?></td>
 
+                    <?php $TotalPrice += ($item['Amount'] * $item['Price'])?>
                 </tr>
             <?php }
             ?>
@@ -87,7 +100,7 @@ session_start()
             </tr>
         </table>
 
-        <p id="TotalPrice">Total (incl. Tax): &euro;40,00</p>
+        <p id="TotalPrice">Total (incl. Tax): &euro;<?php echo $TotalPrice;?></p>
 
         <button id="ProceedButton" onclick="document.location='Shopping_Cart_Details.php'">
             Proceed to details
