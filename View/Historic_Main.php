@@ -1,3 +1,6 @@
+<?php
+require_once '../Model/Historic.php';
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -98,12 +101,17 @@
             <h3>Program</h3>
             <p>We offer multiple programs. The tours will be in Dutch, English or Chinese. All tours start at the St. Bavo. (Note that some days do not include all different languages).<br><br>The price of a normal ticket is €17,50 euros.<br>The price of a family ticket is €60 euros. A family ticket is for 4 persons and is 14% cheaper than a normal ticket.<br>Reservation is mandatory</p>
         </section>
+        <?php
+            //$historic = new Historic();
+            $day ="";
+            //$language ="";
+        ?>
         <p id="programQuestion"><br>Select a day and language to see the program</p>
-        <button class="dayButton">Thu 26 July</button>
-        <button class="dayButton">Fri 27 July</button>
-        <button class="dayButton">Sat 28 July</button>
-        <button class="dayButton">Sun 29 July</button>
-        <form>
+        <button id="button1" type="submit" name="day" value="2018-07-26 00:00:00" onclick="buttonClick('button1')" action="<?php $day="1";?>">Thu 26 July</button>
+        <button id="button2" type="submit" name="day" value="2018-07-27 00:00:00" onclick="buttonClick('button2')" action="<?php $day="2";?>">Fri 27 July</button>
+        <button id="button3" type="submit" name="day" value="2018-07-28 00:00:00" onclick="buttonClick('button3')">Sat 28 July</button>
+        <button id="button4" type="submit" name="day" value="2018-07-29 00:00:00" onclick="buttonClick('button4')">Sun 29 July</button>
+        <form method="post" action="">
             <label class="radioButtonLanguage">
                 <input type="radio" id="english" name="language" value="english" checked>English
             </label>
@@ -114,6 +122,33 @@
                 <input type="radio" id="chinese" name="language" value="chinese">Chinese
             </label>
         </form>
+        <?php
+
+        echo "<span style='color:black;font-size: 5em;'>".$day."</span>";
+          if(isset($_GET['day']))
+          {
+              $radioButton_value = $_GET['day'];
+              echo "<span style='color:black;font-size: 5em;'>".$radioButton_value."</span>";
+          }
+
+            /*//echo "<span style='color:black;font-size: 5em;'>".$historic->getLanguage()."</span>";  $historic->setLanguage("english");
+            if (isset($_GET["day"])){
+            $SelectedDay = $_GET["day"];
+            echo "<span style='color:black;font-size: 5em;'>HELLOO</span>";
+            echo "<span style='color:black;font-size: 5em;'>".$SelectedDay."</span>";
+            }
+            if(isset($_POST["language"]))
+            {
+                $radioButton_value = $_POST["language"];
+                echo $radioButton_value;
+            }
+            /*$day=getPrgramDay();
+            echo "<span style='color:black;font-size: 5em;'>".$day."</span>";
+            /*$historicTour = [];
+            $historicLogic = new HistoricLogic();
+            $historicTour = (array)$historicLogic->GetAllHistoricTour("2018-07-29 00:00:00", "2018-07-30 00:00:00","english");*/
+        ?>
+
         <table class="programTable" id=programTable>
             <tr>
                 <th>Time</th>
@@ -138,26 +173,26 @@
         </table>
         <button id="buyButton" onclick="showPopUp('popupBuyTicket')">Get your tickets now!</button>
     </section>
-    <section id="popupBuyTicket" class="popupBuyTicket">
+    <form action="../Logic/ShoppingCartLogic.php" method="post" id="popupBuyTicket" class="popupBuyTicket">
         <section id="popupContent">
             <h1>Order your tickets for the historic event</h1>
             <section class=orderTicket>
                 <label class="selectDateText" for="selectDate">Select day:</label>
                 <select id="SelectDate" name="selectDate">
                     <option value="" disabled selected>Select a day</option>
-                    <option value='2021-07-26'>Thur 26 July</option>
-                    <option value='2021-07-27'>Fri 27 July</option>
-                    <option value='2021-07-28'>Sat 28 July</option>
-                    <option value='2021-07-29'>Sun 29 July</option>            
+                    <option name="day" value='2018-07-26'>Thur 26 July</option>
+                    <option name="day" value='2018-07-27'>Fri 27 July</option>
+                    <option name="day" value='2018-07-28'>Sat 28 July</option>
+                    <option name="day" value='2018-07-29'>Sun 29 July</option>            
                 </select>
                 <br>
                 <br>
                 <label class="selectTimeText" for="selectTime">Select Time:</label>
                 <select id="SelectTime" name="selectTime">
                     <option value="" disabled selected>Select a timeslot</option>
-                    <option value='10:00'>10:00</option>
-                    <option value='13:00'>13:00</option>
-                    <option value='16:00'>16:00</option>       
+                    <option name="time" value='10:00:00'>10:00</option>
+                    <option name="time" value='13:00:00'>13:00</option>
+                    <option name="time" value='16:00:00'>16:00</option>       
                 </select>
                 <br><br>
                 <label class="selectLanguageText" for="selectLanguage">Select Language:</label>
@@ -180,41 +215,41 @@
                         <h4>Important Note</h4>
                         <p>participants must be a minimum of 12 years old<br> and no strollers are allowed.</p>
                     </section>
-                    <section id="tickets">
-                        <section id="normalTicket">
-                            <h3>Normal Ticket</h3>
-                            <p>€17,50</p>
-                            <select id="normalTicketAmount" name="normalTicketAmount">
-                                <option value="" disabled selected>0</option>
-                                <option value='1'>1</option>
-                                <option value='12'>2</option>
-                                <option value='13'>3</option>       
-                            </select>
-                        </section>
-                        <section id="familyTicket">
-                            <h3>Family Ticket</h3>
-                            <p>€60,00</p>
-                            <select id="familyTicketAmount" name="familyTicketAmount">
-                                <option value="" disabled selected>0</option>
-                                <option value='1'>1</option>
-                                <option value='12'>2</option>
-                                <option value='13'>3</option>       
-                            </select>
-                            <h6>(4 participants)</h6>
-                            <img src='images/historic/historic_discount_image.jpg' alt="14% discount" id="discountImage">
-                            <h4>Total</h4>
-                            <p3 id="totalPriceTickets">€0,00</p3>
-                        </section>
-                        <button id="cancelButton" onclick="closePopUp('popupBuyTicket')">Cancel</button>
-                        <button id="addToCartButton" onclick="closePopUp('popupBuyTicket')">Add to cart</button>
-                        <script>
-                            modal('popupAddedTicket', 'addToCartButton', 'closeButton')
-                        </script>
+                </section>
+                <section id="tickets">
+                    <section id="normalTicket">
+                        <h3>Normal Ticket</h3>
+                        <p>€17,50</p>
+                        <select id="normalTicketAmount" name="normalTicketAmount">
+                            <option value="" disabled selected>0</option>
+                            <option value='1'>1</option>
+                            <option value='12'>2</option>
+                            <option value='13'>3</option>       
+                        </select>
                     </section>
+                    <section id="familyTicket">
+                        <h3>Family Ticket</h3>
+                        <p>€60,00</p>
+                        <select id="familyTicketAmount" name="familyTicketAmount">
+                            <option value="" disabled selected>0</option>
+                            <option value='1'>1</option>
+                            <option value='12'>2</option>
+                            <option value='13'>3</option>       
+                        </select>
+                        <h6>(4 participants)</h6>
+                        <img src='images/historic/historic_discount_image.jpg' alt="14% discount" id="discountImage">
+                        <h4>Total</h4>
+                        <p3 id="totalPriceTickets">€0,00</p3>
+                    </section>
+                    <button id="cancelButton" onclick="closePopUp('popupBuyTicket')">Cancel</button>
+                    <button id="addToCartButton" onclick="closePopUp('popupBuyTicket')">Add to cart</button>
+                    <script>
+                        modal('popupAddedTicket', 'addToCartButton', 'closeButton')
+                    </script>
                 </section>
             </section>
         </section>
-    </section>
+        </form>
     <section class="venuesBox">
         <section id=venuesInfo>
             <h3>Venues</h3>
