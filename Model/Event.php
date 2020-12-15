@@ -42,7 +42,15 @@ class Event
         $this->Price = $Price;
         $this->Btw = $Btw;
     }
-
+    
+     function __construct5($ProductName, $StartTime, $EndTime, $Seats, $Price){
+        $this->ProductName = $ProductName;
+        $this->StartTime = $StartTime;
+        $this->EndTime = $EndTime;
+        $this->Seats = $Seats;
+        $this->Price = $Price;
+    }
+    
     function __construct3($StartTime, $EndTime, $Price){
         $this->StartTime = $StartTime;
         $this->EndTime = $EndTime;
