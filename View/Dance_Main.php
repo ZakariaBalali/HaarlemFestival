@@ -123,7 +123,7 @@ require_once '../Logic/DanceLogic.php';
     </div>
 
 
-    <!-- tickets saturday -->
+    <!-- tickets friday -->
     <section class="grid-container ticketsFriday show" id="ticketsFriday">
         <?php
         $DanceEvents = [];
@@ -137,6 +137,10 @@ require_once '../Logic/DanceLogic.php';
             <section name="ticket<?php echo $i ?>Title" class="ticket<?php echo $i ?>Title"
                      id="ticket<?php echo $dance->getEvent_ID() ?>Title"><?php echo $dance->getArtistName() ?></section>
             <section class="ticket<?php echo $i ?>Detail" id="ticket<?php echo $dance->getEvent_ID() ?>Detail">
+
+                <section class="leftsideDetail">
+                    <img class="imagesLeft" src="images/<?php echo $dance->getImage(); ?>.jpg">
+                </section>
                 <section class="rightsideDetail">
                     <label class="dayLabel ">Date:<?php echo $dayFormat = date("d/m/y", strtotime($dance->getEvent()->getStartTime())); ?></label>
                     <br>
@@ -151,18 +155,15 @@ require_once '../Logic/DanceLogic.php';
                     <br>
 
                     <button class="buyTicket<?php echo $i ?>Btn"
-                            onclick="showBuyTicket<?php echo $i ?>(<?php echo $dance->getEvent_ID() ?>)">Buy now
+                            onclick="showBuyTicket('buyTicket<?php echo $dance->getEvent_ID() ?>', 'ticket<?php echo $dance->getEvent_ID() ?>Title')">Buy now
                     </button>
 
-                </section>
-                <section class="leftsideDetail">
-                    <img class="imagesLeft" src="images/<?php echo $dance->getImage(); ?>.jpg">
                 </section>
             </section>
 
             <!--Achterkant tickets -->
 
-            <section class="buyTicket<?php echo $i ?>" id="buyTicket<?php echo $i ?>">
+            <section class="buyTicket<?php echo $i ?>" id="buyTicket<?php echo $dance->getEvent_ID() ?>">
                 <!--<section class="buyTicket<?php // echo $i ?>Title" id="BuyTicket<?php //echo $i ?>Title"><?php //echo $dance->getArtistName() ?></section> -->
                 <section class="buyTicketLeftside" id="buyTicket1Leftside">
                     <label class="dayLabel">Date:<?php echo $dayFormat = date("d/m/y", strtotime($dance->getEvent()->getStartTime())); ?></label>
@@ -177,12 +178,12 @@ require_once '../Logic/DanceLogic.php';
                     <section class="ticketGridArea">
 
                         <label class="titleRegular">Regular ticket</label>
-                        <label class="priceRegular"><?php echo number_format((float)$dance->getEvent()->getPrice(), 2, ',', ''); ?></label>
+                        <label class="priceRegular">€<?php echo number_format((float)$dance->getEvent()->getPrice(), 2, ',', ''); ?></label>
                         <section class="amountRegular">
                             <button class="minusRegular" id="minusRegular<?php echo $dance->getEvent_ID() ?>">−
                             </button>
                             <input class="inputRegular" type="number" value="0"
-                                   id="<?php echo $dance->getEvent_ID() ?>"/>
+                                   id="inputRegular<?php echo $dance->getEvent_ID() ?>"/>
                             <button class="plusRegular" id="plusRegular<?php echo $dance->getEvent_ID() ?>">+
                             </button>
                             <script>
@@ -190,7 +191,7 @@ require_once '../Logic/DanceLogic.php';
                             </script>
                         </section>
                         <label class="titleAllAccessDay">All-Access Friday</label>
-                        <label class="priceAllAccessDay">150,00</label>
+                        <label class="priceAllAccessDay">€150,00</label>
                         <section class="amountAllAccessDay">
                             <button class="minusAllAccessDay"
                                     id="minusAllAccessDay<?php echo $dance->getEvent_ID() ?>">−
@@ -247,6 +248,10 @@ require_once '../Logic/DanceLogic.php';
             <section name="ticket<?php echo $i ?>Title" class="ticket<?php echo $i ?>Title"
                      id="ticket<?php echo $dance->getEvent_ID() ?>Title"><?php echo $dance->getArtistName() ?></section>
             <section class="ticket<?php echo $i ?>Detail" id="ticket<?php echo $dance->getEvent_ID() ?>Detail">
+
+                <section class="leftsideDetail">
+                    <img class="imagesLeft" src="images/<?php echo $dance->getImage(); ?>.jpg">
+                </section>
                 <section class="rightsideDetail">
                     <label class="dayLabel ">Date:<?php echo $dayFormat = date("d/m/y", strtotime($dance->getEvent()->getStartTime())); ?></label>
                     <br>
@@ -261,18 +266,15 @@ require_once '../Logic/DanceLogic.php';
                     <br>
 
                     <button class="buyTicket<?php echo $i ?>Btn"
-                            onclick="showBuyTicket<?php echo $i ?>(<?php echo $dance->getEvent_ID() ?>)">Buy now
+                            onclick="showBuyTicket('buyTicket<?php echo $dance->getEvent_ID() ?>', 'ticket<?php echo $dance->getEvent_ID() ?>Title')">Buy now
                     </button>
 
-                </section>
-                <section class="leftsideDetail">
-                    <img class="imagesLeft" src="images/<?php echo $dance->getImage(); ?>.jpg">
                 </section>
             </section>
 
             <!--Achterkant tickets -->
 
-            <section class="buyTicket<?php echo $i ?>" id="buyTicket<?php echo $i ?>">
+            <section class="buyTicket<?php echo $i ?>" id="buyTicket<?php echo $dance->getEvent_ID() ?>">
                 <!--<section class="buyTicket<?php // echo $i ?>Title" id="BuyTicket<?php //echo $i ?>Title"><?php //echo $dance->getArtistName() ?></section> -->
                 <section class="buyTicketLeftside" id="buyTicket1Leftside">
                     <label class="dayLabel">Date:<?php echo $dayFormat = date("d/m/y", strtotime($dance->getEvent()->getStartTime())); ?></label>
@@ -287,20 +289,20 @@ require_once '../Logic/DanceLogic.php';
                     <section class="ticketGridArea">
 
                         <label class="titleRegular">Regular ticket</label>
-                        <label class="priceRegular"><?php echo number_format((float)$dance->getEvent()->getPrice(), 2, ',', ''); ?></label>
+                        <label class="priceRegular">€<?php echo number_format((float)$dance->getEvent()->getPrice(), 2, ',', ''); ?></label>
                         <section class="amountRegular">
                             <button class="minusRegular" id="minusRegular<?php echo $dance->getEvent_ID() ?>">−
                             </button>
                             <input class="inputRegular" type="number" value="0"
-                                   id="<?php echo $dance->getEvent_ID() ?>"/>
+                                   id="inputRegular<?php echo $dance->getEvent_ID() ?>"/>
                             <button class="plusRegular" id="plusRegular<?php echo $dance->getEvent_ID() ?>">+
                             </button>
                             <script>
                                 addTicket('minusRegular<?php echo $dance->getEvent_ID()?>', 'inputRegular<?php echo $dance->getEvent_ID()?>', 'plusRegular<?php echo $dance->getEvent_ID()?>')
                             </script>
                         </section>
-                        <label class="titleAllAccessDay">All-Access Saturday</label>
-                        <label class="priceAllAccessDay">150,00</label>
+                        <label class="titleAllAccessDay">All-Access Friday</label>
+                        <label class="priceAllAccessDay">€150,00</label>
                         <section class="amountAllAccessDay">
                             <button class="minusAllAccessDay"
                                     id="minusAllAccessDay<?php echo $dance->getEvent_ID() ?>">−
@@ -354,6 +356,10 @@ require_once '../Logic/DanceLogic.php';
             <section name="ticket<?php echo $i ?>Title" class="ticket<?php echo $i ?>Title"
                      id="ticket<?php echo $dance->getEvent_ID() ?>Title"><?php echo $dance->getArtistName() ?></section>
             <section class="ticket<?php echo $i ?>Detail" id="ticket<?php echo $dance->getEvent_ID() ?>Detail">
+
+                <section class="leftsideDetail">
+                    <img class="imagesLeft" src="images/<?php echo $dance->getImage(); ?>.jpg">
+                </section>
                 <section class="rightsideDetail">
                     <label class="dayLabel ">Date:<?php echo $dayFormat = date("d/m/y", strtotime($dance->getEvent()->getStartTime())); ?></label>
                     <br>
@@ -368,18 +374,15 @@ require_once '../Logic/DanceLogic.php';
                     <br>
 
                     <button class="buyTicket<?php echo $i ?>Btn"
-                            onclick="showBuyTicket<?php echo $i ?>(<?php echo $dance->getEvent_ID() ?>)">Buy now
+                            onclick="showBuyTicket('buyTicket<?php echo $dance->getEvent_ID() ?>', 'ticket<?php echo $dance->getEvent_ID() ?>Title')">Buy now
                     </button>
 
-                </section>
-                <section class="leftsideDetail">
-                    <img class="imagesLeft" src="images/<?php echo $dance->getImage(); ?>.jpg">
                 </section>
             </section>
 
             <!--Achterkant tickets -->
 
-            <section class="buyTicket<?php echo $i ?>" id="buyTicket<?php echo $i ?>">
+            <section class="buyTicket<?php echo $i ?>" id="buyTicket<?php echo $dance->getEvent_ID() ?>">
                 <!--<section class="buyTicket<?php // echo $i ?>Title" id="BuyTicket<?php //echo $i ?>Title"><?php //echo $dance->getArtistName() ?></section> -->
                 <section class="buyTicketLeftside" id="buyTicket1Leftside">
                     <label class="dayLabel">Date:<?php echo $dayFormat = date("d/m/y", strtotime($dance->getEvent()->getStartTime())); ?></label>
@@ -394,20 +397,20 @@ require_once '../Logic/DanceLogic.php';
                     <section class="ticketGridArea">
 
                         <label class="titleRegular">Regular ticket</label>
-                        <label class="priceRegular"><?php echo number_format((float)$dance->getEvent()->getPrice(), 2, ',', ''); ?></label>
+                        <label class="priceRegular">€<?php echo number_format((float)$dance->getEvent()->getPrice(), 2, ',', ''); ?></label>
                         <section class="amountRegular">
                             <button class="minusRegular" id="minusRegular<?php echo $dance->getEvent_ID() ?>">−
                             </button>
                             <input class="inputRegular" type="number" value="0"
-                                   id="<?php echo $dance->getEvent_ID() ?>"/>
+                                   id="inputRegular<?php echo $dance->getEvent_ID() ?>"/>
                             <button class="plusRegular" id="plusRegular<?php echo $dance->getEvent_ID() ?>">+
                             </button>
                             <script>
                                 addTicket('minusRegular<?php echo $dance->getEvent_ID()?>', 'inputRegular<?php echo $dance->getEvent_ID()?>', 'plusRegular<?php echo $dance->getEvent_ID()?>')
                             </script>
                         </section>
-                        <label class="titleAllAccessDay">All-Access Sunday</label>
-                        <label class="priceAllAccessDay">150,00</label>
+                        <label class="titleAllAccessDay">All-Access Friday</label>
+                        <label class="priceAllAccessDay">€150,00</label>
                         <section class="amountAllAccessDay">
                             <button class="minusAllAccessDay"
                                     id="minusAllAccessDay<?php echo $dance->getEvent_ID() ?>">−

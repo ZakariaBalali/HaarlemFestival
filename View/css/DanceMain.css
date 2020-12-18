@@ -294,7 +294,7 @@
 }
 
 .rightsideDetail {
-    float: right;
+    float: left ;
     text-align: left;
     font-size: 1.875rem;
     font-weight: bold;

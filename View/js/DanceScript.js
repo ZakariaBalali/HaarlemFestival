@@ -30,33 +30,7 @@ function addTicket(minButton, input, addButton) {
         inputField.value = currentValue + 1;
     });
 }
-function showBuyTicket1(){
-    document.getElementById("buyTicket1").style.visibility="visible";
-    document.getElementById("ticket1Title").style.backgroundColor="#11557C";
-}
-
-function showBuyTicket2(){
-    document.getElementById("buyTicket2").style.visibility="visible";
-    document.getElementById("ticket2Title").style.backgroundColor="#11557C";
-    
-}
-function showBuyTicket3(){
-    document.getElementById("buyTicket3").style.visibility="visible";
-    document.getElementById("ticket3Title").style.backgroundColor="#11557C";
-    
-}
-function showBuyTicket4(){
-    document.getElementById("buyTicket4").style.visibility="visible";
-    document.getElementById("ticket4Title").style.backgroundColor="#11557C";
-    
-}
-function showBuyTicket5(){
-    document.getElementById("buyTicket5").style.visibility="visible";
-    document.getElementById("ticket5Title").style.backgroundColor="#11557C";
-    
-}
-function showBuyTicket6(){
-    document.getElementById("buyTicket6").style.visibility="visible";
-    document.getElementById("ticket6Title").style.backgroundColor="#11557C";
-    
+function showBuyTicket(BuyTicket, TicketTitle){
+    div1 = document.getElementById(BuyTicket).style.visibility="visible";
+    div1 = document.getElementById(TicketTitle).style.backgroundColor="#11557C";
 }
