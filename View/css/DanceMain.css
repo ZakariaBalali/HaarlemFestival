@@ -24,11 +24,19 @@
     font-weight: bold;
 }
 
-#subtitle {
+#subtitle1 {
     text-align: center;
     font-size: 1.125rem;
     color: white;
 }
+#subtitle2 {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.625rem;
+    color:  lime;
+    border-color: black;
+}
+
 
 .ArtistsRow1 {
     width: 75%;
