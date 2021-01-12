@@ -58,9 +58,10 @@ session_start()
                 <tr>
 
 
-                    <td id ="TabledataCart"><?php echo $item['EventName']; ?> </td>
-                    <td id="Tabledata1"><?php echo $item['ProductName']; ?> <br> <?php echo $timeFormat = date('D d F ', strtotime($item['StartTime'])); ?> </td>
-                    <td id ="Tabledata2"><?php echo "none" ?></td>
+                    <td id="TabledataCart"><?php echo $item['EventName']; ?> </td>
+                    <td id="Tabledata1"><?php echo $item['ProductName']; ?>
+                        <br> <?php echo $timeFormat = date('D d F ', strtotime($item['StartTime'])); ?> </td>
+                    <td id="Tabledata2"><?php echo "none" ?></td>
                     <td id="TabledataCart">&euro; <?php echo $item ['Price']; ?></td>
                     <td id="Tabledata2">
                         <button class="minus"
@@ -72,39 +73,43 @@ session_start()
                                 id="plus<?php echo $item['EventID'] ?>">+
                         </button>
                         <script>
-                            addTicket('minus<?php echo $item['EventID'] ?>', 'input<?php echo $item['EventID']?>', 'plus<?php echo  $item ['EventID']?>')
+                            addTicket('minus<?php echo $item['EventID'] ?>', 'input<?php echo $item['EventID']?>', 'plus<?php echo $item ['EventID']?>')
                         </script>
                     </td>
                     <td id="TabledataCart">&euro;<?php echo($item['Amount'] * $item['Price']) ?></td>
 
-                    <?php $TotalPrice += ($item['Amount'] * $item['Price'])?>
+                    <?php $TotalPrice += ($item['Amount'] * $item['Price']) ?>
                 </tr>
             <?php }
             ?>
 
 
         </table>
+        <form class="formPayment" action="Shopping_Cart_Details.php" method="post" id="GoToPayment">
+            <?php $totalamount = number_format($TotalPrice, 2, '.', '') ?>
+            <input style="display: none" class="valueAmount" id="amount" name="amount"
+                   type="text"
+                   value="<?php echo $totalamount?>"/>
+            <table id="Ordertable">
+                <tr>
+                    <th id="TableHead">Order summary</th>
+                    <th id="TableHead"></th>
+                </tr>
+                <tr>
+                    <td id="Tabledata3">Subtotaal</td>
+                    <td id="Tabledata4">&euro;36,70</td>
+                </tr>
+                <tr>
+                    <td id="Tabledata3">9% Tax</td>
+                    <td id="Tabledata4">&euro;3,30</td>
+                </tr>
+            </table>
 
-        <table id="Ordertable">
-            <tr>
-                <th id="TableHead">Order summary</th>
-                <th id="TableHead"></th>
-            </tr>
-            <tr>
-                <td id="Tabledata3">Subtotaal</td>
-                <td id="Tabledata4">&euro;36,70</td>
-            </tr>
-            <tr>
-                <td id="Tabledata3">9% Tax</td>
-                <td id="Tabledata4">&euro;3,30</td>
-            </tr>
-        </table>
-
-        <p id="TotalPrice">Total (incl. Tax): &euro;<?php echo $TotalPrice;?></p>
-
-        <button id="ProceedButton" onclick="document.location='Shopping_Cart_Details.php'">
-            Proceed to details
-        </button>
+            <p id="TotalPrice">Total (incl. Tax): &euro;<?php echo $totalamount?></p>
+            <button id="ProceedButton" form="GoToPayment" id="GoToPayment">
+                Proceed to Details
+            </button>
+        </form>
     <?php } else {
         echo "Add items to your shopping cart so you can display them here!";
     } ?>
