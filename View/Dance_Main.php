@@ -40,7 +40,7 @@ require_once '../Logic/CombiLogic.php';
         <h2>Haarlem Dance</h2>
     </section>
     <p id="subtitle1">COMMING ARTISTS</p>
-   
+
     <!--row 1 -->
     <section class="ArtistsRow1">
         <img src="./images/arminvanbuuren.jpg " href="# "/>
@@ -162,7 +162,8 @@ require_once '../Logic/CombiLogic.php';
                     <br>
 
                     <button class="buyTicket<?php echo $i ?>Btn"
-                            onclick="showBuyTicket('buyTicket<?php echo $dance->getEvent_ID() ?>', 'ticket<?php echo $dance->getEvent_ID() ?>Title')">Buy now
+                            onclick="showBuyTicket('buyTicket<?php echo $dance->getEvent_ID() ?>', 'ticket<?php echo $dance->getEvent_ID() ?>Title')">
+                        Buy now
                     </button>
 
                 </section>
@@ -182,55 +183,67 @@ require_once '../Logic/CombiLogic.php';
                     <img class="imagesLeft" src="images/<?php echo $dance->getImage(); ?>.jpg">
                 </section>
                 <section class="buyTicketRightside" id="buyTicketRightside">
-                    <section class="ticketGridArea">
+                    <form action="../Logic/ShoppingCartLogic.php" method="post" id="AddToCart<?php echo $dance->getEvent_ID() ?>">
 
-                        <label class="titleRegular">Regular ticket</label>
-                        <label class="priceRegular">€<?php echo number_format((float)$dance->getEvent()->getPrice(), 2, ',', ''); ?></label>
-                        <section class="amountRegular">
-                            <button class="minusRegular" id="minusRegular<?php echo $dance->getEvent_ID() ?>">−
-                            </button>
-                            <input class="inputRegular" type="number" value="0"
-                                   id="inputRegular<?php echo $dance->getEvent_ID() ?>"/>
-                            <button class="plusRegular" id="plusRegular<?php echo $dance->getEvent_ID() ?>">+
-                            </button>
-                            <script>
-                                addTicket('minusRegular<?php echo $dance->getEvent_ID()?>', 'inputRegular<?php echo $dance->getEvent_ID()?>', 'plusRegular<?php echo $dance->getEvent_ID()?>')
-                            </script>
-                        </section>
-                        <label class="titleAllAccessDay"><?php echo $CombiEvents[0]->getTicketName(); ?></label>
-                        <label class="priceAllAccessDay">€<?php echo number_format((float)$CombiEvents[0]->getEvent()->getPrice(), 2, ',', ''); ?></label>
-                        <section class="amountAllAccessDay">
-                            <button class="minusAllAccessDay"
-                                    id="minusAllAccessDay<?php echo $dance->getEvent_ID() ?>">−
-                            </button>
-                            <input class="inputAllAccessday" type="number" value="0"
-                                   id="inputAllAccessDay<?php echo $dance->getEvent_ID() ?>"/>
-                            <button class="plusAllAccessDay"
-                                    id="plusAllAccessDay<?php echo $dance->getEvent_ID() ?>">+
-                            </button>
-                            <script>
-                                addTicket('minusAllAccessDay<?php echo $dance->getEvent_ID()?>', 'inputAllAccessDay<?php echo $dance->getEvent_ID()?>', 'plusAllAccessDay<?php echo $dance->getEvent_ID()?>')
-                            </script>
-                        </section>
-                        <label class="titleAllAccessWeekend"><?php echo $CombiEvents[1]->getTicketName(); ?></label>
-                        <label class="priceAllAccessWeekend">€<?php echo number_format((float)$CombiEvents[1]->getEvent()->getPrice(), 2, ',', ''); ?></label>
-                        <section class="amountAllAccessWeekend">
-                            <button class="minusAllAccessWeekend"
-                                    id="minusAllAccessWeekend<?php echo $dance->getEvent_ID() ?>">−
-                            </button>
-                            <input class="inputAllAccessWeekend" type="number" value="0"
-                                   id="inputAllAccessWeekend<?php echo $dance->getEvent_ID() ?>"/>
-                            <button class="plusAllAccessWeekend"
-                                    id="plusAllAccessWeekend<?php echo $dance->getEvent_ID() ?>">+
-                            </button>
-                            <script>
-                                addTicket('minusAllAccessWeekend<?php echo $dance->getEvent_ID()?>', 'inputAllAccessWeekend<?php echo $dance->getEvent_ID()?>', 'plusAllAccessWeekend<?php echo $dance->getEvent_ID()?>')
-                            </script>
+                        <input style="display: none" class="valueArtist" name="artistID" type="text"
+                               value="<?php echo $dance->getEvent_ID(); ?>"/>
+                        <input style="display: none" class="valueAllAccessDay" name="allAccessDayID" type="text"
+                               value="<?php echo $CombiEvents[0]->getEvent_ID(); ?>"/>
+                        <input style="display: none" class="valueAllAccessWeekend" name="allAccessWeekendID" type="text"
+                               value="<?php echo $CombiEvents[1]->getEvent_ID(); ?>"/>
+                        <section class="ticketGridArea">
 
-                        </section>
-                        <button class="buttonAddTicket<?php echo $i ?>"> Add</button>
-                    </section>
+                            <label class="titleRegular">Regular ticket</label>
+                            <label class="priceRegular">€<?php echo number_format((float)$dance->getEvent()->getPrice(), 2, ',', ''); ?></label>
+                            <section class="amountRegular">
+                                <button class="minusRegular" id="minusRegular<?php echo $dance->getEvent_ID() ?>">−
+                                </button>
+                                <input class="inputRegular" type="number" value="0" name="amountArtist"
+                                       id="inputRegular<?php echo $dance->getEvent_ID() ?>"/>
+                                <button class="plusRegular" id="plusRegular<?php echo $dance->getEvent_ID() ?>">+
+                                </button>
+                                <script>
+                                    addTicket('minusRegular<?php echo $dance->getEvent_ID()?>', 'inputRegular<?php echo $dance->getEvent_ID()?>', 'plusRegular<?php echo $dance->getEvent_ID()?>')
+                                </script>
+                            </section>
+                            <label class="titleAllAccessDay"><?php echo $CombiEvents[0]->getTicketName(); ?></label>
+                            <label class="priceAllAccessDay">€<?php echo number_format((float)$CombiEvents[0]->getEvent()->getPrice(), 2, ',', ''); ?></label>
+                            <section class="amountAllAccessDay">
+                                <button class="minusAllAccessDay"
+                                        id="minusAllAccessDay<?php echo $dance->getEvent_ID() ?>">−
+                                </button>
+                                <input class="inputAllAccessday" name="amountAllAccessDay" type="number" value="0"
+                                       id="inputAllAccessDay<?php echo $dance->getEvent_ID() ?>"/>
+                                <button class="plusAllAccessDay"
+                                        id="plusAllAccessDay<?php echo $dance->getEvent_ID() ?>">+
+                                </button>
+                                <script>
+                                    addTicket('minusAllAccessDay<?php echo $dance->getEvent_ID()?>', 'inputAllAccessDay<?php echo $dance->getEvent_ID()?>', 'plusAllAccessDay<?php echo $dance->getEvent_ID()?>')
+                                </script>
+                            </section>
+                            <label class="titleAllAccessWeekend"><?php echo $CombiEvents[1]->getTicketName(); ?></label>
+                            <label class="priceAllAccessWeekend">€<?php echo number_format((float)$CombiEvents[1]->getEvent()->getPrice(), 2, ',', ''); ?></label>
+                            <section class="amountAllAccessWeekend">
+                                <button class="minusAllAccessWeekend"
+                                        id="minusAllAccessWeekend<?php echo $dance->getEvent_ID() ?>">−
+                                </button>
+                                <input class="inputAllAccessWeekend" type="number" value="0" name="amountAllAccessWeekend"
+                                       id="inputAllAccessWeekend<?php echo $dance->getEvent_ID() ?>"/>
+                                <button class="plusAllAccessWeekend"
+                                        id="plusAllAccessWeekend<?php echo $dance->getEvent_ID() ?>">+
+                                </button>
+                                <script>
+                                    addTicket('minusAllAccessWeekend<?php echo $dance->getEvent_ID()?>', 'inputAllAccessWeekend<?php echo $dance->getEvent_ID()?>', 'plusAllAccessWeekend<?php echo $dance->getEvent_ID()?>')
+                                </script>
 
+                            </section>
+                            <button form="AddToCart<?php echo $dance->getEvent_ID(); ?>" type="submit"
+                                    name="AddToShoppingCartMusic" value="submit"
+                                    class="buttonAddTicket<?php echo $i ?>"
+                                    id="AddToCartButton<?php echo $dance->getEvent_ID() ?>"> Add
+                            </button>
+                        </section>
+                    </form>
                 </section>
 
 
@@ -240,14 +253,14 @@ require_once '../Logic/CombiLogic.php';
         } ?>
     </section>
 
-    <!--tickets sunday -->
+    <!--tickets saturday -->
 
     <section class="grid-container ticketsSaturday" id="ticketsSaturday">
         <?php
         $DanceEvents = [];
         $danceLogic = new DanceLogic();
         $DanceEvents = (array)$danceLogic->GetAllDanceEvents("2018-07-28 00:00:00", "2018-07-29 00:00:00");
-    //Fill array with the two combi events
+        //Fill array with the two combi events
         $CombiEvents = [];
         $combiLogic = new CombiLogic();
         $CombiEvents = (array)$combiLogic->GetAllCombiEventsByName("All-Access Saturday Dance", "All-Access Weekend Dance");
@@ -278,7 +291,8 @@ require_once '../Logic/CombiLogic.php';
                     <br>
 
                     <button class="buyTicket<?php echo $i ?>Btn"
-                            onclick="showBuyTicket('buyTicket<?php echo $dance->getEvent_ID() ?>', 'ticket<?php echo $dance->getEvent_ID() ?>Title')">Buy now
+                            onclick="showBuyTicket('buyTicket<?php echo $dance->getEvent_ID() ?>', 'ticket<?php echo $dance->getEvent_ID() ?>Title')">
+                        Buy now
                     </button>
 
                 </section>
@@ -298,54 +312,67 @@ require_once '../Logic/CombiLogic.php';
                     <img class="imagesLeft" src="images/<?php echo $dance->getImage(); ?>.jpg">
                 </section>
                 <section class="buyTicketRightside" id="buyTicketRightside">
-                    <section class="ticketGridArea">
+                    <form action="../Logic/ShoppingCartLogic.php" method="post" id="AddToCart<?php echo $dance->getEvent_ID() ?>">
 
-                        <label class="titleRegular">Regular ticket</label>
-                        <label class="priceRegular">€<?php echo number_format((float)$dance->getEvent()->getPrice(), 2, ',', ''); ?></label>
-                        <section class="amountRegular">
-                            <button class="minusRegular" id="minusRegular<?php echo $dance->getEvent_ID() ?>">−
-                            </button>
-                            <input class="inputRegular" type="number" value="0"
-                                   id="inputRegular<?php echo $dance->getEvent_ID() ?>"/>
-                            <button class="plusRegular" id="plusRegular<?php echo $dance->getEvent_ID() ?>">+
-                            </button>
-                            <script>
-                                addTicket('minusRegular<?php echo $dance->getEvent_ID()?>', 'inputRegular<?php echo $dance->getEvent_ID()?>', 'plusRegular<?php echo $dance->getEvent_ID()?>')
-                            </script>
-                        </section>
-                        <label class="titleAllAccessDay"><?php echo $CombiEvents[0]->getTicketName(); ?></label>
-                        <label class="priceAllAccessDay">€<?php echo number_format((float)$CombiEvents[0]->getEvent()->getPrice(), 2, ',', ''); ?></label>
-                        <section class="amountAllAccessDay">
-                            <button class="minusAllAccessDay"
-                                    id="minusAllAccessDay<?php echo $dance->getEvent_ID() ?>">−
-                            </button>
-                            <input class="inputAllAccessday" type="number" value="0"
-                                   id="inputAllAccessDay<?php echo $dance->getEvent_ID() ?>"/>
-                            <button class="plusAllAccessDay"
-                                    id="plusAllAccessDay<?php echo $dance->getEvent_ID() ?>">+
-                            </button>
-                            <script>
-                                addTicket('minusAllAccessDay<?php echo $dance->getEvent_ID()?>', 'inputAllAccessDay<?php echo $dance->getEvent_ID()?>', 'plusAllAccessDay<?php echo $dance->getEvent_ID()?>')
-                            </script>
-                        </section>
-                        <label class="titleAllAccessWeekend"><?php echo $CombiEvents[1]->getTicketName(); ?></label>
-                        <label class="priceAllAccessWeekend"> €<?php echo number_format((float)$CombiEvents[1]->getEvent()->getPrice(), 2, ',', ''); ?></label>
-                        <section class="amountAllAccessWeekend">
-                            <button class="minusAllAccessWeekend"
-                                    id="minusAllAccessWeekend<?php echo $dance->getEvent_ID() ?>">−
-                            </button>
-                            <input class="inputAllAccessWeekend" type="number" value="0"
-                                   id="inputAllAccessWeekend<?php echo $dance->getEvent_ID() ?>"/>
-                            <button class="plusAllAccessWeekend"
-                                    id="plusAllAccessWeekend<?php echo $dance->getEvent_ID() ?>">+
-                            </button>
-                            <script>
-                                addTicket('minusAllAccessWeekend<?php echo $dance->getEvent_ID()?>', 'inputAllAccessWeekend<?php echo $dance->getEvent_ID()?>', 'plusAllAccessWeekend<?php echo $dance->getEvent_ID()?>')
-                            </script>
+                        <input style="display: none" class="valueArtist" name="artistID" type="text"
+                               value="<?php echo $dance->getEvent_ID(); ?>"/>
+                        <input style="display: none" class="valueAllAccessDay" name="allAccessDayID" type="text"
+                               value="<?php echo $CombiEvents[0]->getEvent_ID(); ?>"/>
+                        <input style="display: none" class="valueAllAccessWeekend" name="allAccessWeekendID" type="text"
+                               value="<?php echo $CombiEvents[1]->getEvent_ID(); ?>"/>
+                        <section class="ticketGridArea">
 
+                            <label class="titleRegular">Regular ticket</label>
+                            <label class="priceRegular">€<?php echo number_format((float)$dance->getEvent()->getPrice(), 2, ',', ''); ?></label>
+                            <section class="amountRegular">
+                                <button class="minusRegular" id="minusRegular<?php echo $dance->getEvent_ID() ?>">−
+                                </button>
+                                <input class="inputRegular" type="number" value="0" name="amountArtist"
+                                       id="inputRegular<?php echo $dance->getEvent_ID() ?>"/>
+                                <button class="plusRegular" id="plusRegular<?php echo $dance->getEvent_ID() ?>">+
+                                </button>
+                                <script>
+                                    addTicket('minusRegular<?php echo $dance->getEvent_ID()?>', 'inputRegular<?php echo $dance->getEvent_ID()?>', 'plusRegular<?php echo $dance->getEvent_ID()?>')
+                                </script>
+                            </section>
+                            <label class="titleAllAccessDay"><?php echo $CombiEvents[0]->getTicketName(); ?></label>
+                            <label class="priceAllAccessDay">€<?php echo number_format((float)$CombiEvents[0]->getEvent()->getPrice(), 2, ',', ''); ?></label>
+                            <section class="amountAllAccessDay">
+                                <button class="minusAllAccessDay"
+                                        id="minusAllAccessDay<?php echo $dance->getEvent_ID() ?>">−
+                                </button>
+                                <input class="inputAllAccessday" name="amountAllAccessDay" type="number" value="0"
+                                       id="inputAllAccessDay<?php echo $dance->getEvent_ID() ?>"/>
+                                <button class="plusAllAccessDay"
+                                        id="plusAllAccessDay<?php echo $dance->getEvent_ID() ?>">+
+                                </button>
+                                <script>
+                                    addTicket('minusAllAccessDay<?php echo $dance->getEvent_ID()?>', 'inputAllAccessDay<?php echo $dance->getEvent_ID()?>', 'plusAllAccessDay<?php echo $dance->getEvent_ID()?>')
+                                </script>
+                            </section>
+                            <label class="titleAllAccessWeekend"><?php echo $CombiEvents[1]->getTicketName(); ?></label>
+                            <label class="priceAllAccessWeekend">€<?php echo number_format((float)$CombiEvents[1]->getEvent()->getPrice(), 2, ',', ''); ?></label>
+                            <section class="amountAllAccessWeekend">
+                                <button class="minusAllAccessWeekend"
+                                        id="minusAllAccessWeekend<?php echo $dance->getEvent_ID() ?>">−
+                                </button>
+                                <input class="inputAllAccessWeekend" type="number" value="0" name="amountAllAccessWeekend"
+                                       id="inputAllAccessWeekend<?php echo $dance->getEvent_ID() ?>"/>
+                                <button class="plusAllAccessWeekend"
+                                        id="plusAllAccessWeekend<?php echo $dance->getEvent_ID() ?>">+
+                                </button>
+                                <script>
+                                    addTicket('minusAllAccessWeekend<?php echo $dance->getEvent_ID()?>', 'inputAllAccessWeekend<?php echo $dance->getEvent_ID()?>', 'plusAllAccessWeekend<?php echo $dance->getEvent_ID()?>')
+                                </script>
+
+                            </section>
+                            <button form="AddToCart<?php echo $dance->getEvent_ID(); ?>" type="submit"
+                                    name="AddToShoppingCartMusic" value="submit"
+                                    class="buttonAddTicket<?php echo $i ?>"
+                                    id="AddToCartButton<?php echo $dance->getEvent_ID() ?>"> Add
+                            </button>
                         </section>
-                        <button class="buttonAddTicket<?php echo $i ?>"> Add</button>
-                    </section>
+                    </form>
 
                 </section>
 
@@ -390,7 +417,8 @@ require_once '../Logic/CombiLogic.php';
                     <br>
 
                     <button class="buyTicket<?php echo $i ?>Btn"
-                            onclick="showBuyTicket('buyTicket<?php echo $dance->getEvent_ID() ?>', 'ticket<?php echo $dance->getEvent_ID() ?>Title')">Buy now
+                            onclick="showBuyTicket('buyTicket<?php echo $dance->getEvent_ID() ?>', 'ticket<?php echo $dance->getEvent_ID() ?>Title')">
+                        Buy now
                     </button>
 
                 </section>
@@ -410,54 +438,67 @@ require_once '../Logic/CombiLogic.php';
                     <img class="imagesLeft" src="images/<?php echo $dance->getImage(); ?>.jpg">
                 </section>
                 <section class="buyTicketRightside" id="buyTicketRightside">
-                    <section class="ticketGridArea">
+                    <form action="../Logic/ShoppingCartLogic.php" method="post" id="AddToCart<?php echo $dance->getEvent_ID() ?>">
 
-                        <label class="titleRegular">Regular ticket</label>
-                        <label class="priceRegular">€<?php echo number_format((float)$dance->getEvent()->getPrice(), 2, ',', ''); ?></label>
-                        <section class="amountRegular">
-                            <button class="minusRegular" id="minusRegular<?php echo $dance->getEvent_ID() ?>">−
-                            </button>
-                            <input class="inputRegular" type="number" value="0"
-                                   id="inputRegular<?php echo $dance->getEvent_ID() ?>"/>
-                            <button class="plusRegular" id="plusRegular<?php echo $dance->getEvent_ID() ?>">+
-                            </button>
-                            <script>
-                                addTicket('minusRegular<?php echo $dance->getEvent_ID()?>', 'inputRegular<?php echo $dance->getEvent_ID()?>', 'plusRegular<?php echo $dance->getEvent_ID()?>')
-                            </script>
-                        </section>
-                        <label class="titleAllAccessDay"><?php echo $CombiEvents[0]->getTicketName(); ?></label>
-                        <label class="priceAllAccessDay">€<?php echo number_format((float)$CombiEvents[0]->getEvent()->getPrice(), 2, ',', ''); ?></label>
-                        <section class="amountAllAccessDay">
-                            <button class="minusAllAccessDay"
-                                    id="minusAllAccessDay<?php echo $dance->getEvent_ID() ?>">−
-                            </button>
-                            <input class="inputAllAccessday" type="number" value="0"
-                                   id="inputAllAccessDay<?php echo $dance->getEvent_ID() ?>"/>
-                            <button class="plusAllAccessDay"
-                                    id="plusAllAccessDay<?php echo $dance->getEvent_ID() ?>">+
-                            </button>
-                            <script>
-                                addTicket('minusAllAccessDay<?php echo $dance->getEvent_ID()?>', 'inputAllAccessDay<?php echo $dance->getEvent_ID()?>', 'plusAllAccessDay<?php echo $dance->getEvent_ID()?>')
-                            </script>
-                        </section>
-                        <label class="titleAllAccessWeekend"><?php echo $CombiEvents[1]->getTicketName(); ?></label>
-                        <label class="priceAllAccessWeekend">€<?php echo number_format((float)$CombiEvents[1]->getEvent()->getPrice(), 2, ',', ''); ?></label>
-                        <section class="amountAllAccessWeekend">
-                            <button class="minusAllAccessWeekend"
-                                    id="minusAllAccessWeekend<?php echo $dance->getEvent_ID() ?>">−
-                            </button>
-                            <input class="inputAllAccessWeekend" type="number" value="0"
-                                   id="inputAllAccessWeekend<?php echo $dance->getEvent_ID() ?>"/>
-                            <button class="plusAllAccessWeekend"
-                                    id="plusAllAccessWeekend<?php echo $dance->getEvent_ID() ?>">+
-                            </button>
-                            <script>
-                                addTicket('minusAllAccessWeekend<?php echo $dance->getEvent_ID()?>', 'inputAllAccessWeekend<?php echo $dance->getEvent_ID()?>', 'plusAllAccessWeekend<?php echo $dance->getEvent_ID()?>')
-                            </script>
+                        <input style="display: none" class="valueArtist" name="artistID" type="text"
+                               value="<?php echo $dance->getEvent_ID(); ?>"/>
+                        <input style="display: none" class="valueAllAccessDay" name="allAccessDayID" type="text"
+                               value="<?php echo $CombiEvents[0]->getEvent_ID(); ?>"/>
+                        <input style="display: none" class="valueAllAccessWeekend" name="allAccessWeekendID" type="text"
+                               value="<?php echo $CombiEvents[1]->getEvent_ID(); ?>"/>
+                        <section class="ticketGridArea">
 
+                            <label class="titleRegular">Regular ticket</label>
+                            <label class="priceRegular">€<?php echo number_format((float)$dance->getEvent()->getPrice(), 2, ',', ''); ?></label>
+                            <section class="amountRegular">
+                                <button class="minusRegular" id="minusRegular<?php echo $dance->getEvent_ID() ?>">−
+                                </button>
+                                <input class="inputRegular" type="number" value="0" name="amountArtist"
+                                       id="inputRegular<?php echo $dance->getEvent_ID() ?>"/>
+                                <button class="plusRegular" id="plusRegular<?php echo $dance->getEvent_ID() ?>">+
+                                </button>
+                                <script>
+                                    addTicket('minusRegular<?php echo $dance->getEvent_ID()?>', 'inputRegular<?php echo $dance->getEvent_ID()?>', 'plusRegular<?php echo $dance->getEvent_ID()?>')
+                                </script>
+                            </section>
+                            <label class="titleAllAccessDay"><?php echo $CombiEvents[0]->getTicketName(); ?></label>
+                            <label class="priceAllAccessDay">€<?php echo number_format((float)$CombiEvents[0]->getEvent()->getPrice(), 2, ',', ''); ?></label>
+                            <section class="amountAllAccessDay">
+                                <button class="minusAllAccessDay"
+                                        id="minusAllAccessDay<?php echo $dance->getEvent_ID() ?>">−
+                                </button>
+                                <input class="inputAllAccessday" name="amountAllAccessDay" type="number" value="0"
+                                       id="inputAllAccessDay<?php echo $dance->getEvent_ID() ?>"/>
+                                <button class="plusAllAccessDay"
+                                        id="plusAllAccessDay<?php echo $dance->getEvent_ID() ?>">+
+                                </button>
+                                <script>
+                                    addTicket('minusAllAccessDay<?php echo $dance->getEvent_ID()?>', 'inputAllAccessDay<?php echo $dance->getEvent_ID()?>', 'plusAllAccessDay<?php echo $dance->getEvent_ID()?>')
+                                </script>
+                            </section>
+                            <label class="titleAllAccessWeekend"><?php echo $CombiEvents[1]->getTicketName(); ?></label>
+                            <label class="priceAllAccessWeekend">€<?php echo number_format((float)$CombiEvents[1]->getEvent()->getPrice(), 2, ',', ''); ?></label>
+                            <section class="amountAllAccessWeekend">
+                                <button class="minusAllAccessWeekend"
+                                        id="minusAllAccessWeekend<?php echo $dance->getEvent_ID() ?>">−
+                                </button>
+                                <input class="inputAllAccessWeekend" type="number" value="0" name="amountAllAccessWeekend"
+                                       id="inputAllAccessWeekend<?php echo $dance->getEvent_ID() ?>"/>
+                                <button class="plusAllAccessWeekend"
+                                        id="plusAllAccessWeekend<?php echo $dance->getEvent_ID() ?>">+
+                                </button>
+                                <script>
+                                    addTicket('minusAllAccessWeekend<?php echo $dance->getEvent_ID()?>', 'inputAllAccessWeekend<?php echo $dance->getEvent_ID()?>', 'plusAllAccessWeekend<?php echo $dance->getEvent_ID()?>')
+                                </script>
+
+                            </section>
+                            <button form="AddToCart<?php echo $dance->getEvent_ID(); ?>" type="submit"
+                                    name="AddToShoppingCartMusic" value="submit"
+                                    class="buttonAddTicket<?php echo $i ?>"
+                                    id="AddToCartButton<?php echo $dance->getEvent_ID() ?>"> Add
+                            </button>
                         </section>
-                        <button class="buttonAddTicket<?php echo $i ?>"> Add</button>
-                    </section>
+                    </form>
 
                 </section>
 
