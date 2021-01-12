@@ -1,10 +1,10 @@
 function showPopUp(popup){
-    const div1 = document.getElementById(popup);
-    div1.style.visibility="visible";
+    document.getElementById(popup).style.visibility='visible';
 }
 function closePopUp(popup){
     document.getElementById(popup).style.visibility="hidden";
 }
+
 /*const programDay="";
 const programLanguage="";
 
@@ -35,6 +35,17 @@ function buttonClick(buttonId){
     b.style.color = "black";
     })
 }
+
+SelectDate.onclick = function ( e ) {
+    if ( e.target.tagName.toLowerCase() === 'option' ) {
+        // an <option> element was clicked
+        $value=SelectDate.value;
+        console.log(value);
+    }
+};
+function Name(value){
+
+};
 /*
 window.onload = function() {
 
