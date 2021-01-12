@@ -1,12 +1,12 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5\GuzzleHttp;
+namespace _PhpScoper5e394cb3b4e38\GuzzleHttp;
 
-use _PhpScoper7fb942e22fb5\GuzzleHttp\Exception\GuzzleException;
-use _PhpScoper7fb942e22fb5\GuzzleHttp\Promise\PromiseInterface;
-use _PhpScoper7fb942e22fb5\Psr\Http\Message\RequestInterface;
-use _PhpScoper7fb942e22fb5\Psr\Http\Message\ResponseInterface;
-use _PhpScoper7fb942e22fb5\Psr\Http\Message\UriInterface;
+use _PhpScoper5e394cb3b4e38\GuzzleHttp\Exception\GuzzleException;
+use _PhpScoper5e394cb3b4e38\GuzzleHttp\Promise\PromiseInterface;
+use _PhpScoper5e394cb3b4e38\Psr\Http\Message\RequestInterface;
+use _PhpScoper5e394cb3b4e38\Psr\Http\Message\ResponseInterface;
+use _PhpScoper5e394cb3b4e38\Psr\Http\Message\UriInterface;
 /**
  * Client interface for sending HTTP requests.
  */
@@ -15,7 +15,7 @@ interface ClientInterface
     /**
      * @deprecated Will be removed in Guzzle 7.0.0
      */
-    const VERSION = '6.5.5';
+    const VERSION = '6.5.1';
     /**
      * Send an HTTP request.
      *
@@ -26,7 +26,7 @@ interface ClientInterface
      * @return ResponseInterface
      * @throws GuzzleException
      */
-    public function send(\_PhpScoper7fb942e22fb5\Psr\Http\Message\RequestInterface $request, array $options = []);
+    public function send(\_PhpScoper5e394cb3b4e38\Psr\Http\Message\RequestInterface $request, array $options = []);
     /**
      * Asynchronously send an HTTP request.
      *
@@ -36,7 +36,7 @@ interface ClientInterface
      *
      * @return PromiseInterface
      */
-    public function sendAsync(\_PhpScoper7fb942e22fb5\Psr\Http\Message\RequestInterface $request, array $options = []);
+    public function sendAsync(\_PhpScoper5e394cb3b4e38\Psr\Http\Message\RequestInterface $request, array $options = []);
     /**
      * Create and send an HTTP request.
      *

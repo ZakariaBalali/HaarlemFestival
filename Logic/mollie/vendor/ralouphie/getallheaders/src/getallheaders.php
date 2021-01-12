@@ -1,8 +1,8 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5;
+namespace _PhpScoper5e394cb3b4e38;
 
-if (!\function_exists('getallheaders')) {
+if (!\function_exists('_PhpScoper5e394cb3b4e38\\getallheaders')) {
     /**
      * Get all HTTP header key/values as an associative array for the current request.
      *

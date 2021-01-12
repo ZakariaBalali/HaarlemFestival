@@ -1,6 +1,6 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5\GuzzleHttp\Cookie;
+namespace _PhpScoper5e394cb3b4e38\GuzzleHttp\Cookie;
 
 /**
  * Set-Cookie object
@@ -69,7 +69,7 @@ class SetCookie
         foreach ($this->data as $k => $v) {
             if ($k !== 'Name' && $k !== 'Value' && $v !== null && $v !== \false) {
                 if ($k === 'Expires') {
-                    $str .= 'Expires=' . \gmdate('D, d M Y H:i:s \\G\\M\\T', $v) . '; ';
+                    $str .= 'Expires=' . \gmdate('_PhpScoper5e394cb3b4e38\\D, d M Y H:i:s \\G\\M\\T', $v) . '; ';
                 } else {
                     $str .= ($v === \true ? $k : "{$k}={$v}") . '; ';
                 }

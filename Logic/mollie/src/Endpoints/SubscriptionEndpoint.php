@@ -41,20 +41,7 @@ class SubscriptionEndpoint extends \Mollie\Api\Endpoints\CollectionEndpointAbstr
      */
     public function createFor(\Mollie\Api\Resources\Customer $customer, array $options = [], array $filters = [])
     {
-        return $this->createForId($customer->id, $options, $filters);
-    }
-    /**
-     * Create a subscription for a Customer
-     *
-     * @param string $customerId
-     * @param array $options
-     * @param array $filters
-     *
-     * @return Subscription
-     */
-    public function createForId($customerId, array $options = [], array $filters = [])
-    {
-        $this->parentId = $customerId;
+        $this->parentId = $customer->id;
         return parent::rest_create($options, $filters);
     }
     /**
@@ -66,18 +53,7 @@ class SubscriptionEndpoint extends \Mollie\Api\Endpoints\CollectionEndpointAbstr
      */
     public function getFor(\Mollie\Api\Resources\Customer $customer, $subscriptionId, array $parameters = [])
     {
-        return $this->getForId($customer->id, $subscriptionId, $parameters);
-    }
-    /**
-     * @param string $customerId
-     * @param string $subscriptionId
-     * @param array $parameters
-     *
-     * @return Subscription
-     */
-    public function getForId($customerId, $subscriptionId, array $parameters = [])
-    {
-        $this->parentId = $customerId;
+        $this->parentId = $customer->id;
         return parent::rest_read($subscriptionId, $parameters);
     }
     /**
@@ -90,44 +66,20 @@ class SubscriptionEndpoint extends \Mollie\Api\Endpoints\CollectionEndpointAbstr
      */
     public function listFor(\Mollie\Api\Resources\Customer $customer, $from = null, $limit = null, array $parameters = [])
     {
-        return $this->listForId($customer->id, $from, $limit, $parameters);
-    }
-    /**
-     * @param string $customerId
-     * @param string $from The first resource ID you want to include in your list.
-     * @param int $limit
-     * @param array $parameters
-     *
-     * @return SubscriptionCollection
-     */
-    public function listForId($customerId, $from = null, $limit = null, array $parameters = [])
-    {
-        $this->parentId = $customerId;
+        $this->parentId = $customer->id;
         return parent::rest_list($from, $limit, $parameters);
     }
     /**
      * @param Customer $customer
      * @param string $subscriptionId
-     * @param array $data
      *
+     * @param array $data
      * @return null
      * @throws \Mollie\Api\Exceptions\ApiException
      */
     public function cancelFor(\Mollie\Api\Resources\Customer $customer, $subscriptionId, array $data = [])
     {
-        return $this->cancelForId($customer->id, $subscriptionId, $data);
-    }
-    /**
-     * @param string $customerId
-     * @param string $subscriptionId
-     * @param array $data
-     *
-     * @return null
-     * @throws \Mollie\Api\Exceptions\ApiException
-     */
-    public function cancelForId($customerId, $subscriptionId, array $data = [])
-    {
-        $this->parentId = $customerId;
+        $this->parentId = $customer->id;
         return parent::rest_delete($subscriptionId, $data);
     }
     /**

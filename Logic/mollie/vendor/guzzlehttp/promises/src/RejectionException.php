@@ -1,6 +1,6 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5\GuzzleHttp\Promise;
+namespace _PhpScoper5e394cb3b4e38\GuzzleHttp\Promise;
 
 /**
  * A special exception that is thrown when waiting on a rejected promise.
@@ -12,7 +12,7 @@ class RejectionException extends \RuntimeException
     /** @var mixed Rejection reason. */
     private $reason;
     /**
-     * @param mixed  $reason      Rejection reason.
+     * @param mixed $reason       Rejection reason.
      * @param string $description Optional description
      */
     public function __construct($reason, $description = null)

@@ -1,6 +1,6 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5\GuzzleHttp;
+namespace _PhpScoper5e394cb3b4e38\GuzzleHttp;
 
 /**
  * Expands URI templates. Userland implementation of PECL uri_template.

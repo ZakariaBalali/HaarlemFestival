@@ -4,40 +4,31 @@
 
 $loader = require_once __DIR__.'/composer-autoload.php';
 
-// Aliases for the whitelisted classes. For more information see:
-// https://github.com/humbug/php-scoper/blob/master/README.md#class-whitelisting
-if (!class_exists('ComposerAutoloaderInitc4b81ebb43f24ffbdced91aa4ce2f793', false) && !interface_exists('ComposerAutoloaderInitc4b81ebb43f24ffbdced91aa4ce2f793', false) && !trait_exists('ComposerAutoloaderInitc4b81ebb43f24ffbdced91aa4ce2f793', false)) {
-    spl_autoload_call('_PhpScoper7fb942e22fb5\ComposerAutoloaderInitc4b81ebb43f24ffbdced91aa4ce2f793');
-}
-if (!class_exists('Normalizer', false) && !interface_exists('Normalizer', false) && !trait_exists('Normalizer', false)) {
-    spl_autoload_call('_PhpScoper7fb942e22fb5\Normalizer');
-}
-
 // Functions whitelisting. For more information see:
 // https://github.com/humbug/php-scoper/blob/master/README.md#functions-whitelisting
-if (!function_exists('database_write')) {
-    function database_write() {
-        return \_PhpScoper7fb942e22fb5\database_write(...func_get_args());
-    }
-}
 if (!function_exists('database_read')) {
     function database_read() {
-        return \_PhpScoper7fb942e22fb5\database_read(...func_get_args());
+        return \_PhpScoper5e394cb3b4e38\database_read(...func_get_args());
+    }
+}
+if (!function_exists('database_write')) {
+    function database_write() {
+        return \_PhpScoper5e394cb3b4e38\database_write(...func_get_args());
     }
 }
 if (!function_exists('printOrders')) {
     function printOrders() {
-        return \_PhpScoper7fb942e22fb5\printOrders(...func_get_args());
+        return \_PhpScoper5e394cb3b4e38\printOrders(...func_get_args());
     }
 }
-if (!function_exists('composerRequirec4b81ebb43f24ffbdced91aa4ce2f793')) {
-    function composerRequirec4b81ebb43f24ffbdced91aa4ce2f793() {
-        return \_PhpScoper7fb942e22fb5\composerRequirec4b81ebb43f24ffbdced91aa4ce2f793(...func_get_args());
+if (!function_exists('composerRequire188eeae1de1f8613cdf748002142af0c')) {
+    function composerRequire188eeae1de1f8613cdf748002142af0c() {
+        return \_PhpScoper5e394cb3b4e38\composerRequire188eeae1de1f8613cdf748002142af0c(...func_get_args());
     }
 }
-if (!function_exists('uri_template')) {
-    function uri_template() {
-        return \_PhpScoper7fb942e22fb5\uri_template(...func_get_args());
+if (!function_exists('getallheaders')) {
+    function getallheaders() {
+        return \_PhpScoper5e394cb3b4e38\getallheaders(...func_get_args());
     }
 }
 

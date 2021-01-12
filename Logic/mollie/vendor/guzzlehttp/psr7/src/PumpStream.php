@@ -1,8 +1,8 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5\GuzzleHttp\Psr7;
+namespace _PhpScoper5e394cb3b4e38\GuzzleHttp\Psr7;
 
-use _PhpScoper7fb942e22fb5\Psr\Http\Message\StreamInterface;
+use _PhpScoper5e394cb3b4e38\Psr\Http\Message\StreamInterface;
 /**
  * Provides a read only stream that pumps data from a PHP callable.
  *
@@ -13,7 +13,7 @@ use _PhpScoper7fb942e22fb5\Psr\Http\Message\StreamInterface;
  * the read() function of the PumpStream. The provided callable MUST return
  * false when there is no more data to read.
  */
-class PumpStream implements \_PhpScoper7fb942e22fb5\Psr\Http\Message\StreamInterface
+class PumpStream implements \_PhpScoper5e394cb3b4e38\Psr\Http\Message\StreamInterface
 {
     /** @var callable */
     private $source;
@@ -40,12 +40,12 @@ class PumpStream implements \_PhpScoper7fb942e22fb5\Psr\Http\Message\StreamInter
         $this->source = $source;
         $this->size = isset($options['size']) ? $options['size'] : null;
         $this->metadata = isset($options['metadata']) ? $options['metadata'] : [];
-        $this->buffer = new \_PhpScoper7fb942e22fb5\GuzzleHttp\Psr7\BufferStream();
+        $this->buffer = new \_PhpScoper5e394cb3b4e38\GuzzleHttp\Psr7\BufferStream();
     }
     public function __toString()
     {
         try {
-            return \_PhpScoper7fb942e22fb5\GuzzleHttp\Psr7\Utils::copyToString($this);
+            return copy_to_string($this);
         } catch (\Exception $e) {
             return '';
         }
@@ -58,7 +58,6 @@ class PumpStream implements \_PhpScoper7fb942e22fb5\Psr\Http\Message\StreamInter
     {
         $this->tellPos = \false;
         $this->source = null;
-        return null;
     }
     public function getSize()
     {

@@ -2,6 +2,7 @@
 
 namespace Mollie\Api\Endpoints;
 
+use Mollie\Api\Resources\BaseCollection;
 use Mollie\Api\Resources\Customer;
 use Mollie\Api\Resources\Mandate;
 use Mollie\Api\Resources\MandateCollection;
@@ -70,7 +71,7 @@ class MandateEndpoint extends \Mollie\Api\Endpoints\CollectionEndpointAbstract
      * @param string $customerId
      * @param string $mandateId
      * @param array $parameters
-     *
+     * 
      * @return \Mollie\Api\Resources\BaseResource
      * @throws \Mollie\Api\Exceptions\ApiException
      */

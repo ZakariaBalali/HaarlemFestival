@@ -1,6 +1,6 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5\GuzzleHttp\Promise;
+namespace _PhpScoper5e394cb3b4e38\GuzzleHttp\Promise;
 
 /**
  * A promise that has been fulfilled.
@@ -8,12 +8,12 @@ namespace _PhpScoper7fb942e22fb5\GuzzleHttp\Promise;
  * Thenning off of this promise will invoke the onFulfilled callback
  * immediately and ignore other callbacks.
  */
-class FulfilledPromise implements \_PhpScoper7fb942e22fb5\GuzzleHttp\Promise\PromiseInterface
+class FulfilledPromise implements \_PhpScoper5e394cb3b4e38\GuzzleHttp\Promise\PromiseInterface
 {
     private $value;
     public function __construct($value)
     {
-        if (\is_object($value) && \method_exists($value, 'then')) {
+        if (\method_exists($value, 'then')) {
             throw new \InvalidArgumentException('You cannot create a FulfilledPromise with a promise.');
         }
         $this->value = $value;
@@ -24,11 +24,11 @@ class FulfilledPromise implements \_PhpScoper7fb942e22fb5\GuzzleHttp\Promise\Pro
         if (!$onFulfilled) {
             return $this;
         }
-        $queue = \_PhpScoper7fb942e22fb5\GuzzleHttp\Promise\Utils::queue();
-        $p = new \_PhpScoper7fb942e22fb5\GuzzleHttp\Promise\Promise([$queue, 'run']);
+        $queue = queue();
+        $p = new \_PhpScoper5e394cb3b4e38\GuzzleHttp\Promise\Promise([$queue, 'run']);
         $value = $this->value;
         $queue->add(static function () use($p, $value, $onFulfilled) {
-            if (\_PhpScoper7fb942e22fb5\GuzzleHttp\Promise\Is::pending($p)) {
+            if ($p->getState() === self::PENDING) {
                 try {
                     $p->resolve($onFulfilled($value));
                 } catch (\Throwable $e) {

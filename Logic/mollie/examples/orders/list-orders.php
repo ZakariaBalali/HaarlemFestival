@@ -1,10 +1,11 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5;
+namespace _PhpScoper5e394cb3b4e38;
 
 /*
  * List orders using the Mollie API.
  */
+use Mollie\Api\Resources\OrderCollection;
 try {
     /*
      * Initialize the Mollie API library with your API key or OAuth access token.
@@ -17,9 +18,9 @@ try {
      */
     echo '<ul>';
     $latestOrders = $mollie->orders->page();
-    \_PhpScoper7fb942e22fb5\printOrders($latestOrders);
+    \_PhpScoper5e394cb3b4e38\printOrders($latestOrders);
     $previousOrders = $latestOrders->next();
-    \_PhpScoper7fb942e22fb5\printOrders($previousOrders);
+    \_PhpScoper5e394cb3b4e38\printOrders($previousOrders);
     echo '</ul>';
 } catch (\Mollie\Api\Exceptions\ApiException $e) {
     echo "API call failed: " . \htmlspecialchars($e->getMessage());

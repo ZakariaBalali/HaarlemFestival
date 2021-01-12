@@ -1,12 +1,12 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5\GuzzleHttp\Psr7;
+namespace _PhpScoper5e394cb3b4e38\GuzzleHttp\Psr7;
 
 use InvalidArgumentException;
-use _PhpScoper7fb942e22fb5\Psr\Http\Message\StreamInterface;
-use _PhpScoper7fb942e22fb5\Psr\Http\Message\UploadedFileInterface;
+use _PhpScoper5e394cb3b4e38\Psr\Http\Message\StreamInterface;
+use _PhpScoper5e394cb3b4e38\Psr\Http\Message\UploadedFileInterface;
 use RuntimeException;
-class UploadedFile implements \_PhpScoper7fb942e22fb5\Psr\Http\Message\UploadedFileInterface
+class UploadedFile implements \_PhpScoper5e394cb3b4e38\Psr\Http\Message\UploadedFileInterface
 {
     /**
      * @var int[]
@@ -61,7 +61,6 @@ class UploadedFile implements \_PhpScoper7fb942e22fb5\Psr\Http\Message\UploadedF
      * Depending on the value set file or stream variable
      *
      * @param mixed $streamOrFile
-     *
      * @throws InvalidArgumentException
      */
     private function setStreamOrFile($streamOrFile)
@@ -69,8 +68,8 @@ class UploadedFile implements \_PhpScoper7fb942e22fb5\Psr\Http\Message\UploadedF
         if (\is_string($streamOrFile)) {
             $this->file = $streamOrFile;
         } elseif (\is_resource($streamOrFile)) {
-            $this->stream = new \_PhpScoper7fb942e22fb5\GuzzleHttp\Psr7\Stream($streamOrFile);
-        } elseif ($streamOrFile instanceof \_PhpScoper7fb942e22fb5\Psr\Http\Message\StreamInterface) {
+            $this->stream = new \_PhpScoper5e394cb3b4e38\GuzzleHttp\Psr7\Stream($streamOrFile);
+        } elseif ($streamOrFile instanceof \_PhpScoper5e394cb3b4e38\Psr\Http\Message\StreamInterface) {
             $this->stream = $streamOrFile;
         } else {
             throw new \InvalidArgumentException('Invalid stream or file provided for UploadedFile');
@@ -78,7 +77,6 @@ class UploadedFile implements \_PhpScoper7fb942e22fb5\Psr\Http\Message\UploadedF
     }
     /**
      * @param int $error
-     *
      * @throws InvalidArgumentException
      */
     private function setError($error)
@@ -86,14 +84,13 @@ class UploadedFile implements \_PhpScoper7fb942e22fb5\Psr\Http\Message\UploadedF
         if (\false === \is_int($error)) {
             throw new \InvalidArgumentException('Upload file error status must be an integer');
         }
-        if (\false === \in_array($error, \_PhpScoper7fb942e22fb5\GuzzleHttp\Psr7\UploadedFile::$errors)) {
+        if (\false === \in_array($error, \_PhpScoper5e394cb3b4e38\GuzzleHttp\Psr7\UploadedFile::$errors)) {
             throw new \InvalidArgumentException('Invalid error status for UploadedFile');
         }
         $this->error = $error;
     }
     /**
      * @param int $size
-     *
      * @throws InvalidArgumentException
      */
     private function setSize($size)
@@ -121,7 +118,6 @@ class UploadedFile implements \_PhpScoper7fb942e22fb5\Psr\Http\Message\UploadedF
     }
     /**
      * @param string|null $clientFilename
-     *
      * @throws InvalidArgumentException
      */
     private function setClientFilename($clientFilename)
@@ -133,7 +129,6 @@ class UploadedFile implements \_PhpScoper7fb942e22fb5\Psr\Http\Message\UploadedF
     }
     /**
      * @param string|null $clientMediaType
-     *
      * @throws InvalidArgumentException
      */
     private function setClientMediaType($clientMediaType)
@@ -173,25 +168,22 @@ class UploadedFile implements \_PhpScoper7fb942e22fb5\Psr\Http\Message\UploadedF
     }
     /**
      * {@inheritdoc}
-     *
      * @throws RuntimeException if the upload was not successful.
      */
     public function getStream()
     {
         $this->validateActive();
-        if ($this->stream instanceof \_PhpScoper7fb942e22fb5\Psr\Http\Message\StreamInterface) {
+        if ($this->stream instanceof \_PhpScoper5e394cb3b4e38\Psr\Http\Message\StreamInterface) {
             return $this->stream;
         }
-        return new \_PhpScoper7fb942e22fb5\GuzzleHttp\Psr7\LazyOpenStream($this->file, 'r+');
+        return new \_PhpScoper5e394cb3b4e38\GuzzleHttp\Psr7\LazyOpenStream($this->file, 'r+');
     }
     /**
      * {@inheritdoc}
      *
      * @see http://php.net/is_uploaded_file
      * @see http://php.net/move_uploaded_file
-     *
      * @param string $targetPath Path to which to move the uploaded file.
-     *
      * @throws RuntimeException if the upload was not successful.
      * @throws InvalidArgumentException if the $path specified is invalid.
      * @throws RuntimeException on any error during the move operation, or on
@@ -206,7 +198,7 @@ class UploadedFile implements \_PhpScoper7fb942e22fb5\Psr\Http\Message\UploadedF
         if ($this->file) {
             $this->moved = \php_sapi_name() == 'cli' ? \rename($this->file, $targetPath) : \move_uploaded_file($this->file, $targetPath);
         } else {
-            \_PhpScoper7fb942e22fb5\GuzzleHttp\Psr7\Utils::copyToStream($this->getStream(), new \_PhpScoper7fb942e22fb5\GuzzleHttp\Psr7\LazyOpenStream($targetPath, 'w'));
+            copy_to_stream($this->getStream(), new \_PhpScoper5e394cb3b4e38\GuzzleHttp\Psr7\LazyOpenStream($targetPath, 'w'));
             $this->moved = \true;
         }
         if (\false === $this->moved) {

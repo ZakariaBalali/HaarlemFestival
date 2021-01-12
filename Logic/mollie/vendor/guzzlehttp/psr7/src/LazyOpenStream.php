@@ -1,13 +1,13 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5\GuzzleHttp\Psr7;
+namespace _PhpScoper5e394cb3b4e38\GuzzleHttp\Psr7;
 
-use _PhpScoper7fb942e22fb5\Psr\Http\Message\StreamInterface;
+use _PhpScoper5e394cb3b4e38\Psr\Http\Message\StreamInterface;
 /**
  * Lazily reads or writes to a file that is opened only after an IO operation
  * take place on the stream.
  */
-class LazyOpenStream implements \_PhpScoper7fb942e22fb5\Psr\Http\Message\StreamInterface
+class LazyOpenStream implements \_PhpScoper5e394cb3b4e38\Psr\Http\Message\StreamInterface
 {
     use StreamDecoratorTrait;
     /** @var string File to open */
@@ -30,6 +30,6 @@ class LazyOpenStream implements \_PhpScoper7fb942e22fb5\Psr\Http\Message\StreamI
      */
     protected function createStream()
     {
-        return \_PhpScoper7fb942e22fb5\GuzzleHttp\Psr7\Utils::streamFor(\_PhpScoper7fb942e22fb5\GuzzleHttp\Psr7\Utils::tryFopen($this->filename, $this->mode));
+        return stream_for(try_fopen($this->filename, $this->mode));
     }
 }

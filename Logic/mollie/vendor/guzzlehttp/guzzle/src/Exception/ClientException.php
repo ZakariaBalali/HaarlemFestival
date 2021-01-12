@@ -1,10 +1,10 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5\GuzzleHttp\Exception;
+namespace _PhpScoper5e394cb3b4e38\GuzzleHttp\Exception;
 
 /**
  * Exception when a client error is encountered (4xx codes)
  */
-class ClientException extends \_PhpScoper7fb942e22fb5\GuzzleHttp\Exception\BadResponseException
+class ClientException extends \_PhpScoper5e394cb3b4e38\GuzzleHttp\Exception\BadResponseException
 {
 }

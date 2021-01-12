@@ -1,12 +1,12 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5\GuzzleHttp;
+namespace _PhpScoper5e394cb3b4e38\GuzzleHttp;
 
-use _PhpScoper7fb942e22fb5\GuzzleHttp\Promise\PromiseInterface;
-use _PhpScoper7fb942e22fb5\GuzzleHttp\Promise\RejectedPromise;
-use _PhpScoper7fb942e22fb5\GuzzleHttp\Psr7;
-use _PhpScoper7fb942e22fb5\Psr\Http\Message\RequestInterface;
-use _PhpScoper7fb942e22fb5\Psr\Http\Message\ResponseInterface;
+use _PhpScoper5e394cb3b4e38\GuzzleHttp\Promise\PromiseInterface;
+use _PhpScoper5e394cb3b4e38\GuzzleHttp\Promise\RejectedPromise;
+use _PhpScoper5e394cb3b4e38\GuzzleHttp\Psr7;
+use _PhpScoper5e394cb3b4e38\Psr\Http\Message\RequestInterface;
+use _PhpScoper5e394cb3b4e38\Psr\Http\Message\ResponseInterface;
 /**
  * Middleware that retries requests based on the boolean result of
  * invoking the provided "decider" function.
@@ -52,7 +52,7 @@ class RetryMiddleware
      *
      * @return PromiseInterface
      */
-    public function __invoke(\_PhpScoper7fb942e22fb5\Psr\Http\Message\RequestInterface $request, array $options)
+    public function __invoke(\_PhpScoper5e394cb3b4e38\Psr\Http\Message\RequestInterface $request, array $options)
     {
         if (!isset($options['retries'])) {
             $options['retries'] = 0;
@@ -65,7 +65,7 @@ class RetryMiddleware
      *
      * @return mixed
      */
-    private function onFulfilled(\_PhpScoper7fb942e22fb5\Psr\Http\Message\RequestInterface $req, array $options)
+    private function onFulfilled(\_PhpScoper5e394cb3b4e38\Psr\Http\Message\RequestInterface $req, array $options)
     {
         return function ($value) use($req, $options) {
             if (!\call_user_func($this->decider, $options['retries'], $req, $value, null)) {
@@ -79,11 +79,11 @@ class RetryMiddleware
      *
      * @return callable
      */
-    private function onRejected(\_PhpScoper7fb942e22fb5\Psr\Http\Message\RequestInterface $req, array $options)
+    private function onRejected(\_PhpScoper5e394cb3b4e38\Psr\Http\Message\RequestInterface $req, array $options)
     {
         return function ($reason) use($req, $options) {
             if (!\call_user_func($this->decider, $options['retries'], $req, null, $reason)) {
-                return \_PhpScoper7fb942e22fb5\GuzzleHttp\Promise\rejection_for($reason);
+                return \_PhpScoper5e394cb3b4e38\GuzzleHttp\Promise\rejection_for($reason);
             }
             return $this->doRetry($req, $options);
         };
@@ -91,7 +91,7 @@ class RetryMiddleware
     /**
      * @return self
      */
-    private function doRetry(\_PhpScoper7fb942e22fb5\Psr\Http\Message\RequestInterface $request, array $options, \_PhpScoper7fb942e22fb5\Psr\Http\Message\ResponseInterface $response = null)
+    private function doRetry(\_PhpScoper5e394cb3b4e38\Psr\Http\Message\RequestInterface $request, array $options, \_PhpScoper5e394cb3b4e38\Psr\Http\Message\ResponseInterface $response = null)
     {
         $options['delay'] = \call_user_func($this->delay, ++$options['retries'], $response);
         return $this($request, $options);

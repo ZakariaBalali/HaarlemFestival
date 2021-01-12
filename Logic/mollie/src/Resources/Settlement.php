@@ -104,14 +104,16 @@ class Settlement extends \Mollie\Api\Resources\BaseResource
     /**
      * Retrieves all payments associated with this settlement
      *
-     * @param null $limit
-     * @param array $parameters
      * @return PaymentCollection
-     * @throws \Mollie\Api\Exceptions\ApiException
+     * @throws ApiException
      */
-    public function payments($limit = null, array $parameters = [])
+    public function payments()
     {
-        return $this->client->settlementPayments->pageForId($this->id, null, $limit, $parameters);
+        if (!isset($this->_links->payments->href)) {
+            return new \Mollie\Api\Resources\PaymentCollection($this->client, 0, null);
+        }
+        $result = $this->client->performHttpCallToFullUrl(\Mollie\Api\MollieApiClient::HTTP_GET, $this->_links->payments->href);
+        return \Mollie\Api\Resources\ResourceFactory::createCursorResourceCollection($this->client, $result->_embedded->payments, \Mollie\Api\Resources\Payment::class, $result->_links);
     }
     /**
      * Retrieves all refunds associated with this settlement

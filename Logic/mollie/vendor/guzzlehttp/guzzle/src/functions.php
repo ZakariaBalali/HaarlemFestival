@@ -1,11 +1,13 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5\GuzzleHttp;
+namespace _PhpScoper5e394cb3b4e38\GuzzleHttp;
 
-use _PhpScoper7fb942e22fb5\GuzzleHttp\Handler\CurlHandler;
-use _PhpScoper7fb942e22fb5\GuzzleHttp\Handler\CurlMultiHandler;
-use _PhpScoper7fb942e22fb5\GuzzleHttp\Handler\Proxy;
-use _PhpScoper7fb942e22fb5\GuzzleHttp\Handler\StreamHandler;
+use _PhpScoper5e394cb3b4e38\GuzzleHttp\Exception\InvalidArgumentException;
+use _PhpScoper5e394cb3b4e38\GuzzleHttp\Handler\CurlHandler;
+use _PhpScoper5e394cb3b4e38\GuzzleHttp\Handler\CurlMultiHandler;
+use _PhpScoper5e394cb3b4e38\GuzzleHttp\Handler\Proxy;
+use _PhpScoper5e394cb3b4e38\GuzzleHttp\Handler\StreamHandler;
+use _PhpScoper5e394cb3b4e38\Psr\Http\Message\UriInterface;
 /**
  * Expands a URI template
  *
@@ -18,12 +20,12 @@ function uri_template($template, array $variables)
 {
     if (\extension_loaded('uri_template')) {
         // @codeCoverageIgnoreStart
-        return \_PhpScoper7fb942e22fb5\uri_template($template, $variables);
+        return \_PhpScoper5e394cb3b4e38\uri_template($template, $variables);
         // @codeCoverageIgnoreEnd
     }
     static $uriTemplate;
     if (!$uriTemplate) {
-        $uriTemplate = new \_PhpScoper7fb942e22fb5\GuzzleHttp\UriTemplate();
+        $uriTemplate = new \_PhpScoper5e394cb3b4e38\GuzzleHttp\UriTemplate();
     }
     return $uriTemplate->expand($template, $variables);
 }
@@ -86,21 +88,21 @@ function debug_resource($value = null)
  *
  * The returned handler is not wrapped by any default middlewares.
  *
- * @return callable Returns the best handler for the given system.
  * @throws \RuntimeException if no viable Handler is available.
+ * @return callable Returns the best handler for the given system.
  */
 function choose_handler()
 {
     $handler = null;
     if (\function_exists('curl_multi_exec') && \function_exists('curl_exec')) {
-        $handler = \_PhpScoper7fb942e22fb5\GuzzleHttp\Handler\Proxy::wrapSync(new \_PhpScoper7fb942e22fb5\GuzzleHttp\Handler\CurlMultiHandler(), new \_PhpScoper7fb942e22fb5\GuzzleHttp\Handler\CurlHandler());
+        $handler = \_PhpScoper5e394cb3b4e38\GuzzleHttp\Handler\Proxy::wrapSync(new \_PhpScoper5e394cb3b4e38\GuzzleHttp\Handler\CurlMultiHandler(), new \_PhpScoper5e394cb3b4e38\GuzzleHttp\Handler\CurlHandler());
     } elseif (\function_exists('curl_exec')) {
-        $handler = new \_PhpScoper7fb942e22fb5\GuzzleHttp\Handler\CurlHandler();
+        $handler = new \_PhpScoper5e394cb3b4e38\GuzzleHttp\Handler\CurlHandler();
     } elseif (\function_exists('curl_multi_exec')) {
-        $handler = new \_PhpScoper7fb942e22fb5\GuzzleHttp\Handler\CurlMultiHandler();
+        $handler = new \_PhpScoper5e394cb3b4e38\GuzzleHttp\Handler\CurlMultiHandler();
     }
     if (\ini_get('allow_url_fopen')) {
-        $handler = $handler ? \_PhpScoper7fb942e22fb5\GuzzleHttp\Handler\Proxy::wrapStreaming($handler, new \_PhpScoper7fb942e22fb5\GuzzleHttp\Handler\StreamHandler()) : new \_PhpScoper7fb942e22fb5\GuzzleHttp\Handler\StreamHandler();
+        $handler = $handler ? \_PhpScoper5e394cb3b4e38\GuzzleHttp\Handler\Proxy::wrapStreaming($handler, new \_PhpScoper5e394cb3b4e38\GuzzleHttp\Handler\StreamHandler()) : new \_PhpScoper5e394cb3b4e38\GuzzleHttp\Handler\StreamHandler();
     } elseif (!$handler) {
         throw new \RuntimeException('GuzzleHttp requires cURL, the ' . 'allow_url_fopen ini setting, or a custom HTTP handler.');
     }
@@ -115,7 +117,7 @@ function default_user_agent()
 {
     static $defaultAgent = '';
     if (!$defaultAgent) {
-        $defaultAgent = 'GuzzleHttp/' . \_PhpScoper7fb942e22fb5\GuzzleHttp\Client::VERSION;
+        $defaultAgent = 'GuzzleHttp/' . \_PhpScoper5e394cb3b4e38\GuzzleHttp\Client::VERSION;
         if (\extension_loaded('curl') && \function_exists('curl_version')) {
             $defaultAgent .= ' curl/' . \curl_version()['version'];
         }
@@ -269,7 +271,7 @@ function json_decode($json, $assoc = \false, $depth = 512, $options = 0)
 {
     $data = \json_decode($json, $assoc, $depth, $options);
     if (\JSON_ERROR_NONE !== \json_last_error()) {
-        throw new \_PhpScoper7fb942e22fb5\GuzzleHttp\Exception\InvalidArgumentException('json_decode error: ' . \json_last_error_msg());
+        throw new \_PhpScoper5e394cb3b4e38\GuzzleHttp\Exception\InvalidArgumentException('json_decode error: ' . \json_last_error_msg());
     }
     return $data;
 }
@@ -288,7 +290,55 @@ function json_encode($value, $options = 0, $depth = 512)
 {
     $json = \json_encode($value, $options, $depth);
     if (\JSON_ERROR_NONE !== \json_last_error()) {
-        throw new \_PhpScoper7fb942e22fb5\GuzzleHttp\Exception\InvalidArgumentException('json_encode error: ' . \json_last_error_msg());
+        throw new \_PhpScoper5e394cb3b4e38\GuzzleHttp\Exception\InvalidArgumentException('json_encode error: ' . \json_last_error_msg());
     }
     return $json;
+}
+/**
+ * Wrapper for the hrtime() or microtime() functions
+ * (depending on the PHP version, one of the two is used)
+ *
+ * @return float|mixed UNIX timestamp
+ * @internal
+ */
+function _current_time()
+{
+    return \function_exists('_PhpScoper5e394cb3b4e38\\hrtime') ? hrtime(\true) / 1000000000.0 : \microtime(\true);
+}
+/**
+ * @param int $options
+ *
+ * @return UriInterface
+ *
+ * @internal
+ */
+function _idn_uri_convert(\_PhpScoper5e394cb3b4e38\Psr\Http\Message\UriInterface $uri, $options = 0)
+{
+    if ($uri->getHost()) {
+        $idnaVariant = \defined('INTL_IDNA_VARIANT_UTS46') ? \INTL_IDNA_VARIANT_UTS46 : 0;
+        $asciiHost = $idnaVariant === 0 ? \idn_to_ascii($uri->getHost(), $options) : \idn_to_ascii($uri->getHost(), $options, $idnaVariant, $info);
+        if ($asciiHost === \false) {
+            $errorBitSet = isset($info['errors']) ? $info['errors'] : 0;
+            $errorConstants = \array_filter(\array_keys(\get_defined_constants()), function ($name) {
+                return \substr($name, 0, 11) === 'IDNA_ERROR_';
+            });
+            $errors = [];
+            foreach ($errorConstants as $errorConstant) {
+                if ($errorBitSet & \constant($errorConstant)) {
+                    $errors[] = $errorConstant;
+                }
+            }
+            $errorMessage = 'IDN conversion failed';
+            if ($errors) {
+                $errorMessage .= ' (errors: ' . \implode(', ', $errors) . ')';
+            }
+            throw new \_PhpScoper5e394cb3b4e38\GuzzleHttp\Exception\InvalidArgumentException($errorMessage);
+        } else {
+            if ($uri->getHost() !== $asciiHost) {
+                // Replace URI only if the ASCII version is different
+                $uri = $uri->withHost($asciiHost);
+            }
+        }
+    }
+    return $uri;
 }

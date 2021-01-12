@@ -1,6 +1,6 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5;
+namespace _PhpScoper5e394cb3b4e38;
 
 /*
  * Make sure to disable the display of errors in production code!

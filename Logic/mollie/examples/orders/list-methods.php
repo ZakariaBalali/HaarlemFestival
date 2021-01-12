@@ -1,6 +1,6 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5;
+namespace _PhpScoper5e394cb3b4e38;
 
 /*
  * How to get the currently activated payment methods for the Orders API.

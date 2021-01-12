@@ -56,13 +56,6 @@ class Payment extends \Mollie\Api\Resources\BaseResource
      */
     public $amountRemaining;
     /**
-     * The total amount that was charged back for this payment. Only available when the
-     * total charged back amount is not zero. This value is expected to be negative.
-     *
-     * @var \stdClass|null
-     */
-    public $amountChargedBack;
-    /**
      * Description of the payment that is shown to the customer during the payment,
      * and possibly on the bank or credit card statement.
      *
@@ -210,52 +203,6 @@ class Payment extends \Mollie\Api\Resources\BaseResource
      */
     public $isCancelable;
     /**
-     * The total amount that is already captured for this payment. Only available
-     * when this payment supports captures.
-     *
-     * @var \stdClass|null
-     */
-    public $amountCaptured;
-    /**
-     * The application fee, if the payment was created with one. Contains amount
-     * (the value and currency) and description.
-     *
-     * @var \stdClass|null
-     */
-    public $applicationFeeAmount;
-    /**
-     * The date and time the payment became authorized, in ISO 8601 format. This
-     * parameter is omitted if the payment is not authorized (yet).
-     *
-     * @example "2013-12-25T10:30:54+00:00"
-     * @var string|null
-     */
-    public $authorizedAt;
-    /**
-     * The date and time the payment was expired, in ISO 8601 format. This
-     * parameter is omitted if the payment did not expire (yet).
-     *
-     * @example "2013-12-25T10:30:54+00:00"
-     * @var string|null
-     */
-    public $expiredAt;
-    /**
-     * If a customer was specified upon payment creation, the customer’s token will
-     * be available here as well.
-     *
-     * @example cst_XPn78q9CfT
-     * @var string|null
-     */
-    public $customerId;
-    /**
-     * This optional field contains your customer’s ISO 3166-1 alpha-2 country code,
-     * detected by us during checkout. For example: BE. This field is omitted if the
-     * country code was not detected.
-     *
-     * @var string|null
-     */
-    public $countryCode;
-    /**
      * Is this payment canceled?
      *
      * @return bool
@@ -392,7 +339,7 @@ class Payment extends \Mollie\Api\Resources\BaseResource
     public function getAmountRefunded()
     {
         if ($this->amountRefunded) {
-            return (float) $this->amountRefunded->value;
+            return (double) $this->amountRefunded->value;
         }
         return 0.0;
     }
@@ -406,7 +353,7 @@ class Payment extends \Mollie\Api\Resources\BaseResource
     public function getAmountRemaining()
     {
         if ($this->amountRemaining) {
-            return (float) $this->amountRemaining->value;
+            return (double) $this->amountRemaining->value;
         }
         return 0.0;
     }
@@ -487,12 +434,15 @@ class Payment extends \Mollie\Api\Resources\BaseResource
     /**
      * Issue a refund for this payment.
      *
-     * @param array $data
+     * The $data parameter may either be an array of endpoint parameters or empty to
+     * do a full refund.
+     *
+     * @param array|null $data
      *
      * @return BaseResource
      * @throws ApiException
      */
-    public function refund($data)
+    public function refund($data = [])
     {
         $resource = "payments/" . \urlencode($this->id) . "/refunds";
         $data = $this->withPresetOptions($data);
@@ -534,43 +484,5 @@ class Payment extends \Mollie\Api\Resources\BaseResource
     private function withPresetOptions(array $options)
     {
         return \array_merge($this->getPresetOptions(), $options);
-    }
-    /**
-     * The total amount that is already captured for this payment. Only available
-     * when this payment supports captures.
-     *
-     * @return float
-     */
-    public function getAmountCaptured()
-    {
-        if ($this->amountCaptured) {
-            return (float) $this->amountCaptured->value;
-        }
-        return 0.0;
-    }
-    /**
-     * The amount that has been settled.
-     *
-     * @return float
-     */
-    public function getSettlementAmount()
-    {
-        if ($this->settlementAmount) {
-            return (float) $this->settlementAmount->value;
-        }
-        return 0.0;
-    }
-    /**
-     * The total amount that is already captured for this payment. Only available
-     * when this payment supports captures.
-     *
-     * @return float
-     */
-    public function getApplicationFeeAmount()
-    {
-        if ($this->applicationFeeAmount) {
-            return (float) $this->applicationFeeAmount->value;
-        }
-        return 0.0;
     }
 }

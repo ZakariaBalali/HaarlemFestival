@@ -1,6 +1,6 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5;
+namespace _PhpScoper5e394cb3b4e38;
 
 /*
  * How to verify Mollie API Payments in a webhook.
@@ -22,7 +22,7 @@ try {
     /*
      * Update the order in the database.
      */
-    \_PhpScoper7fb942e22fb5\database_write($orderId, $payment->status);
+    \_PhpScoper5e394cb3b4e38\database_write($orderId, $payment->status);
     if ($payment->isPaid() && !$payment->hasRefunds() && !$payment->hasChargebacks()) {
         /*
          * The payment is paid and isn't refunded or charged back.

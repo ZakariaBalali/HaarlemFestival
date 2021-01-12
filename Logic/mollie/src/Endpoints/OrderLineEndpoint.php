@@ -6,6 +6,7 @@ use Mollie\Api\Exceptions\ApiException;
 use Mollie\Api\Resources\Order;
 use Mollie\Api\Resources\OrderLine;
 use Mollie\Api\Resources\OrderLineCollection;
+use Mollie\Api\Resources\ResourceFactory;
 class OrderLineEndpoint extends \Mollie\Api\Endpoints\CollectionEndpointAbstract
 {
     protected $resourcePath = "orders_lines";

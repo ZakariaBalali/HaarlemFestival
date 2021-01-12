@@ -1,6 +1,6 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5;
+namespace _PhpScoper5e394cb3b4e38;
 
 /*
  * Handle an order status change using the Mollie API.
@@ -21,7 +21,7 @@ try {
     /*
      * Update the order in the database.
      */
-    \_PhpScoper7fb942e22fb5\database_write($orderId, $order->status);
+    \_PhpScoper5e394cb3b4e38\database_write($orderId, $order->status);
     if ($order->isPaid() || $order->isAuthorized()) {
         /*
          * The order is paid or authorized

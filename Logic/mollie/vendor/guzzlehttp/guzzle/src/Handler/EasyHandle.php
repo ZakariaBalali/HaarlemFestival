@@ -1,11 +1,11 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5\GuzzleHttp\Handler;
+namespace _PhpScoper5e394cb3b4e38\GuzzleHttp\Handler;
 
-use _PhpScoper7fb942e22fb5\GuzzleHttp\Psr7\Response;
-use _PhpScoper7fb942e22fb5\Psr\Http\Message\RequestInterface;
-use _PhpScoper7fb942e22fb5\Psr\Http\Message\ResponseInterface;
-use _PhpScoper7fb942e22fb5\Psr\Http\Message\StreamInterface;
+use _PhpScoper5e394cb3b4e38\GuzzleHttp\Psr7\Response;
+use _PhpScoper5e394cb3b4e38\Psr\Http\Message\RequestInterface;
+use _PhpScoper5e394cb3b4e38\Psr\Http\Message\ResponseInterface;
+use _PhpScoper5e394cb3b4e38\Psr\Http\Message\StreamInterface;
 /**
  * Represents a cURL easy handle and the data it populates.
  *
@@ -41,8 +41,8 @@ final class EasyHandle
         }
         // HTTP-version SP status-code SP reason-phrase
         $startLine = \explode(' ', \array_shift($this->headers), 3);
-        $headers = \_PhpScoper7fb942e22fb5\GuzzleHttp\headers_from_lines($this->headers);
-        $normalizedKeys = \_PhpScoper7fb942e22fb5\GuzzleHttp\normalize_header_keys($headers);
+        $headers = \_PhpScoper5e394cb3b4e38\GuzzleHttp\headers_from_lines($this->headers);
+        $normalizedKeys = \_PhpScoper5e394cb3b4e38\GuzzleHttp\normalize_header_keys($headers);
         if (!empty($this->options['decode_content']) && isset($normalizedKeys['content-encoding'])) {
             $headers['x-encoded-content-encoding'] = $headers[$normalizedKeys['content-encoding']];
             unset($headers[$normalizedKeys['content-encoding']]);
@@ -57,7 +57,7 @@ final class EasyHandle
             }
         }
         // Attach a response to the easy handle with the parsed headers.
-        $this->response = new \_PhpScoper7fb942e22fb5\GuzzleHttp\Psr7\Response($startLine[1], $headers, $this->sink, \substr($startLine[0], 5), isset($startLine[2]) ? (string) $startLine[2] : null);
+        $this->response = new \_PhpScoper5e394cb3b4e38\GuzzleHttp\Psr7\Response($startLine[1], $headers, $this->sink, \substr($startLine[0], 5), isset($startLine[2]) ? (string) $startLine[2] : null);
     }
     public function __get($name)
     {

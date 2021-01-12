@@ -23,7 +23,6 @@
     "require": {
         "php": ">=5.5",
         "ext-json": "*",
-        "symfony\/polyfill-intl-idn": "^1.17.0",
         "guzzlehttp\/promises": "^1.0",
         "guzzlehttp\/psr7": "^1.6.1"
     },
@@ -33,7 +32,8 @@
         "psr\/log": "^1.1"
     },
     "suggest": {
-        "psr\/log": "Required for using the Log middleware"
+        "psr\/log": "Required for using the Log middleware",
+        "ext-intl": "Required for Internationalized Domain Name (IDN) support"
     },
     "config": {
         "sort-packages": true
@@ -45,7 +45,7 @@
     },
     "autoload": {
         "psr-4": {
-            "_PhpScoper7fb942e22fb5\\GuzzleHttp\\": "src\/"
+            "_PhpScoper5e394cb3b4e38\\GuzzleHttp\\": "src\/"
         },
         "files": [
             "src\/functions_include.php"
@@ -53,7 +53,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "_PhpScoper7fb942e22fb5\\GuzzleHttp\\Tests\\": "tests\/"
+            "_PhpScoper5e394cb3b4e38\\GuzzleHttp\\Tests\\": "tests\/"
         }
     }
 }

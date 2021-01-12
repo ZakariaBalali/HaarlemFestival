@@ -51,12 +51,6 @@ class Method extends \Mollie\Api\Resources\BaseResource
      */
     public $pricing;
     /**
-     * The activation status the method is in.
-     *
-     * @var string
-     */
-    public $status;
-    /**
      * @var \stdClass
      */
     public $_links;

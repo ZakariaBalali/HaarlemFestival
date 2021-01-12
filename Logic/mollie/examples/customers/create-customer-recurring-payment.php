@@ -1,6 +1,6 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5;
+namespace _PhpScoper5e394cb3b4e38;
 
 /*
  * How to create an on-demand recurring payment.
@@ -45,7 +45,7 @@ try {
     /*
      * In this example we store the order with its payment status in a database.
      */
-    \_PhpScoper7fb942e22fb5\database_write($orderId, $payment->status);
+    \_PhpScoper5e394cb3b4e38\database_write($orderId, $payment->status);
     /*
      * The payment will be either pending or paid immediately. The customer
      * does not have to perform any payment steps.

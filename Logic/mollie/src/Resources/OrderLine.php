@@ -110,13 +110,6 @@ class OrderLine extends \Mollie\Api\Resources\BaseResource
      */
     public $productUrl;
     /**
-     * During creation of the order you can set custom metadata on order lines that is stored with
-     * the order, and given back whenever you retrieve that order line.
-     *
-     * @var \stdClass|mixed|null
-     */
-    public $metadata;
-    /**
      * The order line's date and time of creation, in ISO 8601 format.
      *
      * @example 2018-08-02T09:29:56+00:00
@@ -254,29 +247,11 @@ class OrderLine extends \Mollie\Api\Resources\BaseResource
     {
         return $this->type === \Mollie\Api\Types\OrderLineType::TYPE_SURCHARGE;
     }
-    /**
-     * Update an orderline by supplying one or more parameters in the data array
-     *
-     * @return BaseResource
-     */
     public function update()
     {
+        $body = \json_encode(array("name" => $this->name, 'imageUrl' => $this->imageUrl, 'productUrl' => $this->productUrl, 'quantity' => $this->quantity, 'unitPrice' => $this->unitPrice, 'discountAmount' => $this->discountAmount, 'totalAmount' => $this->totalAmount, 'vatAmount' => $this->vatAmount, 'vatRate' => $this->vatRate));
         $url = "orders/{$this->orderId}/lines/{$this->id}";
-        $body = \json_encode($this->getUpdateData());
         $result = $this->client->performHttpCall(\Mollie\Api\MollieApiClient::HTTP_PATCH, $url, $body);
         return \Mollie\Api\Resources\ResourceFactory::createFromApiResult($result, new \Mollie\Api\Resources\Order($this->client));
-    }
-    /**
-     * Get sanitized array of order line data
-     *
-     * @return array
-     */
-    public function getUpdateData()
-    {
-        $data = ["name" => $this->name, 'imageUrl' => $this->imageUrl, 'productUrl' => $this->productUrl, 'metadata' => $this->metadata, 'quantity' => $this->quantity, 'unitPrice' => $this->unitPrice, 'discountAmount' => $this->discountAmount, 'totalAmount' => $this->totalAmount, 'vatAmount' => $this->vatAmount, 'vatRate' => $this->vatRate];
-        // Explicitly filter only NULL values to keep "vatRate => 0" intact
-        return \array_filter($data, function ($value) {
-            return $value !== null;
-        });
     }
 }

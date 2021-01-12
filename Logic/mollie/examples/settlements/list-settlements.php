@@ -1,6 +1,6 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5;
+namespace _PhpScoper5e394cb3b4e38;
 
 /*
  * Using OAuth access token to list settlements of an account.
@@ -19,7 +19,7 @@ try {
         echo '<li><b>Settlement ' . \htmlspecialchars($settlement->reference) . ':</b> (' . \htmlspecialchars($settlement->createdAt) . ')';
         echo '<table border="1"><tr><th>Month</th><th>Description</th><th>Count</th><th>Net</th><th>VAT</th><th>Gross</th></tr>';
         // Convert from stdClass to array
-        $settlement_periods = \json_decode(\json_encode($settlement->periods), \true);
+        $settlement_periods = \json_decode(\json_encode($settlement->periods), \TRUE);
         foreach ($settlement_periods as $year => $months) {
             foreach ($months as $month => $monthly_settlement) {
                 foreach ($monthly_settlement['revenue'] as $revenue) {

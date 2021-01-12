@@ -1,6 +1,6 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5\GuzzleHttp\Promise;
+namespace _PhpScoper5e394cb3b4e38\GuzzleHttp\Promise;
 
 /**
  * A task queue that executes tasks in a FIFO order.
@@ -9,9 +9,9 @@ namespace _PhpScoper7fb942e22fb5\GuzzleHttp\Promise;
  * maintains a constant stack size. You can use the task queue asynchronously
  * by calling the `run()` function of the global task queue in an event loop.
  *
- *     GuzzleHttp\Promise\Utils::queue()->run();
+ *     GuzzleHttp\Promise\queue()->run();
  */
-class TaskQueue implements \_PhpScoper7fb942e22fb5\GuzzleHttp\Promise\TaskQueueInterface
+class TaskQueue implements \_PhpScoper5e394cb3b4e38\GuzzleHttp\Promise\TaskQueueInterface
 {
     private $enableShutdown = \true;
     private $queue = [];
@@ -39,8 +39,8 @@ class TaskQueue implements \_PhpScoper7fb942e22fb5\GuzzleHttp\Promise\TaskQueueI
     }
     public function run()
     {
+        /** @var callable $task */
         while ($task = \array_shift($this->queue)) {
-            /** @var callable $task */
             $task();
         }
     }

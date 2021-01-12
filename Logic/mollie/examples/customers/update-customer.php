@@ -1,6 +1,6 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5;
+namespace _PhpScoper5e394cb3b4e38;
 
 /*
  * Updating an existing customer via the Mollie API.
@@ -22,7 +22,7 @@ try {
     $customer->name = "Luke Sky";
     $customer->email = "luke@example.org";
     $customer->locale = "en_US";
-    $customer->metadata->isJedi = \true;
+    $customer->metadata->isJedi = \TRUE;
     $customer->update();
     echo "<p>Customer updated: " . \htmlspecialchars($customer->name) . "</p>";
 } catch (\Mollie\Api\Exceptions\ApiException $e) {

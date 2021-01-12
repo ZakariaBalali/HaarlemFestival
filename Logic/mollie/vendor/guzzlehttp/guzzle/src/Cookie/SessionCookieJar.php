@@ -1,11 +1,11 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5\GuzzleHttp\Cookie;
+namespace _PhpScoper5e394cb3b4e38\GuzzleHttp\Cookie;
 
 /**
  * Persists cookies in the client session
  */
-class SessionCookieJar extends \_PhpScoper7fb942e22fb5\GuzzleHttp\Cookie\CookieJar
+class SessionCookieJar extends \_PhpScoper5e394cb3b4e38\GuzzleHttp\Cookie\CookieJar
 {
     /** @var string session key */
     private $sessionKey;
@@ -41,7 +41,7 @@ class SessionCookieJar extends \_PhpScoper7fb942e22fb5\GuzzleHttp\Cookie\CookieJ
         $json = [];
         foreach ($this as $cookie) {
             /** @var SetCookie $cookie */
-            if (\_PhpScoper7fb942e22fb5\GuzzleHttp\Cookie\CookieJar::shouldPersist($cookie, $this->storeSessionCookies)) {
+            if (\_PhpScoper5e394cb3b4e38\GuzzleHttp\Cookie\CookieJar::shouldPersist($cookie, $this->storeSessionCookies)) {
                 $json[] = $cookie->toArray();
             }
         }
@@ -58,7 +58,7 @@ class SessionCookieJar extends \_PhpScoper7fb942e22fb5\GuzzleHttp\Cookie\CookieJ
         $data = \json_decode($_SESSION[$this->sessionKey], \true);
         if (\is_array($data)) {
             foreach ($data as $cookie) {
-                $this->setCookie(new \_PhpScoper7fb942e22fb5\GuzzleHttp\Cookie\SetCookie($cookie));
+                $this->setCookie(new \_PhpScoper5e394cb3b4e38\GuzzleHttp\Cookie\SetCookie($cookie));
             }
         } elseif (\strlen($data)) {
             throw new \RuntimeException("Invalid cookie data");

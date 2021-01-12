@@ -1,12 +1,12 @@
 <?php
 
-namespace _PhpScoper7fb942e22fb5\GuzzleHttp\Psr7;
+namespace _PhpScoper5e394cb3b4e38\GuzzleHttp\Psr7;
 
-use _PhpScoper7fb942e22fb5\Psr\Http\Message\StreamInterface;
+use _PhpScoper5e394cb3b4e38\Psr\Http\Message\StreamInterface;
 /**
  * Decorator used to return only a subset of a stream
  */
-class LimitStream implements \_PhpScoper7fb942e22fb5\Psr\Http\Message\StreamInterface
+class LimitStream implements \_PhpScoper5e394cb3b4e38\Psr\Http\Message\StreamInterface
 {
     use StreamDecoratorTrait;
     /** @var int Offset to start reading from */
@@ -20,7 +20,7 @@ class LimitStream implements \_PhpScoper7fb942e22fb5\Psr\Http\Message\StreamInte
      * @param int             $offset Position to seek to before reading (only
      *                                works on seekable streams).
      */
-    public function __construct(\_PhpScoper7fb942e22fb5\Psr\Http\Message\StreamInterface $stream, $limit = -1, $offset = 0)
+    public function __construct(\_PhpScoper5e394cb3b4e38\Psr\Http\Message\StreamInterface $stream, $limit = -1, $offset = 0)
     {
         $this->stream = $stream;
         $this->setLimit($limit);

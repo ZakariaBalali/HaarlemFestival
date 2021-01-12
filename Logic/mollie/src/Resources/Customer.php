@@ -57,7 +57,7 @@ class Customer extends \Mollie\Api\Resources\BaseResource
         if (!isset($this->_links->self->href)) {
             return $this;
         }
-        $body = \json_encode(["name" => $this->name, "email" => $this->email, "locale" => $this->locale, "metadata" => $this->metadata]);
+        $body = \json_encode(array("name" => $this->name, "email" => $this->email, "locale" => $this->locale, "metadata" => $this->metadata));
         $result = $this->client->performHttpCallToFullUrl(\Mollie\Api\MollieApiClient::HTTP_PATCH, $this->_links->self->href, $body);
         return \Mollie\Api\Resources\ResourceFactory::createFromApiResult($result, new \Mollie\Api\Resources\Customer($this->client));
     }
