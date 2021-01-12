@@ -50,10 +50,9 @@
     display: inline;
 }
 #Ordertable{
-    position: absolute;
     float: left;
     margin-top: 6.25rem;
-    margin-left: 83.3rem;
+    margin-left: 24rem;
     margin-right: 12.5rem;
     border-color: black;
     border: 0.125rem solid #000000;
@@ -61,11 +60,10 @@
     text-align: left;
 }
 #ProceedButton{
-    position: absolute;
     background-color: green;
     color: white;
     font-size: 1.125rem;
-    margin-left: 8rem;
+    margin-left: 83.3rem;
     margin-top: 1.25rem;
     width: 16.25rem;
     height: 4rem;
@@ -74,7 +72,7 @@
 #TotalPrice{
     font-size: 1.625rem;
     margin-top: 18.75rem;
-    margin-left: 83.5rem;
+    margin-left: 84.5rem;
 }
 
 .input {

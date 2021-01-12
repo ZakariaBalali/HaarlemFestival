@@ -17,7 +17,7 @@ body{
     top: 6em;
 }
 
-.programButton {
+.myProgramButton {
     font-size: 2.1875rem;
     border: 0.1875rem solid black;
     border-radius: 1.125rem;
@@ -34,17 +34,17 @@ body{
 
 }
 
-.programButton a {
+.myProgramButton a {
     text-decoration: none;
     color: #FFFFFF;
 }
 
-.myProgramButton a {
+.programButton a {
     text-decoration: none;
     color: #000000;
 }
 
-.myProgramButton {
+.programButton {
     border: 0.1875rem solid black;
     border-radius: 1.125rem;
     font-family: "Segoe UI";
@@ -60,11 +60,11 @@ body{
 
 }
 
-.myProgramButton:hover {
+.programButton:hover {
     background-color:#E11B3B;
 }
 
-.myProgramButton:hover a {
+.programButton:hover a {
     color: #FFFFFF;
 }
 
@@ -109,70 +109,3 @@ body{
     background-color:#E11B3B;
     color: white;
 }
-
-.programSection {
-    /*display: none;*/
-    margin-top: -8rem;
-    margin-left: 12.5rem;
-    padding-left: 3.125rem;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 0rem;
-    grid-template-areas: "danceSection" "foodSection" "jazzSection" "historicSection";
-}
-
-.dance{
-    display: block;
-    background-color: brown;
-    margin-bottom: 2.5em;
-    width: 80rem;
-    height: 25rem;
-    border-radius: 0.4em;
-    grid-area: danceSection;
-}
-
-.food{
-    display: block;
-    background-color: red;
-    margin-bottom: 2.5em;
-    width: 80rem;
-    height: 25rem;
-    border-radius: 0.4em;
-    grid-area: foodSection;
-}
-
-.jazz{
-    display: block;
-    background-color: blue;
-    margin-bottom: 2.5em;
-    width: 80rem;
-    height: 25rem;
-    border-radius: 0.4em;
-    grid-area: jazzSection;
-}
-
-.historic {
-    display: block;
-    background-color: black;
-    margin-bottom: 2.5em;
-    width: 80rem;
-    height: 25rem;
-    border-radius: 0.4em;
-    grid-area: historicSection;
-}
-
-#historicImage{
-    margin-left: 1.5em;
-    margin-top: 3em;
-    width: 14rem;
-    height: 12rem;
-}
-
-.Historicbuttons{
-    background-color:#E11B3B; 
-}
-
-
-
-
-
