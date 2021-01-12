@@ -1,5 +1,8 @@
 <?php
 require_once dirname(__FILE__) . '/../DAL/EventDAL.php';
+require('../Model/Historic.php');
+require('HistoricLogic.php');
+$historicLogic = new HistoricLogic();
 session_start();
 
 
@@ -8,6 +11,19 @@ if (isset($_POST['AddToShoppingCartMusic'])) {
     header('Location: ../View/Shopping_Cart.php');
 }
 
+//historic
+if (isset($_POST['AddToShoppingCartHistoric'])) {
+
+    // date and time merged
+    $dateTime = $_POST["selectDate"] . ' ' . $_POST["selectTime"];
+    
+    //$ticketarray= $historicLogic->GetTicket($dateTime, $_POST["language"], "family ticket");
+    $normalTicket = $historicLogic->GetTicket($dateTime, $_POST["language"], "normal ticket");
+    $familyTicket = $historicLogic->GetTicket($dateTime, $_POST["language"], "family ticket");
+    //historic($_POST["selectDate"], $_POST["selectTime"], $_POST["language"], $_POST["normalTicketAmount"], $_POST["familyTicketAmount"]);
+    CheckAmountFor2Tickets($_POST["normalTicketAmount"], $normalTicket->getEvent_ID(), $_POST["familyTicketAmount"], $familyTicket->getEvent_ID());
+    header('Location: ../View/Shopping_Cart.php');
+}
 
 //Check amount of the tickets and calls add to session function when the amount is more than one
 function CheckAmountFor3Tickets($amountArtist, $artistID, $amountAllAccessDay, $allAccessDayID, $amountAllAccessWeekend, $allAccessWeekendID)
@@ -21,6 +37,19 @@ function CheckAmountFor3Tickets($amountArtist, $artistID, $amountAllAccessDay, $
     }
     if ($amountAllAccessWeekend > 0) {
         AddToSession($allAccessWeekendID, $amountAllAccessWeekend);
+    }
+
+}
+
+//for historic tickets 
+function CheckAmountFor2Tickets($amountNormalTicket, $normalTicketID, $amountFamilyTicket, $familyTicketID)
+{
+
+    if ($amountNormalTicket > 0) {
+        AddToSession($normalTicketID, $amountNormalTicket);
+    }
+    if ($amountFamilyTicket > 0) {
+        AddToSession($familyTicketID, $amountFamilyTicket);
     }
 
 }
