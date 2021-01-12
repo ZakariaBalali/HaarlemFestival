@@ -3,6 +3,34 @@ require_once '../Model/Historic.php';
 require_once '../Logic/HistoricLogic.php';
 ?>
 <!DOCTYPE HTML>
+<?php
+        // cookie will expire when the browser close
+        if(isset($_GET['day'])){
+            $cookie_name = "day";
+            $cookie_value = $_GET['day'];
+            setcookie($cookie_name, $cookie_value);
+        }
+        else if(!isset($_GET['day'])){
+            if(!isset($_COOKIE["day"])) {
+                $cookie_name = "day";
+                $cookie_value = "2018-07-26 00:00:00";
+                setcookie($cookie_name, $cookie_value);
+            }
+        }
+
+        if(isset($_GET['language'])){
+            $cookie_name = "language";
+            $cookie_value = $_GET['language'];
+            setcookie($cookie_name, $cookie_value);
+        }
+        else if(!isset($_GET['language'])){
+            if(!isset($_COOKIE["language"])) {
+                $cookie_name = "language";
+                $cookie_value = "english";
+                setcookie($cookie_name, $cookie_value);
+            }
+        }
+    ?>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -107,51 +135,33 @@ require_once '../Logic/HistoricLogic.php';
             <p>We offer multiple programs. The tours will be in Dutch, English or Chinese. All tours start at the St. Bavo. (Note that some days do not include all different languages).<br><br>The price of a normal ticket is €17,50 euros.<br>The price of a family ticket is €60 euros. A family ticket is for 4 persons and is 14% cheaper than a normal ticket.<br>Reservation is mandatory</p>
         </section>
         <p id="programQuestion"><br>Select a day and language to see the program</p>
-        <form method="post" action="">
+        <form method="get" action="">
             <button id="button1" type="submit" name="day" value="2018-07-26 00:00:00">Thu 26 July</button>
             <button id="button2" type="submit" name="day" value="2018-07-27 00:00:00">Fri 27 July</button>
             <button id="button3" type="submit" name="day" value="2018-07-28 00:00:00">Sat 28 July</button>
             <button id="button4" type="submit" name="day" value="2018-07-29 00:00:00">Sun 29 July</button>
         </form>
-        <form method="post" action="">
+        <form method="get" action="">
             <label class="radioButtonLanguage">
-                <input type="radio" id="english" name="language" value="english" checked>English
+                <input onchange='this.form.submit();' type="radio" id="english" name="language" value="english" checked>English
             </label>
             <label class="radioButtonLanguage">
-                <input type="radio" id="dutch" name="language" value="dutch">Dutch
+                <input onchange='this.form.submit();' type="radio" id="dutch" name="language" value="dutch">Dutch
             </label>
             <label class="radioButtonLanguage">
-                <input type="radio" id="chinese" name="language" value="chinese">Chinese
+                <input onchange='this.form.submit();' type="radio" id="chinese" name="language" value="chinese">Chinese
             </label>
         </form>
         <?php
-        // default start day is showen in program
-        $startDay ="2018-07-26 00:00:00";
-        $date ="english";
-        echo "<span style='color:black;font-size: 5em;'>".$startDay."</span>";
+        $endDay = date('Y-m-d H:i:s', strtotime($_COOKIE["day"].'+ 1 days'));
+        //echo voor testen van cookies
+        echo "<span style='color:black;font-size: 5em;'>".$_COOKIE["day"]."</span>";
+        echo "<br>";
+        echo "<span style='color:black;font-size: 5em;'>".$endDay."</span>";
+        echo "<br>";
+        echo "<span style='color:black;font-size: 5em;'>".$_COOKIE["language"]."</span>";
 
-        // getting startday from button
-        if(isset($_GET['day'])){
-            $startDay = $_GET['day'];
-        }
-
-        //echo "<span style='color:black;font-size: 5em;'>".$historic->getLanguage()."</span>";  $historic->setLanguage("english");
-        //end day is calculated
-        $endDay = date('Y-m-d H:i:s', strtotime($startDay.'+ 1 days'));
-
-        if (isset($_GET['language'])){
-            $date = $_GET['language'];
-        }
-        ?>
-        <?php
-        //$historicTour = [];
-        $historicTour = (array)$historicLogic->GetAllHistoricTour($startDay, $endDay,"english");
-        //$historicTour111 = $historicLogic->GetTicket("2018-07-26 10:00:00", "english", "family ticket");
-        //var_dump($historicTour111);
-        //echo $historicTour111->getEvent_ID();
-        
-        // echo json_encode($historicTour);
-        //echo "<span style='color:black;font-size: 5em;'>".$hh."</span>";onchange="functionName(this.value)"
+        $historicTour = (array)$historicLogic->GetAllHistoricTour($_COOKIE["day"], $endDay, $_COOKIE["language"]);
 
         ?>
         <table class="programTable" id=programTable>
