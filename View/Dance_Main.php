@@ -39,7 +39,7 @@ require_once '../Logic/CombiLogic.php';
     <section class="EventTitle">
         <h2>Haarlem Dance</h2>
     </section>
-    <p id="subtitle1">COMMING ARTISTS</p>
+    <p id="subtitle1">EXPECTED ARTISTS</p>
 
     <!--row 1 -->
     <section class="ArtistsRow1">
