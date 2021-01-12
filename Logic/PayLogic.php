@@ -15,7 +15,6 @@ $payment = $mollie->payments->create([
     "description" => "$description",
     "redirectUrl" => "http://chocomel.infhaarlem.nl/View/Shopping_Cart_Order.php",
     "webhookUrl" => "http://chocomel.infhaarlem.nl/",
-    "redirectUrl" => "http://chocomel.infhaarlem.nl/"
 
 ]);
 
