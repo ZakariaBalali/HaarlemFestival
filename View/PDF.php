@@ -28,7 +28,7 @@ $pdf->Ln();
 
 foreach ($CustomerByID as $customer) {
 
-$pdf->Cell(0, 10, 'OrderNumber: ' .$customer->GetCustomerByOrderID(),0,1,'L');
+$pdf->Cell(0, 10, 'OrderNumber: ' .$customer->GetOrderID(),0,1,'L');
 $pdf->Cell(0, 10, 'Firstname: ' .$customer->getFirstName(),0,1,'L');
 $pdf->Cell(0, 10, 'Lastname: ' .$customer->getLastName(),0,1,'L');
 $pdf->Cell(0, 10, 'Email: ' .$customer->getEmail(),0,1,'L');
