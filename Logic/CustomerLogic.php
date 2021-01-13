@@ -11,8 +11,8 @@ class CustomerLogic
     }
 
 //Gets functions from DAL layer
-    function GetCustomerByOrderID($OrderID)
+    function GetCustomerByID($OrderID)
     {
-        return $this->customerDAL->GetCustomerByOrderID($OrderID);
+        return $this->customerDAL->GetCustomersByID($OrderID);
     }
 }

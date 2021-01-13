@@ -6,8 +6,8 @@ require_once '../lib/fpdf.php';
 
 
 $Customers = [];
-$customer = new CustomerLogic();
-$CustomerByID =(array)$customer->GetCustomerByOrderID("1");
+$customerLogic = new CustomerLogic();
+$Customers = (array)$customerLogic->GetCustomerByID("1");
 
 
 
@@ -26,9 +26,9 @@ $pdf->Cell(0, 10, 'This invoice contains the order number and barcode that gives
 
 $pdf->Ln();
 
-foreach ($CustomerByID as $customer) {
+foreach ($Customers as $customer) {
 
-$pdf->Cell(0, 10, 'OrderNumber: ' .$customer->GetOrderID(),0,1,'L');
+$pdf->Cell(0, 10, 'OrderNumber: ' .$customer->getOrderID(),0,1,'L');
 $pdf->Cell(0, 10, 'Firstname: ' .$customer->getFirstName(),0,1,'L');
 $pdf->Cell(0, 10, 'Lastname: ' .$customer->getLastName(),0,1,'L');
 $pdf->Cell(0, 10, 'Email: ' .$customer->getEmail(),0,1,'L');
