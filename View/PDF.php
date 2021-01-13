@@ -1,12 +1,15 @@
 
 <?php
-
 require_once '../Model/mypdf.php';
-require_once '../Model/Customer.php';
+require_once '../Logic/CustomerLogic.php';
 require_once '../lib/fpdf.php';
 
 
-$customer = new Customer($CustomerID,$FirstName,$LastName,$Email,$PhoneNumber,$OrderID);
+$Customers = [];
+$customer = new CustomerLogic();
+$CustomerByID =(array)$customer->GetCustomerByOrderID("1");
+
+
 
 $pdf = new FPDF();
 $pdf->AliasNbPages();
@@ -23,11 +26,14 @@ $pdf->Cell(0, 10, 'This invoice contains the order number and barcode that gives
 
 $pdf->Ln();
 
-$pdf->Cell(0, 10, 'OrderNumber: ' .$customer->getOrderID(),0,1,'L');
+foreach ($CustomerByID as $customer) {
+
+$pdf->Cell(0, 10, 'OrderNumber: ' .$customer->GetCustomerByOrderID(),0,1,'L');
 $pdf->Cell(0, 10, 'Firstname: ' .$customer->getFirstName(),0,1,'L');
 $pdf->Cell(0, 10, 'Lastname: ' .$customer->getLastName(),0,1,'L');
 $pdf->Cell(0, 10, 'Email: ' .$customer->getEmail(),0,1,'L');
-
+$pdf->Cell(0, 10, 'Phone-Number: ' .$customer->getPhoneNumber(),0,1,'L');
+}
 $pdf->output();
 
 
