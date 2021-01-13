@@ -16,7 +16,7 @@ class CustomerDAL
 
     function GetCustomerByOrderID($OrderID)
     {
-        $sql = "SELECT C.Customer_ID, C.First_Name, C.Last_Name , C.Email, C.Phone_Number, O.Order_ID FROM Order O INNER JOIN Customer C ON  C.Customer_ID = O.Customer_ID";
+        $sql = "SELECT C.Customer_ID, C.First_Name, C.Last_Name , C.Email, C.Phone_Number, O.Order_ID FROM Order O INNER JOIN Customer C ON  C.Customer_ID = O.Customer_ID WHERE Order_ID = '" . $OrderID . "'";
         $Customers = [];
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
