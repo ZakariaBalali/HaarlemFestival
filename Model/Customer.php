@@ -6,14 +6,16 @@ class Customer{
     private $LastName;
     private $Email;
     private $PhoneNumber;
+    private $OrderID;
 
-    function __construct( $CustomerID,$FirstName,$LastName,$Email,$PhoneNumber)
+    function __construct( $CustomerID,$FirstName,$LastName,$Email,$PhoneNumber,$OrderID)
     {
         $this->$CustomerID= $CustomerID;
         $this->$FirstName = $FirstName;
         $this->$LastName = $LastName;
         $this->$Email = $Email;
         $this->$PhoneNumber = $PhoneNumber;
+        $this->$OrderID = $OrderID;
     }
 
     /**
@@ -51,6 +53,13 @@ class Customer{
     {
         return $this->PhoneNumber;
     }
+       /**
+     * @return mixed
+     */
+    public function getOrderID()
+    {
+        return $this->OrderID;
+    }    
 
 
 
