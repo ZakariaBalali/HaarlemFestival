@@ -1,13 +1,13 @@
 <?php
 
-require_once dirname(__FILE__) . '/../lib/fpdf.php';
+require_once '../lib/fpdf.php';
 
  class PDF extends FPDF
  {
    function Header()
    {
        //logo
-       $this->Image('logo.png',10,6,30);
+       $this->Image('/../View/images/logopdf.jpg',10,6,30);
        // give it a font
        $this->SetFont('Arial','B',15);
        // move to the right
