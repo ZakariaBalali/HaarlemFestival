@@ -67,23 +67,29 @@ session_start()
         <div class="container2">
 
             <h3 class="FormHeader">Order Summary</h3>
-            <div class="container3">
-                <strong id="span1">Food</strong>
-                <span id="span2">Reservation Ratatouille</span>
-                <span id="span2">Thu 28 July 19.00</span>
-            </div>
+            <?php
+            foreach ($_SESSION['Products'] as $item) {
+
+                ?>
+                <div class="container3">
+                    <strong id="span1"><?php echo $item['EventName']; ?></strong><br>
+                    <span id="span2"><?php echo $item['ProductName']; ?></span>
+                    <span id="span2"><?php echo $timeFormat = date('D d F ', strtotime($item['StartTime'])); ?></span>
+                    <span id="span6"><?php echo $item['Amount']?>x</span>
+                </div>
+            <?php } ?>
 
             <div class="container4">
-                <span id="span4">Subtotaal</span>
+                <span id="span4">Subtotal</span>
                 <span id="span4">9&percnt; Tax</span>
             </div>
 
             <div class="container5">
-                <strong id="span5">&euro;36,70</strong>
-                <strong id="span5">&euro;3,30</strong>
+                <strong id="span5">&euro;<?php echo($amount * 0.91) ?></strong>
+                <strong id="span5">&euro;<?php echo($amount * 0.09) ?></strong>
             </div>
         </div>
-        <p id="p1">Total (incl. Tax): &euro;<?php echo $amount?></p>
+        <p id="p1">Total (incl. Tax): &euro;<?php echo $amount ?></p>
 
         <button id="ConfirmButton" form="GoToPayment" id="GoToPayment">
             Confirm order

@@ -96,12 +96,12 @@ session_start()
                     <th id="TableHead"></th>
                 </tr>
                 <tr>
-                    <td id="Tabledata3">Subtotaal</td>
-                    <td id="Tabledata4">&euro;36,70</td>
+                    <td id="Tabledata3">Subtotal</td>
+                    <td id="Tabledata4">&euro;<?php echo ($totalamount * 0.91)?></td>
                 </tr>
                 <tr>
                     <td id="Tabledata3">9% Tax</td>
-                    <td id="Tabledata4">&euro;3,30</td>
+                    <td id="Tabledata4">&euro;<?php echo ($totalamount * 0.09)?></td>
                 </tr>
             </table>
 

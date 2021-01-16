@@ -41,7 +41,6 @@
   }
 
   #span2{
-    margin-left: 6.875rem;
     display: block;
   }
   
@@ -52,11 +51,13 @@
   #span4{
     margin-left: 9.188rem;
     display: block;
+    font-weight: bold;
   }
   #span5{
     display: block;
     margin-right: 6.25rem;
     text-align: right;
+    font-weight: bold;
   }
   .red{
     color: red;
@@ -119,11 +120,13 @@
   }
 
 #p1{
-  float: right;
-  margin-top: 2.5rem;
-  margin-right: 12.5rem;
+  margin-left: 90rem;
+  margin-top: 1rem;
+  width: 16.25rem;
+  height: 4rem;
   color: black;
-  font-size: 1.625rem;
+  font-size: 1rem;
+  font-weight: bold;
 }
 #p2{
   display: block;
@@ -135,7 +138,7 @@
   background-color: green;
   color: white;
   font-size: 1.125rem;
-  margin-left: 24rem;
+  margin-left: 87rem;
   margin-top: 3rem;
   width: 16.25rem;
   height: 4rem;
