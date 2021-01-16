@@ -11,13 +11,8 @@ class FoodLogic
     }
 
 //Gets functions from DAL layer
-    // function GetAllFoodEvents($Cuisine)
-    // {
-    //     return $this->foodDAL->GetFoodEventsByCuisine($Cuisine);
-    // }
-
-    function GetFoodStartTimes($Reservation)
+    function GetFoodTimes($ProductName)
     {
-        return $this->foodDAL->GetFoodEventStart($Reservation);
+        return $this->foodDAL->GetFoodTimes($ProductName);
     }
 }

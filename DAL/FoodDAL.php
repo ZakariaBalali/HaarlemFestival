@@ -1,5 +1,6 @@
 <?php
 require_once dirname(__FILE__) . '/../Model/Food.php';
+require_once dirname(__FILE__) . '/../Model/Event.php';
 require_once dirname(__FILE__) . '/DbConnection.php';
 
 class FoodDAL
@@ -14,25 +15,26 @@ class FoodDAL
         $this->connection = $this->instance->getConnection();
     }
 
-    function GetFoodEventStart($Reservation)
+    function GetFoodTimes($ProductName)
     {
-        $sql = "SELECT E.StartTime FROM Event E WHERE E.EventName = 'Food' AND E.ProductName = '" . $Reservation . "' ORDER BY E.StartTime ASC";
+        $sql = "SELECT E.StartTime, E.EndTime, E.Price FROM Event E WHERE E.EventName = 'Food' AND E.ProductName = '" . $ProductName . "' ORDER BY E.StartTime ASC";
         $FoodTimes = [];
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {               
+            while ($row = mysqli_fetch_assoc($result)) {
                 $StartTime = $row["StartTime"];
-               
+                $EndTime = $row["EndTime"];
+                $Price = $row["Price"];
 
-                $Food = new Event($StartTime);
+                $Food = new Food($StartTime, $EndTime, $Price);
                 $FoodTimes[] = $Food;
             }
             return $FoodTimes;
-
         } else {
-            echo 'No Starttimes found';
+            echo 'No Food times found';
         }
     }
+
 }
 
 ?>

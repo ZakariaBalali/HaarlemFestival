@@ -11,7 +11,19 @@ class Food
     private $Cuisine;
     private $Event;
 
-    function __construct($Event_ID, $RestaurantName, $Stars, $Description, $Image, $Cuisine, $StartTime, $EndTime, $Price)
+
+    public function __construct()
+    {
+        $get_arguments = func_get_args();
+        $number_of_arguments = func_num_args();
+
+        if (method_exists($this, $method_name = '__construct' . $number_of_arguments)) {
+            call_user_func_array(array($this, $method_name), $get_arguments);
+        }
+    }
+
+
+    function __construct9($Event_ID, $RestaurantName, $Stars, $Description, $Image, $Cuisine, $StartTime, $EndTime, $Price)
     {
         $this->Event_ID = $Event_ID;
         $this->RestaurantName = $RestaurantName;
@@ -20,6 +32,12 @@ class Food
         $this->Image = $Image;
         $this->Cuisine = $Cuisine;
         $this->Event = new Event($StartTime, $EndTime, $Price);
+    }
+
+
+    function __construct3($StartTime, $EndTime, $Prize)
+    {
+        $this->Event = new Event($StartTime, $EndTime, $Prize);
     }
 
     public function getEvent_ID()
@@ -108,7 +126,7 @@ class Food
     {
         $this->Cuisine = $Cuisine;
     }
-    
+
     /**
      * @return Event
      */

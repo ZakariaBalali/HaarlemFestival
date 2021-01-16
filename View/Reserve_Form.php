@@ -17,10 +17,16 @@ require_once '../Logic/FoodLogic.php';
 <!-- Testing what's in the array -->
 <p>
   <?php
-  $foodLogic = new FoodLogic();
-  $Reservation = "Reservation Restaurant Mr. & Mrs.";
-  $StartTimes[] = $foodLogic->GetFoodStartTimes($Reservation);
-  print_r($StartTimes);
+//Fill array with jazz events
+$FoodEvents = [];
+$foodLogic = new FoodLogic();
+$FoodEvents = (array)$foodLogic->GetFoodTimes("Reservation Restaurant Mr. & Mrs.");
+
+
+foreach ($FoodEvents as $food) {
+    echo $food->getEvent()->getStartTime();
+
+}
 
   ?>
 </p>
@@ -44,11 +50,16 @@ require_once '../Logic/FoodLogic.php';
     <label for="time"><b>Time:</b></label>
     <select>
       <?php
+
+
+      require_once '../Logic/FoodLogic.php';
+
+      //Fill array with jazz events
+      $FoodEvents = [];
       $foodLogic = new FoodLogic();
-      $Reservation = "Reservation Restaurant Mr. & Mrs.";
-      $StartTimes[] = $foodLogic->GetFoodStartTimes($Reservation);
-      foreach ($StartTimes as $value) {
-        echo "<option>$value</option>";
+      $FoodEvents = (array)$foodLogic->GetFoodTimes("Reservation Restaurant Mr. & Mrs.");
+      foreach($FoodEvents as $food){
+          ?><option><?php echo $food->getEvent()->getStartTime() ?></option>;<?php
       }
       ?>
     </select>
