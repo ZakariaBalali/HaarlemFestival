@@ -104,6 +104,31 @@ body{
     width: 10em;
     height: 2.5em;
 }
+/* //.buttons */
+#allButton{
+    background-color:#E11B3B;
+    color: white;
+}
+
+#button26th{
+    background-color:#FFFFFF;;
+    color: black;
+}
+
+#button27th{
+    background-color:#FFFFFF;;
+    color: black;
+}
+
+#button28th{
+    background-color:#FFFFFF;;
+    color: black;
+}
+
+#button29th{
+    background-color:#FFFFFF;;
+    color: black;
+}
 
 .dayFilter button:hover{
     background-color:#E11B3B;
@@ -123,55 +148,264 @@ body{
 
 .dance{
     display: block;
-    background-color: brown;
+    display:inline-block;
+    background-color: white;
     margin-bottom: 2.5em;
+    padding-bottom: 2em;
     width: 80rem;
-    height: 25rem;
+    height: 100%;
     border-radius: 0.4em;
     grid-area: danceSection;
 }
 
 .food{
     display: block;
-    background-color: red;
+    display:inline-block;
+    background-color: white;
     margin-bottom: 2.5em;
+    padding-bottom: 2em;
     width: 80rem;
-    height: 25rem;
+    height: 100%;
     border-radius: 0.4em;
     grid-area: foodSection;
 }
 
 .jazz{
     display: block;
-    background-color: blue;
+    display:inline-block;
+    background-color: white;
     margin-bottom: 2.5em;
+    padding-bottom: 2em;
     width: 80rem;
-    height: 25rem;
+    height: 100%;
     border-radius: 0.4em;
     grid-area: jazzSection;
 }
 
 .historic {
     display: block;
-    background-color: black;
+    /* overflow:visible; */
+    display:inline-block;
+    background-color: white;
     margin-bottom: 2.5em;
+    padding-bottom: 2em;
     width: 80rem;
-    height: 25rem;
+    height: 100%;
     border-radius: 0.4em;
     grid-area: historicSection;
 }
 
+/* historic section */
+.historic p{
+    color: black;
+    padding-top: 0.2em;
+    padding-left: 0.2em;
+}
+
 #historicImage{
+    float: left;
     margin-left: 1.5em;
-    margin-top: 3em;
-    width: 14rem;
-    height: 12rem;
+    width: 12rem;
+    height: 10rem;
 }
 
 .Historicbuttons{
-    background-color:#E11B3B; 
+    background-color:lightgrey;
+    margin: 0.5em;
+    border-radius: 0.5em;
+    font-size: 0.5em;
+    width: 14em;
+    height: 3em; 
+}
+.historicRightSide{
+    margin-left: 8em;
+    padding-left: 2em;
+    color: black;
 }
 
+.historicRightSide p{
+    font-size: 0.7em;
+    font-weight: bold;
+    margin-bottom: 0em;
+}
+
+.historicIcon{
+    margin-top: 0.2em;
+    margin-left: -1.5em;
+    margin-right: 1em;
+}
+
+#historicThursday {
+    display: block;
+    margin-top: -2em;
+}
+
+#historicFriday{
+    display: block;
+}
+
+#historicSaturday{
+    display: block;
+}
+
+#historicSunday{
+    display: block;
+}
+
+/* jazz section */
+.jazz p{
+    color: black;
+    padding-top: 0.2em;
+    padding-left: 0.2em;
+}
+
+#jazzImage{
+    float: left;
+    margin-left: 1.5em;
+    width: 12rem;
+    height: 10rem;
+}
+
+.Jazzbuttons{
+    background-color:lightgrey;
+    margin: 0.5em;
+    border-radius: 0.5em;
+    font-size: 0.5em;
+    width: 14em;
+    height: 3em; 
+}
+.jazzRightSide{
+    margin-left: 8em;
+    padding-left: 2em;
+    color: black;
+}
+.jazzRightSide p{
+    font-size: 0.7em;
+    font-weight: bold;
+    margin-bottom: 0em;
+}
+
+#jazzThursday {
+    display: block;
+    margin-top: -2em;
+}
+
+#jazzFriday{
+    display: block;
+}
+
+#jazzSaturday{
+    display: block;
+}
+
+#jazzSunday{
+    display: block;
+}
+
+/* dance section */
+.dance p{
+    color: black;
+    padding-top: 0.2em;
+    padding-left: 0.2em;
+    left: 2em;
+}
+
+#danceImage{
+    float: left;
+    margin-left: 1.5em;
+    width: 12rem;
+    height: 10rem;
+}
+
+.Dancebuttons{
+    background-color:lightgrey;
+    margin: 0.5em;
+    border-radius: 0.5em;
+    font-size: 0.5em;
+    width: 14em;
+    height: 4em; 
+}
+.danceRightSide{
+    margin-left: 8em;
+    padding-left: 2em;
+    color: black;
+}
+
+.danceRightSide p{
+    font-size: 0.7em;
+    font-weight: bold;
+    margin-bottom: 0em;
+}
+
+#danceThursday {
+    display: block;
+    margin-top: -2em;
+}
+
+#danceFriday{
+    display: block;
+}
+
+#danceSaturday{
+    display: block;
+}
+
+#danceSunday{
+    display: block;
+}
+
+
+/* food section */
+.food p{
+    color: black;
+    padding-top: 0.2em;
+    padding-left: 0.2em;
+    left: 2em;
+}
+
+#foodImage{
+    float: left;
+    margin-left: 1.5em;
+    width: 12rem;
+    height: 10rem;
+}
+
+.Foodbuttons{
+    background-color:lightgrey;
+    margin: 0.5em;
+    border-radius: 0.5em;
+    font-size: 0.5em;
+    width: 14em;
+    height: 4em; 
+}
+.foodRightSide{
+    margin-left: 8em;
+    padding-left: 2em;
+    color: black;
+}
+
+.foodRightSide p{
+    font-size: 0.7em;
+    font-weight: bold;
+    margin-bottom: 0em;
+}
+
+#foodThursday {
+    display: block;
+    margin-top: -2em;
+}
+
+#foodFriday{
+    display: block;
+}
+
+#foodSaturday{
+    display: block;
+}
+
+#foodSunday{
+    display: block;
+}
 
 
 
