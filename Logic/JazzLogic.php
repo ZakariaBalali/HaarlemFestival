@@ -15,4 +15,9 @@ class JazzLogic
     {
         return $this->jazzDAL->GetJazzEventsByDay($TimeStartDay, $TimeEndDay);
     }
+    
+    function GetAllJazzTickets()
+    {
+        return $this->jazzDAL->GetAllJazzTickets();
+    }
 }

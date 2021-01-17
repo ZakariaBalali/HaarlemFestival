@@ -15,4 +15,9 @@ class FoodLogic
     {
         return $this->foodDAL->GetFoodTimes($ProductName);
     }
+    
+    function GetAllFoodEvents()
+    {
+        return $this->foodDAL->GetAllFoodEvents();
+    }
 }

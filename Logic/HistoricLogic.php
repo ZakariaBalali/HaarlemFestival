@@ -11,7 +11,7 @@ class HistoricLogic
     }
 
 //Gets functions from DAL layer
-    function GetAllHistoricTour($startDay, $endDay, $Language){
+    function GetProgramByDayAndLanguage($startDay, $endDay, $Language){
         try{
             return $this->historicDAL->GetProgramByDayAndLanguage($startDay, $endDay, $Language);
         }
@@ -20,6 +20,17 @@ class HistoricLogic
         }
         
     }
+
+    function GetAllHistoricTours(){
+        try{
+            return $this->historicDAL->GetAllHistoricTours();
+        }
+        catch(Exception $e){
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
+        
+    }
+
     function GetProgramByDay($startDay, $endDay){
         try{
             return $this->historicDAL->GetProgramByDay($startDay, $endDay);
@@ -28,6 +39,7 @@ class HistoricLogic
             echo 'Caught exception: ',  $e->getMessage(), "\n";
         }
     }
+
     function GetTicket($startTime, $language, $ticketName){
         try{
             return $this->historicDAL->GetTicket($startTime, $language, $ticketName);
@@ -36,6 +48,7 @@ class HistoricLogic
             echo 'Caught exception: ',  $e->getMessage(), "\n";
         }
     }
+    
     function GetTicketByDay($startTime){
         try{
             return $this->historicDAL->GetTicketByDay($startTime);

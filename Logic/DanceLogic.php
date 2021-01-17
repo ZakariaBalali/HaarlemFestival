@@ -15,4 +15,8 @@ class DanceLogic
     {
         return $this->danceDAL->GetDanceEventsByDay($TimeStartDay, $TimeEndDay);
     }
+
+    function GetAllDanceTickets(){
+        return $this->danceDAL->GetAllDanceTickets();
+    }
 }
