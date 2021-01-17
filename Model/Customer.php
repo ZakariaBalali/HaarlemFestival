@@ -9,7 +9,17 @@ class Customer
     private $PhoneNumber;
     private $OrderID;
 
-    public function __construct($CustomerID, $FirstName, $LastName, $Email, $PhoneNumber, $OrderID)
+    public function __construct()
+    {
+        $get_arguments = func_get_args();
+        $number_of_arguments = func_num_args();
+
+        if (method_exists($this, $method_name = '__construct' . $number_of_arguments)) {
+            call_user_func_array(array($this, $method_name), $get_arguments);
+        }
+    }
+
+    public function __construct6($CustomerID, $FirstName, $LastName, $Email, $PhoneNumber, $OrderID)
     {
         $this->CustomerID = $CustomerID;
         $this->FirstName = $FirstName;
@@ -17,6 +27,14 @@ class Customer
         $this->Email = $Email;
         $this->PhoneNumber = $PhoneNumber;
         $this->OrderID = $OrderID;
+    }
+
+    public function __construct4($CustomerID, $FirstName, $LastName, $Email)
+    {
+        $this->CustomerID = $CustomerID;
+        $this->FirstName = $FirstName;
+        $this->LastName = $LastName;
+        $this->Email = $Email;
     }
 
     /**

@@ -1,3 +1,7 @@
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE HTML>
 <html>
 
@@ -35,35 +39,46 @@
         <strong id="SuccesText">Succesfull payment</strong>
         <strong id="Text1">Thank you, your payment has been succesfull.</strong>
         <strong id="Text2">A confirmation e-mail has been sent to</strong>
-        <strong id="Text3">P.folkertsma@inholland.nl</strong>
+        <?php foreach($_SESSION['Customer'] as $item) {
+
+        ?>
+        <strong id="Text3"><?php echo $item['Email']; ?></strong>
     </section>
 
     <section>
+
+
+
         <h1 id="header">Order Details</h1>
         <hr>
         <p id="Text4">
             <span><strong>Order number:</strong></span>
-            <span>26292021</span>
+            <span><?php  echo $_SESSION["OrderID"] ?></span>
         </p>
 
         <p id="Text5">
             <span><strong id>Order date:</strong></span>
-            <span>Sep 25, 2020</span>
+            <span><?php echo date('M d , Y');?></span>
         </p>
 
         <p id="Text6">
             <span><strong id>Name:</strong></span>
-            <span>Petra Folkmertsma</span>
+            <span><?php echo $item['FirstName'];?> <?php echo $item['LastName'];?></span>
         </p>
 
         <p id="Text7">
             <span><strong id>Email:</strong></span>
-            <span>P.folkertsma@inholland.nl</span>
+            <span><?php echo $item['Email']; }?></span>
         </p>
 
-        <button id="pdf">
-            Download PDF
-        </button>
+        <form action="PDF.php" method="post">
+            <input style="display: none" class="valueOrder" name="orderID" type="text"
+                   value="<?php echo $_SESSION["OrderID"] ?>"/>
+            <button id="pdf" type="submit">
+                Download PDF
+            </button>
+        </form>
+
 
         <button id="BackHome" onclick="document.location='Homepage.php'">
             Back to festival

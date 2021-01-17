@@ -15,4 +15,14 @@ class CustomerLogic
     {
         return $this->customerDAL->GetCustomersByID($OrderID);
     }
+
+    function SetCustomer($FirstName, $LastName, $Email, $Phone)
+    {
+        return $this->customerDAL->SetCustomer($FirstName, $LastName, $Email, $Phone);
+    }
+
+    function GetHighestCustomerID(){
+        return $this->customerDAL->GetMaxCustomerID();
+    }
+
 }

@@ -1,22 +1,63 @@
 <?php
 require_once dirname(__FILE__) . '/../Logic/mollie/vendor/autoload.php';
+require_once dirname(__FILE__) . '/../Logic/CustomerLogic.php';
+require_once dirname(__FILE__) . '/../Logic/OrderLogic.php';
+session_start();
+if (isset($_POST['ConfirmButton'])) {
+    //Puts customer into the database
+    $customerLogic = new CustomerLogic();
+    $customerLogic->SetCustomer($_POST["firstName"], $_POST["lastName"], $_POST["email"], $_POST["phone"]);
 
-$mollie = new \Mollie\Api\MollieApiClient();
-$mollie->setApiKey("test_kWeW5tjftHhThty23qAtNeaDyQERjC");
 
-$amount = $_POST["amount"];
-$description = "test";
-$payment = $mollie->payments->create([
-    "amount" => [
-        "currency" => "EUR",
-        "value" => "$amount"
+    $Customers = (array)$customerLogic->GetHighestCustomerID();
+    $CustomerID = $Customers[0]->getCustomerID();
 
-    ],
-    "description" => "$description",
-    "redirectUrl" => "http://chocomel.infhaarlem.nl/View/Shopping_Cart_Order.php",
-    "webhookUrl" => "http://chocomel.infhaarlem.nl/Logic/Webhook.php",
+    $_SESSION["Customer"] = array();
 
-]);
+    $customer = array('CustomerID' => $Customers[0]->getCustomerID(), 'FirstName' => $_POST["firstName"],
+        'LastName' => $_POST["lastName"], 'Email' => $_POST["email"], 'Phone' => $_POST["phone"]);
 
-header("Location: " . $payment->getCheckoutUrl(), true, 303);
+    $_SESSION['Customer'][$CustomerID] = $customer;
+
+    //Sets the Order in the database
+    SetOrder($CustomerID,  date('Y-m-d'), $_POST["amount"]);
+
+}
+
+function SetOrder($CustomerID, $DateOrder, $Amount)
+{
+    $orderLogic = new OrderLogic();
+    $orderLogic->SetOrder($CustomerID,$DateOrder,$Amount);
+
+    $Orders = (array)$orderLogic->GetHighestOrderID();
+    $_SESSION["OrderID"] =$Orders[0]->getOrderID();
+
+    //Calls the Mollie API for the payment
+    CallMollieAPI();
+}
+
+function CallMollieAPI()
+
+{
+
+    $mollie = new \Mollie\Api\MollieApiClient();
+    $mollie->setApiKey("test_kWeW5tjftHhThty23qAtNeaDyQERjC");
+
+    $amount = $_POST["amount"];
+    $description = "Haarlem Festival";
+    $payment = $mollie->payments->create([
+        "amount" => [
+            "currency" => "EUR",
+            "value" => "$amount"
+
+        ],
+        "description" => "$description",
+        "redirectUrl" => "http://chocomel.infhaarlem.nl/View/Shopping_Cart_Order.php",
+        "webhookUrl" => "http://chocomel.infhaarlem.nl/Logic/Webhook.php",
+
+    ]);
+
+    header("Location: " . $payment->getCheckoutUrl(), true, 303);
+}
+
 ?>

@@ -35,6 +35,40 @@ class CustomerDAL
             echo 'No Customers found';
         }
     }
+
+
+    function SetCustomer($FirstName, $LastName, $Email, $Phone)
+    {
+        $stmt = $this->connection->prepare("INSERT INTO Customer(First_Name, Last_Name, Email, Phone_Number) VALUES(?,?,?,?)");
+        $stmt->bind_param("sssi", $FirstName, $LastName, $Email, $Phone);
+        try {
+            $stmt->execute();
+            return true;
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+
+    function GetMaxCustomerID()
+    {
+        $sql = "SELECT Customer_ID, First_Name, Last_Name, Email FROM Customer WHERE Customer_ID=(SELECT max(Customer_ID) FROM Customer)";
+        $Customers = [];
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $CustomerID = $row["Customer_ID"];
+                $FirstName = $row["First_Name"];
+                $LastName = $row["Last_Name"];
+                $Email = $row["Email"];
+
+                $Customer = new Customer($CustomerID, $FirstName, $LastName, $Email);
+                $Customers[] = $Customer;
+            }
+            return $Customers;
+        } else {
+            echo 'No Customers found';
+        }
+    }
 }
 
 ?>

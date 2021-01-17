@@ -21,7 +21,7 @@ try {
     database_write($orderId, $payment->status);
 
     if ($payment->isPaid() && ! $payment->hasRefunds() && ! $payment->hasChargebacks()) {
-        $_SESSION['StatusPayment'] = "Jevader";
+
     } elseif ($payment->isOpen()) {
         /*
          * The payment is open.

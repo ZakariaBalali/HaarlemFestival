@@ -8,7 +8,7 @@ require_once '../lib/phpqrcode/qrlib.php';
 
 $Customers = [];
 $customerLogic = new CustomerLogic();
-$Customers = (array)$customerLogic->GetCustomerByID("4");
+$Customers = (array)$customerLogic->GetCustomerByID($_POST["orderID"]);
 
 
 
