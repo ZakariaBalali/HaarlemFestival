@@ -28,6 +28,7 @@ foreach ($FoodEvents as $food) {
 
 }
 
+
   ?>
 </p>
 
@@ -39,11 +40,11 @@ foreach ($FoodEvents as $food) {
 
     <label for="date"><b>Date:</b></label>
     <select>
-      <option value="" disabled selected hidden></option>
-      <option value="26 July">26 July</option>
-      <option value="27 July">27 July</option>
-      <option value="28 July">28 July</option>
-      <option value="29 July">29 July</option>
+      <option name="date" value="" disabled selected hidden></option>
+      <option name="date" value="26 July">26 July</option>
+      <option name="date" value="27 July">27 July</option>
+      <option name="date" value="28 July">28 July</option>
+      <option name="date" value="29 July">29 July</option>
     </select>
 
     <!-- Trying to print array starttimes to drop down options -->
@@ -59,7 +60,7 @@ foreach ($FoodEvents as $food) {
       $foodLogic = new FoodLogic();
       $FoodEvents = (array)$foodLogic->GetFoodTimes("Reservation Restaurant Mr. & Mrs.");
       foreach($FoodEvents as $food){
-          ?><option><?php echo $food->getEvent()->getStartTime() ?></option>;<?php
+          ?><option name="time"><?php echo $food->getEvent()->getStartTime() ?></option>;<?php
       }
       ?>
     </select>
@@ -73,36 +74,36 @@ foreach ($FoodEvents as $food) {
 
     <label for="adults"><b>Adults:</b></label>
     <select>
-      <option value="" disabled selected hidden></option>
-      <option value="1adult">1</option>
-      <option value="2adults">2</option>
-      <option value="3adults">3</option>
-      <option value="4adults">4</option>
-      <option value="5adults">5</option>
-      <option value="6adults">6</option>
-      <option value="7adults">7</option>
+      <option name="amountAdultTicket" value="" disabled selected hidden></option>
+      <option name="amountAdultTicket" value="1">1</option>
+      <option name="amountAdultTicket" value="2">2</option>
+      <option name="amountAdultTicket" value="3">3</option>
+      <option name="amountAdultTicket" value="4">4</option>
+      <option name="amountAdultTicket" value="5">5</option>
+      <option name="amountAdultTicket" value="6">6</option>
+      <option name="amountAdultTicket" value="7">7</option>
     </select>
 
-    <label for="adults"><b>Children:</b></label>
-    <select>
-      <option value="" disabled selected hidden></option>
-      <option value="1child">1</option>
-      <option value="2children">2</option>
-      <option value="3children">3</option>
-      <option value="4children">4</option>
-      <option value="5children">5</option>
-      <option value="6children">6</option>
-      <option value="7children">7</option>
+    <label for="children"><b>Children:</b></label>
+    <select name="amountChildTicket" type="number">
+      <option name="amountChildTicket" value="" disabled selected hidden></option>
+      <option name="amountChildTicket" value="1">1</option>
+      <option name="amountChildTicket" value="2">2</option>
+      <option name="amountChildTicket" value="3">3</option>
+      <option name="amountChildTicket" value="4">4</option>
+      <option name="amountChildTicket" value="5">5</option>
+      <option name="amountChildTicket" value="6">6</option>
+      <option name="amountChildTicket" value="7">7</option>
     </select>
 
     <label for="comments"><b>Comments:</b></label>
-    <textarea rows="6" cols="30" name="comments"></textarea>
+    <textarea rows="6" cols="30" name="comments" type="text"></textarea>
 
     <p>
       The reservation fee is &euro;10 per person. The total reservation fee will be deducted from the final check.
     </p>
 
-    <button type="submit" class="btn">Confirm</button>
+    <button type="submit" name="AddToShoppingCartFood" class="btn">Confirm</button>
     <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
   </form>
 </div>
