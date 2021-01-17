@@ -2,6 +2,7 @@
 require_once dirname(__FILE__) . '/../Logic/mollie/vendor/autoload.php';
 require_once dirname(__FILE__) . '/../Logic/CustomerLogic.php';
 require_once dirname(__FILE__) . '/../Logic/OrderLogic.php';
+require_once dirname(__FILE__) . '/../Logic/OrderItemLogic.php';
 session_start();
 if (isset($_POST['ConfirmButton'])) {
     //Puts customer into the database
@@ -20,24 +21,38 @@ if (isset($_POST['ConfirmButton'])) {
     $_SESSION['Customer'][$CustomerID] = $customer;
 
     //Sets the Order in the database
-    SetOrder($CustomerID,  date('Y-m-d'), $_POST["amount"]);
+    SetOrder($CustomerID, date('Y-m-d'), $_POST["amount"]);
 
 }
 
 function SetOrder($CustomerID, $DateOrder, $Amount)
 {
     $orderLogic = new OrderLogic();
-    $orderLogic->SetOrder($CustomerID,$DateOrder,$Amount);
+    $orderLogic->SetOrder($CustomerID, $DateOrder, $Amount);
 
     $Orders = (array)$orderLogic->GetHighestOrderID();
-    $_SESSION["OrderID"] =$Orders[0]->getOrderID();
+    $_SESSION["OrderID"] = $Orders[0]->getOrderID();
 
-    //Calls the Mollie API for the payment
+    SetOrderItem();
+}
+
+function SetOrderItem()
+{
+    $orderItemLogic = new OrderItemLogic();
+
+
+    foreach ($_SESSION['Products'] as $item) {
+
+        $orderItemLogic->SetOrderItem($_SESSION["OrderID"], $item['EventID'], $item['Amount'], $item['Price'], $item['Btw'], $item['StartTime']);
+
+    }
+
     CallMollieAPI();
+
+
 }
 
 function CallMollieAPI()
-
 {
 
     $mollie = new \Mollie\Api\MollieApiClient();

@@ -20,7 +20,7 @@ if (isset($_POST['AddToShoppingCartHistoric'])) {
 
     // date and time merged
     $dateTime = $_POST["selectDate"] . ' ' . $_POST["selectTime"];
-    
+
     //$ticketarray= $historicLogic->GetTicket($dateTime, $_POST["language"], "family ticket");
     $normalTicket = $historicLogic->GetTicket($dateTime, $_POST["language"], "normal ticket");
     $familyTicket = $historicLogic->GetTicket($dateTime, $_POST["language"], "family ticket");
@@ -88,7 +88,7 @@ function AddToSession($EventID, $Amount)
         foreach ($events as $event) {
             $_SESSION['products'] = array();
             $cart = array('EventID' => $EventID, 'EventName' => $event->getEventName(),
-                'ProductName' => $event->getProductName(), 'StartTime' => $event->getStartTime(), 'Price' => $event->getPrice(), 'Amount' => $Amount);
+                'ProductName' => $event->getProductName(), 'StartTime' => $event->getStartTime(), 'Price' => $event->getPrice(), 'Btw' => $event->getBtw(), 'Amount' => $Amount);
 
         }
 
@@ -96,11 +96,12 @@ function AddToSession($EventID, $Amount)
     else {
         foreach ($events as $event) {
             $cart = array('EventID' => $EventID, 'EventName' => $event->getEventName(),
-                'ProductName' => $event->getProductName(), 'StartTime' => $event->getStartTime(), 'Price' => $event->getPrice(), 'Amount' => $Amount);
+                'ProductName' => $event->getProductName(), 'StartTime' => $event->getStartTime(), 'Price' => $event->getPrice(), 'Btw' => $event->getBtw(),  'Amount' => $Amount);
 
         }
     }
 
     $_SESSION['Products'][$EventID] = $cart;
 }
+
 ?>

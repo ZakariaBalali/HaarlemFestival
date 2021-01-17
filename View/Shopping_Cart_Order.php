@@ -1,6 +1,7 @@
 <?php
 // Start the session
 session_start();
+
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -15,82 +16,81 @@ session_start();
 </head>
 
 <body>
-    <section class="Banner">
-        <section class="leftBanner">
-            <img class="logoImage" src="images/logo.png">
-            <h1 class="Title">Haarlem Festival</h1>
-        </section>
-        <section class="rightBanner">
-            <h1 class="Date">26-29 July 2021</h1>
-        </section>
+<section class="Banner">
+    <section class="leftBanner">
+        <img class="logoImage" src="images/logo.png">
+        <h1 class="Title">Haarlem Festival</h1>
     </section>
-    <section class="NavigationBar">
-        <a href="Homepage.php">Home</a>
-        <a href="Dance_Main.php">Dance</a>
-        <a href="Food_Main.php">Food</a>
-        <a href="Jazz_Main.php">Jazz</a>
-        <a href="Historic_Main.php">Historic</a>
-        <a href="Program_Main.php">Program</a>
-        <a class="active" href="Shopping_Cart.php"><img src="images/icon_shoppingcart_active.png"></a>
+    <section class="rightBanner">
+        <h1 class="Date">26-29 July 2021</h1>
     </section>
+</section>
+<section class="NavigationBar">
+    <a href="Homepage.php">Home</a>
+    <a href="Dance_Main.php">Dance</a>
+    <a href="Food_Main.php">Food</a>
+    <a href="Jazz_Main.php">Jazz</a>
+    <a href="Historic_Main.php">Historic</a>
+    <a href="Program_Main.php">Program</a>
+    <a class="active" href="Shopping_Cart.php"><img src="images/icon_shoppingcart_active.png"></a>
+</section>
 
 
-    <section id="containerTop">
-        <?php  if (isset($_SESSION['OrderID'])) { ?>
-        <img id="checkmark" src="images/checkmark.png">
-        <strong id="SuccesText">Succesfull payment</strong>
-        <strong id="Text1">Thank you, your payment has been succesfull.</strong>
-        <strong id="Text2">A confirmation e-mail has been sent to</strong>
-        <?php foreach($_SESSION['Customer'] as $item) {
+<section id="containerTop">
+    <?php if (isset($_SESSION['OrderID'])) { ?>
+    <img id="checkmark" src="images/checkmark.png">
+    <strong id="SuccesText">Succesfull payment</strong>
+    <strong id="Text1">Thank you, your payment has been succesfull.</strong>
+    <strong id="Text2">A confirmation e-mail has been sent to</strong>
+    <?php foreach ($_SESSION['Customer'] as $item) {
 
-        ?>
-        <strong id="Text3"><?php echo $item['Email']; ?></strong>
-    </section>
+    ?>
+    <strong id="Text3"><?php echo $item['Email']; ?></strong>
+</section>
 
-    <section>
-
-
-
-        <h1 id="header">Order Details</h1>
-        <hr>
-        <p id="Text4">
-            <span><strong>Order number:</strong></span>
-            <span><?php  echo $_SESSION["OrderID"] ?></span>
-        </p>
-
-        <p id="Text5">
-            <span><strong id>Order date:</strong></span>
-            <span><?php echo date('M d , Y');?></span>
-        </p>
-
-        <p id="Text6">
-            <span><strong id>Name:</strong></span>
-            <span><?php echo $item['FirstName'];?> <?php echo $item['LastName'];?></span>
-        </p>
-
-        <p id="Text7">
-            <span><strong id>Email:</strong></span>
-            <span><?php echo $item['Email']; }?></span>
-        </p>
-
-        <form action="PDF.php" method="post">
-            <input style="display: none" class="valueOrder" name="orderID" type="text"
-                   value="<?php echo $_SESSION["OrderID"] ?>"/>
-            <button id="pdf" type="submit">
-                Download PDF
-            </button>
-        </form>
+<section>
 
 
-        <button id="BackHome" onclick="document.location='Homepage.php'">
-            Back to festival
+    <h1 id="header">Order Details</h1>
+    <hr>
+    <p id="Text4">
+        <span><strong>Order number:</strong></span>
+        <span><?php echo $_SESSION["OrderID"] ?></span>
+    </p>
+
+    <p id="Text5">
+        <span><strong id>Order date:</strong></span>
+        <span><?php echo date('M d , Y'); ?></span>
+    </p>
+
+    <p id="Text6">
+        <span><strong id>Name:</strong></span>
+        <span><?php echo $item['FirstName']; ?><?php echo $item['LastName']; ?></span>
+    </p>
+
+    <p id="Text7">
+        <span><strong id>Email:</strong></span>
+        <span><?php echo $item['Email'];
+            } ?></span>
+    </p>
+
+    <form action="PDF.php" method="post">
+        <input style="display: none" class="valueOrder" name="orderID" type="text"
+               value="<?php echo $_SESSION["OrderID"] ?>"/>
+        <button id="pdf" type="submit">
+            Download PDF
         </button>
-        <?php }
-        else{
-            ?><label class= "Text8" id="Text8">How did you get here? </label> <?php
-        }?>
-    </section>
+    </form>
 
+
+    <button id="BackHome" onclick="document.location='Homepage.php'">
+        Back to festival
+    </button>
+    <?php }
+    else {
+        ?><label class="Text8" id="Text8">How did you get here? </label> <?php
+    } ?>
+</section>
 
 
 <?php
