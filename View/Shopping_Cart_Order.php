@@ -34,7 +34,9 @@ session_start();
         <a class="active" href="Shopping_Cart.php"><img src="images/icon_shoppingcart_active.png"></a>
     </section>
 
+
     <section id="containerTop">
+        <?php  if (isset($_SESSION['OrderID'])) { ?>
         <img id="checkmark" src="images/checkmark.png">
         <strong id="SuccesText">Succesfull payment</strong>
         <strong id="Text1">Thank you, your payment has been succesfull.</strong>
@@ -83,10 +85,20 @@ session_start();
         <button id="BackHome" onclick="document.location='Homepage.php'">
             Back to festival
         </button>
+        <?php }
+        else{
+            ?><label class= "Text8" id="Text8">How did you get here? </label> <?php
+        }?>
     </section>
 
 
 
+<?php
+// Unset all of the session variables.
+$_SESSION = array();
+// Finally, destroy the session.
+session_destroy();
 
+?>
 
 </body>
