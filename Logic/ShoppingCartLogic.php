@@ -3,6 +3,10 @@ require_once dirname(__FILE__) . '/../DAL/EventDAL.php';
 require('../Model/Historic.php');
 require('HistoricLogic.php');
 $historicLogic = new HistoricLogic();
+
+require('../Model/Food.php');
+require('FoodLogic.php');
+$food = new Food();
 session_start();
 
 
@@ -23,6 +27,25 @@ if (isset($_POST['AddToShoppingCartHistoric'])) {
     //historic($_POST["selectDate"], $_POST["selectTime"], $_POST["language"], $_POST["normalTicketAmount"], $_POST["familyTicketAmount"]);
     CheckAmountFor2Tickets($_POST["normalTicketAmount"], $normalTicket->getEvent_ID(), $_POST["familyTicketAmount"], $familyTicket->getEvent_ID());
     header('Location: ../View/Shopping_Cart.php');
+}
+
+// Food isset
+if (isset($_POST['AddToShoppingCartFood'])) {
+    $TicketID = $_POST["time"];
+    $TicketID = $food->getEvent_ID();
+    CheckAmountForFoodTickets($TicketID, $_POST["amountAdultTicket"], $_POST["amountChildTicket"]);
+    header('Location: ../View/Shopping_Cart.php');
+}
+
+// Check for food tickets
+function CheckAmountForFoodTickets($ReservationID, $amountAdultTicket, $amountChildTicket)
+{
+    if ($amountAdultTicket > 0) {
+        AddToSession($ReservationID, $amountAdultTicket);
+    }
+    if ($amountChildTicket > 0) {
+        AddToSession($ReservationID, $amountChildTicket);
+    }
 }
 
 //Check amount of the tickets and calls add to session function when the amount is more than one
