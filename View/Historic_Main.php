@@ -161,7 +161,7 @@ require_once '../Logic/HistoricLogic.php';
         echo "<br>";
         echo "<span style='color:black;font-size: 5em;'>".$_COOKIE["language"]."</span>";
 
-        $historicTour = (array)$historicLogic->GetAllHistoricTour($_COOKIE["day"], $endDay, $_COOKIE["language"]);
+        $historicTour = (array)$historicLogic->GetProgramByDayAndLanguage($_COOKIE["day"], $endDay, $_COOKIE["language"]);
 
         ?>
         <table class="programTable" id=programTable>
