@@ -85,11 +85,11 @@ session_start()
             </div>
 
             <div class="container5">
-                <strong id="span5">&euro;<?php echo($amount * 0.91) ?></strong>
-                <strong id="span5">&euro;<?php echo($amount * 0.09) ?></strong>
+                <strong id="span5">&euro;<?php echo number_format(($amount * 0.91), 2, '.', '') ?></strong>
+                <strong id="span5">&euro;<?php echo number_format(($amount * 0.09), 2, '.', '') ?></strong>
             </div>
         </div>
-        <p id="p1">Total (incl. Tax): &euro;<?php echo $amount ?></p>
+        <p id="p1">Total (incl. Tax): &euro;<?php echo number_format($amount, 2, '.', '') ?></p>
 
         <button id="ConfirmButton" name="ConfirmButton" form="GoToPayment" id="GoToPayment">
             Confirm order
