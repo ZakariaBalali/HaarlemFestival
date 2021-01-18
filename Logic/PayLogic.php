@@ -67,7 +67,7 @@ function CallMollieAPI()
 
         ],
         "description" => "$description",
-        "redirectUrl" => "http://chocomel.infhaarlem.nl/View/Shopping_Cart_Order.php",
+        "redirectUrl" => "http://chocomel.infhaarlem.nl/View/MakePdf.php",
         "webhookUrl" => "http://chocomel.infhaarlem.nl/Logic/Webhook.php",
 
     ]);

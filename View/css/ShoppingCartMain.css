@@ -51,8 +51,9 @@
 }
 #Ordertable{
     float: left;
+    position: absolute;
     margin-top: 6.25rem;
-    margin-left: 24rem;
+    margin-left: 83.3rem;
     margin-right: 12.5rem;
     border-color: black;
     border: 0.125rem solid #000000;

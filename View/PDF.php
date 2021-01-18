@@ -59,13 +59,13 @@ if (!file_exists($pngAbsoluteFilePath)) {
 // displaying
 $pdf->Image($urlRelativeFilePath, null, null, 50, 50);
 $pdf->Cell(0,10,($customer->getFirstName() . ' ' .$customer->getLastName() . $codeContents),0,1,'L');
-
 }
 
 
 
 $pdf->output();
-  
+
+
 
 
 
