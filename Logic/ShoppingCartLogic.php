@@ -95,7 +95,12 @@ function CheckAmountFor2Tickets($amountNormalTicket, $normalTicketID, $amountFam
 //Adds The item to a session
 function AddToSession($EventID, $Amount)
 {
-
+    if(isset($_POST['comments'])){
+        $comment = $_POST['comments'];
+    }
+    else{
+        $comment = "none";
+    }
     $eventDAL = new EventDAL();
     $events = (array)$eventDAL->GetEventByID($EventID);
     //If there isn't a session, make one and add to it
@@ -103,7 +108,7 @@ function AddToSession($EventID, $Amount)
         foreach ($events as $event) {
             $_SESSION['products'] = array();
             $cart = array('EventID' => $EventID, 'EventName' => $event->getEventName(),
-                'ProductName' => $event->getProductName(), 'StartTime' => $event->getStartTime(), 'Price' => $event->getPrice(), 'Btw' => $event->getBtw(), 'Amount' => $Amount);
+                'ProductName' => $event->getProductName(), 'StartTime' => $event->getStartTime(), 'Price' => $event->getPrice(), 'Btw' => $event->getBtw(), 'Amount' => $Amount, 'Comment' => $comment);
 
         }
 
@@ -117,7 +122,7 @@ function AddToSession($EventID, $Amount)
         }
         foreach ($events as $event) {
             $cart = array('EventID' => $EventID, 'EventName' => $event->getEventName(),
-                'ProductName' => $event->getProductName(), 'StartTime' => $event->getStartTime(), 'Price' => $event->getPrice(), 'Btw' => $event->getBtw(),  'Amount' => $Amount);
+                'ProductName' => $event->getProductName(), 'StartTime' => $event->getStartTime(), 'Price' => $event->getPrice(), 'Btw' => $event->getBtw(),  'Amount' => $Amount,'Comment' => $comment);
 
         }
     }
