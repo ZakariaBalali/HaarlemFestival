@@ -69,42 +69,6 @@ require_once '../Logic/HistoricLogic.php';
 
 <section class="MainContent">
 
-    <!-- <section id="popupAddedTicket" class="popupAddedTicket">
-        <section class="popup-content">
-
-            <section class="popup-header">
-                <img src="images/icon_successfull.png">
-                <h1>Item(s) added to Shopping cart</h1>
-            </section>
-            <section class="popup-body">
-                <table class="addedTickets">
-                    <tr>
-                        <th>Amount</th>
-                        <th>Title</th>
-                        <th>Date</th>
-                        <th>Timeslot</th>
-                        <th>Price</th>
-                    </tr>
-                    <tr class="tableContent">
-                        <th>1x</th>
-                        <th>Historic English</th>
-                        <th>Sat Jul 28th</th>
-                        <th>13:00-15:00</th>
-                        <th>€17,50</th>
-                    </tr>
-                </table>
-            </section>
-            <section class="popup-footer">
-                <button class="closeButton" id="closeButton">Continue Shopping</button>
-                <button onclick="window.location.href='Program_Main.php';" class="programButton">View in Program
-                </button>
-                <button onclick="window.location.href='Shopping_Cart.php';" class="shoppingCartButton">To Shopping
-                    cart
-                </button>
-            </section>
-        </section>
-    </section> -->
-
     <section class=eventName>
         <h2>Haarlem Historic tour</h2>
     </section>
@@ -327,10 +291,6 @@ require_once '../Logic/HistoricLogic.php';
                     <option name="time" value='13:00:00'>13:00</option>
                     <option name="time" value='16:00:00'>16:00</option>       
                 </select>
-                <?php
-                    // $Tickets = (array)$historicLogic->GetTicketByDay($_POST["selectDate"] . ' ' . $_POST["selectTime"]);
-                    // var_dump($Tickets); 
-                ?>
                 <br><br>
                 <label class="selectLanguageText" for="selectLanguage">Select Language:</label>
                 <br>
@@ -387,10 +347,6 @@ require_once '../Logic/HistoricLogic.php';
                     </section>
                     <button id="cancelButton" onclick="closePopUp('popupBuyTicket')">Cancel</button>
                     <button id="addToCartButton" type="submit" name="AddToShoppingCartHistoric">Add to cart</button>
-                    <!-- <button id="addToCartButton" onclick="closePopUp('popupBuyTicket')">Add to cart</button> -->
-                    <!-- <script>
-                        modal('popupAddedTicket', 'addToCartButton', 'closeButton')
-                    </script> -->
                 </section>
             </section>
         </section>
