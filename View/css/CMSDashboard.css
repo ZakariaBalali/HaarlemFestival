@@ -1,0 +1,56 @@
+#welcome {
+    font-size: 2.75rem;
+    font-family: Segoe UI;
+    margin-left: 0.8rem;
+}
+
+.turnover {
+    margin-left: 2.4rem;
+    font-size: 1.5rem;
+    font-family: arial;
+    border: 0.05rem solid black;
+    width: 80%;
+    height: 50%;
+    padding-left: 0.8rem;
+    padding-top: 0.8rem;
+}
+
+#turnoverTitle {
+    font-family: 'Segoe UI';
+    font-size: 1.75rem;
+    margin-left: 0.6rem;
+}
+
+.datePick {
+    font-size: 1.5rem;
+    margin-left: 0.8rem;
+    margin-top: 0.5em;
+}
+
+.datePicker {
+    font-size: 1.25rem;
+}
+
+.infoBoxes {
+    margin-left: 0.8rem;
+    margin-top: 1.6rem;
+}
+
+.infoBox {
+    font-family: arial;
+    font-size: 1.25rem;
+    float: left;
+    width: 20rem;
+    padding: 0.5rem;
+    border: 0.1rem solid black;
+    background-color: white;
+}
+
+#details {
+    width: 12rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    background-color: white;
+    margin-left: 39.64rem;
+    margin-top: 1.2rem;
+}

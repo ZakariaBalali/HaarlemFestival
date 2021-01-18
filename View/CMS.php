@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>CMS</title>
     <link href="css/CMS.css" rel="stylesheet" type="text/css">
+    <link href="css/CMSDashboard.css" rel="stylesheet" type="text/css">
 </head>
 
 <section class="topBanner">
