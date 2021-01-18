@@ -12,7 +12,7 @@ if (isset($_POST['plusSession'])) {
 }
 
 if (isset($_POST['minusSession'])) {
-    if ($_SESSION["Products"][$EventID]['Amount'] > 0) {
+    if ($_SESSION["Products"][$EventID]['Amount'] > 1) {
         $_SESSION["Products"][$EventID]['Amount'] -= 1; // Add this
     }
     header('Location: ../View/Shopping_Cart.php');
