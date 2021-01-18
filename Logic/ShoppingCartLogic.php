@@ -9,13 +9,13 @@ require('FoodLogic.php');
 $foodLogic = new FoodLogic();
 session_start();
 
-
+// Music isset
 if (isset($_POST['AddToShoppingCartMusic'])) {
     CheckAmountFor3Tickets($_POST["amountArtist"], $_POST["artistID"], $_POST["amountAllAccessDay"], $_POST["allAccessDayID"], $_POST["amountAllAccessWeekend"], $_POST["allAccessWeekendID"]);
     header('Location: ../View/Shopping_Cart.php');
 }
 
-//historic
+// Historic isset
 if (isset($_POST['AddToShoppingCartHistoric'])) {
 
     if(!$_POST["normalTicketAmount"]=="" || !$_POST["familyTicketAmount"]==""){
@@ -37,17 +37,9 @@ if (isset($_POST['AddToShoppingCartHistoric'])) {
 
 
 // Food isset
-if (isset($_POST['AddToShoppingCartFood'])) {
-
-    //dit zijn test zinnen. hiermee kan je echo en kijken of de value komt enz. deze 3 values heb je nodig om het te kunne toevoegen aan shoppingcart. je hebt een id nodig die haal je om met getreservation. en aantal adults en aantal kinderen
-    echo "<span style='color:black;font-size: 5em;'>".$_POST["time"]."</span>";
-    echo "<span style='color:black;font-size: 5em;'>".$_POST["amountAdultTicket"]."</span>";
-    echo "<span style='color:black;font-size: 5em;'>". $_POST["amountChildTicket"]."</span>";
-
-    $reservation = $foodLogic->GetReservation("Restaurant Mr. & Mrs.", "2018-07-26 19:30:00");
-    echo print_r($reservation);
-    //$reservation = $foodLogic->GetReservation("Restaurant Mr. & Mrs.", $_POST["time"]);
-    //de bovenste zin werkt helemaal (is nu in comment omdat datum niet klopt die je ophaalt. het moet 2018 zijn), query klopt. alleen kan het fout gaan bij het ophalen van de tijdstippen omdat je nog de oude data erin hebt. nieuwe data heeft jaartal 2018 en je oude data is 2021
+if (isset($_POST['AddToShoppingCartFood'])) 
+{
+    $reservation = $foodLogic->GetReservation($_POST["restaurant"], $_POST["time"]);
     CheckAmountForFoodTickets($reservation->getEvent_ID(), $_POST["amountAdultTicket"], $_POST["amountChildTicket"]);
     header('Location: ../View/Shopping_Cart.php');
 }
