@@ -17,7 +17,7 @@ class HistoricDAL
     function GetProgramByDayAndLanguage($startDay, $endDay, $Language)
     {
         $sql = "SELECT E.Event_ID, E.ProductName, E.StartTime, E.EndTime, E.Price, E.Seats, H.Language FROM Event E INNER JOIN Event_Historic H ON E.Event_ID = H.Event_ID WHERE E.EventName = 'Historic' AND E.StartTime >= '" . $startDay . "' and E.StartTime <= '" . $endDay. "' AND H.Language = '" . $Language. "' AND E.ProductName = 'normal ticket' ORDER BY E.StartTime ASC";
-        $HistoricProgram = [];
+        $historicProgram = [];
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
@@ -31,9 +31,9 @@ class HistoricDAL
                 $Price = $row["Price"];
 
                 $Historic = new Historic($Event_ID, $Language, $ProductName, $StartTime, $EndTime, $Seats, $Price);
-                $HistoricProgram[] = $Historic;
+                $historicProgram[] = $Historic;
             }
-            return $HistoricProgram;
+            return $historicProgram;
 
         } else {
             echo 'No Historic tour found';
@@ -43,7 +43,7 @@ class HistoricDAL
     function GetAllHistoricTours()
     {
         $sql = "SELECT E.Event_ID, E.ProductName, E.StartTime, E.EndTime, E.Price, E.Seats, H.Language FROM Event E INNER JOIN Event_Historic H ON E.Event_ID = H.Event_ID WHERE E.EventName = 'Historic' AND E.ProductName = 'normal ticket' ORDER BY E.StartTime ASC";
-        $HistoricProgram = [];
+        $historicProgram = [];
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
@@ -56,10 +56,10 @@ class HistoricDAL
                 $Seats = $row["Seats"];
                 $Price = $row["Price"];
 
-                $Historic = new Historic($Event_ID, $Language, $ProductName, $StartTime, $EndTime, $Seats, $Price);
-                $HistoricProgram[] = $Historic;
+                $historicTour = new Historic($Event_ID, $Language, $ProductName, $StartTime, $EndTime, $Seats, $Price);
+                $historicProgram[] = $historicTour;
             }
-            return $HistoricProgram;
+            return $historicProgram;
 
         } else {
             echo 'No Historic tour found';
@@ -69,7 +69,7 @@ class HistoricDAL
     function GetProgramByDay($startDay, $endDay)
     {
         $sql = "SELECT E.Event_ID, E.ProductName, E.StartTime, E.EndTime, E.Price, E.Seats, H.Language FROM Event E INNER JOIN Event_Historic H ON E.Event_ID = H.Event_ID WHERE E.EventName = 'Historic' AND E.StartTime >= '" . $startDay . "' and E.StartTime <= '" . $endDay. "' AND E.ProductName = 'normal ticket' ORDER BY E.StartTime ASC";
-        $HistoricProgram = [];
+        $historicProgram = [];
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
@@ -82,10 +82,10 @@ class HistoricDAL
                 $Seats = $row["Seats"];
                 $Price = $row["Price"];
 
-                $Historic = new Historic($Event_ID, $Language, $ProductName, $StartTime, $EndTime, $Seats, $Price);
-                $HistoricProgram[] = $Historic;
+                $historicTour = new Historic($Event_ID, $Language, $ProductName, $StartTime, $EndTime, $Seats, $Price);
+                $historicProgram[] = $historicTour;
             }
-            return $HistoricProgram;
+            return $historicProgram;
 
         } else {
             echo 'No Historic tour found';
@@ -106,9 +106,9 @@ class HistoricDAL
                 $Seats = $row["Seats"];
                 $Price = $row["Price"];
 
-                $Historic = new Historic($Event_ID, $Language, $ProductName, $StartTime, $EndTime, $Seats, $Price);
+                $historicTour = new Historic($Event_ID, $Language, $ProductName, $StartTime, $EndTime, $Seats, $Price);
             }
-            return $Historic;
+            return $historicTour;
 
         } else {
             echo 'No ticket found';
@@ -130,9 +130,9 @@ class HistoricDAL
                 $Seats = $row["Seats"];
                 $Price = $row["Price"];
 
-                $Historic = new Historic($Event_ID, $Language, $ProductName, $StartTime, $EndTime, $Seats, $Price);
+                $historicTour = new Historic($Event_ID, $Language, $ProductName, $StartTime, $EndTime, $Seats, $Price);
             }
-            return $Historic;
+            return $historicTour;
 
         } else {
             echo 'No ticket found';
