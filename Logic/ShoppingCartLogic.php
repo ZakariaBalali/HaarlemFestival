@@ -31,8 +31,8 @@ if (isset($_POST['AddToShoppingCartHistoric'])) {
     else{
         //return back to previous page
         header('Location: ' . $_SERVER['HTTP_REFERER']);
-        exit;      
-    }   
+        exit;
+    }
 }
 
 
@@ -109,6 +109,12 @@ function AddToSession($EventID, $Amount)
 
     } //Use existing session to add to
     else {
+        //checks if item has already been added
+        foreach ($_SESSION['Products'] as $Product) {
+            if ($Product['EventID'] == $EventID) {
+                $Amount += $Product['Amount'];
+            }
+        }
         foreach ($events as $event) {
             $cart = array('EventID' => $EventID, 'EventName' => $event->getEventName(),
                 'ProductName' => $event->getProductName(), 'StartTime' => $event->getStartTime(), 'Price' => $event->getPrice(), 'Btw' => $event->getBtw(),  'Amount' => $Amount);
