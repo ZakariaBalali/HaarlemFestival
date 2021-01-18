@@ -87,7 +87,7 @@ session_start()
                     <section id="ticketBoxRight">
                         <p id="ticketTitle"><?php echo $item['ProductName']; echo "\r\n";?></p>
                         <p id="ticketDate">Date: <?php echo $timeFormat = date('D d F ', strtotime($item['StartTime'])); ?></p>
-                        <p id="ticetTimeSlot"> StartTime: <?php echo $timeFormat = date('H:i', strtotime($item['StartTime'])); ?></p>
+                        <p id="ticetTimeSlot"> Start Time: <?php echo $timeFormat = date('H:i', strtotime($item['StartTime'])); ?></p>
                     </section>
                 </section>
             </ul>
