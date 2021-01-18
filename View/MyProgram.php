@@ -73,7 +73,7 @@ session_start()
     <?php foreach ($_SESSION['Products'] as $item){?>
             <ul>
                 <section id="<?php echo $timeFormat = date('D', strtotime($item['StartTime'])); ?>" name = "<?php echo $item['EventName']?>" class="box <?php echo $item['EventName']; echo "\r\n"; echo $timeFormat = date('D', strtotime($item['StartTime'])); ?>">
-                    <section id="eventBox">
+                    <section class="<?php echo $item['EventName']?>" id="eventBox">
                         <p id= eventName>Haarlem <?php echo $item['EventName']?></p>
                     </section>
                     <section id="ticketBoxLeft">

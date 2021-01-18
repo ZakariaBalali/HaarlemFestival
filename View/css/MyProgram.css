@@ -150,13 +150,45 @@ body{
     /* background-color: #E11B3B; */
     float: left;
 }
+
+.Dance{
+
+}
 #eventBox{
-    top:-5;
     bottom: 5em;
     width: 13em;
     height: 1.5em;
     background-color: blue;
 }
+
+#eventBox.Jazz{
+    bottom: 5em;
+    width: 13em;
+    height: 1.5em;
+    background-color: #1E87FF;
+}
+
+#eventBox.Dance{
+    bottom: 5em;
+    width: 13em;
+    height: 1.5em;
+    background-color: #DF2136;
+}
+
+#eventBox.Food{
+    bottom: 5em;
+    width: 13em;
+    height: 1.5em;
+    background-color: #FF9130;
+}
+
+#eventBox.Historic{
+    bottom: 5em;
+    width: 13em;
+    height: 1.5em;
+    background-color: #4F944F;
+}
+
 
 #ticketBoxLeft{
     bottom: 5em;
