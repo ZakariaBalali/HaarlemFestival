@@ -65,3 +65,15 @@
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
+
+#ReserveHeader{
+  color:black;
+}
+
+#FormLabel{
+  color:black;
+}
+
+#FormText{
+  color:black;
+}
