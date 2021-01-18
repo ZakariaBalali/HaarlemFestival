@@ -15,6 +15,10 @@ class OrderItemLogic
     {
         return $this->orderItemDAL->SetOrderItem($OrderID, $EventID, $Amount, $UnitPrice, $UnitBtw, $StartTime);
     }
+    function GetOrderItem($OrderID)
+    {
+        return $this->orderItemDAL->GetOrderItem($OrderID);
+    }
 
 
 }
