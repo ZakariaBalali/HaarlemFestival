@@ -4,32 +4,32 @@ require_once '../Logic/HistoricLogic.php';
 ?>
 <!DOCTYPE HTML>
 <?php
-        // cookie will expire when the browser close
-        if(isset($_GET['day'])){
-            $cookie_name = "day";
-            $cookie_value = $_GET['day'];
-            setcookie($cookie_name, $cookie_value);
-        }
-        else if(!isset($_GET['day'])){
-            if(!isset($_COOKIE["day"])) {
-                $cookie_name = "day";
-                $cookie_value = "2018-07-26 00:00:00";
-                setcookie($cookie_name, $cookie_value);
-            }
-        }
+        // // cookie will expire when the browser close
+        // if(isset($_GET['day'])){
+        //     $cookie_name = "day";
+        //     $cookie_value = $_GET['day'];
+        //     setcookie($cookie_name, $cookie_value);
+        // }
+        // else if(!isset($_GET['day'])){
+        //     if(!isset($_COOKIE["day"])) {
+        //         $cookie_name = "day";
+        //         $cookie_value = "2018-07-26 00:00:00";
+        //         setcookie($cookie_name, $cookie_value);
+        //     }
+        // }
 
-        if(isset($_GET['language'])){
-            $cookie_name = "language";
-            $cookie_value = $_GET['language'];
-            setcookie($cookie_name, $cookie_value);
-        }
-        else if(!isset($_GET['language'])){
-            if(!isset($_COOKIE["language"])) {
-                $cookie_name = "language";
-                $cookie_value = "english";
-                setcookie($cookie_name, $cookie_value);
-            }
-        }
+        // if(isset($_GET['language'])){
+        //     $cookie_name = "language";
+        //     $cookie_value = $_GET['language'];
+        //     setcookie($cookie_name, $cookie_value);
+        // }
+        // else if(!isset($_GET['language'])){
+        //     if(!isset($_COOKIE["language"])) {
+        //         $cookie_name = "language";
+        //         $cookie_value = "english";
+        //         setcookie($cookie_name, $cookie_value);
+        //     }
+        // }
     ?>
 <html>
 <head>
@@ -46,6 +46,7 @@ require_once '../Logic/HistoricLogic.php';
 <?php
     //creating new historic logic
     $historicLogic = new HistoricLogic();
+    $historicTour = (array)$historicLogic->GetAllHistoricTours();
 ?>
 <section class="Banner">
     <section class="leftBanner">
@@ -68,7 +69,7 @@ require_once '../Logic/HistoricLogic.php';
 
 <section class="MainContent">
 
-    <section id="popupAddedTicket" class="popupAddedTicket">
+    <!-- <section id="popupAddedTicket" class="popupAddedTicket">
         <section class="popup-content">
 
             <section class="popup-header">
@@ -102,7 +103,7 @@ require_once '../Logic/HistoricLogic.php';
                 </button>
             </section>
         </section>
-    </section>
+    </section> -->
 
     <section class=eventName>
         <h2>Haarlem Historic tour</h2>
@@ -135,51 +136,176 @@ require_once '../Logic/HistoricLogic.php';
             <p>We offer multiple programs. The tours will be in Dutch, English or Chinese. All tours start at the St. Bavo. (Note that some days do not include all different languages).<br><br>The price of a normal ticket is €17,50 euros.<br>The price of a family ticket is €60 euros. A family ticket is for 4 persons and is 14% cheaper than a normal ticket.<br>Reservation is mandatory</p>
         </section>
         <p id="programQuestion"><br>Select a day and language to see the program</p>
-        <form method="get" action="">
-            <button id="button1" type="submit" name="day" value="2018-07-26 00:00:00">Thu 26 July</button>
-            <button id="button2" type="submit" name="day" value="2018-07-27 00:00:00">Fri 27 July</button>
-            <button id="button3" type="submit" name="day" value="2018-07-28 00:00:00">Sat 28 July</button>
-            <button id="button4" type="submit" name="day" value="2018-07-29 00:00:00">Sun 29 July</button>
-        </form>
-        <form method="get" action="">
-            <label class="radioButtonLanguage">
-                <input onchange='this.form.submit();' type="radio" id="english" name="language" value="english" checked>English
-            </label>
-            <label class="radioButtonLanguage">
-                <input onchange='this.form.submit();' type="radio" id="dutch" name="language" value="dutch">Dutch
-            </label>
-            <label class="radioButtonLanguage">
-                <input onchange='this.form.submit();' type="radio" id="chinese" name="language" value="chinese">Chinese
-            </label>
-        </form>
-        <?php
-        $endDay = date('Y-m-d H:i:s', strtotime($_COOKIE["day"].'+ 1 days'));
-        //echo voor testen van cookies
-        echo "<span style='color:black;font-size: 5em;'>".$_COOKIE["day"]."</span>";
-        echo "<br>";
-        echo "<span style='color:black;font-size: 5em;'>".$endDay."</span>";
-        echo "<br>";
-        echo "<span style='color:black;font-size: 5em;'>".$_COOKIE["language"]."</span>";
+        <button id="button26th" name="day" value="2018-07-26 00:00:00" onclick="buttonClick(this.id)" selected>Thu 26 July</button>
+        <button id="button27th" name="day" value="2018-07-27 00:00:00" onclick="buttonClick(this.id)">Fri 27 July</button>
+        <button id="button28th" name="day" value="2018-07-28 00:00:00" onclick="buttonClick(this.id)">Sat 28 July</button>
+        <button id="button29th" name="day" value="2018-07-29 00:00:00" onclick="buttonClick(this.id)">Sun 29 July</button>
+        <br>
+        <label class="radioButtonLanguage">
+            <input onchange="radioButtonClick(this.id)" type="radio" id="btnEnglish" name="language" value="english" checked>English
+        </label>
+        <label class="radioButtonLanguage">
+            <input onchange="radioButtonClick(this.id)" type="radio" id="btnDutch" name="language" value="dutch">Dutch
+        </label>
+        <label class="radioButtonLanguage">
+            <input onchange="radioButtonClick(this.id)" type="radio" id="btnChinese" name="language" value="chinese">Chinese
+        </label>
 
-        $historicTour = (array)$historicLogic->GetProgramByDayAndLanguage($_COOKIE["day"], $endDay, $_COOKIE["language"]);
+        <!-- program 26th  -->    
+        <table class= "programTable" id="historicThursdayEnglish">
+            <tr><th>Time</th><th>Language</th><th>Seats left</th></tr>
+            <?php 
+                foreach ($historicTour as $tour) {
+                    if($tour->getEvent()->getStartTime()>="2018-07-26 00:00:00" && $tour->getEvent()->getEndTime()<="2018-07-27 00:00:00" && $tour->getLanguage()=="english"){?>
+                        <tr>
+                            <td> <?php echo $timeFormat = date('H:i', strtotime($tour->getEvent()->getStartTime())); ?> </td>
+                            <td> <?php echo $tour->getLanguage() ?> </td>
+                            <td> <?php echo $tour->getEvent()->getSeats() ?> </td>
+                        </tr>
+            <?php }}?>
+        </table>
+        <table class= "programTable" id="historicThursdayDutch">
+            <tr><th>Time</th><th>Language</th><th>Seats left</th></tr>
+            <?php 
+                foreach ($historicTour as $tour) {
+                    if($tour->getEvent()->getStartTime()>="2018-07-26 00:00:00" && $tour->getEvent()->getEndTime()<="2018-07-27 00:00:00" && $tour->getLanguage()=="dutch"){?>
+                        <tr>
+                            <td> <?php echo $timeFormat = date('H:i', strtotime($tour->getEvent()->getStartTime())); ?> </td>
+                            <td> <?php echo $tour->getLanguage() ?> </td>
+                            <td> <?php echo $tour->getEvent()->getSeats() ?> </td>
+                        </tr>
+            <?php }} ?>
+        </table>
+        <table class= "programTable" id="historicThursdayChinese">
+            <tr><th>Time</th><th>Language</th><th>Seats left</th></tr>
+            <?php 
+                foreach ($historicTour as $tour) {
+                    if($tour->getEvent()->getStartTime()>="2018-07-26 00:00:00" && $tour->getEvent()->getEndTime()<="2018-07-27 00:00:00" && $tour->getLanguage()=="chinese"){?>
+                        <tr>
+                            <td> <?php echo $timeFormat = date('H:i', strtotime($tour->getEvent()->getStartTime())); ?> </td>
+                            <td> <?php echo $tour->getLanguage() ?> </td>
+                            <td> <?php echo $tour->getEvent()->getSeats() ?> </td>
+                        </tr>
+            <?php }} ?>
+        </table>
 
-        ?>
-        <table class="programTable" id=programTable>
-            <tr>
-                <th>Time</th>
-                <th>Language</th>
-                <th>Seats left</th>
-            </tr>
-            <?php foreach ($historicTour as $tour) { ?>
-            <tr>
-                <td> <?php echo $timeFormat = date('H:i', strtotime($tour->getEvent()->getStartTime())); ?> </td>
-                <td> <?php echo $tour->getLanguage() ?> </td>
-                <td> <?php echo $tour->getEvent()->getSeats() ?> </td>
-            </tr>
-            <?php } ?>
+        <!-- program 27th  -->    
+        <table class= "programTable" id="historicFridayEnglish">
+            <tr><th>Time</th><th>Language</th><th>Seats left</th></tr>
+            <?php 
+                foreach ($historicTour as $tour) {
+                    if($tour->getEvent()->getStartTime()>="2018-07-27 00:00:00" && $tour->getEvent()->getEndTime()<="2018-07-28 00:00:00" && $tour->getLanguage()=="english"){?>
+                        <tr>
+                            <td> <?php echo $timeFormat = date('H:i', strtotime($tour->getEvent()->getStartTime())); ?> </td>
+                            <td> <?php echo $tour->getLanguage() ?> </td>
+                            <td> <?php echo $tour->getEvent()->getSeats() ?> </td>
+                        </tr>
+            <?php }} ?>
+        </table>
+        <table class= "programTable" id="historicFridayDutch">
+            <tr><th>Time</th><th>Language</th><th>Seats left</th></tr>
+            <?php 
+                foreach ($historicTour as $tour) {
+                    if($tour->getEvent()->getStartTime()>="2018-07-27 00:00:00" && $tour->getEvent()->getEndTime()<="2018-07-28 00:00:00" && $tour->getLanguage()=="dutch"){?>
+                        <tr>
+                            <td> <?php echo $timeFormat = date('H:i', strtotime($tour->getEvent()->getStartTime())); ?> </td>
+                            <td> <?php echo $tour->getLanguage() ?> </td>
+                            <td> <?php echo $tour->getEvent()->getSeats() ?> </td>
+                        </tr>
+            <?php }} ?>
+        </table>
+        <table class= "programTable" id="historicFridayChinese">
+            <tr><th>Time</th><th>Language</th><th>Seats left</th></tr>
+            <?php 
+                foreach ($historicTour as $tour) {
+                    if($tour->getEvent()->getStartTime()>="2018-07-27 00:00:00" && $tour->getEvent()->getEndTime()<="2018-07-28 00:00:00" && $tour->getLanguage()=="chinese"){?>
+                        <tr>
+                            <td> <?php echo $timeFormat = date('H:i', strtotime($tour->getEvent()->getStartTime())); ?> </td>
+                            <td> <?php echo $tour->getLanguage() ?> </td>
+                            <td> <?php echo $tour->getEvent()->getSeats() ?> </td>
+                        </tr>
+            <?php }} ?>
+        </table>
+
+        <!-- program 28th  -->    
+        <table class= "programTable" id="historicSaturdayEnglish">
+            <tr><th>Time</th><th>Language</th><th>Seats left</th></tr>
+            <?php 
+                foreach ($historicTour as $tour) {
+                    if($tour->getEvent()->getStartTime()>="2018-07-28 00:00:00" && $tour->getEvent()->getEndTime()<="2018-07-29 00:00:00" && $tour->getLanguage()=="english"){?>
+                        <tr>
+                            <td> <?php echo $timeFormat = date('H:i', strtotime($tour->getEvent()->getStartTime())); ?> </td>
+                            <td> <?php echo $tour->getLanguage() ?> </td>
+                            <td> <?php echo $tour->getEvent()->getSeats() ?> </td>
+                        </tr>
+            <?php }} ?>
+        </table>
+        <table class= "programTable" id="historicSaturdayDutch">
+            <tr><th>Time</th><th>Language</th><th>Seats left</th></tr>
+            <?php 
+                foreach ($historicTour as $tour) {
+                    if($tour->getEvent()->getStartTime()>="2018-07-28 00:00:00" && $tour->getEvent()->getEndTime()<="2018-07-29 00:00:00" && $tour->getLanguage()=="dutch"){?>
+                        <tr>
+                            <td> <?php echo $timeFormat = date('H:i', strtotime($tour->getEvent()->getStartTime())); ?> </td>
+                            <td> <?php echo $tour->getLanguage() ?> </td>
+                            <td> <?php echo $tour->getEvent()->getSeats() ?> </td>
+                        </tr>
+            <?php }} ?>
+        </table>
+        <table class= "programTable" id="historicSaturdayChinese">
+            <tr><th>Time</th><th>Language</th><th>Seats left</th></tr>
+            <?php 
+                foreach ($historicTour as $tour) {
+                    if($tour->getEvent()->getStartTime()>="2018-07-28 00:00:00" && $tour->getEvent()->getEndTime()<="2018-07-29 00:00:00" && $tour->getLanguage()=="chinese"){?>
+                        <tr>
+                            <td> <?php echo $timeFormat = date('H:i', strtotime($tour->getEvent()->getStartTime())); ?> </td>
+                            <td> <?php echo $tour->getLanguage() ?> </td>
+                            <td> <?php echo $tour->getEvent()->getSeats() ?> </td>
+                        </tr>
+            <?php }} ?>
+        </table>
+
+        <!-- program 30th  -->    
+        <table class= "programTable" id="historicSundayEnglish">
+            <tr><th>Time</th><th>Language</th><th>Seats left</th></tr>
+            <?php 
+                foreach ($historicTour as $tour) {
+                    if($tour->getEvent()->getStartTime()>="2018-07-29 00:00:00" && $tour->getEvent()->getEndTime()<="2018-07-30 00:00:00" && $tour->getLanguage()=="english"){?>
+                        <tr>
+                            <td> <?php echo $timeFormat = date('H:i', strtotime($tour->getEvent()->getStartTime())); ?> </td>
+                            <td> <?php echo $tour->getLanguage() ?> </td>
+                            <td> <?php echo $tour->getEvent()->getSeats() ?> </td>
+                        </tr>
+            <?php }} ?>
+        </table>
+        <table class= "programTable" id="historicSundayDutch">
+            <tr><th>Time</th><th>Language</th><th>Seats left</th></tr>
+            <?php 
+                foreach ($historicTour as $tour) {
+                    if($tour->getEvent()->getStartTime()>="2018-07-29 00:00:00" && $tour->getEvent()->getEndTime()<="2018-07-30 00:00:00" && $tour->getLanguage()=="dutch"){?>
+                        <tr>
+                            <td> <?php echo $timeFormat = date('H:i', strtotime($tour->getEvent()->getStartTime())); ?> </td>
+                            <td> <?php echo $tour->getLanguage() ?> </td>
+                            <td> <?php echo $tour->getEvent()->getSeats() ?> </td>
+                        </tr>
+            <?php }} ?>
+        </table>
+        <table class= "programTable" id="historicSundayChinese">
+            <tr><th>Time</th><th>Language</th><th>Seats left</th></tr>
+            <?php 
+                foreach ($historicTour as $tour) {
+                    if($tour->getEvent()->getStartTime()>="2018-07-29 00:00:00" && $tour->getEvent()->getEndTime()<="2018-07-30 00:00:00" && $tour->getLanguage()=="chinese"){?>
+                        <tr>
+                            <td> <?php echo $timeFormat = date('H:i', strtotime($tour->getEvent()->getStartTime())); ?> </td>
+                            <td> <?php echo $tour->getLanguage() ?> </td>
+                            <td> <?php echo $tour->getEvent()->getSeats() ?> </td>
+                        </tr>
+            <?php }} ?>
         </table>
         <button id="buyButton" onclick="showPopUp('popupBuyTicket')">Get your tickets now!</button>
     </section>
+
+    <!-- TicketpopUp -->
     <form action="../Logic/ShoppingCartLogic.php" method="post" id="popupBuyTicket" class="popupBuyTicket">
         <section id="popupContent">
             <h1>Order your tickets for the historic event</h1>
@@ -231,26 +357,33 @@ require_once '../Logic/HistoricLogic.php';
                     <section id="normalTicket">
                         <h3>Normal Ticket</h3>
                         <p>€17,50</p>
-                        <select id="normalTicketAmount" name="normalTicketAmount">
-                            <option value="0" disabled selected>0</option>
-                            <option value='1'>1</option>
-                            <option value='2'>2</option>
-                            <option value='3'>3</option>       
+                        <p id=normalTicketEuroSign >€</p>
+                        <p id=normalTicketPrice>0,00</p>
+                        <select id="normalTicketAmount" name="normalTicketAmount" onchange="CalculateNormalTicket(this.value),CalculateTotalPrice()">
+                            <option value="0" selected>0</option>
+                            <?php 
+                            for ($i = 1; $i < 13; $i++) {?>
+                                <option value=<?php echo $i?>><?php echo $i ?></option>
+                            <?php } ?>     
                         </select>
                     </section>
                     <section id="familyTicket">
                         <h3>Family Ticket</h3>
                         <p>€60,00</p>
-                        <select id="familyTicketAmount" name="familyTicketAmount">
-                            <option value="0" disabled selected>0</option>
-                            <option value='1'>1</option>
-                            <option value='2'>2</option>
-                            <option value='3'>3</option>       
+                        <p id=familyTicketEuroSign >€</p>
+                        <p id=familyTicketPrice >0,00</p>
+                        <select id="familyTicketAmount" name="familyTicketAmount" onchange="CalculateFamilyTicket(this.value),CalculateTotalPrice()">
+                            <option value="0" selected>0</option>
+                            <?php 
+                            for ($i = 1; $i < 4; $i++) {?>
+                                <option value=<?php echo $i?>><?php echo $i ?></option>
+                            <?php } ?>
+                        </select>      
                         </select>
                         <h6>(4 participants)</h6>
                         <img src='images/historic/historic_discount_image.jpg' alt="14% discount" id="discountImage">
                         <h4>Total</h4>
-                        <p3 id="totalPriceTickets">€0,00</p3>
+                        <p3 id="totalPriceTickets">€ 0,00</p3>
                     </section>
                     <button id="cancelButton" onclick="closePopUp('popupBuyTicket')">Cancel</button>
                     <button id="addToCartButton" type="submit" name="AddToShoppingCartHistoric">Add to cart</button>
