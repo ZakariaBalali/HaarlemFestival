@@ -1165,13 +1165,6 @@ a {
     height: 6rem;
     margin-top: 1.2rem;
     margin-left: 1.7rem;
-}
-
-.AddToCartButton:hover {
-    background-color: #00408A;
-}
-
-.AddToCartButton label {
     font-size: 1.0625rem;
     font-family: "Segoe UI";
     text-align: center;
@@ -1180,6 +1173,12 @@ a {
     cursor: pointer;
     color: #FFFFFF;
 }
+
+.AddToCartButton:hover {
+    background-color: #00408A;
+}
+
+
 
 .AddToCartButton img {
     margin-top: 2.2rem;
