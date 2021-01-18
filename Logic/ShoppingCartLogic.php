@@ -6,7 +6,7 @@ $historicLogic = new HistoricLogic();
 
 require('../Model/Food.php');
 require('FoodLogic.php');
-$food = new Food();
+$foodLogic = new FoodLogic();
 session_start();
 
 
@@ -18,22 +18,37 @@ if (isset($_POST['AddToShoppingCartMusic'])) {
 //historic
 if (isset($_POST['AddToShoppingCartHistoric'])) {
 
-    // date and time merged
-    $dateTime = $_POST["selectDate"] . ' ' . $_POST["selectTime"];
+    if(!$_POST["normalTicketAmount"]=="" || !$_POST["familyTicketAmount"]==""){
+        // date and time merged
+        $dateTime = $_POST["selectDate"] . ' ' . $_POST["selectTime"];
 
-    //$ticketarray= $historicLogic->GetTicket($dateTime, $_POST["language"], "family ticket");
-    $normalTicket = $historicLogic->GetTicket($dateTime, $_POST["language"], "normal ticket");
-    $familyTicket = $historicLogic->GetTicket($dateTime, $_POST["language"], "family ticket");
-    //historic($_POST["selectDate"], $_POST["selectTime"], $_POST["language"], $_POST["normalTicketAmount"], $_POST["familyTicketAmount"]);
-    CheckAmountFor2Tickets($_POST["normalTicketAmount"], $normalTicket->getEvent_ID(), $_POST["familyTicketAmount"], $familyTicket->getEvent_ID());
-    header('Location: ../View/Shopping_Cart.php');
+        $normalTicket = $historicLogic->GetTicket($dateTime, $_POST["language"], "normal ticket");
+        $familyTicket = $historicLogic->GetTicket($dateTime, $_POST["language"], "family ticket");
+
+        CheckAmountFor2Tickets($_POST["normalTicketAmount"], $normalTicket->getEvent_ID(), $_POST["familyTicketAmount"], $familyTicket->getEvent_ID());
+        header('Location: ../View/Shopping_Cart.php');
+    }
+    else{
+        //return back to previous page
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        exit;      
+    }   
 }
+
 
 // Food isset
 if (isset($_POST['AddToShoppingCartFood'])) {
-    $TicketID = $_POST["time"];
-    $TicketID = $food->getEvent_ID();
-    CheckAmountForFoodTickets($TicketID, $_POST["amountAdultTicket"], $_POST["amountChildTicket"]);
+
+    //dit zijn test zinnen. hiermee kan je echo en kijken of de value komt enz. deze 3 values heb je nodig om het te kunne toevoegen aan shoppingcart. je hebt een id nodig die haal je om met getreservation. en aantal adults en aantal kinderen
+    echo "<span style='color:black;font-size: 5em;'>".$_POST["time"]."</span>";
+    echo "<span style='color:black;font-size: 5em;'>".$_POST["amountAdultTicket"]."</span>";
+    echo "<span style='color:black;font-size: 5em;'>". $_POST["amountChildTicket"]."</span>";
+
+    $reservation = $foodLogic->GetReservation("Restaurant Mr. & Mrs.", "2018-07-26 19:30:00");
+    echo print_r($reservation);
+    //$reservation = $foodLogic->GetReservation("Restaurant Mr. & Mrs.", $_POST["time"]);
+    //de bovenste zin werkt helemaal (is nu in comment omdat datum niet klopt die je ophaalt. het moet 2018 zijn), query klopt. alleen kan het fout gaan bij het ophalen van de tijdstippen omdat je nog de oude data erin hebt. nieuwe data heeft jaartal 2018 en je oude data is 2021
+    CheckAmountForFoodTickets($reservation->getEvent_ID(), $_POST["amountAdultTicket"], $_POST["amountChildTicket"]);
     header('Location: ../View/Shopping_Cart.php');
 }
 

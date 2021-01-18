@@ -20,4 +20,11 @@ class FoodLogic
     {
         return $this->foodDAL->GetAllFoodEvents();
     }
+
+    function GetReservation($restaurantName, $startTime)
+    {
+        return $this->foodDAL->GetReservation($restaurantName, $startTime);
+    }
+
+    
 }
