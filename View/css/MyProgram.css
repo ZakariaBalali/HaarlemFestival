@@ -2,6 +2,7 @@ body{
     background-color: darkgray;
     font-size: 2.1875rem;
     color: black;
+    width: 50em;
     overflow-x: hidden; /*horizontal*/
     overflow-y: scroll; /*vertical*/
 }
@@ -108,4 +109,135 @@ body{
 .dayFilter button:hover{
     background-color:#E11B3B;
     color: white;
+}
+#allButton{
+    background-color:#E11B3B;
+    color: white;
+}
+
+#button26th{
+    background-color:#FFFFFF;;
+    color: black;
+}
+
+#button27th{
+    background-color:#FFFFFF;;
+    color: black;
+}
+
+#button28th{
+    background-color:#FFFFFF;;
+    color: black;
+}
+
+#button29th{
+    background-color:#FFFFFF;;
+    color: black;
+}
+
+.dayFilter button:hover{
+    background-color:#E11B3B;
+    color: white;
+}
+
+.box{
+    position: relative;
+    height:8em;
+    width: 15em;
+    left: 5.5em;
+    top: -5em;
+    margin: 0.5em;
+    /* background-color: #E11B3B; */
+    float: left;
+}
+#eventBox{
+    top:-5;
+    bottom: 5em;
+    width: 13em;
+    height: 1.5em;
+    background-color: blue;
+}
+
+#ticketBoxLeft{
+    bottom: 5em;
+    width: 5em;
+    height: 6.5em;
+    background-color:white;
+    float: left;
+}
+
+#ticketBoxRight{
+    float: left;
+    bottom: 5em;
+    width: 8em;
+    height: 6.5em;
+    background-color:white;
+}
+#ticketTitle{
+    text-align: center;
+    margin-top: 0.7em;
+    font-size: 0.7em;
+    font-weight: bold;
+    color: black;
+}
+
+#ticketDate{
+    text-align: center;
+    margin-top: 1.2em;
+    font-size: 0.6em;
+    color: black;
+}
+
+#ticetTimeSlot{
+    text-align: center;
+    margin-top: 1.7em;
+    font-size: 0.6em;
+    color: black;
+}
+
+#eventName{
+    margin-top: 0em;
+    font-size: 1em;
+    text-align: center;
+}
+#ticketImage{
+    float: left;
+    margin: 0.2em;
+    margin-top: 1.3em;
+    width: 10rem;
+    height: 8rem;
+}
+#warning{
+    text-align: center;
+}
+.Historic{
+    display: block;
+}
+.Dance{
+    display: block;
+}
+.box.Combi.Dance{
+    display: block;
+}
+.box.Combi.Jazz{
+    display: block;
+}
+.Jazz{
+    display: block;
+}
+.Food{
+    display: block;
+}
+
+#Thu{
+    display: block;
+}
+#Fri{
+    display: block;
+}
+#Sat{
+    display: block;
+}
+#Sun{
+    display: block;
 }
