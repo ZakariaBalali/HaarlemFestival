@@ -87,6 +87,7 @@ function CheckAmountFor2Tickets($amountNormalTicket, $normalTicketID, $amountFam
 //Adds The item to a session
 function AddToSession($EventID, $Amount)
 {
+    //Checks if there is a comment
     if(isset($_POST['comments'])){
         $comment = $_POST['comments'];
     }
