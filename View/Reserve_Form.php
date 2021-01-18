@@ -39,17 +39,17 @@ foreach ($FoodEvents as $food) {
     <h1>Reserve</h1>
 
     <label for="date"><b>Date:</b></label>
-    <select>
-      <option name="date" value="" disabled selected hidden></option>
-      <option name="date" value="26 July">26 July</option>
-      <option name="date" value="27 July">27 July</option>
-      <option name="date" value="28 July">28 July</option>
-      <option name="date" value="29 July">29 July</option>
+    <select name= "date">
+      <option value="" disabled selected hidden></option>
+      <option value="26 July">26 July</option>
+      <option value="27 July">27 July</option>
+      <option value="28 July">28 July</option>
+      <option value="29 July">29 July</option>
     </select>
 
     <!-- Trying to print array starttimes to drop down options -->
     <label for="time"><b>Time:</b></label>
-    <select>
+    <select name=time>
       <?php
 
 
@@ -60,7 +60,7 @@ foreach ($FoodEvents as $food) {
       $foodLogic = new FoodLogic();
       $FoodEvents = (array)$foodLogic->GetFoodTimes("Reservation Restaurant Mr. & Mrs.");
       foreach($FoodEvents as $food){
-          ?><option name="time"><?php echo $food->getEvent()->getStartTime() ?></option>;<?php
+          ?><option value="<?php echo $food->getEvent()->getStartTime() ?>"><?php echo $food->getEvent()->getStartTime() ?></option>;<?php
       }
       ?>
     </select>
@@ -73,27 +73,27 @@ foreach ($FoodEvents as $food) {
       // } -->
 
     <label for="adults"><b>Adults:</b></label>
-    <select>
-      <option name="amountAdultTicket" value="" disabled selected hidden></option>
-      <option name="amountAdultTicket" value="1">1</option>
-      <option name="amountAdultTicket" value="2">2</option>
-      <option name="amountAdultTicket" value="3">3</option>
-      <option name="amountAdultTicket" value="4">4</option>
-      <option name="amountAdultTicket" value="5">5</option>
-      <option name="amountAdultTicket" value="6">6</option>
-      <option name="amountAdultTicket" value="7">7</option>
+    <select name="amountAdultTicket">
+      <option value="" disabled selected hidden></option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
     </select>
 
     <label for="children"><b>Children:</b></label>
     <select name="amountChildTicket" type="number">
-      <option name="amountChildTicket" value="" disabled selected hidden></option>
-      <option name="amountChildTicket" value="1">1</option>
-      <option name="amountChildTicket" value="2">2</option>
-      <option name="amountChildTicket" value="3">3</option>
-      <option name="amountChildTicket" value="4">4</option>
-      <option name="amountChildTicket" value="5">5</option>
-      <option name="amountChildTicket" value="6">6</option>
-      <option name="amountChildTicket" value="7">7</option>
+      <option value="" disabled selected hidden></option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
     </select>
 
     <label for="comments"><b>Comments:</b></label>
