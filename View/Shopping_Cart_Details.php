@@ -58,7 +58,7 @@ session_start()
             <input type="text" id="phone" name="phone">
 
             <label for="email"><strong>Email</strong><span class="red">&ast;</span></label>
-            <input type="text" id="email" name="email" required>
+            <input type="text" id="email" name="email" required autocomplete="off">
             <strong id="span3">The tickets will be sent to your e-mail address</strong>
 
             <strong id="p2">Textboxes with an Asterisk(<span class="red">&ast;</span>) are required</strong>
