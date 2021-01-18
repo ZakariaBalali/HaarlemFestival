@@ -19,7 +19,6 @@ if (isset($_POST['minusSession'])) {
 }
 
 if (isset($_POST['deleteSession'])) {
-    echo "kom je hier";
     unset($_SESSION['Products'][$EventID]);
     header('Location: ../View/Shopping_Cart.php');
 }
