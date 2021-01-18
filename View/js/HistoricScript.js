@@ -24,7 +24,6 @@ function radioButtonClick(radioButtonId){
 function buttonClick(buttonId){
     //array with all filterdays
     let dayButtonsArray = ["button26th", "button27th","button28th", "button29th"];
-    //let languageButtonsArray = ["btnEnglish", "btnDutch","btnChinese"];
     
     //tables
     const tableThursdayEnglish = document.getElementById("historicThursdayEnglish");
@@ -160,69 +159,19 @@ function buttonClick(buttonId){
 
 }
 
-
-// SelectDate.onclick = function ( e ) {
-//     if ( e.target.tagName.toLowerCase() === 'option' ) {
-//         // an <option> element was clicked
-//         $value=SelectDate.value;
-//         console.log(value);
-//     }
-// };
-// function Name(value){
-
-// };
-/*
-window.onload = function() {
-
-    document.getElementById('english').checked=true;
-    const en = document.getElementById('english');
-    const nl = document.getElementById('dutch');
-    const ch = document.getElementById('chinese');
-
-    en.onclick = programLanguage=en.value;
-    nl.onclick = programLanguage=nl.value;
-    ch.onclick = programLanguage=ch.value;
-
-}
-
-function handler() {
-    alert('clicked');
-}
-
-/*function blurBackGround(){
-    document.elm.style.filter="blur(0.5rem)"
-}*/
-// function SingelticketPrice(amountObject) {
-//     var amount = amountObject.value;
-//     var price = amount * 17.50;
-//     document.getElementById("singleprice").innerHTML = price;
-// }
-
-// function FamilyticketPrice(amountObject) {
-//     var amount = amountObject.value;
-//     var price = amount * 60.00;
-//     document.getElementById("familyprice").innerHTML = price;
-// }
-
-// function TotalticketPrice() {
-//     var singleprice = document.getElementById("singleprice").textContent;
-//     var familyprice = document.getElementById("familyprice").textContent;
-//     var totalprice = +singleprice + +familyprice;
-//     document.getElementById("totalprice").innerText = totalprice;
-// }
-
-//document.getElementById("normalTicketPrice").addEventListener("change", CalculateTotalPrice());
-
+//Calculating Total price of normal ticket
 function CalculateNormalTicket(amount){
     document.getElementById("normalTicketPrice").innerText = (amount*17.50).toFixed(2);
 }
+
+//Calculating Total price of family ticket
 function CalculateFamilyTicket(amount){
     document.getElementById("familyTicketPrice").innerText = (amount*60.00).toFixed(2);
 }
+
+//Calculating Total price
 function CalculateTotalPrice(){
     const normalTicket = document.getElementById("normalTicketPrice").textContent;
     const familyTicket = document.getElementById("familyTicketPrice").textContent;
-    // var price =+normalTicket + +familyTicket; 
-    // console.log(price);
     document.getElementById("totalPriceTickets").innerText = "€"+(parseFloat(normalTicket) + parseFloat(familyTicket)).toFixed(2);
 }
