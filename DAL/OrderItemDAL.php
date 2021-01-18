@@ -27,6 +27,30 @@ class OrderItemDAL
             return false;
         }
     }
+    function GetOrderItem($OrderID)
+    {
+        $sql = "SELECT E.StartTime, E.EventName ,E.ProductName, E.Price, O.Event_ID, O.Order_ID, O.Amount FROM Event E INNER JOIN Order_Item O ON E.Event_ID = O.Event_ID WHERE Order_ID = '" . $OrderID . "'";
+        $OrderItems = [];
+        $result = mysqli_query($this->connection, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $StartTime = $row["StartTime"];
+                $EventName = $row["ProductName"];
+                $Price = $row["Price"];
+                $Event_ID=$row["Event_ID"];
+                $OrderID = $row["Order_ID"];
+                $Amount = $row["Amount"];
+
+     
+
+                $OrderItem = new OrderItem($OrderID,$EventName,$Amount,$Price,$Event_ID,$StartTime);
+                $OrderItems[] = $OrderItem;
+            }
+            return  $OrderItems;
+        } else {
+            echo 'No Dance events found';
+        }
+    }
 
 }
 
