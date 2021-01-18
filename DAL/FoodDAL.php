@@ -15,9 +15,10 @@ class FoodDAL
         $this->connection = $this->instance->getConnection();
     }
 
-    function GetFoodTimes($ProductName)
+    // Get Food Starttimes for the form
+    function GetFoodTimes($restaurantName)
     {
-        $sql = "SELECT E.StartTime, E.EndTime, E.Price FROM Event E WHERE E.EventName = 'Food' AND E.ProductName = '" . $ProductName . "' ORDER BY E.StartTime ASC";
+        $sql = "SELECT E.StartTime, E.EndTime, E.Price FROM Event E INNER JOIN Event_Food F ON E.Event_ID = F.Event_ID WHERE E.EventName = 'Food' AND E.ProductName = 'Reservation' AND F.RestaurantName = '" . $restaurantName . "' ORDER BY E.StartTime ASC";
         $FoodTimes = [];
         $result = mysqli_query($this->connection, $sql);
         if (mysqli_num_rows($result) > 0) {
@@ -35,7 +36,8 @@ class FoodDAL
         }
     }
 
-    //for program
+
+    // Get food events for program
     function GetAllFoodEvents()
     {
         $sql = "SELECT E.StartTime, E.EndTime , E.Price, F.Event_ID, F.RestaurantName, F.Stars, F.Description, F.Image, F.Cuisine FROM Event E INNER JOIN Event_Food F ON E.Event_ID = F.Event_ID WHERE E.EventName = 'Food' AND E.ProductName = 'Reservation' ORDER BY E.StartTime ASC";
@@ -62,6 +64,7 @@ class FoodDAL
         }
     }
 
+    // Get reservation for shopping cart
     function GetReservation($restaurantName, $startTime)
     {
         $sql = "SELECT E.StartTime, E.EndTime , E.Price, F.Event_ID, F.RestaurantName, F.Stars, F.Description, F.Image, F.Cuisine FROM Event E INNER JOIN Event_Food F ON E.Event_ID = F.Event_ID WHERE E.EventName = 'Food' AND E.ProductName = 'Reservation' AND F.RestaurantName = '" . $restaurantName . "' AND E.StartTime = '" . $startTime . "' ORDER BY E.StartTime ";
@@ -85,6 +88,6 @@ class FoodDAL
             echo 'No Food events found';
         }
     }
-}
+}    
 
 ?>
