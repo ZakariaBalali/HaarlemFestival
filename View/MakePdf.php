@@ -1,6 +1,7 @@
 <?php
 require_once '../Model/mypdf.php';
 require_once '../Logic/CustomerLogic.php';
+require_once '../Logic/OrderItemLogic.php';
 require_once '../lib/fpdf.php';
 require_once '../lib/phpqrcode/qrlib.php';
 require_once dirname(__FILE__) . '/../Logic/OrderLogic.php';
@@ -8,13 +9,16 @@ require_once dirname(__FILE__) . '/../Logic/OrderLogic.php';
 //get Order ID
 $orderLogic = new OrderLogic();
 $Orders = (array)$orderLogic->GetHighestOrderID();
-$Orders[0]->getOrderID();
 
 //User Order ID to get Customer
 $Customers = [];
 $customerLogic = new CustomerLogic();
 $Customers = (array)$customerLogic->GetCustomerByID($Orders[0]->getOrderID());
 
+
+$OrderItems = [];
+$OrderItemLogic = new OrderItemLogic();
+$OrderItems = (array)$OrderItemLogic->GetOrderItem($Orders[0]->getOrderID());
 
 
 $pdf = new FPDF();
@@ -42,13 +46,30 @@ foreach ($Customers as $customer) {
     $pdf->Cell(0, 10, 'Phone-Number: 0' .$customer->getPhoneNumber(),0,1,'L');
 
 
+
+
+
+    $i=1;
+    foreach($OrderItems as $orderItem)
+    {
+        $pdf->Cell(0, 10, 'Ticket '.$i .' Detail',0,1,'C');
+
+        $pdf->Cell(0, 10, 'Event Name: ' .$orderItem->getEventID(),0,1,'L');
+        $pdf->Cell(0, 10, 'Amount: ' .$orderItem->getAmount(),0,1,'L');
+        $pdf->Cell(0, 10, 'Start Time: ' .date('l d F G i', strtotime($orderItem->getStartTime())),0,1,'L');
+
+        $pdf->Ln(3);
+        $i++;
+    }
+
+
 // how to save PNG codes to server
 
     $tempDir = '../lib/qrcodes/';
 
     $codeContents = ' this is your QR code for the Festival';
 
-// we need to generate filename somehow, 
+// we need to generate filename somehow,
 // with md5 or with database ID used to obtains $codeContents...
     $fileName = '005_file_'.md5($customer->getOrderID()).'.png';
 
