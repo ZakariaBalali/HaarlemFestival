@@ -45,16 +45,16 @@ session_start()
     <section class="eventFilter">
         <h4>Events</h4>
         <li>
-            <input id="checkBoxDance" type="checkbox" checked value="dance" onclick="checkBox(this.id,'Dance')" /> Dance
+            <input id="Dance" type="checkbox" checked value="dance" onclick="checkBox(this.id)" /> Dance
         </li>
         <li>
-            <input id="checkBoxFood" type="checkbox" checked value="food" onclick="checkBox(this.id,'Food')"/> Food
+            <input id="Food" type="checkbox" checked value="food" onclick="checkBox(this.id)"/> Food
         </li>
         <li>
-            <input id="checkBoxJazz" type="checkbox" checked value="jazz" onclick="checkBox(this.id,'Jazz')"/> Jazz
+            <input id="Jazz" type="checkbox" checked value="jazz" onclick="checkBox(this.id)"/> Jazz
         </li>
         <li>
-            <input id="checkBoxHistoric" type="checkbox" checked value="historic" onclick="checkBox(this.id,'Historic')"/> Historic
+            <input id="Historic" type="checkbox" checked value="historic" onclick="checkBox(this.id)"/> Historic
         </li>
     </section>
     <section class="dayFilter">
@@ -72,7 +72,7 @@ session_start()
         ?>
     <?php foreach ($_SESSION['Products'] as $item){?>
             <ul>
-                <section id="<?php echo $timeFormat = date('D', strtotime($item['StartTime'])); ?>" name = "<?php echo $item['EventName']?>" class="box <?php echo $item['EventName']?>">
+                <section id="<?php echo $timeFormat = date('D', strtotime($item['StartTime'])); ?>" name = "<?php echo $item['EventName']?>" class="box <?php echo $item['EventName']; echo "\r\n"; echo $timeFormat = date('D', strtotime($item['StartTime'])); ?>">
                     <section id="eventBox">
                         <p id= eventName>Haarlem <?php echo $item['EventName']?></p>
                     </section>
