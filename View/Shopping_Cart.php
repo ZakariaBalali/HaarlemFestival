@@ -61,7 +61,7 @@ session_start()
                         <td id="TabledataCart"><?php echo $item['EventName']; ?> </td>
                         <td id="Tabledata1"><?php echo $item['ProductName']; ?>
                             <br> <?php echo $timeFormat = date('D d F ', strtotime($item['StartTime'])); ?> </td>
-                        <td id="Tabledata2"><?php echo $item['Comment'] ?></td>
+                        <td id="CommentsTable"><?php echo $item['Comment'] ?></td>
                         <td id="TabledataCart">&euro; <?php echo $item ['Price']; ?></td>
                         <td id="Tabledata2">
                             <button name="minusSession" class="minus" type="submit" "
