@@ -1,6 +1,11 @@
 <?php
 // Start the session
 session_start();
+if($_SESSION['confirm'] != "Confirm"  )
+{
+    echo "WRONG";
+    header("Location: Homepage.php"); //if user did not proceed with payment, redirect to the Home page
+}
 
 ?>
 <!DOCTYPE HTML>
@@ -93,6 +98,12 @@ session_start();
 </section>
 
 
+<?php
+// Unset all of the session variables.
+//$_SESSION = array();
+// Finally, destroy the session.
+//session_destroy();
 
+?>
 
 </body>
