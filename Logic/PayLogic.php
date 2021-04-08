@@ -4,16 +4,15 @@ require_once dirname(__FILE__) . '/../Logic/CustomerLogic.php';
 require_once dirname(__FILE__) . '/../Logic/OrderLogic.php';
 require_once dirname(__FILE__) . '/../Logic/OrderItemLogic.php';
 session_start();
-// if(!isset($_SESSION['payment_description']))
-// {
-//      header("Location: index.php"); //if user did not proceed with payment, redirect to index page
-// }
-
 if (isset($_POST['ConfirmButton'])) {
-    //Puts customer into the database
+    //Puts customer into the database and sanitizes data
     $customerLogic = new CustomerLogic();
-    $customerLogic->SetCustomer($_POST["firstName"], $_POST["lastName"], $_POST["email"], $_POST["phone"]);
+    $firstName = filter_var($_POST["firstName"], FILTER_SANITIZE_STRING);
+    $lastName = filter_var($_POST["lastName"], FILTER_SANITIZE_STRING);
+    $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
+    $phone = filter_var($_POST["phone"], FILTER_SANITIZE_NUMBER_INT);
 
+    $customerLogic->SetCustomer($firstName, $lastName, $email, $phone);
 
     $Customers = (array)$customerLogic->GetHighestCustomerID();
     $CustomerID = $Customers[0]->getCustomerID();
@@ -59,6 +58,7 @@ function SetOrderItem()
 
 function CallMollieAPI()
 {
+
     $mollie = new \Mollie\Api\MollieApiClient();
     $mollie->setApiKey("test_kWeW5tjftHhThty23qAtNeaDyQERjC");
 
