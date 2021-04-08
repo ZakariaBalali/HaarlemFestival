@@ -3,34 +3,6 @@ require_once '../Model/Historic.php';
 require_once '../Logic/HistoricLogic.php';
 ?>
 <!DOCTYPE HTML>
-<?php
-        // // cookie will expire when the browser close
-        // if(isset($_GET['day'])){
-        //     $cookie_name = "day";
-        //     $cookie_value = $_GET['day'];
-        //     setcookie($cookie_name, $cookie_value);
-        // }
-        // else if(!isset($_GET['day'])){
-        //     if(!isset($_COOKIE["day"])) {
-        //         $cookie_name = "day";
-        //         $cookie_value = "2018-07-26 00:00:00";
-        //         setcookie($cookie_name, $cookie_value);
-        //     }
-        // }
-
-        // if(isset($_GET['language'])){
-        //     $cookie_name = "language";
-        //     $cookie_value = $_GET['language'];
-        //     setcookie($cookie_name, $cookie_value);
-        // }
-        // else if(!isset($_GET['language'])){
-        //     if(!isset($_COOKIE["language"])) {
-        //         $cookie_name = "language";
-        //         $cookie_value = "english";
-        //         setcookie($cookie_name, $cookie_value);
-        //     }
-        // }
-    ?>
 <html>
 <head>
     <meta charset="UTF-8">
