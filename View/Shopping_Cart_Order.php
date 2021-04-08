@@ -95,9 +95,9 @@ session_start();
 
 <?php
 // Unset all of the session variables.
-$_SESSION = array();
+//$_SESSION = array();
 // Finally, destroy the session.
-session_destroy();
+//session_destroy();
 
 ?>
 

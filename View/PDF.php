@@ -7,14 +7,17 @@ require_once '../lib/fpdf.php';
 require_once '../lib/phpqrcode/qrlib.php';
 
 
+session_start();
+$OrderId = $_SESSION["OrderID"];
+
 $Customers = [];
 $customerLogic = new CustomerLogic();
-$Customers = (array)$customerLogic->GetCustomerByID($_POST["orderID"]);
+$Customers = (array)$customerLogic->GetCustomerByID($OrderId);
 
 
 $OrderItems = [];
 $OrderItemLogic = new OrderItemLogic();
-$OrderItems = (array)$OrderItemLogic->GetOrderItem($_POST["orderID"]);
+$OrderItems = (array)$OrderItemLogic->GetOrderItem($OrderId);
 
 
 $pdf = new FPDF();

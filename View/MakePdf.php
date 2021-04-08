@@ -6,19 +6,18 @@ require_once '../lib/fpdf.php';
 require_once '../lib/phpqrcode/qrlib.php';
 require_once dirname(__FILE__) . '/../Logic/OrderLogic.php';
 
-//get Order ID
-$orderLogic = new OrderLogic();
-$Orders = (array)$orderLogic->GetHighestOrderID();
+session_start();
+$OrderId = $_SESSION["OrderID"];
 
 //User Order ID to get Customer
 $Customers = [];
 $customerLogic = new CustomerLogic();
-$Customers = (array)$customerLogic->GetCustomerByID($Orders[0]->getOrderID());
+$Customers = (array)$customerLogic->GetCustomerByID($OrderId);
 
 
 $OrderItems = [];
 $OrderItemLogic = new OrderItemLogic();
-$OrderItems = (array)$OrderItemLogic->GetOrderItem($Orders[0]->getOrderID());
+$OrderItems = (array)$OrderItemLogic->GetOrderItem($OrderId);
 
 
 $pdf = new FPDF();
