@@ -124,11 +124,7 @@ function AddToSession($EventID, $Amount)
 
     $_SESSION['last_login'] = time();
 
-    // Prevent session hijacking
-    function last_login_is_recent() {
-      $recent_limit = 60 * 60 * 24 * 1; // 1 day
-      if(!isset($_SESSION['last_login'])) { return false; }
-      return (($_SESSION['last_login'] + $recent_limit) >= time());
+   
     }
 }
 
