@@ -30,20 +30,18 @@ class OrderDAL
 
     function GetMaxOrderID()
     {
-        $sql = "SELECT Order_ID FROM `Order` WHERE Order_ID=(SELECT max(Order_ID) FROM `Order`)";
-        $Orders = [];
-        $result = mysqli_query($this->connection, $sql);
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
+        //prepared statement
+        $stmt = $this->connection->prepare("SELECT Order_ID FROM `Order` WHERE Order_ID=(SELECT max(Order_ID) FROM `Order`)");
+		$stmt->execute();
+		$result = $stmt->get_result();
+		$stmt-> bind_result($OrderID); 
+        while ($row = $result->fetch_assoc()) {
                 $OrderID = $row["Order_ID"];
 
                 $Order = new Order($OrderID);
                 $Orders[] = $Order;
-            }
-            return $Orders;
-        } else {
-            echo 'No Customers found';
         }
+        return $Orders;
     }
 }
 

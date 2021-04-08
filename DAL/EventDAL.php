@@ -16,11 +16,14 @@ class EventDAL
 
     function GetEventByID($Event_ID)
     {
-        $sql = "SELECT Event_ID, EventName, ProductName , StartTime, EndTime, Seats, Price, Btw FROM Event WHERE Event_ID = '$Event_ID'";
-        $Events = [];
-        $result = mysqli_query($this->connection, $sql);
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
+        //prepared statement
+        $stmt = $this->connection->prepare("SELECT Event_ID, EventName, ProductName , StartTime, EndTime, Seats, Price, Btw FROM Event WHERE Event_ID = ?");
+        $stmt->bind_param("i", $Event_ID);
+        $stmt->execute();
+		$result = $stmt->get_result();
+		$stmt-> bind_result($Event_ID, $EventName, $ProductName, $StartTime, $EndTime, $Seats, $Price, $Btw); 
+        while ($row = $result->fetch_assoc()) {
+
                 $Event_ID = $row["Event_ID"];
                 $EventName = $row["EventName"];
                 $ProductName = $row["ProductName"];
@@ -32,11 +35,8 @@ class EventDAL
 
                 $Event = new Event($Event_ID, $EventName, $ProductName, $StartTime, $EndTime, $Seats, $Price, $Btw);
                 $Events[] = $Event;
-            }
-            return $Events;
-        } else {
-            echo 'No events found';
         }
+        return $Events;
     }
 }
 

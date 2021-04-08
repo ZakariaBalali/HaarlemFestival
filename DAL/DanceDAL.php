@@ -16,11 +16,14 @@ class DanceDAL
 
     function GetDanceEventsByDay($TimeStartDay, $TimeEndDay)
     {
-        $sql = "SELECT E.StartTime, E.EndTime , E.Price, D.Event_ID, D.ArtistName, D.Duration, D.Image, D.Location FROM Event E INNER JOIN Event_Dance D ON E.Event_ID = D.Event_ID WHERE E.EventName = 'Dance' AND E.StartTime >= '" . $TimeStartDay . "' AND StartTime < '" . $TimeEndDay . "' ORDER BY E.StartTime ASC";
-        $DanceEvents = [];
-        $result = mysqli_query($this->connection, $sql);
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
+        //prepared statement
+        $stmt = $this->connection->prepare("SELECT E.StartTime, E.EndTime , E.Price, D.Event_ID, D.ArtistName, D.Duration, D.Image, D.Location FROM Event E INNER JOIN Event_Dance D ON E.Event_ID = D.Event_ID WHERE E.EventName = 'Dance' AND E.StartTime >= ? AND StartTime < ? ORDER BY E.StartTime ASC");
+        $stmt->bind_param("ss", $TimeStartDay, $TimeEndDay);
+        $stmt->execute();
+		$result = $stmt->get_result();
+		$stmt-> bind_result($Event_ID,$ArtistName, $Duration, $Location, $Image, $StartTime, $EndTime, $Price); 
+        while ($row = $result->fetch_assoc()) {
+
                 $StartTime = $row["StartTime"];
                 $EndTime = $row["EndTime"];
                 $Price = $row["Price"];
@@ -32,21 +35,21 @@ class DanceDAL
 
                 $Dance = new Dance($Event_ID,$ArtistName, $Duration, $Location, $Image, $StartTime, $EndTime, $Price);
                 $DanceEvents[] = $Dance;
-            }
-            return $DanceEvents;
-        } else {
-            echo 'No Dance events found';
         }
+        return $DanceEvents;
+        
     }
     
      //for program
      function GetAllDanceTickets()
      {
-         $sql = "SELECT E.StartTime, E.EndTime , E.Price, D.Event_ID, D.ArtistName, D.Duration, D.Image, D.Location FROM Event E INNER JOIN Event_Dance D ON E.Event_ID = D.Event_ID WHERE E.EventName = 'Dance' ORDER BY E.StartTime ASC";
-         $DanceEvents = [];
-         $result = mysqli_query($this->connection, $sql);
-         if (mysqli_num_rows($result) > 0) {
-             while ($row = mysqli_fetch_assoc($result)) {
+        //prepared statement
+        $stmt = $this->connection->prepare("SELECT E.StartTime, E.EndTime , E.Price, D.Event_ID, D.ArtistName, D.Duration, D.Image, D.Location FROM Event E INNER JOIN Event_Dance D ON E.Event_ID = D.Event_ID WHERE E.EventName = 'Dance' ORDER BY E.StartTime ASC");
+        $stmt->execute();
+		$result = $stmt->get_result();
+		$stmt-> bind_result($StartTime, $EndTime, $Price, $Event_ID, $ArtistName, $Duration, $Image, $Location); 
+        while ($row = $result->fetch_assoc()) {
+
                  $StartTime = $row["StartTime"];
                  $EndTime = $row["EndTime"];
                  $Price = $row["Price"];
@@ -58,11 +61,8 @@ class DanceDAL
  
                  $Dance = new Dance($Event_ID,$ArtistName, $Duration, $Location, $Image, $StartTime, $EndTime, $Price);
                  $DanceEvents[] = $Dance;
-             }
-             return $DanceEvents;
-         } else {
-             echo 'No Dance events found';
-         }
+        }
+        return $DanceEvents;
      }
 }
 
