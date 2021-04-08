@@ -13,6 +13,11 @@ class CombiLogic
 //Gets functions from DAL layer
     function GetAllCombiEventsByName($ticketName1, $ticketName2)
     {
-        return $this->combiDAL->GetCombiEventsByName($ticketName1, $ticketName2);
+        try{
+            return $this->combiDAL->GetCombiEventsByName($ticketName1, $ticketName2);
+        }
+        catch(Exception $e){
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
     }
 }

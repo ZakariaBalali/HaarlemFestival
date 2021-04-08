@@ -13,10 +13,21 @@ class DanceLogic
 //Gets functions from DAL layer
     function GetAllDanceEvents($TimeStartDay, $TimeEndDay)
     {
-        return $this->danceDAL->GetDanceEventsByDay($TimeStartDay, $TimeEndDay);
+        try{
+            return $this->danceDAL->GetDanceEventsByDay($TimeStartDay, $TimeEndDay);
+        }
+        catch(Exception $e){
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
     }
 
-    function GetAllDanceTickets(){
-        return $this->danceDAL->GetAllDanceTickets();
+    function GetAllDanceTickets()
+    {
+        try{
+            return $this->danceDAL->GetAllDanceTickets();
+        }
+        catch(Exception $e){
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
     }
 }

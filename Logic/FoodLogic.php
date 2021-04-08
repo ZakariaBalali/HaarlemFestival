@@ -13,17 +13,32 @@ class FoodLogic
 //Gets functions from DAL layer
     function GetFoodTimes($ProductName)
     {
-        return $this->foodDAL->GetFoodTimes($ProductName);
+        try{
+            return $this->foodDAL->GetFoodTimes($ProductName);
+        }
+        catch(Exception $e){
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
     }
     
     function GetAllFoodEvents()
     {
-        return $this->foodDAL->GetAllFoodEvents();
+        try{
+            return $this->foodDAL->GetAllFoodEvents();
+        }
+        catch(Exception $e){
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
     }
 
     function GetReservation($restaurantName, $startTime)
     {
-        return $this->foodDAL->GetReservation($restaurantName, $startTime);
+        try{
+            return $this->foodDAL->GetReservation($restaurantName, $startTime);
+        }
+        catch(Exception $e){
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
     }
 
     
