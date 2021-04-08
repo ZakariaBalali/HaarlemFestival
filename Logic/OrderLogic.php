@@ -13,12 +13,22 @@ class OrderLogic
 
     function SetOrder($CustomerID, $OrderDate, $TotalPrice)
     {
-        return $this->orderDAL->SetOrder($CustomerID, $OrderDate, $TotalPrice);
+        try{
+            return $this->orderDAL->SetOrder($CustomerID, $OrderDate, $TotalPrice);
+        }
+        catch(Exception $e){
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
     }
 
     function GetHighestOrderID()
     {
-        return $this->orderDAL->GetMaxOrderID();
+        try{
+            return $this->orderDAL->GetMaxOrderID();
+        }
+        catch(Exception $e){
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
     }
 
 }

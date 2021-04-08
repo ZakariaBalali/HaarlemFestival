@@ -5,9 +5,9 @@ require_once dirname(__FILE__) . '/../Logic/OrderLogic.php';
 require_once dirname(__FILE__) . '/../Logic/OrderItemLogic.php';
 session_start();
 if (isset($_POST['ConfirmButton'])) {
-    //Puts customer into the database
+    //Puts customer into the database and sanitizes data to prevent remote file inclusion
     $customerLogic = new CustomerLogic();
-    $customerLogic->SetCustomer($_POST["firstName"], $_POST["lastName"], $_POST["email"], $_POST["phone"]);
+    $customerLogic->SetCustomer(filter_var($_POST["firstName"], FILTER_SANITIZE_STRING), filter_var($_POST["lastName"], FILTER_SANITIZE_STRING), filter_var($_POST["email"], FILTER_SANITIZE_EMAIL), filter_var($_POST["phone"], FILTER_SANITIZE_NUMBER_INT));
 
 
     $Customers = (array)$customerLogic->GetHighestCustomerID();

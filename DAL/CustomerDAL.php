@@ -16,11 +16,14 @@ class CustomerDAL
 
     function GetCustomersByID($OrderNumber)
     {
-        $sql = "SELECT C.Customer_ID, C.First_Name, C.Last_Name , C.Email, C.Phone_Number, O.Order_ID FROM `Order` AS O INNER JOIN Customer AS C ON C.Customer_ID = O.Customer_ID WHERE Order_ID = '" . $OrderNumber . "'";
-        $Customers = [];
-        $result = mysqli_query($this->connection, $sql);
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
+        //prepared statement
+        $stmt = $this->connection->prepare("SELECT C.Customer_ID, C.First_Name, C.Last_Name , C.Email, C.Phone_Number, O.Order_ID FROM `Order` AS O INNER JOIN Customer AS C ON C.Customer_ID = O.Customer_ID WHERE Order_ID = ?");
+        $stmt->bind_param("i", $OrderNumber );
+        $stmt->execute();
+		$result = $stmt->get_result();
+		$stmt-> bind_result($CustomerID, $FirstName, $LastName, $Email, $PhoneNumber, $OrderID); 
+        while ($row = $result->fetch_assoc()) {
+
                 $CustomerID = $row["Customer_ID"];
                 $FirstName = $row["First_Name"];
                 $LastName = $row["Last_Name"];
@@ -29,11 +32,8 @@ class CustomerDAL
                 $OrderID = $row["Order_ID"];
                 $Customer = new Customer($CustomerID, $FirstName, $LastName, $Email, $PhoneNumber, $OrderID);
                 $Customers[] = $Customer;
-            }
-            return $Customers;
-        } else {
-            echo 'No Customers found';
         }
+        return $Customers;
     }
 
 
@@ -51,11 +51,13 @@ class CustomerDAL
 
     function GetMaxCustomerID()
     {
-        $sql = "SELECT Customer_ID, First_Name, Last_Name, Email FROM Customer WHERE Customer_ID=(SELECT max(Customer_ID) FROM Customer)";
-        $Customers = [];
-        $result = mysqli_query($this->connection, $sql);
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
+        //prepared statement
+        $stmt = $this->connection->prepare("SELECT Customer_ID, First_Name, Last_Name, Email FROM Customer WHERE Customer_ID=(SELECT max(Customer_ID) FROM Customer)");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt-> bind_result($CustomerID, $FirstName, $LastName, $Email); 
+        while ($row = $result->fetch_assoc()) {
+
                 $CustomerID = $row["Customer_ID"];
                 $FirstName = $row["First_Name"];
                 $LastName = $row["Last_Name"];
@@ -63,11 +65,8 @@ class CustomerDAL
 
                 $Customer = new Customer($CustomerID, $FirstName, $LastName, $Email);
                 $Customers[] = $Customer;
-            }
-            return $Customers;
-        } else {
-            echo 'No Customers found';
         }
+        return $Customers;
     }
 }
 
