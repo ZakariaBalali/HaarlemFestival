@@ -121,15 +121,10 @@ function AddToSession($EventID, $Amount)
     }
 
     $_SESSION['Products'][$EventID] = $cart;
-<<<<<<< HEAD
 
-    $_SESSION['last_login'] = time();
 
-   
-    }
 
-=======
 }
->>>>>>> 9ef8c44b8e104e51471476b694063039f4a3d481
+
 
 ?>
