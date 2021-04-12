@@ -95,7 +95,17 @@ session_start();
 
 
 <?php
+foreach($_SESSION as $key => $val)
+{
 
+    if ($key !== 'OrderID')
+    {
+
+        unset($_SESSION[$key]);
+
+    }
+
+}
 
 ?>
 
