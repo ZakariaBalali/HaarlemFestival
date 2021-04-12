@@ -100,7 +100,7 @@ $pdf->output();
 // Finally, destroy the session.
  session_destroy();
 
-?>
+
 
 
 
