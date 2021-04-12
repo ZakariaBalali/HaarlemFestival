@@ -91,12 +91,7 @@ if($_SESSION['confirm'] != "Confirm"  )
     <button id="BackHome" onclick="document.location='Homepage.php'">
         Back to festival
     </button>
-    <?php
-    // Unset all of the session variables.
-    $_SESSION = array();
-    // Finally, destroy the session.
-    session_destroy();
-}
+    <?php }
     else {
         ?><label class="Text8" id="Text8">How did you get here? </label> <?php
     } ?>
