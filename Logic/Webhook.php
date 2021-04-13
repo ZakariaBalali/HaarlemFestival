@@ -21,7 +21,6 @@ try {
     database_write($orderId, $payment->status);
 
     if ($payment->isPaid() && ! $payment->hasRefunds() && ! $payment->hasChargebacks()) {
-
     } elseif ($payment->isOpen()) {
         /*
          * The payment is open.
@@ -56,6 +55,3 @@ try {
 } catch (\Mollie\Api\Exceptions\ApiException $e) {
     echo "API call failed: " . htmlspecialchars($e->getMessage());
 }
-session_start();
-unset($_SESSION['confirm']);
-$_SESSION['confirm'] = "Confirm";

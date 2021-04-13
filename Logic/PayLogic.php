@@ -75,7 +75,6 @@ function CallMollieAPI()
         "webhookUrl" => "http://chocomel.infhaarlem.nl/Logic/Webhook.php",
 
     ]);
-
     header("Location: " . $payment->getCheckoutUrl(), true, 303);
 }
 
