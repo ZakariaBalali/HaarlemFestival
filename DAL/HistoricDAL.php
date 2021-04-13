@@ -18,9 +18,8 @@ class HistoricDAL
     {
         //prepared statement
         $stmt = $this->connection->prepare("SELECT E.Event_ID, E.ProductName, E.StartTime, E.EndTime, E.Price, E.Seats, H.Language FROM Event E INNER JOIN Event_Historic H ON E.Event_ID = H.Event_ID WHERE E.EventName = 'Historic' AND E.ProductName = 'normal ticket' ORDER BY E.StartTime ASC");
-		$stmt->execute();
-		$result = $stmt->get_result();
-		$stmt-> bind_result($Event_ID, $Language, $ProductName, $StartTime, $EndTime, $Seats, $Price); 
+	    $stmt->execute();
+	    $result = $stmt->get_result(); 
         while ($row = $result->fetch_assoc()) {
 
                 $Event_ID=$row["Event_ID"];
@@ -43,8 +42,7 @@ class HistoricDAL
         $stmt = $this->connection->prepare("SELECT E.Event_ID, E.ProductName, E.StartTime, E.EndTime, E.Price, E.Seats, H.Language FROM Event E INNER JOIN Event_Historic H ON E.Event_ID = H.Event_ID WHERE E.EventName = 'Historic' AND E.StartTime = ? AND H.Language = ? AND E.ProductName = ?");
         $stmt->bind_param("sss", $startTime, $language, $ticketName );
         $stmt->execute();
-		$result = $stmt->get_result();
-		$stmt-> bind_result($Event_ID, $Language, $ProductName, $StartTime, $EndTime, $Seats, $Price); 
+	    $result = $stmt->get_result();
         while ($row = $result->fetch_assoc()) {
 
                 $Event_ID=$row["Event_ID"];

@@ -32,9 +32,8 @@ class OrderDAL
     {
         //prepared statement
         $stmt = $this->connection->prepare("SELECT Order_ID FROM `Order` WHERE Order_ID=(SELECT max(Order_ID) FROM `Order`)");
-		$stmt->execute();
-		$result = $stmt->get_result();
-		$stmt-> bind_result($OrderID); 
+	    $stmt->execute();
+	    $result = $stmt->get_result(); 
         while ($row = $result->fetch_assoc()) {
                 $OrderID = $row["Order_ID"];
 

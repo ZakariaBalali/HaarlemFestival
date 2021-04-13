@@ -20,8 +20,7 @@ class JazzDAL
         $stmt = $this->connection->prepare("SELECT E.StartTime, E.EndTime , E.Price, J.Event_ID, J.BandName, J.Description, J.Image, J.Location FROM Event E INNER JOIN Event_Jazz J ON E.Event_ID = J.Event_ID WHERE E.EventName = 'Jazz' AND E.StartTime >= ? AND StartTime < ? ORDER BY E.StartTime ASC");
         $stmt->bind_param("ss", $TimeStartDay, $TimeEndDay);
         $stmt->execute();
-		$result = $stmt->get_result();
-		$stmt-> bind_result($Event_ID,$BandName, $Description, $Location, $Image, $StartTime, $EndTime, $Price); 
+	    $result = $stmt->get_result(); 
         while ($row = $result->fetch_assoc()) {
 
                 $StartTime = $row["StartTime"];
@@ -46,8 +45,7 @@ class JazzDAL
         INNER JOIN Event_Jazz J ON E.Event_ID = J.Event_ID WHERE J.Event_ID = ?");
         $stmt->bind_param("i", $Event_ID);
         $stmt->execute();
-		$result = $stmt->get_result();
-		$stmt-> bind_result($Event_ID,$BandName, $Description, $Location, $Image, $StartTime, $EndTime, $Price); 
+	    $result = $stmt->get_result(); 
         while ($row = $result->fetch_assoc()) {
                 $StartTime = $row["StartTime"];
                 $EndTime = $row["EndTime"];
@@ -76,9 +74,8 @@ class JazzDAL
     {
         //prepared statement
         $stmt = $this->connection->prepare("SELECT E.StartTime, E.EndTime , E.Price, J.Event_ID, J.BandName, J.Description, J.Image, J.Location FROM Event E INNER JOIN Event_Jazz J ON E.Event_ID = J.Event_ID WHERE E.EventName = 'Jazz' ORDER BY E.StartTime ASC");
-		$stmt->execute();
-		$result = $stmt->get_result();
-		$stmt-> bind_result($Event_ID,$BandName, $Description, $Location, $Image, $StartTime, $EndTime, $Price); 
+	    $stmt->execute();
+	    $result = $stmt->get_result(); 
         while ($row = $result->fetch_assoc()) {
 
                 $StartTime = $row["StartTime"];

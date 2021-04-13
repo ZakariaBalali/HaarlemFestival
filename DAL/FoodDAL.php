@@ -22,8 +22,7 @@ class FoodDAL
         $stmt = $this->connection->prepare("SELECT E.StartTime, E.EndTime, E.Price FROM Event E INNER JOIN Event_Food F ON E.Event_ID = F.Event_ID WHERE E.EventName = 'Food' AND E.ProductName = 'Reservation' AND F.RestaurantName = ? ORDER BY E.StartTime ASC");
         $stmt->bind_param("s", $restaurantName);
         $stmt->execute();
-		$result = $stmt->get_result();
-		$stmt-> bind_result($StartTime, $EndTime, $Price); 
+	    $result = $stmt->get_result();
         while ($row = $result->fetch_assoc()) {
 
                 $StartTime = $row["StartTime"];
@@ -43,9 +42,8 @@ class FoodDAL
     {
         //prepared statement
         $stmt = $this->connection->prepare("SELECT E.StartTime, E.EndTime , E.Price, F.Event_ID, F.RestaurantName, F.Stars, F.Description, F.Image, F.Cuisine FROM Event E INNER JOIN Event_Food F ON E.Event_ID = F.Event_ID WHERE E.EventName = 'Food' AND E.ProductName = 'Reservation' ORDER BY E.StartTime ASC");
-		$stmt->execute();
-		$result = $stmt->get_result();
-		$stmt-> bind_result($Event_ID,$RestaurantName, $Stars, $Description, $Image, $Cuisine, $StartTime, $EndTime, $Price); 
+	    $stmt->execute();
+	    $result = $stmt->get_result(); 
         while ($row = $result->fetch_assoc()) {
 
                 $StartTime = $row["StartTime"];
@@ -71,8 +69,7 @@ class FoodDAL
         $stmt = $this->connection->prepare("SELECT E.StartTime, E.EndTime , E.Price, F.Event_ID, F.RestaurantName, F.Stars, F.Description, F.Image, F.Cuisine FROM Event E INNER JOIN Event_Food F ON E.Event_ID = F.Event_ID WHERE E.EventName = 'Food' AND E.ProductName = 'Reservation' AND F.RestaurantName = ? AND E.StartTime = ? ORDER BY E.StartTime ");
         $stmt->bind_param("ss", $restaurantName, $startTime);
         $stmt->execute();
-        $result = $stmt->get_result();
-        $stmt-> bind_result($Event_ID,$RestaurantName, $Stars, $Description, $Image, $Cuisine, $StartTime, $EndTime, $Price); 
+        $result = $stmt->get_result(); 
         while ($row = $result->fetch_assoc()) {
                 $StartTime = $row["StartTime"];
                 $EndTime = $row["EndTime"];

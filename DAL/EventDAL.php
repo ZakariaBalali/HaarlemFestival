@@ -20,8 +20,7 @@ class EventDAL
         $stmt = $this->connection->prepare("SELECT Event_ID, EventName, ProductName , StartTime, EndTime, Seats, Price, Btw FROM Event WHERE Event_ID = ?");
         $stmt->bind_param("i", $Event_ID);
         $stmt->execute();
-		$result = $stmt->get_result();
-		$stmt-> bind_result($Event_ID, $EventName, $ProductName, $StartTime, $EndTime, $Seats, $Price, $Btw); 
+	    $result = $stmt->get_result();
         while ($row = $result->fetch_assoc()) {
 
                 $Event_ID = $row["Event_ID"];

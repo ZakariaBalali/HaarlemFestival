@@ -20,8 +20,7 @@ class CombiDAL
         $stmt = $this->connection->prepare("SELECT C.Event_ID, E.Price, C.TicketName FROM Event E INNER JOIN Event_Combi C ON E.Event_ID = C.Event_ID WHERE C.TicketName = ? OR C.TicketName = ?");
         $stmt->bind_param("ss", $ticketName1, $ticketName2 );
         $stmt->execute();
-		$result = $stmt->get_result();
-		$stmt-> bind_result($Event_ID, $Language, $ProductName, $StartTime, $EndTime, $Seats, $Price); 
+	    $result = $stmt->get_result();
         while ($row = $result->fetch_assoc()) {
                 $Event_ID = $row["Event_ID"];
                 $Price = $row["Price"];

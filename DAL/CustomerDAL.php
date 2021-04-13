@@ -20,8 +20,7 @@ class CustomerDAL
         $stmt = $this->connection->prepare("SELECT C.Customer_ID, C.First_Name, C.Last_Name , C.Email, C.Phone_Number, O.Order_ID FROM `Order` AS O INNER JOIN Customer AS C ON C.Customer_ID = O.Customer_ID WHERE Order_ID = ?");
         $stmt->bind_param("i", $OrderNumber );
         $stmt->execute();
-		$result = $stmt->get_result();
-		$stmt-> bind_result($CustomerID, $FirstName, $LastName, $Email, $PhoneNumber, $OrderID); 
+	    $result = $stmt->get_result();
         while ($row = $result->fetch_assoc()) {
 
                 $CustomerID = $row["Customer_ID"];
@@ -55,7 +54,6 @@ class CustomerDAL
         $stmt = $this->connection->prepare("SELECT Customer_ID, First_Name, Last_Name, Email FROM Customer WHERE Customer_ID=(SELECT max(Customer_ID) FROM Customer)");
         $stmt->execute();
         $result = $stmt->get_result();
-        $stmt-> bind_result($CustomerID, $FirstName, $LastName, $Email); 
         while ($row = $result->fetch_assoc()) {
 
                 $CustomerID = $row["Customer_ID"];

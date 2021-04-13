@@ -33,8 +33,7 @@ class OrderItemDAL
         $stmt = $this->connection->prepare("SELECT E.StartTime, E.EventName ,E.ProductName, E.Price, O.Event_ID, O.Order_ID, O.Amount FROM Event E INNER JOIN Order_Item O ON E.Event_ID = O.Event_ID WHERE Order_ID = ?");
         $stmt->bind_param("i", $OrderID );
         $stmt->execute();
-		$result = $stmt->get_result();
-		$stmt-> bind_result($OrderID,$EventName,$Amount,$Price,$Event_ID,$StartTime); 
+	    $result = $stmt->get_result(); 
         while ($row = $result->fetch_assoc()) {
                 $StartTime = $row["StartTime"];
                 $EventName = $row["ProductName"];
