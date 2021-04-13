@@ -1,8 +1,11 @@
 <?php
 // Start the session
 session_start();
-
-
+//checking if payment is done
+if($_SESSION['confirm'] != "Confirm"  )
+{
+    header("Location: Homepage.php"); //if user did not proceed with payment, redirect to the Home page
+}
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -106,7 +109,5 @@ foreach($_SESSION as $key => $val)
     }
 
 }
-
 ?>
-
 </body>

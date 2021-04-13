@@ -7,6 +7,10 @@ require_once '../lib/phpqrcode/qrlib.php';
 require_once dirname(__FILE__) . '/../Logic/OrderLogic.php';
 
 session_start();
+// setting session to confirmed
+unset($_SESSION['confirm']);
+$_SESSION['confirm'] = "Confirm";
+
 $OrderId = $_SESSION["OrderID"];
 
 //User Order ID to get Customer
@@ -143,8 +147,4 @@ foreach ($Customers as $customer) {
     }
 
 }
-
-
-
-
 ?>
