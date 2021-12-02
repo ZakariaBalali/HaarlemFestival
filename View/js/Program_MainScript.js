@@ -46,7 +46,7 @@ function checkBox(id, section) {
 
     let sectionArray = [sectionHistoric1, sectionHistoric2, sectionHistoric3, sectionHistoric4, sectionDance1, sectionDance2, sectionDance3, sectionDance4, sectionJazz1, sectionJazz2, sectionJazz3, sectionJazz4, sectionFood1, sectionFood2, sectionFood3, sectionFood4 ];
 
-    // Get the checkbox
+    // Get the button
     const button = document.getElementById(id);
 
     //set all filterButtons to default colour

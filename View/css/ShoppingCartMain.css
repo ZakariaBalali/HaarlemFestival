@@ -47,12 +47,14 @@
 }
 
 .formPayment{
-    display: inline;
+   display: inline;
+
 }
 #Ordertable{
     float: left;
-    margin-top: 6.25rem;
-    margin-left: 24rem;
+    position: absolute;
+    top: 22rem;
+    left: 95rem;
     margin-right: 12.5rem;
     border-color: black;
     border: 0.125rem solid #000000;
@@ -60,21 +62,30 @@
     text-align: left;
 }
 #ProceedButton{
+    float: left;
+    position: absolute;
+    left: 96.1rem;
+    top: 35rem;
     background-color: green;
     color: white;
     font-size: 1.125rem;
-    margin-left: 83.3rem;
-    margin-top: 1.25rem;
     width: 16.25rem;
     height: 4rem;
 }
 
 #TotalPrice{
+    position: absolute;
     font-size: 1.625rem;
-    margin-top: 18.75rem;
-    margin-left: 84.5rem;
+    top: 30rem;
+    left: 95rem;
 }
 
+#CommentsTable{
+    max-width: 10rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 .input {
     width: 2rem;
     border: none;

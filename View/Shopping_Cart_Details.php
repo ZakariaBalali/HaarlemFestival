@@ -48,17 +48,17 @@ session_start()
 
             <h3 class="FormHeader">Details</h3>
             <label id="label1" for="fname"><strong>First Name</strong><span class="red">&ast;</span></label>
-            <input type="text" id="fname" name="firstname">
+            <input type="text" id="fname" name="firstName" required>
 
             <label for="lname"><strong>Last Name</strong><span class="red">&ast;</span></label>
-            <input type="text" id="lname" name="lastname">
+            <input type="text" id="lname" name="lastName" required>
             <strong id="span3">The Haarlem festival tickets are personal and can not be resold</strong>
 
             <label for="phone"><strong>Phone number</strong></label>
             <input type="text" id="phone" name="phone">
 
             <label for="email"><strong>Email</strong><span class="red">&ast;</span></label>
-            <input type="text" id="email" name="email">
+            <input type="text" id="email" name="email" required autocomplete="off">
             <strong id="span3">The tickets will be sent to your e-mail address</strong>
 
             <strong id="p2">Textboxes with an Asterisk(<span class="red">&ast;</span>) are required</strong>
@@ -85,13 +85,13 @@ session_start()
             </div>
 
             <div class="container5">
-                <strong id="span5">&euro;<?php echo($amount * 0.91) ?></strong>
-                <strong id="span5">&euro;<?php echo($amount * 0.09) ?></strong>
+                <strong id="span5">&euro;<?php echo number_format(($amount * 0.91), 2, '.', '') ?></strong>
+                <strong id="span5">&euro;<?php echo number_format(($amount * 0.09), 2, '.', '') ?></strong>
             </div>
         </div>
-        <p id="p1">Total (incl. Tax): &euro;<?php echo $amount ?></p>
+        <p id="p1">Total (incl. Tax): &euro;<?php echo number_format($amount, 2, '.', '') ?></p>
 
-        <button id="ConfirmButton" form="GoToPayment" id="GoToPayment">
+        <button id="ConfirmButton" name="ConfirmButton" form="GoToPayment" id="GoToPayment">
             Confirm order
         </button>
     </form>

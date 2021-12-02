@@ -68,6 +68,12 @@
     display: inline;
 }
 
+.Text8{
+    position: absolute;
+    color:black;
+    margin-top: 50rem;
+}
+
 #Text4, #Text5, #Text6, #Text7{
     display: block;
 }

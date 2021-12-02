@@ -29,17 +29,14 @@ session_start()
     <a href="Jazz_Main.php">Jazz</a>
     <a href="Historic_Main.php">Historic</a>
     <a href="Program_Main.php">Program</a>
-    <?php
-    if (isset($_SESSION['Products'])) { ?>
-        <a href="DeleteSession.php">Delete Session</a>
-    <?php } ?>
     <a class="active" href="Shopping_Cart.php"><img src="images/icon_shoppingcart_active.png"></a>
 </section>
 
 <section class="MainCart">
     <h1 id="CartTitle">Shopping Cart</h1>
     <?php
-    if (isset($_SESSION['Products'])) { ?>
+    if (!empty($_SESSION['Products'])) { ?>
+
         <table id="CartTable">
             <tr id="TableHead">
                 <th>Event</th>
@@ -48,48 +45,49 @@ session_start()
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Total</th>
+                <th>Delete</th>
             </tr>
 
             <?php
             $TotalPrice = 0;
             foreach ($_SESSION['Products'] as $item) {
-
+                //Make a form for each item to delete them if needed
                 ?>
-                <tr>
+                <form class="formAlter" action="AlterSession.php" method="post" id="AlterProduct">
+                    <input style="display: none" class="valueEvent" name="eventID" type="text"
+                           value="<?php echo $item['EventID'] ?>"/><?php
+                    ?>
+                    <tr>
+                        <td id="TabledataCart"><?php echo $item['EventName']; ?> </td>
+                        <td id="Tabledata1"><?php echo $item['ProductName']; ?>
+                            <br> <?php echo $timeFormat = date('D d F ', strtotime($item['StartTime'])); ?> </td>
+                        <td id="CommentsTable"><?php echo $item['Comment'] ?></td>
+                        <td id="TabledataCart">&euro; <?php echo $item ['Price']; ?></td>
+                        <td id="Tabledata2">
+                            <button name="minusSession" class="minus" type="submit" "
+                                    id="minus<?php echo $item['EventID'] ?>">−
+                            </button>
+                            <input class="input" name="amount" type="number" value="<?php echo $item ['Amount'] ?>"
+                                   id="input<?php echo $item['EventID'] ?>"/>
+                            <button name="plusSession" class="plus" type="submit"
+                                    id="plus<?php echo $item['EventID'] ?>">+
+                            </button>
 
-
-                    <td id="TabledataCart"><?php echo $item['EventName']; ?> </td>
-                    <td id="Tabledata1"><?php echo $item['ProductName']; ?>
-                        <br> <?php echo $timeFormat = date('D d F ', strtotime($item['StartTime'])); ?> </td>
-                    <td id="Tabledata2"><?php echo "none" ?></td>
-                    <td id="TabledataCart">&euro; <?php echo $item ['Price']; ?></td>
-                    <td id="Tabledata2">
-                        <button class="minus"
-                                id="minus<?php echo $item['EventID'] ?>">−
-                        </button>
-                        <input class="input" name="amount" type="number" value="<?php echo $item ['Amount'] ?>"
-                               id="input<?php echo $item['EventID'] ?>"/>
-                        <button class="plus"
-                                id="plus<?php echo $item['EventID'] ?>">+
-                        </button>
-                        <script>
-                            addTicket('minus<?php echo $item['EventID'] ?>', 'input<?php echo $item['EventID']?>', 'plus<?php echo $item ['EventID']?>')
-                        </script>
-                    </td>
-                    <td id="TabledataCart">&euro;<?php echo($item['Amount'] * $item['Price']) ?></td>
-
-                    <?php $TotalPrice += ($item['Amount'] * $item['Price']) ?>
-                </tr>
+                        </td>
+                        <td id="TabledataCart">&euro;<?php echo($item['Amount'] * $item['Price']) ?></td>
+                        <?php $TotalPrice += ($item['Amount'] * $item['Price']) ?>
+                        <td id="Tabledata2"><button name="deleteSession"><img width="48"height="48" src="images/trash.png"></button>
+                    </tr>
+                </form>
             <?php }
             ?>
-
-
         </table>
+
         <form class="formPayment" action="Shopping_Cart_Details.php" method="post" id="GoToPayment">
             <?php $totalamount = number_format($TotalPrice, 2, '.', '') ?>
             <input style="display: none" class="valueAmount" id="amount" name="amount"
                    type="text"
-                   value="<?php echo $totalamount?>"/>
+                   value="<?php echo $totalamount ?>"/>
             <table id="Ordertable">
                 <tr>
                     <th id="TableHead">Order summary</th>
@@ -97,15 +95,15 @@ session_start()
                 </tr>
                 <tr>
                     <td id="Tabledata3">Subtotal</td>
-                    <td id="Tabledata4">&euro;<?php echo ($totalamount * 0.91)?></td>
+                    <td id="Tabledata4">&euro;<?php echo number_format(($totalamount * 0.91), 2, '.', '') ?></td>
                 </tr>
                 <tr>
                     <td id="Tabledata3">9% Tax</td>
-                    <td id="Tabledata4">&euro;<?php echo ($totalamount * 0.09)?></td>
+                    <td id="Tabledata4">&euro;<?php echo number_format(($totalamount * 0.09), 2, '.', '') ?></td>
                 </tr>
             </table>
 
-            <p id="TotalPrice">Total (incl. Tax): &euro;<?php echo $totalamount?></p>
+            <p id="TotalPrice">Total (incl. Tax): &euro;<?php echo $totalamount ?></p>
             <button id="ProceedButton" form="GoToPayment" id="GoToPayment">
                 Proceed to Details
             </button>

@@ -1,3 +1,6 @@
+<?php
+session_start()
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -7,6 +10,7 @@
     <meta name="keywords" content="Create your own Programme">
     <link href="css/MyProgram.css" rel="stylesheet" type="text/css">
     <link href="css/Banner.css" rel="stylesheet" type="text/css">
+    <script src="js/MyProgramScript.js"></script>
 </head>
 <body>
 <section class="Banner">
@@ -41,32 +45,55 @@
     <section class="eventFilter">
         <h4>Events</h4>
         <li>
-            <input id="checkBoxDance" type="checkbox" checked value="dance" />
-            <label for="checkBoxLabal">Dance</label>
+            <input id="Dance" type="checkbox" checked value="dance" onclick="checkBox(this.id)" /> Dance
         </li>
         <li>
-            <input id="checkBoxFood" type="checkbox" checked value="food" />
-            <label for="checkBoxLabal">Food</label>
+            <input id="Food" type="checkbox" checked value="food" onclick="checkBox(this.id)"/> Food
         </li>
         <li>
-            <input id="checkBoxJazz" type="checkbox" checked value="jazz" />
-            <label for="checkBoxLabal">Jazz</label>
+            <input id="Jazz" type="checkbox" checked value="jazz" onclick="checkBox(this.id)"/> Jazz
         </li>
         <li>
-            <input id="checkBoxHistoric" type="checkbox" checked value="historic" />
-            <label for="checkBoxLabal">Historic</label>
+            <input id="Historic" type="checkbox" checked value="historic" onclick="checkBox(this.id)"/> Historic
         </li>
     </section>
     <section class="dayFilter">
-        <h4>Showtimes</h4>
+        <h4 id="dayFilterTitle">Showtimes</h4>
         <br>
-        <button id="allDaysButton">All days</button>
-        <button id="26thButton">Thu Jul 26th</button>
-        <button id="27thButton">Fri Jul 27th</button>
-        <button id="28thButton">Sat Jul 28th</button>
-        <button id="29thButton">Sun Jul 29th</button>
+        <button id="allButton" value="All" onclick="filterButtons(this.id)">All days</button>
+        <button id="button26th" value="2018-07-26 00:00:00" onclick="filterButtons(this.id)" >Thu Jul 26th</button>
+        <button id="button27th" value="2018-07-27 00:00:00" onclick="filterButtons(this.id)" >Fri Jul 27th</button>
+        <button id="button28th" value="2018-07-28 00:00:00" onclick="filterButtons(this.id)" >Sat Jul 28th</button>
+        <button id="button29th" value="2018-07-29 00:00:00" onclick="filterButtons(this.id)" >Sun Jul 29th</button>
+    </section>
 
-    </section>  
+    <?php
+    if (isset($_SESSION['Products'])) { 
+        ?>
+    <?php foreach ($_SESSION['Products'] as $item){?>
+            <ul>
+                <section id="<?php echo $timeFormat = date('D', strtotime($item['StartTime'])); ?>" name = "<?php echo $item['EventName']?>" class="box <?php echo $item['EventName']; echo "\r\n"; echo $timeFormat = date('D', strtotime($item['StartTime'])); ?>">
+                    <section class="<?php echo $item['EventName']?>" id="eventBox">
+                        <p id= eventName>Haarlem <?php echo $item['EventName']?></p>
+                    </section>
+                    <section id="ticketBoxLeft">
+                        <img src=
+                            <?php if ($item['EventName']=="Dance" || $item['EventName']== "Combi Dance") {echo'images/dance_background_homepage.jpg';}
+                            elseif ($item['EventName']=="Jazz" || $item['EventName']== "Combi Jazz") {echo'images/jazz_background_homepage.jpg';}
+                            elseif ($item['EventName']=="Food") {echo'images/food_background_homepage.jpg';}
+                            elseif ($item['EventName']=="Historic") {echo'images/historic_background_homepage.jpg';}
+                            ?> id="ticketImage">
+                    </section>
+                    <section id="ticketBoxRight">
+                        <p id="ticketTitle"><?php echo $item['ProductName']; echo "\r\n";?></p>
+                        <p id="ticketDate">Date: <?php echo $timeFormat = date('D d F ', strtotime($item['StartTime'])); ?></p>
+                        <p id="ticetTimeSlot"> Start Time: <?php echo $timeFormat = date('H:i', strtotime($item['StartTime'])); ?></p>
+                    </section>
+                </section>
+            </ul>
+    <?php }?>
+
+    <?php } else {?> <p id="warning"><?php echo" Add tickets to shoppingcart to see myProgam";}?></p>
 
 
 

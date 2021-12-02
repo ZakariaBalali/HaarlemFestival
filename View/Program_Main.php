@@ -88,74 +88,74 @@ require_once '../Logic/FoodLogic.php';
             <!-- dance program Thursday 26th -->
             <section class= "danceRightSide thursday" id="danceThursday">
                 <p>Thursday 26 July</p>
-                    <!-- <form action="../Logic/ShoppingCartLogic.php" method="post" id="programForm" class="programForm"> -->
-                        <?php 
-                        $i=0;
-                        foreach ($danceTickets as $ticket) {
-                            if($ticket->getEvent()->getStartTime()>="2018-07-26 00:00:00" && $ticket->getEvent()->getEndTime()<="2018-07-27 00:00:00"){
-                                $i++?>
-                                <button class=Dancebuttons type="submit" value="<?php echo $ticket->getEvent_ID()?>">
-                                <b><?php echo $ticket->getArtistName() ?></b><br>
-                                <?php echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getEndTime())); ?>
-                            </button>
-                            <?php if($i==3){echo "<br>"; $i=0;}
-                            }
-                        }?>
-                    <!-- </form> -->
+                <form action="Dance_Main.php" method="post">
+                    <?php 
+                    $i=0;
+                    foreach ($danceTickets as $ticket) {
+                        if($ticket->getEvent()->getStartTime()>="2018-07-26 00:00:00" && $ticket->getEvent()->getEndTime()<="2018-07-27 00:00:00"){
+                            $i++?>
+                            <button class=Dancebuttons type="submit" value="<?php echo $ticket->getEvent_ID()?>">
+                            <b><?php echo $ticket->getArtistName() ?></b><br>
+                            <?php echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getEndTime())); ?>
+                        </button>
+                        <?php if($i==3){echo "<br>"; $i=0;}
+                        }
+                    }?>
+                </form>
             </section>
             <!-- dance program Thursday 27th -->
             <section class= "danceRightSide friday" id="danceFriday">
                 <p>Friday 27 July</p>
-                    <!-- <form action="../Logic/ShoppingCartLogic.php" method="post" id="programForm" class="programForm"> -->
-                        <?php 
-                        $i=0;
-                        foreach ($danceTickets as $ticket) {
-                            if($ticket->getEvent()->getStartTime()>="2018-07-27 00:00:00" && $ticket->getEvent()->getEndTime()<="2018-07-28 00:00:00"){
-                                $i++?>
-                                <button class=Dancebuttons type="submit" value="<?php echo $ticket->getEvent_ID()?>">
-                                <b><?php echo $ticket->getArtistName() ?></b><br>
-                                <?php echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getEndTime())); ?>
-                            </button>
-                            <?php if($i==3){echo "<br>"; $i=0;}
-                            }
-                        }?>
-                    <!-- </form> -->
+                <form action="Dance_Main.php" method="post">
+                    <?php 
+                    $i=0;
+                    foreach ($danceTickets as $ticket) {
+                        if($ticket->getEvent()->getStartTime()>="2018-07-27 00:00:00" && $ticket->getEvent()->getEndTime()<="2018-07-28 00:00:00"){
+                            $i++?>
+                            <button class=Dancebuttons type="submit" value="<?php echo $ticket->getEvent_ID()?>">
+                            <b><?php echo $ticket->getArtistName() ?></b><br>
+                            <?php echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getEndTime())); ?>
+                        </button>
+                        <?php if($i==3){echo "<br>"; $i=0;}
+                        }
+                    }?>
+                </form>
             </section>
             <!-- dance program Satday 28th -->
             <section class= "danceRightSide saturday" id="danceSaturday">
                 <p>Saturday 28 July</p>
-                    <!-- <form action="../Logic/ShoppingCartLogic.php" method="post" id="programForm" class="programForm"> -->
-                        <?php 
-                        $i=0;
-                        foreach ($danceTickets as $ticket) {
-                            if($ticket->getEvent()->getStartTime()>="2018-07-28 00:00:00" && $ticket->getEvent()->getEndTime()<="2018-07-29 00:00:00"){
-                                $i++?>
-                                <button class=Dancebuttons type="submit" value="<?php echo $ticket->getEvent_ID()?>">
-                                <b><?php echo $ticket->getArtistName() ?></b><br>
-                                <?php echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getEndTime())); ?>
-                            </button>
-                            <?php if($i==3){echo "<br>"; $i=0;}
-                            }
-                        }?>
-                    <!-- </form> -->
+                <form action="Dance_Main.php" method="post">
+                    <?php 
+                    $i=0;
+                    foreach ($danceTickets as $ticket) {
+                        if($ticket->getEvent()->getStartTime()>="2018-07-28 00:00:00" && $ticket->getEvent()->getEndTime()<="2018-07-29 00:00:00"){
+                            $i++?>
+                            <button class=Dancebuttons type="submit" value="<?php echo $ticket->getEvent_ID()?>">
+                            <b><?php echo $ticket->getArtistName() ?></b><br>
+                            <?php echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getEndTime())); ?>
+                        </button>
+                        <?php if($i==3){echo "<br>"; $i=0;}
+                        }
+                    }?>
+                </form>
             </section>
             <!-- dance program Sunday 29th -->
             <section class= "danceRightSide sunday" id="danceSunday">
                 <p>Sunday 29 July</p>
-                    <!-- <form action="../Logic/ShoppingCartLogic.php" method="post" id="programForm" class="programForm"> -->
-                        <?php 
-                        $i=0;
-                        foreach ($danceTickets as $ticket) {
-                            if($ticket->getEvent()->getStartTime()>="2018-07-29 00:00:00" && $ticket->getEvent()->getEndTime()<="2018-07-30 00:00:00"){
-                                $i++?>
-                                <button class=Dancebuttons type="submit" value="<?php echo $ticket->getEvent_ID()?>">
-                                <b><?php echo $ticket->getArtistName() ?></b><br>
-                                <?php echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getEndTime())); ?>
-                            </button>
-                            <?php if($i==3){echo "<br>"; $i=0;}
-                            }
-                        }?>
-                    <!-- </form> -->
+                <form action="Dance_Main.php" method="post">
+                    <?php 
+                    $i=0;
+                    foreach ($danceTickets as $ticket) {
+                        if($ticket->getEvent()->getStartTime()>="2018-07-29 00:00:00" && $ticket->getEvent()->getEndTime()<="2018-07-30 00:00:00"){
+                            $i++?>
+                            <button class=Dancebuttons type="submit" value="<?php echo $ticket->getEvent_ID()?>">
+                            <b><?php echo $ticket->getArtistName() ?></b><br>
+                            <?php echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getEndTime())); ?>
+                        </button>
+                        <?php if($i==3){echo "<br>"; $i=0;}
+                        }
+                    }?>
+                </form>
             </section>
         </section>
         <section class="food" id="food">
@@ -171,73 +171,73 @@ require_once '../Logic/FoodLogic.php';
             <!-- food program Thursday 26th -->
             <section class= "foodRightSide thursday" id="foodThursday">
                 <p>Thursday 26 July</p>
-                    <!-- <form action="../Logic/ShoppingCartLogic.php" method="post" id="programForm" class="programForm"> -->
-                        <?php 
-                        $i=0;
-                        foreach ($foodEvents as $event) { 
-                            if($event->getEvent()->getStartTime()>="2018-07-26 00:00:00" && $event->getEvent()->getEndTime()<="2018-07-27 00:00:00"){
-                                $i++?>
-                                <button class=Foodbuttons type="submit" value="<?php echo $event->getEvent_ID()?>">
-                                <b><?php echo $event->getRestaurantName() ?></b><br>
-                                <?php echo $timeFormat = date('H:i', strtotime($event->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($event->getEvent()->getEndTime())); ?>
-                            </button>
-                            <?php if($i==3){echo "<br>"; $i=0;}
-                            }
-                        }?>
-                    <!-- </form> -->
+                <form action="Food_Main.php" method="post">
+                    <?php 
+                    $i=0;
+                    foreach ($foodEvents as $event) { 
+                        if($event->getEvent()->getStartTime()>="2018-07-26 00:00:00" && $event->getEvent()->getEndTime()<="2018-07-27 00:00:00"){
+                            $i++?>
+                            <button class=Foodbuttons type="submit" value="<?php echo $event->getEvent_ID()?>">
+                            <b><?php echo $event->getRestaurantName() ?></b><br>
+                            <?php echo $timeFormat = date('H:i', strtotime($event->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($event->getEvent()->getEndTime())); ?>
+                        </button>
+                        <?php if($i==3){echo "<br>"; $i=0;}
+                        }
+                    }?>
+                </form>
             </section>
             <!-- food program Friday 27th -->
             <section class= "foodRightSide friday" id="foodFriday">
                 <p>Friday 27 July</p>
-                    <!-- <form action="../Logic/ShoppingCartLogic.php" method="post" id="programForm" class="programForm"> -->
-                        <?php 
-                        $i=0;
-                        foreach ($foodEvents as $event) { 
-                            if($event->getEvent()->getStartTime()>="2018-07-27 00:00:00" && $event->getEvent()->getEndTime()<="2018-07-28 00:00:00"){
-                                $i++?>
-                                <button class=Foodbuttons type="submit" value="<?php echo $event->getEvent_ID()?>">
-                                <b><?php echo $event->getRestaurantName() ?></b><br>
-                                <?php echo $timeFormat = date('H:i', strtotime($event->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($event->getEvent()->getEndTime())); ?>
-                            </button>
-                            <?php if($i==3){echo "<br>"; $i=0;}
-                            }
-                        }?>
-                    <!-- </form> -->
+                <form action="Food_Main.php" method="post">
+                    <?php 
+                    $i=0;
+                    foreach ($foodEvents as $event) { 
+                        if($event->getEvent()->getStartTime()>="2018-07-27 00:00:00" && $event->getEvent()->getEndTime()<="2018-07-28 00:00:00"){
+                            $i++?>
+                            <button class=Foodbuttons type="submit" value="<?php echo $event->getEvent_ID()?>">
+                            <b><?php echo $event->getRestaurantName() ?></b><br>
+                            <?php echo $timeFormat = date('H:i', strtotime($event->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($event->getEvent()->getEndTime())); ?>
+                        </button>
+                        <?php if($i==3){echo "<br>"; $i=0;}
+                        }
+                    }?>
+                </form>
             </section>
             <!-- food program Saturday 28th -->
             <section class= "foodRightSide saturday" id="foodSaturday">
                 <p>Saturday 28 July</p>
-                    <!-- <form action="../Logic/ShoppingCartLogic.php" method="post" id="programForm" class="programForm"> -->
-                        <?php 
-                        $i=0;
-                        foreach ($foodEvents as $event) { 
-                            if($event->getEvent()->getStartTime()>="2018-07-28 00:00:00" && $event->getEvent()->getEndTime()<="2018-07-29 00:00:00"){
-                                $i++?>
-                                <button class=Foodbuttons type="submit" value="<?php echo $event->getEvent_ID()?>">
-                                <b><?php echo $event->getRestaurantName() ?></b><br>
-                                <?php echo $timeFormat = date('H:i', strtotime($event->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($event->getEvent()->getEndTime())); ?>
-                            </button>
-                            <?php if($i==3){echo "<br>"; $i=0;}
-                            }
-                        }?>
-                    <!-- </form> -->
+                <form action="Food_Main.php" method="post">
+                    <?php 
+                    $i=0;
+                    foreach ($foodEvents as $event) { 
+                        if($event->getEvent()->getStartTime()>="2018-07-28 00:00:00" && $event->getEvent()->getEndTime()<="2018-07-29 00:00:00"){
+                            $i++?>
+                            <button class=Foodbuttons type="submit" value="<?php echo $event->getEvent_ID()?>">
+                            <b><?php echo $event->getRestaurantName() ?></b><br>
+                            <?php echo $timeFormat = date('H:i', strtotime($event->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($event->getEvent()->getEndTime())); ?>
+                        </button>
+                        <?php if($i==3){echo "<br>"; $i=0;}
+                        }
+                    }?>
+                </form>
             </section>
             <section class= "foodRightSide sunday" id="foodSunday">
                 <p>Sunday 29 July</p>
-                    <!-- <form action="../Logic/ShoppingCartLogic.php" method="post" id="programForm" class="programForm"> -->
-                        <?php 
-                        $i=0;
-                        foreach ($foodEvents as $event) { 
-                            if($event->getEvent()->getStartTime()>="2018-07-29 00:00:00" && $event->getEvent()->getEndTime()<="2018-07-30 00:00:00"){
-                                $i++?>
-                                <button class=Foodbuttons type="submit" value="<?php echo $event->getEvent_ID()?>">
-                                <b><?php echo $event->getRestaurantName() ?></b><br>
-                                <?php echo $timeFormat = date('H:i', strtotime($event->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($event->getEvent()->getEndTime())); ?>
-                            </button>
-                            <?php if($i==3){echo "<br>"; $i=0;}
-                            }
-                        }?>
-                    <!-- </form> -->
+                <form action="Food_Main.php" method="post">
+                    <?php 
+                    $i=0;
+                    foreach ($foodEvents as $event) { 
+                        if($event->getEvent()->getStartTime()>="2018-07-29 00:00:00" && $event->getEvent()->getEndTime()<="2018-07-30 00:00:00"){
+                            $i++?>
+                            <button class=Foodbuttons type="submit" value="<?php echo $event->getEvent_ID()?>">
+                            <b><?php echo $event->getRestaurantName() ?></b><br>
+                            <?php echo $timeFormat = date('H:i', strtotime($event->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($event->getEvent()->getEndTime())); ?>
+                        </button>
+                        <?php if($i==3){echo "<br>"; $i=0;}
+                        }
+                    }?>
+                </form>
             </section>
         </section>
         <section class="jazz" id="jazz">
@@ -253,74 +253,74 @@ require_once '../Logic/FoodLogic.php';
             <!-- jazz program Thursday 26th -->
             <section class= "jazzRightSide thursday" id="jazzThursday">
                 <p>Thursday 26 July</p>
-                    <!-- <form action="../Logic/ShoppingCartLogic.php" method="post" id="programForm" class="programForm"> -->
-                        <?php 
-                        $i=0;
-                        foreach ($jazzTickets as $ticket) { 
-                            if($ticket->getEvent()->getStartTime()>="2018-07-26 00:00:00" && $ticket->getEvent()->getEndTime()<="2018-07-27 00:00:00"){
-                                $i++?>
-                                <button class=Jazzbuttons type="submit" value="<?php echo $ticket->getEvent_ID()?>">
-                                <b><?php echo $ticket->getBandName() ?></b><br>
-                                <?php echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getEndTime())); ?>
-                            </button>
-                            <?php if($i==3){echo "<br>"; $i=0;}
-                            }
-                        }?>
-                    <!-- </form> -->
+                <form action="Jazz_Ticketpage.php" method="post">
+                    <?php 
+                    $i=0;
+                    foreach ($jazzTickets as $ticket) { 
+                        if($ticket->getEvent()->getStartTime()>="2018-07-26 00:00:00" && $ticket->getEvent()->getEndTime()<="2018-07-27 00:00:00"){
+                            $i++?>
+                            <button class=Jazzbuttons type="submit" value="<?php echo $ticket->getEvent_ID()?>">
+                            <b><?php echo $ticket->getBandName() ?></b><br>
+                            <?php echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getEndTime())); ?>
+                        </button>
+                        <?php if($i==3){echo "<br>"; $i=0;}
+                        }
+                    }?>
+                </form>
             </section>
             <!-- jazz program Friday 27th -->
             <section class= "jazzRightSide friday" id="jazzFriday">
                 <p>Friday 27 July</p>
-                    <!-- <form action="../Logic/ShoppingCartLogic.php" method="post" id="programForm" class="programForm"> -->
-                        <?php 
-                        $i=0;
-                        foreach ($jazzTickets as $ticket) { 
-                            if($ticket->getEvent()->getStartTime()>="2018-07-27 00:00:00" && $ticket->getEvent()->getEndTime()<="2018-07-28 00:00:00"){
-                                $i++?>
-                                <button class=Jazzbuttons type="submit" value="<?php echo $ticket->getEvent_ID()?>">
-                                <b><?php echo $ticket->getBandName() ?></b><br>
-                                <?php echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getEndTime())); ?>
-                            </button>
-                            <?php if($i==3){echo "<br>"; $i=0;}
-                            }
-                        }?>
-                    <!-- </form> -->
+                <form action="Jazz_Ticketpage.php" method="post">
+                    <?php 
+                    $i=0;
+                    foreach ($jazzTickets as $ticket) { 
+                        if($ticket->getEvent()->getStartTime()>="2018-07-27 00:00:00" && $ticket->getEvent()->getEndTime()<="2018-07-28 00:00:00"){
+                            $i++?>
+                            <button class=Jazzbuttons type="submit" value="<?php echo $ticket->getEvent_ID()?>">
+                            <b><?php echo $ticket->getBandName() ?></b><br>
+                            <?php echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getEndTime())); ?>
+                        </button>
+                        <?php if($i==3){echo "<br>"; $i=0;}
+                        }
+                    }?>
+                </form>
             </section>
             <!-- jazz program Saturday 28th -->
             <section class= "jazzRightSide saturday" id="jazzSaturday">
                 <p>Saturday 28 July</p>
-                    <!-- <form action="../Logic/ShoppingCartLogic.php" method="post" id="programForm" class="programForm"> -->
-                        <?php 
-                        $i=0;
-                        foreach ($jazzTickets as $ticket) { 
-                            if($ticket->getEvent()->getStartTime()>="2018-07-28 00:00:00" && $ticket->getEvent()->getEndTime()<="2018-07-29 00:00:00"){
-                                $i++?>
-                                <button class=Jazzbuttons type="submit" value="<?php echo $ticket->getEvent_ID()?>">
-                                <b><?php echo $ticket->getBandName() ?></b><br>
-                                <?php echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getEndTime())); ?>
-                            </button>
-                            <?php if($i==3){echo "<br>"; $i=0;}
-                            }
-                        }?>
-                    <!-- </form> -->
+                <form action="Jazz_Ticketpage.php" method="post">
+                    <?php 
+                    $i=0;
+                    foreach ($jazzTickets as $ticket) { 
+                        if($ticket->getEvent()->getStartTime()>="2018-07-28 00:00:00" && $ticket->getEvent()->getEndTime()<="2018-07-29 00:00:00"){
+                            $i++?>
+                            <button class=Jazzbuttons type="submit" value="<?php echo $ticket->getEvent_ID()?>">
+                            <b><?php echo $ticket->getBandName() ?></b><br>
+                            <?php echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getEndTime())); ?>
+                        </button>
+                        <?php if($i==3){echo "<br>"; $i=0;}
+                        }
+                    }?>
+                </form>
             </section>
             <!-- jazz program Thursday 29th -->
             <section class= "jazzRightSide sunday" id="jazzSunday">
                 <p>Sunday 29 July</p>
-                    <!-- <form action="../Logic/ShoppingCartLogic.php" method="post" id="programForm" class="programForm"> -->
-                        <?php 
-                        $i=0;
-                        foreach ($jazzTickets as $ticket) { 
-                            if($ticket->getEvent()->getStartTime()>="2018-07-29 00:00:00" && $ticket->getEvent()->getEndTime()<="2018-07-30 00:00:00"){
-                                $i++?>
-                                <button class=Jazzbuttons type="submit" value="<?php echo $ticket->getEvent_ID()?>">
-                                <b><?php echo $ticket->getBandName() ?></b><br>
-                                <?php echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getEndTime())); ?>
-                            </button>
-                            <?php if($i==3){echo "<br>"; $i=0;}
-                            }
-                        }?>
-                    <!-- </form> -->
+                <form action="Jazz_Ticketpage.php" method="post">
+                    <?php 
+                    $i=0;
+                    foreach ($jazzTickets as $ticket) { 
+                        if($ticket->getEvent()->getStartTime()>="2018-07-29 00:00:00" && $ticket->getEvent()->getEndTime()<="2018-07-30 00:00:00"){
+                            $i++?>
+                            <button class=Jazzbuttons type="submit" value="<?php echo $ticket->getEvent_ID()?>">
+                            <b><?php echo $ticket->getBandName() ?></b><br>
+                            <?php echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getStartTime()));?>- <?php  echo $timeFormat = date('H:i', strtotime($ticket->getEvent()->getEndTime())); ?>
+                        </button>
+                        <?php if($i==3){echo "<br>"; $i=0;}
+                        }
+                    }?>
+                </form>
             </section>
         </section>
         <section class="historic" id="historic">
@@ -336,7 +336,7 @@ require_once '../Logic/FoodLogic.php';
             <!-- historic program Thursday 26th -->
             <section class= "historicRightSide thursday" id="historicThursday">
                 <p>Thursday 26 July</p>
-                <!-- <form action="../Logic/ShoppingCartLogic.php" method="post" id="programForm" class="programForm"> -->
+                <form action="Historic_Main.php" method="post">
                     <?php 
                     $i=0;
                     foreach ($historicTours as $tour) { 
@@ -353,14 +353,14 @@ require_once '../Logic/FoodLogic.php';
                         <?php if($i==3){echo "<br>"; $i=0;}
                         }
                     }?>
-                <!-- </form> -->
+                </form>
             </section>
             <?php //echo "<br>";?>
 
             <!-- historic program Friday 27th -->
             <section class= "historicRightSide friday" id="historicFriday">
                 <p>Friday 27 July</p>
-                <!-- <form action="../Logic/ShoppingCartLogic.php" method="post" id="programForm" class="programForm"> -->
+                <form action="Historic_Main.php" method="post">
                     <?php 
                     $i=0;
                     foreach ($historicTours as $tour) { 
@@ -377,13 +377,13 @@ require_once '../Logic/FoodLogic.php';
                         <?php if($i==3){echo "<br>"; $i=0;}
                         }
                     }?>
-                <!-- </form> -->
+                </form>
             </section>
 
             <!-- historic program Saturday 28th -->
             <section class= "historicRightSide friday" id="historicSaturday">
                 <p>Saturday 28 July</p>
-                <!-- <form action="../Logic/ShoppingCartLogic.php" method="post" id="programForm" class="programForm"> -->
+                <form action="Historic_Main.php" method="post">
                     <?php 
                     $i=0;
                     foreach ($historicTours as $tour) { 
@@ -400,13 +400,13 @@ require_once '../Logic/FoodLogic.php';
                         <?php if($i==3){echo "<br>"; $i=0;}
                         }
                     }?>
-                <!-- </form> -->
+                </form>
             </section>
 
             <!-- historic program Sunday 29th -->
             <section class= "historicRightSide friday" id="historicSunday">
                 <p>Sunday 29 July</p>
-                <!-- <form action="../Logic/ShoppingCartLogic.php" method="post" id="programForm" class="programForm"> -->
+                <form action="Historic_Main.php" method="post">
                     <?php 
                     $i=0;
                     foreach ($historicTours as $tour) { 
@@ -423,7 +423,7 @@ require_once '../Logic/FoodLogic.php';
                         <?php if($i==3){echo "<br>"; $i=0;}
                         }
                     }?>
-                <!-- </form> -->
+                </form>
             </section>
     </section>  
 

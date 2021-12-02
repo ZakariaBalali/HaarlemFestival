@@ -5,65 +5,173 @@ function closePopUp(popup){
     document.getElementById(popup).style.visibility="hidden";
 }
 
-/*const programDay="";
-const programLanguage="";
+//default variables
+var selectedRadiobutton;
+var selectedDaybutton;
 
-function getPrgramDay(){
-    return programDay;
+function radioButtonClick(radioButtonId){
+    selectedRadiobutton = document.getElementById(radioButtonId);
+
+    if(selectedDaybutton==null){
+        //set default day
+        buttonClick("button26th")
+    }
+    else{
+        buttonClick(selectedDaybutton);
+    }
 }
-function getProgramLanguage(){
-    return programLanguage;
-}*/
 
 function buttonClick(buttonId){
-    //array met alle dag buttons
-    let buttonsArray = ["button1", "button2","button3", "button4"];
+    //array with all filterdays
+    let dayButtonsArray = ["button26th", "button27th","button28th", "button29th"];
+    
+    //tables
+    const tableThursdayEnglish = document.getElementById("historicThursdayEnglish");
+    const tableThursdayDutch = document.getElementById("historicThursdayDutch");
+    const tableThursdayChinese = document.getElementById("historicThursdayChinese");
 
+    const tableFridayEnglish = document.getElementById("historicFridayEnglish");
+    const tableFridayDutch = document.getElementById("historicFridayDutch");
+    const tableFridayChinese = document.getElementById("historicFridayChinese");
+
+    const tableSaturdayEnglish = document.getElementById("historicSaturdayEnglish");
+    const tableSaturdayDutch = document.getElementById("historicSaturdayDutch");
+    const tableSaturdayChinese = document.getElementById("historicSaturdayChinese");
+
+    const tableSundayEnglish = document.getElementById("historicSundayEnglish");
+    const tableSundayDutch = document.getElementById("historicSundayDutch");
+    const tableSundayChinese = document.getElementById("historicSundayChinese");
+    let tablesArray = [tableThursdayEnglish, tableThursdayDutch, tableThursdayChinese, tableFridayEnglish, tableFridayDutch, tableFridayChinese, tableSaturdayEnglish, tableSaturdayDutch, tableSaturdayChinese, tableSundayEnglish, tableSundayDutch, tableSundayChinese];
+
+    //set selected day
+    selectedDaybutton=buttonId;
+
+    //set default language
+    if(selectedRadiobutton==null){
+        selectedRadiobutton= document.getElementById("btnEnglish");
+    }
+
+    //set all filterbutton in default colour
+    dayButtonsArray.forEach(function(button) {
+        const btn = document.getElementById(button);
+        btn.style.backgroundColor = "lightgrey";
+        btn.style.color = "black";
+    })
+
+    //set colour of selected button
     const button = document.getElementById(buttonId);
-    //programDay = button.value;
     button.style.backgroundColor = "green";
     button.style.color = "white";
     
-    let positie = buttonsArray.indexOf(button.id);
-    let DeleteSelectedButton = buttonsArray.splice(positie, 1);
-    console.log(buttonsArray)
     
-    buttonsArray.forEach(function(button) {
-    console.log(button);
-    const b = document.getElementById(button);
-    b.style.backgroundColor = "lightgrey";
-    b.style.color = "black";
-    })
-}
+    if(button.id == "button26th"){
+        tablesArray.forEach(function(table) {
+            //hide every day table
+            const sct = document.getElementById(table.id);
+            sct.style.display = "none";
 
-SelectDate.onclick = function ( e ) {
-    if ( e.target.tagName.toLowerCase() === 'option' ) {
-        // an <option> element was clicked
-        $value=SelectDate.value;
-        console.log(value);
+            //show table of selected day
+            if(table.id.includes("Thursday")){
+                if(selectedRadiobutton.value.includes("english") && table.id.includes("English")){
+                    const sct = document.getElementById(table.id);
+                    sct.style.display = "block";
+                }
+                if(selectedRadiobutton.value.includes("dutch") && table.id.includes("Dutch")){
+                    const sct = document.getElementById(table.id);
+                    sct.style.display = "block";
+                }
+                if(selectedRadiobutton.value.includes("chinese") && table.id.includes("Chinese")){
+                    const sct = document.getElementById(table.id);
+                    sct.style.display = "block";
+                }
+            }           
+        })
     }
-};
-function Name(value){
+    else if(button.id == "button27th"){
+        tablesArray.forEach(function(table) {
+            //hide every day table
+            const sct = document.getElementById(table.id);
+            sct.style.display = "none";
 
-};
-/*
-window.onload = function() {
+            //show table of selected day
+            if(table.id.includes("Friday")){
+                if(selectedRadiobutton.value=="english" && table.id.includes("English")){
+                    const sct = document.getElementById(table.id);
+                    sct.style.display = "block";
+                }
+                if(selectedRadiobutton.value=="dutch" && table.id.includes("Dutch")){
+                    const sct = document.getElementById(table.id);
+                    sct.style.display = "block";
+                }
+                if(selectedRadiobutton.value=="chinese" && table.id.includes("Chinese")){
+                    const sct = document.getElementById(table.id);
+                    sct.style.display = "block";
+                }
+            }           
+        })
+    }
+    else if(button.id == "button28th"){
+        tablesArray.forEach(function(table) {
+            //hide every day table
+            const sct = document.getElementById(table.id);
+            sct.style.display = "none";
 
-    document.getElementById('english').checked=true;
-    const en = document.getElementById('english');
-    const nl = document.getElementById('dutch');
-    const ch = document.getElementById('chinese');
+            //show table of selected day
+            if(table.id.includes("Saturday")){
+                if(selectedRadiobutton.value.includes("english") && table.id.includes("English")){
+                    const sct = document.getElementById(table.id);
+                    sct.style.display = "block";
+                }
+                else if(selectedRadiobutton.value.includes("dutch") && table.id.includes("Dutch")){
+                    const sct = document.getElementById(table.id);
+                    sct.style.display = "block";
+                }
+                else if(selectedRadiobutton.value.includes("chinese") && table.id.includes("Chinese")){
+                    const sct = document.getElementById(table.id);
+                    sct.style.display = "block";
+                }
+            }           
+        })
+    }
+    else if(button.id == "button29th"){
+        tablesArray.forEach(function(table) {
+            //hide every day table
+            const sct = document.getElementById(table.id);
+            sct.style.display = "none";
 
-    en.onclick = programLanguage=en.value;
-    nl.onclick = programLanguage=nl.value;
-    ch.onclick = programLanguage=ch.value;
+            //show table of selected day
+            if(table.id.includes("Sunday")){
+                if(selectedRadiobutton.value.includes("english") && table.id.includes("English")){
+                    const sct = document.getElementById(table.id);
+                    sct.style.display = "block";
+                }
+                else if(selectedRadiobutton.value.includes("dutch") && table.id.includes("Dutch")){
+                    const sct = document.getElementById(table.id);
+                    sct.style.display = "block";
+                }
+                else if(selectedRadiobutton.value.includes("chinese") && table.id.includes("Chinese")){
+                    const sct = document.getElementById(table.id);
+                    sct.style.display = "block";
+                }
+            }           
+        })
+    }
 
 }
 
-function handler() {
-    alert('clicked');
+//Calculating Total price of normal ticket
+function CalculateNormalTicket(amount){
+    document.getElementById("normalTicketPrice").innerText = (amount*17.50).toFixed(2);
 }
 
-/*function blurBackGround(){
-    document.elm.style.filter="blur(0.5rem)"
-}*/
+//Calculating Total price of family ticket
+function CalculateFamilyTicket(amount){
+    document.getElementById("familyTicketPrice").innerText = (amount*60.00).toFixed(2);
+}
+
+//Calculating Total price
+function CalculateTotalPrice(){
+    const normalTicket = document.getElementById("normalTicketPrice").textContent;
+    const familyTicket = document.getElementById("familyTicketPrice").textContent;
+    document.getElementById("totalPriceTickets").innerText = "€"+(parseFloat(normalTicket) + parseFloat(familyTicket)).toFixed(2);
+}

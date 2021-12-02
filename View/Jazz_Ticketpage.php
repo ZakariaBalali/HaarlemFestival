@@ -271,7 +271,7 @@ require_once '../Logic/CombiLogic.php';
                             class="AddToCartButton"
                             id="AddToCartButton<?php echo $jazz->getEvent_ID() ?>">
                         <img src="images/ShoppingCart.png">
-                        <label>Add to Cart</label>
+                        Add to Cart
                     </button>
             </form>
         </section>
@@ -417,7 +417,7 @@ require_once '../Logic/CombiLogic.php';
                         class="AddToCartButton"
                         id="AddToCartButton<?php echo $jazz->getEvent_ID() ?>">
                     <img src="images/ShoppingCart.png">
-                    <label>Add to Cart</label>
+                   Add to Cart
                 </button>
         </form>
     </section>
@@ -563,7 +563,7 @@ require_once '../Logic/CombiLogic.php';
                         class="AddToCartButton"
                         id="AddToCartButton<?php echo $jazz->getEvent_ID() ?>">
                     <img src="images/ShoppingCart.png">
-                    <label>Add to Cart</label>
+                    Add to Cart
                 </button>
         </form>
     </section>

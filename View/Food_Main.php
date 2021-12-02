@@ -1,3 +1,7 @@
+<?php
+require_once '../Logic/FoodLogic.php';
+?>
+
 <!DOCTYPE HTML>
 <html>
 
@@ -8,6 +12,8 @@
     <meta name="keywords" content="Food, Restaurants, International">
     <link href="css/FoodMain.css" rel="stylesheet" type="text/css">
     <link href="css/Banner.css" rel="stylesheet" type="text/css">
+    <link href="css/ReserveForm.css" rel="stylesheet" type="text/css">
+    <script src="js/FoodScript.js"></script>
 </head>
 
 <body>
@@ -54,7 +60,7 @@
             </p>
             <img id="Stars4" src="images/4stars.png">
             <strong id="Rest1Price">Price: &euro;45</strong>
-            <button id="ReserveButton">Make Reservation</button>
+            <button id="ReserveButton" onclick="openForm1()">Make Reservation</button>
         </section>
 
         <section class="Rest2">
@@ -66,7 +72,7 @@
             </p>
             <img id="Stars4" src="images/4stars.png">
             <strong id="Rest1Price">Price: &euro;45</strong>
-            <button id="ReserveButton">Make Reservation</button>
+            <button id="ReserveButton" onclick="openForm2()">Make Reservation</button>
         </section>
 
         <section class="Rest3">
@@ -78,7 +84,7 @@
             </p>
             <img id="Stars3" src="images/3stars.png">
             <strong id="Rest2Price">Price: &euro;35</strong>
-            <button id="ReserveButton2">Make Reservation</button>
+            <button id="ReserveButton2" onclick="openForm3()">Make Reservation</button>
         </section>
 
         <section class="Rest4">
@@ -90,7 +96,7 @@
             </p>
             <img id="Stars3" src="images/3stars.png">
             <strong id="Rest2Price">Price: &euro;35</strong>
-            <button id="ReserveButton2">Make Reservation</button>
+            <button id="ReserveButton2" onclick="openForm4()">Make Reservation</button>
         </section>
 
         <section class="Rest5">
@@ -102,7 +108,7 @@
             </p>
             <img id="Stars3" src="images/3stars.png">
             <strong id="Rest2Price">Price: &euro;35</strong>
-            <button id="ReserveButton2">Make Reservation</button>
+            <button id="ReserveButton2" onclick="openForm5()">Make Reservation</button>
         </section>
 
         <section class="Rest6">
@@ -114,7 +120,7 @@
             </p>
             <img id="Stars3" src="images/3stars.png">
             <strong id="Rest2Price">Price: &euro;35</strong>
-            <button id="ReserveButton2">Make Reservation</button>
+            <button id="ReserveButton2" onclick="openForm6()">Make Reservation</button>
         </section>
 
         <section class="Rest7">
@@ -126,7 +132,7 @@
             </p>
             <img id="Stars4" src="images/4stars.png">
             <strong id="Rest1Price">Price: &euro;45</strong>
-            <button id="ReserveButton">Make Reservation</button>
+            <button id="ReserveButton" onclick="openForm7()">Make Reservation</button>
         </section>
 
         <section class="Rest8">
@@ -138,10 +144,466 @@
             </p>
             <img id="Stars4" src="images/4stars.png">
             <strong id="Rest1Price">Price: &euro;45</strong>
-            <button id="ReserveButton">Make Reservation</button>
+            <button id="ReserveButton" onclick="openForm8()">Make Reservation</button>
         </section>
     </article>
 
+    <!-- Form1 -->
+    <div class="form-popup" id="myForm1">
+        <form action="../Logic/ShoppingCartLogic.php" method="post" class="form-container">
+            <h1 id="ReserveHeader">Reserve</h1>
+
+            <input type="hidden" name="restaurant" value="Restaurant Mr. & Mrs.">
+
+            <label id="FormLabel" for="time"><b>Date/Time:</b></label>
+            <select name="time">
+                <?php
+
+                //Fill array with food events
+                $FoodEvents = [];
+                $foodLogic = new FoodLogic();
+                $FoodEvents = (array)$foodLogic->GetFoodTimes("Restaurant Mr. & Mrs.");
+                foreach ($FoodEvents as $food) {
+                ?><option value="<?php echo $food->getEvent()->getStartTime() ?>"><?php echo $timeFormat = date('d-m H:i', strtotime($food->getEvent()->getStartTime())) ?></option>;<?php
+                                                                                                                                                                                    }
+                                                                                                                                                                                        ?>
+            </select> <br><br>
+
+            <label id="FormLabel" for="adults"><b>Adults:</b></label>
+            <select name="amountAdultTicket">
+                <option value="" disabled selected hidden></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select> <br><br>
+
+            <label id="FormLabel" for="children"><b>Children:</b></label>
+            <select name="amountChildTicket" type="number">
+                <option value="" disabled selected hidden></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select> <br><br>
+
+            <label id="FormLabel" for="comments"><b>Comments:</b></label>
+            <textarea rows="6" cols="30" name="comments" type="text"></textarea>
+
+            <p id="FormText">
+                The reservation fee is &euro;10 per person. The total reservation fee will be deducted from the final check.
+            </p>
+
+            <button type="submit" name="AddToShoppingCartFood" class="btn">Confirm</button>
+            <button type="button" class="btn cancel" onclick="closeForm1()">Cancel</button>
+        </form>
+    </div>
+
+    <!-- Form2 -->
+    <div class="form-popup" id="myForm2">
+        <form action="../Logic/ShoppingCartLogic.php" method="post" class="form-container">
+            <h1 id="ReserveHeader">Reserve</h1>
+
+            <input type="hidden" name="restaurant" value="Ratatouille">
+
+            <label id="FormLabel" for="time"><b>Date/Time:</b></label>
+            <select name="time">
+                <?php
+
+                //Fill array with food events
+                $FoodEvents = [];
+                $foodLogic = new FoodLogic();
+                $FoodEvents = (array)$foodLogic->GetFoodTimes("Ratatouille");
+                foreach ($FoodEvents as $food) {
+                ?><option value="<?php echo $food->getEvent()->getStartTime() ?>"><?php echo $timeFormat = date('d-m H:i', strtotime($food->getEvent()->getStartTime())) ?></option>;<?php
+                                                                                                                                                                                    }
+                                                                                                                                                                                        ?>
+            </select> <br><br>
+
+            <label id="FormLabel" for="adults"><b>Adults:</b></label>
+            <select name="amountAdultTicket">
+                <option value="" disabled selected hidden></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select> <br><br>
+
+            <label id="FormLabel" for="children"><b>Children:</b></label>
+            <select name="amountChildTicket" type="number">
+                <option value="" disabled selected hidden></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select> <br><br>
+
+            <label id="FormLabel" for="comments"><b>Comments:</b></label>
+            <textarea rows="6" cols="30" name="comments" type="text"></textarea>
+
+            <p id="FormText">
+                The reservation fee is &euro;10 per person. The total reservation fee will be deducted from the final check.
+            </p>
+
+            <button type="submit" name="AddToShoppingCartFood" class="btn">Confirm</button>
+            <button type="button" class="btn cancel" onclick="closeForm2()">Cancel</button>
+        </form>
+    </div>
+
+    <!-- Form3 -->
+    <div class="form-popup" id="myForm3">
+        <form action="../Logic/ShoppingCartLogic.php" method="post" class="form-container">
+            <h1 id="ReserveHeader">Reserve</h1>
+
+            <input type="hidden" name="restaurant" value="Urban Frenchy Bistro Toujours">
+
+            <label id="FormLabel" for="time"><b>Date/Time:</b></label>
+            <select name="time">
+                <?php
+
+                //Fill array with food events
+                $FoodEvents = [];
+                $foodLogic = new FoodLogic();
+                $FoodEvents = (array)$foodLogic->GetFoodTimes("Urban Frenchy Bistro Toujours");
+                foreach ($FoodEvents as $food) {
+                ?><option value="<?php echo $food->getEvent()->getStartTime() ?>"><?php echo $timeFormat = date('d-m H:i', strtotime($food->getEvent()->getStartTime())) ?></option>;<?php
+                                                                                                                                                                                    }
+                                                                                                                                                                                        ?>
+            </select> <br><br>
+
+            <label id="FormLabel" for="adults"><b>Adults:</b></label>
+            <select name="amountAdultTicket">
+                <option value="" disabled selected hidden></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select> <br><br>
+
+            <label id="FormLabel" for="children"><b>Children:</b></label>
+            <select name="amountChildTicket" type="number">
+                <option value="" disabled selected hidden></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select> <br><br>
+
+            <label id="FormLabel" for="comments"><b>Comments:</b></label>
+            <textarea rows="6" cols="30" name="comments" type="text"></textarea>
+
+            <p id="FormText">
+                The reservation fee is &euro;10 per person. The total reservation fee will be deducted from the final check.
+            </p>
+
+            <button type="submit" name="AddToShoppingCartFood" class="btn">Confirm</button>
+            <button type="button" class="btn cancel" onclick="closeForm3()">Cancel</button>
+        </form>
+    </div>
+
+    <!-- Form4 -->
+    <div class="form-popup" id="myForm4">
+        <form action="../Logic/ShoppingCartLogic.php" method="post" class="form-container">
+            <h1 id="ReserveHeader">Reserve</h1>
+
+            <input type="hidden" name="restaurant" value="The Golden Bull">
+
+            <label id="FormLabel" for="time"><b>Date/Time:</b></label>
+            <select name="time">
+                <?php
+
+                //Fill array with food events
+                $FoodEvents = [];
+                $foodLogic = new FoodLogic();
+                $FoodEvents = (array)$foodLogic->GetFoodTimes("The Golden Bull");
+                foreach ($FoodEvents as $food) {
+                ?><option value="<?php echo $food->getEvent()->getStartTime() ?>"><?php echo $timeFormat = date('d-m H:i', strtotime($food->getEvent()->getStartTime())) ?></option>;<?php
+                                                                                                                                                                                    }
+                                                                                                                                                                                        ?>
+            </select> <br><br>
+
+            <label id="FormLabel" for="adults"><b>Adults:</b></label>
+            <select name="amountAdultTicket">
+                <option value="" disabled selected hidden></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select> <br><br>
+
+            <label id="FormLabel" for="children"><b>Children:</b></label>
+            <select name="amountChildTicket" type="number">
+                <option value="" disabled selected hidden></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select> <br><br>
+
+            <label id="FormLabel" for="comments"><b>Comments:</b></label>
+            <textarea rows="6" cols="30" name="comments" type="text"></textarea>
+
+            <p id="FormText">
+                The reservation fee is &euro;10 per person. The total reservation fee will be deducted from the final check.
+            </p>
+
+            <button type="submit" name="AddToShoppingCartFood" class="btn">Confirm</button>
+            <button type="button" class="btn cancel" onclick="closeForm4()">Cancel</button>
+        </form>
+    </div>
+
+    <!-- Form5 -->
+    <div class="form-popup" id="myForm5">
+        <form action="../Logic/ShoppingCartLogic.php" method="post" class="form-container">
+            <h1 id="ReserveHeader">Reserve</h1>
+
+            <input type="hidden" name="restaurant" value="Specktakel">
+
+            <!-- Trying to print array starttimes to drop down options -->
+            <label id="FormLabel" for="time"><b>Date/Time:</b></label>
+            <select name="time">
+                <?php
+
+                //Fill array with food events
+                $FoodEvents = [];
+                $foodLogic = new FoodLogic();
+                $FoodEvents = (array)$foodLogic->GetFoodTimes("Specktakel");
+                foreach ($FoodEvents as $food) {
+                ?><option value="<?php echo $food->getEvent()->getStartTime() ?>"><?php echo $timeFormat = date('d-m H:i', strtotime($food->getEvent()->getStartTime())) ?></option>;<?php
+                                                                                                                                                                                    }
+                                                                                                                                                                                        ?>
+            </select> <br><br>
+
+            <label id="FormLabel" for="adults"><b>Adults:</b></label>
+            <select name="amountAdultTicket">
+                <option value="" disabled selected hidden></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select> <br><br>
+
+            <label id="FormLabel" for="children"><b>Children:</b></label>
+            <select name="amountChildTicket" type="number">
+                <option value="" disabled selected hidden></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select> <br><br>
+
+            <label id="FormLabel" for="comments"><b>Comments:</b></label>
+            <textarea rows="6" cols="30" name="comments" type="text"></textarea>
+
+            <p id="FormText">
+                The reservation fee is &euro;10 per person. The total reservation fee will be deducted from the final check.
+            </p>
+
+            <button type="submit" name="AddToShoppingCartFood" class="btn">Confirm</button>
+            <button type="button" class="btn cancel" onclick="closeForm5()">Cancel</button>
+        </form>
+    </div>
+
+    <!-- Form6 -->
+    <div class="form-popup" id="myForm6">
+        <form action="../Logic/ShoppingCartLogic.php" method="post" class="form-container">
+            <h1 id="ReserveHeader">Reserve</h1>
+
+            <input type="hidden" name="restaurant" value="Grand Cafe Brinkman">
+
+            <label id="FormLabel" for="time"><b>Date/Time:</b></label>
+            <select name="time">
+                <?php
+
+                //Fill array with food events
+                $FoodEvents = [];
+                $foodLogic = new FoodLogic();
+                $FoodEvents = (array)$foodLogic->GetFoodTimes("Grand Cafe Brinkman");
+                foreach ($FoodEvents as $food) {
+                ?><option value="<?php echo $food->getEvent()->getStartTime() ?>"><?php echo $timeFormat = date('d-m H:i', strtotime($food->getEvent()->getStartTime())) ?></option>;<?php
+                                                                                                                                                                                    }
+                                                                                                                                                                                        ?>
+            </select> <br><br>
+
+            <label id="FormLabel" for="adults"><b>Adults:</b></label>
+            <select name="amountAdultTicket">
+                <option value="" disabled selected hidden></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select> <br><br>
+
+            <label id="FormLabel" for="children"><b>Children:</b></label>
+            <select name="amountChildTicket" type="number">
+                <option value="" disabled selected hidden></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select> <br><br>
+
+            <label id="FormLabel" for="comments"><b>Comments:</b></label>
+            <textarea rows="6" cols="30" name="comments" type="text"></textarea>
+
+            <p id="FormText">
+                The reservation fee is &euro;10 per person. The total reservation fee will be deducted from the final check.
+            </p>
+
+            <button type="submit" name="AddToShoppingCartFood" class="btn">Confirm</button>
+            <button type="button" class="btn cancel" onclick="closeForm6()">Cancel</button>
+        </form>
+    </div>
+
+    <!-- Form7 -->
+    <div class="form-popup" id="myForm7">
+        <form action="../Logic/ShoppingCartLogic.php" method="post" class="form-container">
+            <h1 id="ReserveHeader">Reserve</h1>
+
+            <input type="hidden" name="restaurant" value="Restaurant ML">
+
+            <label id="FormLabel" for="time"><b>Date/Time:</b></label>
+            <select name="time">
+                <?php
+
+                //Fill array with food events
+                $FoodEvents = [];
+                $foodLogic = new FoodLogic();
+                $FoodEvents = (array)$foodLogic->GetFoodTimes("Restaurant ML");
+                foreach ($FoodEvents as $food) {
+                ?><option value="<?php echo $food->getEvent()->getStartTime() ?>"><?php echo $timeFormat = date('d-m H:i', strtotime($food->getEvent()->getStartTime())) ?></option>;<?php
+                                                                                                                                                                                    }
+                                                                                                                                                                                        ?>
+            </select> <br><br>
+
+            <label id="FormLabel" for="adults"><b>Adults:</b></label>
+            <select name="amountAdultTicket">
+                <option value="" disabled selected hidden></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select> <br><br>
+
+            <label id="FormLabel" for="children"><b>Children:</b></label>
+            <select name="amountChildTicket" type="number">
+                <option value="" disabled selected hidden></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select> <br><br>
+
+            <label id="FormLabel" for="comments"><b>Comments:</b></label>
+            <textarea rows="6" cols="30" name="comments" type="text"></textarea>
+
+            <p id="FormText">
+                The reservation fee is &euro;10 per person. The total reservation fee will be deducted from the final check.
+            </p>
+
+            <button type="submit" name="AddToShoppingCartFood" class="btn">Confirm</button>
+            <button type="button" class="btn cancel" onclick="closeForm7()">Cancel</button>
+        </form>
+    </div>
+
+    <!-- Form8 -->
+    <div class="form-popup" id="myForm8">
+        <form action="../Logic/ShoppingCartLogic.php" method="post" class="form-container">
+            <h1 id="ReserveHeader">Reserve</h1>
+
+            <input type="hidden" name="restaurant" value="Restaurant Fris">
+
+            <label id="FormLabel" for="time"><b>Date/Time:</b></label>
+            <select name="time">
+                <?php
+
+                //Fill array with food events
+                $FoodEvents = [];
+                $foodLogic = new FoodLogic();
+                $FoodEvents = (array)$foodLogic->GetFoodTimes("Restaurant Fris");
+                foreach ($FoodEvents as $food) {
+                ?><option value="<?php echo $food->getEvent()->getStartTime() ?>"><?php echo $timeFormat = date('d-m H:i', strtotime($food->getEvent()->getStartTime())) ?></option>;<?php
+                                                                                                                                                                                    }
+                                                                                                                                                                                        ?>
+            </select> <br><br>
+
+            <label id="FormLabel" for="adults"><b>Adults:</b></label>
+            <select name="amountAdultTicket">
+                <option value="" disabled selected hidden></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select> <br><br>
+
+            <label id="FormLabel" for="children"><b>Children:</b></label>
+            <select name="amountChildTicket" type="number">
+                <option value="" disabled selected hidden></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select> <br><br>
+
+            <label id="FormLabel" for="comments"><b>Comments:</b></label>
+            <textarea rows="6" cols="30" name="comments" type="text"></textarea>
+
+            <p id="FormText">
+                The reservation fee is &euro;10 per person. The total reservation fee will be deducted from the final check.
+            </p>
+
+            <button type="submit" name="AddToShoppingCartFood" class="btn">Confirm</button>
+            <button type="button" class="btn cancel" onclick="closeForm8()">Cancel</button>
+        </form>
+    </div>
 </body>
 
 </html>

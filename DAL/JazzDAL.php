@@ -16,11 +16,13 @@ class JazzDAL
 
     function GetJazzEventsByDay($TimeStartDay, $TimeEndDay)
     {
-        $sql = "SELECT E.StartTime, E.EndTime , E.Price, J.Event_ID, J.BandName, J.Description, J.Image, J.Location FROM Event E INNER JOIN Event_Jazz J ON E.Event_ID = J.Event_ID WHERE E.EventName = 'Jazz' AND E.StartTime >= '" . $TimeStartDay . "' AND StartTime < '" . $TimeEndDay . "' ORDER BY E.StartTime ASC";
-        $JazzEvents = [];
-        $result = mysqli_query($this->connection, $sql);
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
+        //prepared statement
+        $stmt = $this->connection->prepare("SELECT E.StartTime, E.EndTime , E.Price, J.Event_ID, J.BandName, J.Description, J.Image, J.Location FROM Event E INNER JOIN Event_Jazz J ON E.Event_ID = J.Event_ID WHERE E.EventName = 'Jazz' AND E.StartTime >= ? AND StartTime < ? ORDER BY E.StartTime ASC");
+        $stmt->bind_param("ss", $TimeStartDay, $TimeEndDay);
+        $stmt->execute();
+	    $result = $stmt->get_result(); 
+        while ($row = $result->fetch_assoc()) {
+
                 $StartTime = $row["StartTime"];
                 $EndTime = $row["EndTime"];
                 $Price = $row["Price"];
@@ -32,21 +34,19 @@ class JazzDAL
 
                 $Jazz = new Jazz($Event_ID,$BandName, $Description, $Location, $Image, $StartTime, $EndTime, $Price);
                 $JazzEvents[] = $Jazz;
-            }
-            return $JazzEvents;
-        } else {
-            echo 'No Jazz events found';
         }
+        return $JazzEvents;
     }
 
     function GetJazzEventById($Event_ID)
     {
-        $sql = "SELECT E.StartTime, E.EndTime , E.Price, J.Event_ID, J.BandName, J.Description, J.Image, J.Location FROM Event E 
-        INNER JOIN Event_Jazz J ON E.Event_ID = J.Event_ID WHERE J.Event_ID = $Event_ID";
-        $JazzEvents = [];
-        $result = mysqli_query($this->connection, $sql);
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
+        //prepared statement
+        $stmt = $this->connection->prepare("SELECT E.StartTime, E.EndTime , E.Price, J.Event_ID, J.BandName, J.Description, J.Image, J.Location FROM Event E 
+        INNER JOIN Event_Jazz J ON E.Event_ID = J.Event_ID WHERE J.Event_ID = ?");
+        $stmt->bind_param("i", $Event_ID);
+        $stmt->execute();
+	    $result = $stmt->get_result(); 
+        while ($row = $result->fetch_assoc()) {
                 $StartTime = $row["StartTime"];
                 $EndTime = $row["EndTime"];
                 $Price = $row["Price"];
@@ -58,11 +58,8 @@ class JazzDAL
 
                 $Jazz = new Jazz($Event_ID,$BandName, $Description, $Location, $Image, $StartTime, $EndTime, $Price);
                 return $Jazz;
-            }
-            return $JazzEvents;
-        } else {
-            echo 'No Jazz events found';        
         }
+        return $JazzEvents;
     }
     
     function SaveDescription($jazzEvent){
@@ -75,11 +72,12 @@ class JazzDAL
     //for program
     function GetAllJazzTickets()
     {
-        $sql = "SELECT E.StartTime, E.EndTime , E.Price, J.Event_ID, J.BandName, J.Description, J.Image, J.Location FROM Event E INNER JOIN Event_Jazz J ON E.Event_ID = J.Event_ID WHERE E.EventName = 'Jazz' ORDER BY E.StartTime ASC";
-        $JazzEvents = [];
-        $result = mysqli_query($this->connection, $sql);
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
+        //prepared statement
+        $stmt = $this->connection->prepare("SELECT E.StartTime, E.EndTime , E.Price, J.Event_ID, J.BandName, J.Description, J.Image, J.Location FROM Event E INNER JOIN Event_Jazz J ON E.Event_ID = J.Event_ID WHERE E.EventName = 'Jazz' ORDER BY E.StartTime ASC");
+	    $stmt->execute();
+	    $result = $stmt->get_result(); 
+        while ($row = $result->fetch_assoc()) {
+
                 $StartTime = $row["StartTime"];
                 $EndTime = $row["EndTime"];
                 $Price = $row["Price"];
@@ -91,11 +89,9 @@ class JazzDAL
 
                 $Jazz = new Jazz($Event_ID,$BandName, $Description, $Location, $Image, $StartTime, $EndTime, $Price);
                 $JazzEvents[] = $Jazz;
-            }
-            return $JazzEvents;
-        } else {
-            echo 'No Jazz events found';
         }
+        return $JazzEvents;
+
     }
 }
 

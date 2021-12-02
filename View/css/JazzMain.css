@@ -192,7 +192,7 @@ body{
     object-fit: cover;
 }
 
-.titleGumboKings {
+.title1 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -202,13 +202,13 @@ body{
     width: 20.9375rem;
     height: 2.4375rem;
     line-height: 2.4375rem;
-    top: 44.5rem;
+    top: 44.6rem;
     left: 5.6875rem;
     color: black;
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeGumboKings {
+.time1 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;
@@ -219,13 +219,13 @@ body{
     width: 20.9375rem;
     height: 2.4375rem;
     line-height: 2.4375rem;
-    top: 47.0625rem;
+    top: 47.1rem;
     left: 5.6875rem;
     color: black;
     background-color: rgba(255, 110, 110, 0.71)
 }
 
-.titleWickedJazzSounds {
+.title2 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -241,7 +241,7 @@ body{
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeWickedJazzSounds {
+.time2 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;
@@ -259,7 +259,7 @@ body{
 }
 
 
-.titleEvolve {
+.title3 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -275,7 +275,7 @@ body{
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeEvolve {
+.time3 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;
@@ -292,7 +292,7 @@ body{
     background-color: rgba(249, 255, 62, 0.71);
 }
 
-.titleTomThomsonAssemble {
+.title4 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -308,7 +308,7 @@ body{
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeTomThomsonAssemble {
+.time4 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;
@@ -325,7 +325,7 @@ body{
     background-color: rgba(70, 240, 246, 0.71);
 }
 
-.titleNtjamRosie {
+.title5 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -341,7 +341,7 @@ body{
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeNtjamRosie {
+.time5 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;
@@ -358,7 +358,7 @@ body{
     background-color: rgba(255, 133, 227, 0.71);
 }
 
-.titleJonnaFraser {
+.title6 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -374,7 +374,7 @@ body{
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeJonnaFraser {
+.time6 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;
@@ -391,7 +391,7 @@ body{
     background-color: rgba(255, 200, 72, 0.71);
 }
 
-.titleFoxAndTheMayors {
+.title7{
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -407,7 +407,7 @@ body{
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeFoxAndTheMayors {
+.time7 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;
@@ -424,7 +424,7 @@ body{
     background-color: rgba(255, 110, 110, 0.71)
 }
 
-.titleMylesSanko {
+.title8 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -440,7 +440,7 @@ body{
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeMylesSanko {
+.time8 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;
@@ -458,7 +458,7 @@ body{
 }
 
 
-.titleUncleSue {
+.title9 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -474,7 +474,7 @@ body{
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeUncleSue {
+.time9 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;
@@ -491,7 +491,7 @@ body{
     background-color: rgba(249, 255, 62, 0.71);
 }
 
-.titleRuisSoundsystem {
+.title10{
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -507,7 +507,7 @@ body{
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeRuisSoundsystem {
+.time10 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;
@@ -524,7 +524,7 @@ body{
     background-color: rgba(70, 240, 246, 0.71);
 }
 
-.titleChrisAllen {
+.title11 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -540,7 +540,7 @@ body{
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeChrisAllen {
+.time11 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;
@@ -557,7 +557,7 @@ body{
     background-color: rgba(255, 133, 227, 0.71);
 }
 
-.titleTheFamilyXL {
+.title12 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -573,7 +573,7 @@ body{
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeTheFamilyXL {
+.time12 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;
@@ -590,7 +590,7 @@ body{
     background-color: rgba(255, 200, 72, 0.71);
 }
 
-.titleGareDuNord {
+.title13 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -606,7 +606,7 @@ body{
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeGareDuNord {
+.time13 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;
@@ -623,7 +623,7 @@ body{
     background-color: rgba(255, 110, 110, 0.71)
 }
 
-.titleHanBennink {
+.title14 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -639,7 +639,7 @@ body{
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeHanBennink {
+.time14 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;
@@ -657,7 +657,7 @@ body{
 }
 
 
-.titleRilan {
+.title15 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -673,7 +673,7 @@ body{
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeRilan {
+.time15 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;
@@ -690,7 +690,7 @@ body{
     background-color: rgba(249, 255, 62, 0.71);
 }
 
-.titleTheNordaniens {
+.title16 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -706,7 +706,7 @@ body{
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeTheNordaniens {
+.time16 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;
@@ -723,7 +723,7 @@ body{
     background-color: rgba(70, 240, 246, 0.71);
 }
 
-.titleSoulSix {
+.title17 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -739,7 +739,7 @@ body{
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeSoulSix {
+.time17 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;
@@ -756,7 +756,7 @@ body{
     background-color: rgba(255, 133, 227, 0.71);
 }
 
-.titleLilithMerlot {
+.title18 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -772,7 +772,7 @@ body{
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeLilithMerlot {
+.time18 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;
@@ -789,7 +789,7 @@ body{
     background-color: rgba(255, 200, 72, 0.71);
 }
 
-.titleRuisSunday {
+.title19 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -805,7 +805,7 @@ body{
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeRuisSunday {
+.time19 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;
@@ -822,7 +822,7 @@ body{
     background-color: rgba(255, 110, 110, 0.71)
 }
 
-.titleWickedSunday {
+.title20 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -838,7 +838,7 @@ body{
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeWickedSunday {
+.time20 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;
@@ -856,7 +856,7 @@ body{
 }
 
 
-.titleEvolveSunday {
+.title21 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -872,7 +872,7 @@ body{
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeEvolveSunday {
+.time21 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;
@@ -889,7 +889,7 @@ body{
     background-color: rgba(249, 255, 62, 0.71);
 }
 
-.titleTheNordaniensSunday {
+.title22 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -905,7 +905,7 @@ body{
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeTheNordaniensSunday {
+.time22 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;
@@ -922,7 +922,7 @@ body{
     background-color: rgba(70, 240, 246, 0.71);
 }
 
-.titleGumboKingsSunday {
+.title23 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -938,7 +938,7 @@ body{
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeGumboKingsSunday {
+.time23 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;
@@ -955,7 +955,7 @@ body{
     background-color: rgba(255, 133, 227, 0.71);
 }
 
-.titleGareDuNordSunday {
+.title24 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-weight: bold;
@@ -971,7 +971,7 @@ body{
     background-color: rgba(255, 255, 255, 0.71);
 }
 
-.timeGareDuNordSunday {
+.time24 {
     border: #707070 0.0625rem solid;
     font-family: "Segoe UI";
     font-size: 1.125rem;

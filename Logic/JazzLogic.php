@@ -13,11 +13,21 @@ class JazzLogic
 //Gets functions from DAL layer
     function GetAllJazzEvents($TimeStartDay, $TimeEndDay)
     {
-        return $this->jazzDAL->GetJazzEventsByDay($TimeStartDay, $TimeEndDay);
+        try{
+            return $this->jazzDAL->GetJazzEventsByDay($TimeStartDay, $TimeEndDay);
+        }
+        catch(Exception $e){
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
     }
     
     function GetAllJazzTickets()
     {
-        return $this->jazzDAL->GetAllJazzTickets();
+        try{
+            return $this->jazzDAL->GetAllJazzTickets();
+        }
+        catch(Exception $e){
+            echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
     }
 }

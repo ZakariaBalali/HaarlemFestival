@@ -78,7 +78,7 @@ body:not(.NavigationBar) {
     font-weight: bold;
 }
 
-#button1, #button2, #button3, #button4 {
+#button26th, #button27th, #button28th, #button29th  {
     font-size: 1em;
     color: black;
     background-color: lightgrey;
@@ -94,11 +94,11 @@ body:not(.NavigationBar) {
     width: 8em;
 }
 
-#button1:hover, #button2:hover, #button3:hover, #button4:hover  {
+#button26th:hover, #button27th:hover, #button28th:hover, #button29th :hover  {
     background-color: #3e8e41;
     color: white;
 }
-#button1{
+#button26th{
     background-color: #3e8e41;
     color: white;
 }
@@ -123,7 +123,7 @@ th {
     border: none;
 }
 
-#programTable {
+.programTable {
     top: 2em;
     position: relative;
     font-size: 1.1em;
@@ -262,7 +262,7 @@ th {
     color: black;
     bottom: 2.5em;
     left: 0.5em;
-    width: 30em;
+    width: 33em;
     height: 3.5em;
 }
 
@@ -298,7 +298,7 @@ th {
     color: black;
     bottom: 3.5em;
     left: 0.5em;
-    width: 30em;
+    width: 33em;
     height: 3.5em;
 }
 
@@ -345,13 +345,14 @@ th {
     position: relative;
     font-size: 1.1em;
     bottom: 5em;
+    left: 0.5em;
 }
 
 #totalPriceTickets {
     position: relative;
     font-size: 1.1em;
     bottom: 7.5em;
-    left: 24.5em;
+    left: 25.8em;
 }
 
 #addToCartButton {
@@ -475,6 +476,74 @@ th {
 
 .shoppingCartButton {
     background-color: #A5CD38;
+}
+
+#normalTicketPrice{
+    margin-left: 21em;
+    margin-top: -2.2em;
+}
+
+#normalTicketEuroSign{
+    margin-left: 17em;
+    margin-top: -2.1em;
+}
+
+#familyTicketPrice{
+    margin-left: 21em;
+    margin-top:-2.2em;
+}
+
+#familyTicketEuroSign{
+    margin-left: 17em;
+    margin-top: -2.1em; 
+}
+
+#historicThursdayEnglish{
+    display: block;
+}
+
+#historicThursdayDutch{
+    display: none;
+}
+
+#historicThursdayChinese{
+    display: none;
+}
+
+#historicFridayEnglish{
+    display: none;
+}
+
+#historicFridayDutch{
+    display: none;
+}
+
+#historicFridayChinese{
+    display: none;
+}
+
+#historicSaturdayEnglish{
+    display: none;
+}
+
+#historicSaturdayDutch{
+    display: none;
+}
+
+#historicSaturdayChinese{
+    display: none;
+}
+
+#historicSundayEnglish{
+    display: none;
+}
+
+#historicSundayDutch{
+    display: none;
+}
+
+#historicSundayChinese{
+    display: none;
 }
 
 /* Add Animation */

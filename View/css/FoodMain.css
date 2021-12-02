@@ -102,6 +102,7 @@
     font-size: 1.0625rem;
     margin-top: 1.5625rem;
     margin-right: 1.75rem;
+    cursor: pointer;
 }
 #Stars3{
     float: right;
@@ -127,4 +128,12 @@
     font-size: 1.0625rem;
     margin-top: 0.3125rem;
     margin-right: 1.75rem;
+    cursor: pointer;
+}
+label{
+    width: 100px;
+    display: inline-block;
+}
+select{
+    width: 130px;
 }

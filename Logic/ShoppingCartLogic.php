@@ -3,26 +3,56 @@ require_once dirname(__FILE__) . '/../DAL/EventDAL.php';
 require('../Model/Historic.php');
 require('HistoricLogic.php');
 $historicLogic = new HistoricLogic();
+
+require('../Model/Food.php');
+require('FoodLogic.php');
+$foodLogic = new FoodLogic();
 session_start();
 
-
+// Music isset
 if (isset($_POST['AddToShoppingCartMusic'])) {
     CheckAmountFor3Tickets($_POST["amountArtist"], $_POST["artistID"], $_POST["amountAllAccessDay"], $_POST["allAccessDayID"], $_POST["amountAllAccessWeekend"], $_POST["allAccessWeekendID"]);
     header('Location: ../View/Shopping_Cart.php');
 }
 
-//historic
+// Historic isset
 if (isset($_POST['AddToShoppingCartHistoric'])) {
 
-    // date and time merged
-    $dateTime = $_POST["selectDate"] . ' ' . $_POST["selectTime"];
-    
-    //$ticketarray= $historicLogic->GetTicket($dateTime, $_POST["language"], "family ticket");
-    $normalTicket = $historicLogic->GetTicket($dateTime, $_POST["language"], "normal ticket");
-    $familyTicket = $historicLogic->GetTicket($dateTime, $_POST["language"], "family ticket");
-    //historic($_POST["selectDate"], $_POST["selectTime"], $_POST["language"], $_POST["normalTicketAmount"], $_POST["familyTicketAmount"]);
-    CheckAmountFor2Tickets($_POST["normalTicketAmount"], $normalTicket->getEvent_ID(), $_POST["familyTicketAmount"], $familyTicket->getEvent_ID());
+    if(!$_POST["normalTicketAmount"]=="" || !$_POST["familyTicketAmount"]==""){
+        // date and time merged
+        $dateTime = $_POST["selectDate"] . ' ' . $_POST["selectTime"];
+
+        $normalTicket = $historicLogic->GetTicket($dateTime, $_POST["language"], "normal ticket");
+        $familyTicket = $historicLogic->GetTicket($dateTime, $_POST["language"], "family ticket");
+
+        CheckAmountFor2Tickets($_POST["normalTicketAmount"], $normalTicket->getEvent_ID(), $_POST["familyTicketAmount"], $familyTicket->getEvent_ID());
+        header('Location: ../View/Shopping_Cart.php');
+    }
+    else{
+        //return back to previous page
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        exit;
+    }
+}
+
+
+// Food isset
+if (isset($_POST['AddToShoppingCartFood'])) 
+{
+    $reservation = $foodLogic->GetReservation($_POST["restaurant"], $_POST["time"]);
+    CheckAmountForFoodTickets($reservation->getEvent_ID(), $_POST["amountAdultTicket"], $_POST["amountChildTicket"]);
     header('Location: ../View/Shopping_Cart.php');
+}
+
+// Check for food tickets
+function CheckAmountForFoodTickets($ReservationID, $amountAdultTicket, $amountChildTicket)
+{
+    if ($amountAdultTicket > 0) {
+        AddToSession($ReservationID, $amountAdultTicket);
+    }
+    if ($amountChildTicket > 0) {
+        AddToSession($ReservationID, $amountChildTicket);
+    }
 }
 
 //Check amount of the tickets and calls add to session function when the amount is more than one
@@ -57,7 +87,13 @@ function CheckAmountFor2Tickets($amountNormalTicket, $normalTicketID, $amountFam
 //Adds The item to a session
 function AddToSession($EventID, $Amount)
 {
-
+    //Checks if there is a comment
+    if(isset($_POST['comments'])){
+        $comment = $_POST['comments'];
+    }
+    else{
+        $comment = "none";
+    }
     $eventDAL = new EventDAL();
     $events = (array)$eventDAL->GetEventByID($EventID);
     //If there isn't a session, make one and add to it
@@ -65,19 +101,30 @@ function AddToSession($EventID, $Amount)
         foreach ($events as $event) {
             $_SESSION['products'] = array();
             $cart = array('EventID' => $EventID, 'EventName' => $event->getEventName(),
-                'ProductName' => $event->getProductName(), 'StartTime' => $event->getStartTime(), 'Price' => $event->getPrice(), 'Amount' => $Amount);
+                'ProductName' => $event->getProductName(), 'StartTime' => $event->getStartTime(), 'Price' => $event->getPrice(), 'Btw' => $event->getBtw(), 'Amount' => $Amount, 'Comment' => $comment);
 
         }
 
     } //Use existing session to add to
     else {
+        //checks if item has already been added
+        foreach ($_SESSION['Products'] as $Product) {
+            if ($Product['EventID'] == $EventID) {
+                $Amount += $Product['Amount'];
+            }
+        }
         foreach ($events as $event) {
             $cart = array('EventID' => $EventID, 'EventName' => $event->getEventName(),
-                'ProductName' => $event->getProductName(), 'StartTime' => $event->getStartTime(), 'Price' => $event->getPrice(), 'Amount' => $Amount);
+                'ProductName' => $event->getProductName(), 'StartTime' => $event->getStartTime(), 'Price' => $event->getPrice(), 'Btw' => $event->getBtw(),  'Amount' => $Amount,'Comment' => $comment);
 
         }
     }
 
     $_SESSION['Products'][$EventID] = $cart;
+
+
+
 }
+
+
 ?>
