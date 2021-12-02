@@ -37,6 +37,16 @@ class EventDAL
         }
         return $Events;
     }
+
+    function GetSeats($Event_ID)
+    {
+        $stmt = $this->connection->prepare("SELECT Seats FROM Event WHERE Event_ID = ?");
+        $stmt->bind_param("i", $Event_ID);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = mysqli_fetch_assoc($result);
+        return $row["Seats"];
+    }
 }
 
 ?>

@@ -1,5 +1,6 @@
 <?php
 require_once '../DAL/JazzDAL.php';
+require_once '../DAL/EventDAL.php';
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -28,7 +29,7 @@ require_once '../DAL/JazzDAL.php';
 
 <section class="workSpace">
 
-<table style="width:100%">
+<table style="width:60%">
   <tr>
     <th>Band</th>
     <th>Start Time</th>
@@ -36,22 +37,21 @@ require_once '../DAL/JazzDAL.php';
     <th>Location</th>
     <th>Price</th>
     <th>Seats</th>
-    <th>...</th>
+    <th>Edit</th>
   </tr>
   <?php
         // logic laag!!
         $jazzDAL = new JazzDAL();
+        $eventDal = new EventDAL();
         $shows = $jazzDAL->GetAllJazzTickets();
         foreach ($shows as $show) { ?>
           <tr>
             <td><?php echo $show->getBandName() ?></td>
-            <td><?php echo $show->getEvent()->GetStartTime(); ?></td>
+            <td><?php echo $show->getEvent()->getStartTime(); ?></td>
             <td><?php echo $show->getEvent()->getEndTime(); ?></td>
             <td><?php echo $show->getLocation() ?></td>
-            <td><?php echo $show->getEvent()->getPrice(); ?></td>
-            <td><?php echo $show->getEvent()->getSeats(); ?></td>
-            <td>a</td>
-
+            <td><?php echo number_format((float)$show->getEvent()->getPrice(), 2, ',', ''); ?></td>
+            <td><?php echo $eventDal->GetSeats($show->getEvent_ID()); ?></td>
 
             <td><a href="" name="edit">Edit</a></td>
           </tr>
